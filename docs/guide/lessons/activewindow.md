@@ -1,6 +1,6 @@
 # How to create a LUYA Active Window
 
-In this lesson we are going to add a special email function to the [address book](https://github.com/luyadev/luya-module-addressbook) which we have created in the [previous lesson](https://github.com/luyadev/luya/blob/master/docs/guide/lesson-module.md). We will extend the original CRUD view for the contact group list in the CMS with another button. This button will open a window overlay which will give us the possibility to freely add custom actions and views. In our case, we want to add the feature to send all contacts in the group list an email. 
+In this lesson we are going to add a special email function to the [address book](https://github.com/luyadev/luya-module-addressbook) which we have created in the [previous lesson](/guide/lessons/module). We will extend the original CRUD view for the contact group list in the CMS with another button. This button will open a window overlay which will give us the possibility to freely add custom actions and views. In our case, we want to add the feature to send all contacts in the group list an email. 
 
 We will learn how to add and integrate an [Active Window](https://luya.io/guide/ngrest-activewindow) to an existing LUYA module.
 
@@ -17,7 +17,7 @@ See the GIF below:
 
 ## Adding the Active Window to our group model
 
-As stated in the [Active Window Documentation]() we will have to add the button for opening the Active Window view in the associated model file. As we want to send the emails for every group, we have to modify the `addressbook/model/Group.php` and add the function `ngRestConfig` as the declaration is missing in our case:
+As stated in the [Active Window Documentation](/guide/ngrest/activewindow) we will have to add the button for opening the Active Window view in the associated model file. As we want to send the emails for every group, we have to modify the `addressbook/model/Group.php` and add the function `ngRestConfig` as the declaration is missing in our case:
 
 ```php
 public function ngRestActiveWindows()

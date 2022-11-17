@@ -2,7 +2,7 @@
 
 A theme can be used to overwrite views of other modules (e.g. app) or other themes with inheritance. As a collection of informations like Assets or Views it's bundled and therefore shareable.
 
-> In order to create your custom theme you can run the [Console Command](luya-console.md) `theme/create` wizard.
+> In order to create your custom theme you can run the [Console Command](/guide/app/console) `theme/create` wizard.
 
 ## Create a new theme
 

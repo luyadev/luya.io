@@ -4,7 +4,7 @@ In order to use a controller to prepare your data you have to assign those into 
 
 ## Generate custom controller and view
 
-Let´s assume you have already registered your admin module ([[app-admin-module.md]]). Next let´s create a new controller in the `controllers` folder of your admin folder:
+Let´s assume you have already registered your admin module ([[/guide/admin/intro]]). Next let´s create a new controller in the `controllers` folder of your admin folder:
 
 ```php
 <?php
@@ -73,4 +73,4 @@ zaa.bootstrap.register('FinderController', ['$scope', function($scope) {
 </div>
 ```
 
-You could also register a java script file within an [[app-admin-module-assets.md]].
+You could also register a java script file within an [[/guide/admin/assets]].

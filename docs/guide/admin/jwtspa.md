@@ -6,7 +6,7 @@ The LUYA admin provides a basic JWT generator including an out of the box authen
 
 ## Prerequisite
 
-+ A custom (application) admin module is required to setup JWT ([[app-admin-module.md]]).
++ A custom (application) admin module is required to setup JWT ([[/guide/admin/intro]]).
 + Understand API Users which are explaind in Headless Guide Section ([[concept-headless.md]]).
 + Configure the `luya\admin\components\Jwt` component.
 

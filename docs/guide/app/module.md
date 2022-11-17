@@ -1,7 +1,7 @@
 # Project Module
 
 A very important behavior in *LUYA* projects are **modules**. You can always use modules to put your own custom and reusable logic inside. 
-For instance you can put database logic inside of the ActiveRecord models. A module can also provide information for other module, e.g.  [CMS Blocks](app-blocks.md). 
+For instance you can put database logic inside of the ActiveRecord models. A module can also provide information for other module, e.g.  [CMS Blocks](/guide/cms/blocks). 
 
 ![Installed Modules](https://raw.githubusercontent.com/luyadev/luya/master/docs/guide/img/installed-packages.png "Installed Modules")
 
@@ -9,10 +9,10 @@ For instance you can put database logic inside of the ActiveRecord models. A mod
 
 There are two different types of modules:
 
-+ [Admin](app-admin-module.md) - Contains Models, Migrations Administration, [NgRest CRUD](ngrest-concept.md).
-+ [Frontend](app-module-frontend.md) - Contains controllers and views, logic for frontend implementations.
++ [Admin](/guide/admin/intro) - Contains Models, Migrations Administration, [NgRest CRUD](/guide/ngrest/concept).
++ [Frontend](/guide/frontend/intro) - Contains controllers and views, logic for frontend implementations.
 
-> In order to create your custom module you can run the [Console Command](luya-console.md) `module/create` wizard.
+> In order to create your custom module you can run the [Console Command](/guide/app/console) `module/create` wizard.
 
 Structure of modules
 
@@ -81,7 +81,7 @@ class Module extends \luya\admin\base\Module
 
 ## Import Method
 
-All modules can contain a `luya\admin\base\Module::import()` method wich will be called when running the [console command `import`](luya-console.md). 
+All modules can contain a `luya\admin\base\Module::import()` method wich will be called when running the [console command `import`](/guide/app/console). 
 If `luya\admin\base\Module::import()` method returns an array each class must extend from the `luya\console\Importer` class.
 
 > One of the main ideas behind LUYA is to store data in files and import them into your database.
@@ -127,8 +127,3 @@ To do so open the `composer.json` file and add the *autoload* section (if not ex
 ```
 
 Run the `composer dump-autoload` command in order to refresh the autoload section of your Composer file. Now you are able to access the *app/modules/mymodule* files directly with the *mymodule* module namepsace.
-
-## Links
-
-+ [Frontend Module guide](app-module-frontend.md)
-+ [Admin Module guide](app-admin-module.md)

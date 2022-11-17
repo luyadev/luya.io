@@ -45,7 +45,7 @@ You can try to update the placeholder-image styles by using its class and your c
 ?>
 ```
 
-> Tip: If you use LUYA Admin you can let the [LUYA Filters](app-filters.md) do the work for you.
+> Tip: If you use LUYA Admin you can let the [LUYA Filters](/guide/app/filters) do the work for you.
 
 
 ### Base64 encode

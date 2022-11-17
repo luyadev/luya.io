@@ -2,13 +2,13 @@
 
 Active Selections are anlog to [[ngrest-activebutton.md]]. When `luya\admin\ngrest\base\NgRestModel::ngRestActiveSelections()` are defined, checkboxes will appear in the CRUD list (overview of all records) and a the active selection buttons are visible in the bottom. A click on the button interacts with the selected items/rows.
 
-There are built in Active Selections you can use and configure or you can create your own Active Selections and attach them to an [[ngrest-model.md]].
+There are built in Active Selections you can use and configure or you can create your own Active Selections and attach them to an [[/guide/ngrest/model]].
 
 + `luya\admin\selections\DeleteActiveSelection`
 
 ## Inline
 
-Compare to [[ngrest-activebutton.md]] or [[ngrest-activewindow.md]] Active Selections can be defined inline as anonymus function inside the [[ngrest-model.md]] `luya\admin\ngrest\base\NgRestModel::ngRestActiveSelections()` method.
+Compare to [[ngrest-activebutton.md]] or [[/guide/ngrest/activewindow]] Active Selections can be defined inline as anonymus function inside the [[/guide/ngrest/model]] `luya\admin\ngrest\base\NgRestModel::ngRestActiveSelections()` method.
 
 #### Basic Usage
 
@@ -102,7 +102,7 @@ class DeleteActiveSelection extends ActiveSelection
 
 ## Attaching
 
-Use the `luya\admin\ngrest\base\NgRestModel::ngRestActiveSelections()` method insde the desired [[ngrest-model.md]]:
+Use the `luya\admin\ngrest\base\NgRestModel::ngRestActiveSelections()` method insde the desired [[/guide/ngrest/model]]:
 
 ```php
 public function ngRestActiveSelections()

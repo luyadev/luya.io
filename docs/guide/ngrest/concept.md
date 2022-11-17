@@ -23,8 +23,8 @@ The word *NgRest* is explained as follows: A**Ng**ular**Rest** (Representational
 
 Preparations:
 
-+ [Create database table via migrations](luya-console.md)
-+ [Create an Admin Module](app-admin-module.md) where you can put the NgRest CRUD files.
++ [Create database table via migrations](/guide/app/console)
++ [Create an Admin Module](/guide/admin/intro) where you can put the NgRest CRUD files.
 
 Setup CRUD:
 
@@ -116,7 +116,7 @@ class Member extends \luya\admin\ngrest\base\NgRestModel
 }
 ```
 
-You can read more about the configuration of the [[ngrest-model.md]].
+You can read more about the configuration of the [[/guide/ngrest/model]].
 
 ## Creating controller and API
 

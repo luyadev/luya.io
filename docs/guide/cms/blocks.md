@@ -1,6 +1,6 @@
 # CMS blocks
 
-Blocks are elements used in the CMS module to display and configure data. Blocks are dropped into the placeholders of a [CMS Layout](app-cmslayouts.md). An example of a block could be a paragraph tag where the user can add the content. LUYA CMS module is shipped with some default blocks, but you can create your own elements.
+Blocks are elements used in the CMS module to display and configure data. Blocks are dropped into the placeholders of a [CMS Layout](/guide/cms/cmslayouts). An example of a block could be a paragraph tag where the user can add the content. LUYA CMS module is shipped with some default blocks, but you can create your own elements.
 
 ![Block Admin](https://raw.githubusercontent.com/luyadev/luya/master/docs/guide/img/block-admin.png "Block Admin")
 
@@ -93,7 +93,7 @@ Check the `\luya\cms\base\PhpBlockView` for full method reference to use inside 
 
 ## Register and import
 
-After creating a block, you have to *import* it into your application. The reason behind the import process is to avoid rely on database structure (which cant be tracked in a VCS or SVN easily) and to work with PHP files you can manage in version control system (e.g. GitHub or Bitbucket). Run the [Import Command](luya-console.md):
+After creating a block, you have to *import* it into your application. The reason behind the import process is to avoid rely on database structure (which cant be tracked in a VCS or SVN easily) and to work with PHP files you can manage in version control system (e.g. GitHub or Bitbucket). Run the [Import Command](/guide/app/console):
 
 ```sh
 ./vendor/bin/luya import

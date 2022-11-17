@@ -1,7 +1,7 @@
 # Console commands
 
 To execute a console command open your terminal and change into the base directory of your *LUYA* project. 
-The base directory is where folders like vendor, public_html, runtime are located, e. g. when you run the [luya-kickstarter](install.md) its in `luya-kickstarter`.
+The base directory is where folders like vendor, public_html, runtime are located, e. g. when you run the [luya-kickstarter](/guide/installation/) its in `luya-kickstarter`.
 
 ```sh
 ./vendor/bin/luya <command>
@@ -17,14 +17,14 @@ Global LUYA commands:
 
 |Command|Description
 |--------|---------
-|`import`|Updates permission, CMS blocks, CMS layouts, image filters. Import is a one of the main concepts of LUYA. Its saving your project data into the database. This way you can track your files within VCS (Git, SVN) and import them. [Create Import Commmand](app-module.md#import-method).
+|`import`|Updates permission, CMS blocks, CMS layouts, image filters. Import is a one of the main concepts of LUYA. Its saving your project data into the database. This way you can track your files within VCS (Git, SVN) and import them. [Create Import Commmand](/guide/app/module).
 |`migrate`|Execute all migrations from all modules, updates your database if any. The main difference to the Yii migrate command is its going to collect all migrations from all modules.
 |`migrate/create migration1 modulename`|Create new migration file named `mymigration1` in the module `modulename`: `migrate/create mymigration1 modulename`.
 |`health`|Tests all basic directory if they are writable and existing.
 |`health/mailer`|Check if you mailer component is working and can send mails.
-|`module/create`|Create new [frontend/admin module](app-module.md) with a wizzard.
+|`module/create`|Create new [frontend/admin module](/guide/app/module) with a wizzard.
 |`module/controller/action`|All commands stored in the folder `commands` can be run by default routing.
-|`theme/create`|Create new [theme](app-themes.md) with a wizzard.
+|`theme/create`|Create new [theme](/guide/app/themes) with a wizzard.
 
 Admin UI commands:
 
@@ -32,20 +32,20 @@ Admin UI commands:
 |---    |---
 |`admin/setup`|Execute the *LUYA* Setup will create a user, group and base table informations.
 |`admin/setup/user`|Create a new user for the *LUYA* admin UI from command line.
-|`admin/filter`|Generate a [Filter](app-filters.md) Class.
-|`admin/proxy`|Start the [content sync](concept-depandsync) process.
+|`admin/filter`|Generate a [Filter](/guide/app/filters) Class.
+|`admin/proxy`|Start the [content sync](/guide/concepts/depandsync) process.
 |`admin/proxy/clear`|Flush the configuration setup for the content sync process.
 |`admin/storage/cleanup-image-table`|Find if duplications are available in the image table (same filter and file id). If confirmed it will remove all duplications except of one, the first one created.
 |`admin/storage/process-thumbnails`|Create all thumbnails for filemanager preview. Otherwise they are created on request load.
-|`admin/active-window/create`|Generate a [new Active Window](ngrest-activewindow.md) class file based on your configuration.
-|`admin/crud/create`|Create new [NgRest CRUD](ngrest-concept.md) with a wizzard.
-|`admin/crud/model`|Generates only the [NgRestModel](ngrest-model.md). Usage `./vendor/bin/luya admin/crud/model "app\models\Customer"` 
+|`admin/active-window/create`|Generate a [new Active Window](/guide/ngrest/activewindow) class file based on your configuration.
+|`admin/crud/create`|Create new [NgRest CRUD](/guide/ngrest/concept) with a wizzard.
+|`admin/crud/model`|Generates only the [NgRestModel](/guide/ngrest/model.html). Usage `./vendor/bin/luya admin/crud/model "app\models\Customer"` 
 
 CMS module commands:
 
 |Command|Description 
 |---    |---
-|`cms/block/create`|Create new [CMS content blocks](app-blocks.md) with a wizzard.
+|`cms/block/create`|Create new [CMS content blocks](/guide/cms/blocks) with a wizzard.
 
 
 ## Create your own command

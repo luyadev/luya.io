@@ -1,6 +1,6 @@
 # Filter Chain Effects
 
-The name effect is maybe a little bit confusing, as `crop` or `thumbnail` does not sound like an effect at all, but there are other things which are effects. Actually an effect is an array of items in the `chain()` method of a [Filter](app-filters.md).
+The name effect is maybe a little bit confusing, as `crop` or `thumbnail` does not sound like an effect at all, but there are other things which are effects. Actually an effect is an array of items in the `chain()` method of a [Filter](/guide/app/filters).
 
 Each chain effect can have several arguments which changes the behavior of the effect. Since we have integrated the [Yii 2 Imagine Extension](https://github.com/yiisoft/yii2-imagine) the arguments to passed are equals to the supported methods in the extension. The thumbnail behavior has been strongly improved by this extension to calculate images based on values without doing the math on your own.
 

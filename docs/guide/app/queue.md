@@ -52,7 +52,7 @@ The verbose option helps to debug and should be disabled in production.
 
 > The original queue/listen command won't store any timestamp information about last run in the `luya\admin\models\Config` like the fake cronjob does.
 
-When using the `queue/listen` command its recommend to enable `luya\admin\storage\BaseFileSystemStorage::$queueFilters` because this option will process the image filter creation in the queue instead of the users browser. This will therefore moved the large memory load from the webserver to the instance which is running the `queue/listen` command. Add all your application [[app-filters.md]] to the `luya\admin\storage\BaseFileSystemStorage::$queueFiltersList` list, as only the listed filters will be generated.
+When using the `queue/listen` command its recommend to enable `luya\admin\storage\BaseFileSystemStorage::$queueFilters` because this option will process the image filter creation in the queue instead of the users browser. This will therefore moved the large memory load from the webserver to the instance which is running the `queue/listen` command. Add all your application [[/guide/app/filters]] to the `luya\admin\storage\BaseFileSystemStorage::$queueFiltersList` list, as only the listed filters will be generated.
 
 ## Push a Job into the Queue
 

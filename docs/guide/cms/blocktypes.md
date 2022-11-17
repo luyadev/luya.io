@@ -227,8 +227,8 @@ Now you are able to access the TagInjector object trough the `$this['tags']` Arr
 
 In order to develop custom directive types you need to create a few things are required:
 
-1. A module which is registered and loaded (the module will provide the registration of the asset files). [[app-admin-module.md]]
-2. An asset file which holds the angular directive code. [[app-admin-module-assets.md]]]
+1. A module which is registered and loaded (the module will provide the registration of the asset files). [[/guide/admin/intro]]
+2. An asset file which holds the angular directive code. [[/guide/admin/assets]]]
 3. The angular directive itself which is compatible with LUYA injector API.
 
 An example code for a directive which is compatible with the injector API directive:

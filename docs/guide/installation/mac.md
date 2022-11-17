@@ -1,10 +1,10 @@
 # Installation on macOS
 
-> The installation process does not differ to the [general installation](install.md) but on several macOS systems you may use different config values as described below.
+> The installation process does not differ to the [general installation](/guide/installation/) but on several macOS systems you may use different config values as described below.
 
 ## Installation
 
-**[Follow the general installation guide](install.md) and then use the macOS specific settings below.**
+**[Follow the general installation guide](/guide/installation/) and then use the macOS specific settings below.**
 
 Most macOS Apache services does not work with the default Unix socket defined in your `php.ini` (as it could be of the wrong loaded PHP profile), so you have to define an additional Unix socket inside your dsn configuration of the database component:
 
@@ -42,4 +42,4 @@ which php
 php -i
 ```
 
-> Visit the [installation problems and questions site](install-problems.md) if you get any problems with the LUYA setup.
+> Visit the [installation problems and questions site](/guide/installation/problems) if you get any problems with the LUYA setup.

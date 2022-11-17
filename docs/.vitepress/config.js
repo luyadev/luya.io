@@ -7,12 +7,14 @@ export default {
     logo: {light: '/assets/luyalogo.png', dark: '/assets/luyalogo.png'},
     socialLinks: [
       { icon: 'youtube', link: 'https://www.youtube.com/@luyaio'},
-      { icon: 'github', link: 'https://github.com/luyadev' }
+      { icon: 'github', link: 'https://github.com/luyadev' },
+      { icon: 'twitter', link: 'https://twitter.com/luyadev'}
     ],
     nav: [
       { text: 'Guide', link: '/guide/' },
       { text: 'API Docs', link: 'https://api.luya.io' },
-      { text: 'Forum', link: 'https://github.com/orgs/luyadev/discussions' }
+      { text: 'Forum', link: 'https://github.com/orgs/luyadev/discussions' },
+      { text: 'Packages', link: 'https://packagist.org/?tags=luya'}
     ],
     sidebar: [
       {
@@ -86,7 +88,7 @@ export default {
           items: [
             { text: 'Intro', link: '/guide/frontend/intro' },
             { text: 'Working with Forms', link: '/guide/frontend/forms' },
-            { text: 'Layouts', link: '/guide/frontend/intro' },
+            { text: 'Layouts', link: '/guide/frontend/layouts' },
             { text: 'URL Rules', link: '/guide/frontend/urlrules' },
           ]
         },

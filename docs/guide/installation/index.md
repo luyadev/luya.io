@@ -28,13 +28,13 @@ If the Composer installation is done, switch to **configs** folder inside the ap
 cp env.php.dist env.php
 ```
 
-Now the database connection inside the `configs/config.php` file needs to fit your MySQL servers' configuration. It is recommended to open all config files once to change values and understand the behavior. In order to understand the config files, read more in the [environment configs section](install-environments.md).
+Now the database connection inside the `configs/config.php` file needs to fit your MySQL servers' configuration. It is recommended to open all config files once to change values and understand the behavior. In order to understand the config files, read more in the [environment configs section](/guide/installation/environments.html).
 
 ## Run Migrate and Import
 
 After successfully setting up your database connection, you have to reopen your terminal and switch to your project directory and excute the **luya** binary files, which has been installed into your vendor folder by Composer as described below.
 
-Run the migration files with the [migrate console command](luya-console.md):
+Run the migration files with the [migrate console command](/guide/app/console):
 
 > Note: If the migration process failed, try to replace localhost with 127.0.0.1 in the database DNS configuration `(env-local-db.php)` which is located in the  configs folder.
 
@@ -42,7 +42,7 @@ Run the migration files with the [migrate console command](luya-console.md):
 ./vendor/bin/luya migrate
 ```
 
-Build and import all filesystem configurations into the database with the [import console command](luya-console.md):
+Build and import all filesystem configurations into the database with the [import console command](/guide/app/console):
 
 ```sh
 ./vendor/bin/luya import
@@ -50,7 +50,7 @@ Build and import all filesystem configurations into the database with the [impor
 
 ## Run admin/setup
 
-Finally execute the [setup console command](luya-console.md) command, which is going to setup a user, group and permissions:
+Finally execute the [setup console command](/guide/app/console) command, which is going to setup a user, group and permissions:
 
 ```sh
 ./vendor/bin/luya admin/setup
@@ -62,7 +62,7 @@ The setup process will ask you for an email and password to store your personal 
 
 You can now log into the administration interface, e.g. `http://localhost/luya-kickstarter/public_html/admin` (dependings on the location of the LUYA files).
 
-> Check the [Installation Problems and Questions Site](install-problems.md) if you have any problems with the LUYA setup.
+> Check the [Installation Problems and Questions Site](/guide/installation/problems) if you have any problems with the LUYA setup.
 
 ## Docker (docker-compose)
 
@@ -85,12 +85,3 @@ docker-compose exec luya_web luya <console_command>
 ```
 
 Since the Dockerimage is running on port 80, the docker-compose maps the internal [https://github.com/luyadev/luya-kickstarter/blob/master/docker-compose.yml#L27](port 80 to your machines port 8080) so you can now access your website in the browser under `localhost:8080`.
-
----
-
-### What's next?
-
-+ [Understanding the LUYA Core](concept-core.md)
-+ [Create new CMS layout](app-cmslayouts.md)
-+ [Create new CMS block](app-blocks.md)
-+ [Build navigations / Menus](app-menu.md)

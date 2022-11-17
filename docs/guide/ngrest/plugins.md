@@ -1,6 +1,6 @@
 # NgRest Attribute Plugins
 
-An NgRest plugin is like the type of an input which means you can create selects, date pickers, file or image uploads and more. Each NgRest Config Plugin can have its configuration options. You should read the [[ngrest-model.md]] guide section to understand how to use the plugins.
+An NgRest plugin is like the type of an input which means you can create selects, date pickers, file or image uploads and more. Each NgRest Config Plugin can have its configuration options. You should read the [[/guide/ngrest/model]] guide section to understand how to use the plugins.
 
 ## LUYA System plugins
 
@@ -12,17 +12,17 @@ The plugins listed below can be configured but make sure your are familiar with 
 |textArray            |`\luya\admin\ngrest\plugins\TextArray`|array        |Multiple input type text fields.
 |textarea              |`\luya\admin\ngrest\plugins\Textarea`|string        |Textarea input type field.
 |password            |`\luya\admin\ngrest\plugins\Password`|string        |Input type password field.
-|[selectArray](ngrest-plugin-select.md) |`\luya\admin\ngrest\plugins\SelectArray`|string    |Select dropdown with options from input configuration.
-|[selectModel](ngrest-plugin-select.md) |`\luya\admin\ngrest\plugins\SelectModel`|string    |Select dropdown with options given from an Active Record Model class.
-|[selectRelationActiveQuery](ngrest-plugin-select.md)|`luya\admin\ngrest\plugins\SelectRelationActiveQuery`|string |Select via modal selection based on an ActiveQuery relation definition.
+|[selectArray](/guide/ngrest/plugin-select) |`\luya\admin\ngrest\plugins\SelectArray`|string    |Select dropdown with options from input configuration.
+|[selectModel](/guide/ngrest/plugin-select) |`\luya\admin\ngrest\plugins\SelectModel`|string    |Select dropdown with options given from an Active Record Model class.
+|[selectRelationActiveQuery](/guide/ngrest/plugin-select)|`luya\admin\ngrest\plugins\SelectRelationActiveQuery`|string |Select via modal selection based on an ActiveQuery relation definition.
 |toggleStatus       |`\luya\admin\ngrest\plugins\ToggleStatus`|integer/string    |Create checkbox where you can toggle on or off.
 |image                |`\luya\admin\ngrest\plugins\Image`|integer    |Create an image upload and returns the imageId from storage system.
 |imageArray            |`\luya\admin\ngrest\plugins\ImageArray`|array        |Creates an uploader for multiple images and returns an array with the image ids from the storage system.
 |file                |`\luya\admin\ngrest\plugins\File`|integer        |Creates a file upload and returns the fileId from the storage system.
 |fileArray          |`\luya\admin\ngrest\plugins\FileArray`|array        |Creates an uploader for multiple files and returns an array with the file ids from the storage system.
 |checkboxList        |`\luya\admin\ngrest\plugins\CheckboxList`|array        |Create multiple checkboxes and return the selected items as array.
-|[checkboxRelation](ngrest-plugin-checkboxrelation.md) |`\luya\admin\ngrest\plugins\CheckboxRelation`|array |Create multiple checkbox based on another model with a via table.
-|[CheckboxRelationActiveQuery](ngrest-plugin-checkboxrelation.md)|`\luya\admin\ngrest\plugins\CheckboxRelationActiveQuery`|array |Create an Checkbox relation based on a current existing relation definition inside the Model.
+|[checkboxRelation](/guide/ngrest/plugin-checkboxrelation) |`\luya\admin\ngrest\plugins\CheckboxRelation`|array |Create multiple checkbox based on another model with a via table.
+|[CheckboxRelationActiveQuery](/guide/ngrest/plugin-checkboxrelation)|`\luya\admin\ngrest\plugins\CheckboxRelationActiveQuery`|array |Create an Checkbox relation based on a current existing relation definition inside the Model.
 |date                |`\luya\admin\ngrest\plugins\Date`|integer |Date picker to choose date, month and year. Returns the Unix timestamp of the selection.
 |datetime             |`\luya\admin\ngrest\plugins\Datetime`|integer |Date picker to choose date, month, year hour and minute. Returns the Unix timestamp of the selection.
 |decimal            |`\luya\admin\ngrest\plugins\Decimal`|float    |Creates a decimal input field. First parameter defines optional step size. Default = 0.001
@@ -80,7 +80,7 @@ class TestPlugin extends Plugin
 ```
 
 The above class is abstracted from the `luya\admin\ngrest\base\Plugin` which requires the `luya\admin\ngrest\base\Plugin::renderUpdate`, `luya\admin\ngrest\base\Plugin::renderList` and `luya\admin\ngrest\base\Plugin::renderCreate` methods which are basically taking care of the form input or the element in the CRUD list view. As you can see the helper method `luya\admin\helpers\Angular::directive` is in charge to return a form input tag with a custom directive named `my-directive`. 
-The directive has to be stored in a JavaScript file related to the admin UI which you can include by using [Admin Module Assets](app-admin-module-assets.md), e.g.:
+The directive has to be stored in a JavaScript file related to the admin UI which you can include by using [Admin Module Assets](/guide/admin/assets), e.g.:
 
 ```js
 zaa.directive("myDirective", function() {
@@ -104,7 +104,7 @@ zaa.directive("myDirective", function() {
 
 > If your code depends on an external library (which is loaded trough bower for example), you have to push this dependency into the zaa LUYA admin variable: `angular.module("zaa").requires.push('ui.tinymce');`. Afterwards the `ui.tinymce` (in this example) can be used in side your directive.
 
-Now in order to use the custom `TestPlugin` in your [NgRest config model](ngrest-model.md) you can define an extra field which takes care of getting (list) and setting (update/create) the value in your `admin\ngrest\base\Model` ActiveRecord class model.
+Now in order to use the custom `TestPlugin` in your [NgRest config model](/guide/ngrest/model) you can define an extra field which takes care of getting (list) and setting (update/create) the value in your `admin\ngrest\base\Model` ActiveRecord class model.
 
 ```php
 class Product extends \luya\admin\ngrest\base\NgRestModel

@@ -23,12 +23,12 @@ copy env-local-db.php.dist env-local-db.php
 ```
 
 Now the database connection inside the `configs/env-local-db.php` file needs to fit your MySQL servers configuration. 
-It´s recommend to open all config files once to change values and understand the behavior. In order to understand the config files read more in the [environment configs section](install-configs.md). 
+It´s recommend to open all config files once to change values and understand the behavior. In order to understand the config files read more in the [environment configs section](/guide/installation/structure). 
 After successfully setting up your database connection you have to reopen your terminal and **change into your project directory and excute the console command at `public_html` folder**
 
 > `php` command is available if you already add your `php.exe` path on your system environment variable
 
-Run the migration files with the [migrate console command](luya-console.md):
+Run the migration files with the [migrate console command](/guide/app/console):
 
 > Note: If the migration process failed, try to replace localhost with 127.0.0.1 in the database DNS configuration `(env-local-db.php)` which is located in the  configs folder.
 
@@ -36,13 +36,13 @@ Run the migration files with the [migrate console command](luya-console.md):
 php index.php migrate
 ```
 
-Build and import all filesystem configurations into the database with the [import console command](luya-console.md):
+Build and import all filesystem configurations into the database with the [import console command](/guide/app/console):
 
 ```sh
 php index.php import
 ```
 
-At last we execute the [setup console command](luya-console.md) which is going to setup a user, group and permissions:
+At last we execute the [setup console command](/guide/app/console) which is going to setup a user, group and permissions:
 
 ```sh
 php index.php admin/setup
@@ -54,4 +54,4 @@ The setup proccess will ask you for an email and password to store your personal
 
 You can now log in into your administration interface `http://localhost/luya-kickstarter/admin` (depending on where you have located the LUYA files).
 
-> Visit the [installation problems and questions Site](install-problems.md) when you have any problems with the LUYA setup.
+> Visit the [installation problems and questions Site](/guide/installation/problems) when you have any problems with the LUYA setup.

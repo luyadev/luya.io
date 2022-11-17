@@ -12,7 +12,7 @@ Below, all these configs and environments explained:
 ## env.php
 
 The `env.php` file returns the currently used config, so this file is used to change the config on different environment.
-This file is ignored by GitHub by default. If a new project is created an example file named `env.php.dist` will be provided (see [Install](install.md)).
+This file is ignored by GitHub by default. If a new project is created an example file named `env.php.dist` will be provided (see [Install](/guide/installation/)).
 
 ## config.php
 

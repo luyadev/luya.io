@@ -10,7 +10,7 @@ Each NgRest model does have a `luya\admin\ngrest\base\NgRestModel::ngrestAttribu
 
 #### Define attribute types
 
-To define an attribute type for a specific attribute you have to override the `luya\admin\ngrest\base\NgRestModel::ngrestAttributeTypes()` method by returning an array where the key is the field and value the config of the [NgRest Plugin](ngrest-plugins.md).
+To define an attribute type for a specific attribute you have to override the `luya\admin\ngrest\base\NgRestModel::ngrestAttributeTypes()` method by returning an array where the key is the field and value the config of the [NgRest Plugin](/guide/ngrest/plugins).
 
 An example of a definitions:
 
@@ -28,9 +28,9 @@ public function ngrestAttributeTypes()
 }
 ```
 
-A definition contains always the attribute (as key) and the NgRest plugin config. If you have to pass arguments to the plugin object you can define an array where the first key is the name of the plugin and the other keys are the plugin properties. Take a look at all [NgRest Plugins](ngrest-plugins.md).
+A definition contains always the attribute (as key) and the NgRest plugin config. If you have to pass arguments to the plugin object you can define an array where the first key is the name of the plugin and the other keys are the plugin properties. Take a look at all [NgRest Plugins](/guide/ngrest/plugins).
 
-> Keep in mind that when a plugin is attached to a field, it will override the original value from the database. Examples are shown in the [Select Plugin Guide](ngrest-plugin-select.md)
+> Keep in mind that when a plugin is attached to a field, it will override the original value from the database. Examples are shown in the [Select Plugin Guide](/guide/ngrest/plugin-select)
 
 #### Scope and NgRest config
 
@@ -42,7 +42,7 @@ There are different scope pointers you can configure in order to tell your forms
 |create    |Forms to create a new record with the given columns.
 |update    |Forms to update an existing record with the given columns.
 |delete    |Define whether items of the data table can be deleted or not. To activate deletion set this pointer to `true`.
-|aw        |Attach a [[ngrest-activewindow.md]] to each row in the list overview, e.g. a button next to edit button.
+|aw        |Attach a [[/guide/ngrest/activewindow]] to each row in the list overview, e.g. a button next to edit button.
 
 As you know what section/scope you can define with your already defined attributes you have to define the `luya\admin\ngrest\base\NgRestModel::ngRestConfig()` method, this could look as followed:
 

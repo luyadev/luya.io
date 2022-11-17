@@ -2,7 +2,7 @@
 
 Page properties are personalised settings you can apply to specific pages. Once a property has defined, it can be applied to every page. 
 
-Let us assume you would like to use different colors on different pages, therefore you can create a color property where the user can select a specific color for each page. Once the property is set you can use them in your view files, or [blocks](app-blocks.md), or [layouts](app-cmslayouts.md) components.
+Let us assume you would like to use different colors on different pages, therefore you can create a color property where the user can select a specific color for each page. Once the property is set you can use them in your view files, or [blocks](/guide/cms/blocks), or [cms layouts](/guide/cms/cmslayouts) components.
 
 Use cases:
 
@@ -13,7 +13,7 @@ Use cases:
 
 ## Creating a new property
 
-All properties must be in a folder called `properties` and must contain the suffix `Property` inside the filename. LUYA will automatically detect and setup all properties when you run the [import](luya-console.md) command. You can either create the properties folder inside your application or in your module folder to enable reusable modules with properties which will be attached automatically too.
+All properties must be in a folder called `properties` and must contain the suffix `Property` inside the filename. LUYA will automatically detect and setup all properties when you run the [import](/guide/app/console) command. You can either create the properties folder inside your application or in your module folder to enable reusable modules with properties which will be attached automatically too.
 
 Below you can see an example of a property (in `FooBarProperty.php`) for creating a text field which can be attached somewhere in your view files:
 
@@ -90,9 +90,9 @@ echo Html::img($image, ['class' => 'yourImageClass']);
 
 You can access the properties in
 
-+ [Menus](app-menu.md)
-+ [CMS layouts](app-cmslayouts.md) or layouts
-+ [CMS blocks](app-blocks.md)
++ [Menus](/guide/cms/menu)
++ [CMS layouts](/guide/cms/cmslayouts) or layouts
++ [CMS blocks](/guide/cms/blocks)
 
 #### Access in menus
 
