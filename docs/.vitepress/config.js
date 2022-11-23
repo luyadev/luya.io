@@ -6,6 +6,13 @@ export default {
     editLink: {
       pattern: 'https://github.com/luyadev/luya.io/edit/master/docs/:path'
     },
+    /*
+    algolia: {
+      appId: '8J64VVRP8K',
+      apiKey: 'a18e2f4cc5665f6602c5631fd868adfd',
+      indexName: 'vitepress'
+    },
+    */
     siteTitle: 'luya.io',
     logo: {light: '/assets/luyalogo.png', dark: '/assets/luyalogo.png'},
     socialLinks: [

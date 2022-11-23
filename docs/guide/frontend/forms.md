@@ -3,7 +3,7 @@
 
 This example shows how to use a `yii\widgets\ActiveForm` in a controller which uses a [[/guide/ngrest/model]]. 
 
-::: TIP
+::: tip
 When using the CMS, there is an [visual form builder module](https://github.com/luyadev/luya-module-forms) available as package.
 ::::
 

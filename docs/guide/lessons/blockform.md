@@ -2,7 +2,7 @@
 
 This is an example of how to generate a block with a form represented by a model and using the ActiveForm widget to generate the output.
 
-::: TIP
+::: tip
 When using the CMS, there is an [visual form builder module](https://github.com/luyadev/luya-module-forms) available as package.
 ::::
 
