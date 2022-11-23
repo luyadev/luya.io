@@ -4,7 +4,7 @@ title: Home
 hero:
   name: LUYA
   text: BUILD ANY SYSTEM
-  tagline: LUYA is a scalable web framework and content management system with the goal to please developers, clients and users alike
+  tagline: LUYA is a scalable web framework and content management system with the goal to please developers, clients and users alike. Since 2015
   image:
     light: /assets/luyalogo.png
     dark: /assets/luyalogo.png
