@@ -3,6 +3,9 @@ export default {
   description: 'BUILD ANY SYSTEM',
   lang: 'en-US',
   themeConfig: {
+    editLink: {
+      pattern: 'https://github.com/luyadev/luya.io/edit/master/docs/:path'
+    },
     siteTitle: 'luya.io',
     logo: {light: '/assets/luyalogo.png', dark: '/assets/luyalogo.png'},
     socialLinks: [
