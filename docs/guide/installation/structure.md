@@ -1,6 +1,8 @@
-# Structures
+# Structure & Config
 
-## Example project folder hierarchy
+See the tipical folder structure of a LUYA application and read more about the `luya\Config` object in order to configure your application.
+
+## Application Structure
 
 This is how a standard LUYA kickstarter application hierarchy should look and where files, configs, modules and views should be located:
 
@@ -108,7 +110,7 @@ $config = require 'config.php';
 return $config->toArray(\luya\Config::ENV_PROD);
 ```
 
-## Configuration File for Console and Web
+## Console and Web
 
 Since the introduction of `luya\Config` its possible to set components for either console or web runtime, assuming you have `cookieValidationKey` in `request` component which is only valid on web runtime you can use `luya\Config::webComponent()` to register the component:
 
@@ -155,7 +157,7 @@ Depending on console or web request would resolve:
 ];
 ```
 
-## Configuration for different Environments
+## Environments
 
 As a key concept of LUYA is to don't repeat yourself with `luya\Config` a configuration file for different hosts can be done in a single file using `env()`. Assuming a database connection which has different connection details on different hosts (prep and prod) define the `yii\db\Connection` as followed:
 
@@ -208,7 +210,7 @@ $config = require 'config.php';
 return $config->toArray(\luya\Config::ENV_PROD);
 ```
 
-## Create company wide config
+## Company wide config
 
 Its very common that you like to share configuration values over different projects, therefore we encourage you to create your own LUYA DI repo, create a private repository on your VCS Platform (example GitHub) add a Bootstrap file like:
 
@@ -312,31 +314,6 @@ Now you can include the private LUYA DI package into your projects:
 
 So now there is no need to configure `errorHandler` or `mail` component, as its done by default whenever the application is running (due to LUYA bootstrap file).
 
-## Changing the root directory
+## Changing root directory
 
 The `public_html` folder is the root directory. It contains the application bootstrap file. If you want to reflect your web server directory structure, you can rename the `public_html` folder to whatever you want to. For example: `www` or `web`. You just need to update your configuration by adding the `webrootDirectory` config, e.g. it should look like this: `'webrootDirectory' => 'www'`
-
-## Composer latest LUYA development version
-
-In order to get latest development build (dev-master) for the LUYA modules and core your `composer.json` could look like this:
-
-```json
- {
-    "require": {
-        "luyadev/luya-core" : "^1.0@dev",
-        "luyadev/luya-module-admin" : "^1.0@dev",
-        "luyadev/luya-module-cms" : "^1.0@dev",
-        "luyadev/luya-module-crawler" : "^1.0@dev",
-        "luyadev/luya-deployer" : "^1.0@dev"
-    },
-    "require-dev" : {
-        "yiisoft/yii2-debug" : "^2.0",
-        "yiisoft/yii2-gii" : "^2.0"
-    },
-    "extra": {
-        "asset-installer-paths": {
-            "bower-asset-library": "vendor/bower"
-        }
-    }
-}
-```

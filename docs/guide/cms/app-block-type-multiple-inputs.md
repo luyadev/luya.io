@@ -26,7 +26,7 @@ Generate a expandable list with custom nested fields and/or plugins inside each 
 
 ### LUYA admin UI
 
-![Example of multiple inputs in action](https://raw.githubusercontent.com/luyadev/luya/master/docs/guide/img/app-block-type-multiple-inputs-example.png "Multiple inputs in action")
+![Example of multiple inputs in action](../img/app-block-type-multiple-inputs-example.png "Multiple inputs in action")
 
 ### Output in frontend
 

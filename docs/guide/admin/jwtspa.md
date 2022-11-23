@@ -30,7 +30,7 @@ Make Request:
 
 The image shows the above descriped cycle.
 
-![luya-proxy](https://raw.githubusercontent.com/luyadev/luya/master/docs/guide/img/jwt-apiuser-proxy.png "JWT with Admin as Proxy")
+![luya-proxy](../img/jwt-apiuser-proxy.png "JWT with Admin as Proxy")
 
 ## Setup
 

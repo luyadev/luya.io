@@ -7,7 +7,7 @@ Below, all these configs and environments explained:
 
 ## Overview
 
-![configs-graphic](https://raw.githubusercontent.com/luyadev/luya/master/docs/guide/img/configs-luya.jpg "LUYA envs config")
+![configs-graphic](../img/configs-luya.jpg "LUYA envs config")
 
 ## env.php
 

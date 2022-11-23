@@ -45,7 +45,7 @@ We recommend to enable `luya\admin\Module::$secureLogin` which will send you a t
 
 Since admin version 3.0 its also possible to setup 2FA login wiht OTP trough any authenticator app.
 
-![LUYA 2FA](https://raw.githubusercontent.com/luyadev/luya/master/docs/guide/img/2fa.png)
+![LUYA 2FA](../img/2fa.png)
 
 ## Strong admin user password policy
 

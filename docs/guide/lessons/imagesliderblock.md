@@ -14,7 +14,7 @@ Creating a block in LUYA is very simple when using our wizards. As [shown in the
 For our image slider block we will create an app block named ImagesliderBlock" with one `var named **images** and labeled **Images**.
 See the GIF below:
 
-![Creating ImagesliderBlock](https://raw.githubusercontent.com/luyadev/luya/master/docs/guide/img/imagesliderblock-create.gif "Creating block with commands")
+![Creating ImagesliderBlock](../img/imagesliderblock-create.gif "Creating block with commands")
 
 This will automatically create an pre filled `ImagesliderBlock.php` in our **blocks** directory and an empty view file with the same name in **views/blocks**
 
@@ -136,15 +136,15 @@ After reloading the CMS you will notice the new block `ImagesliderBlock` on the 
 
 In the GIF below, you will see how to add new images and import pictures into the LUYA filesystem:`
 
-![Using ImagesliderBlock](https://raw.githubusercontent.com/luyadev/luya/master/docs/guide/img/imagesliderblock-upload.gif "Creating block with commands")
+![Using ImagesliderBlock](../img/imagesliderblock-upload.gif "Creating block with commands")
 
 Note the use of the image filter "Thumbnail medium (300xnull)". You can also use a crop filter. This isn't mandatory but it's nice to have evenly sized pictures with a click of a button, instead of resizing all pictures to the exact size before uploading.
 
 After adding some images to the block you can quickly preview the result in the frontend by clicking on the site preview button:
 
-![site preview](https://raw.githubusercontent.com/luyadev/luya/master/docs/guide/img/imagesliderblock-preview.jpg "Preview site changes")
+![site preview](../img/imagesliderblock-preview.jpg "Preview site changes")
 
 Depending on the configuration of the image slider plugin, the used images and screen size, the frontend output of the plugin will look something like this:
 
-![site frontend](https://raw.githubusercontent.com/luyadev/luya/master/docs/guide/img/imagesliderblock-frontend.jpg "Site frontend")
+![site frontend](../img/imagesliderblock-frontend.jpg "Site frontend")
 

@@ -99,7 +99,7 @@ While running the import command (`./vendor/bin/luya import`), the theme informa
 After a succesfull import of the new theme, the theme itself can be activated in the CMS Admin *Themes* section.
 **For each new and exists pages you have to set/change the selected layout file.**
 
-![theme-management](https://raw.githubusercontent.com/luyadev/luya/master/docs/guide/img/theme-management.png "LUYA theme management")
+![theme-management](../img/theme-management.png "LUYA theme management")
 
 > For developing purposes themes can also be activated withing the `luya\theme\ThemeManager` component with `luya\theme\ThemeManager::$activeThemeName` property.
 

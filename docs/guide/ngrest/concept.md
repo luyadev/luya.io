@@ -3,11 +3,11 @@
 One of the most powerful tools in *LUYA*, is the **AngularJS C** surface. It combines *AngularJS*, *RESTful*, *CRUD* and *Active Record* in a very elegant and powerful way.
 So in a more understandable sentence **Generate administration forms to create, update, delete and list your data very fast and elegant**. It creates an API you can talk trough via AngularJS and you can configure it like an ActiveRecord and also use it like an Active Record Model in your application. Here is an example of an NgRest CRUD for admin UI users:
 
-![ngrest-crud-example](https://raw.githubusercontent.com/luyadev/luya/master/docs/guide/img/ngrest-crud-example.jpg "NgRest CRUD Example")
+![ngrest-crud-example](../img/ngrest-crud-example.jpg "NgRest CRUD Example")
 
 The word *NgRest* is explained as follows: A**Ng**ular**Rest** (Representational state transfer)
 
-![ngrest-crud](https://raw.githubusercontent.com/luyadev/luya/master/docs/guide/img/ngrest-crud.png "NgRest Image")
+![ngrest-crud](../img/ngrest-crud.png "NgRest Image")
 
 > **Quick NgRest CRUD setup instructions:**
 > 1. Create a (admin) module `./vendor/bin/luya module/create`.

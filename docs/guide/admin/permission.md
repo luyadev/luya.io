@@ -19,7 +19,7 @@ To see the module in the admin menu, please enable permission for installed modu
 
 Each admin module does have a `luya\admin\base\Module::getMenu()` method where you can put your module navigation. The response must be an instance of `luya\admin\components\AdminMenuBuilder`.
 
-![menu](https://raw.githubusercontent.com/luyadev/luya/master/docs/guide/img/admin-menu-structure.jpg "LUYA Menu")
+![menu](../img/admin-menu-structure.jpg "LUYA Menu")
 
 + ➀ node: Menu top level (root) entry.
 + ➀ nodeRoute: Top level node which directly redirects to a custom module route.

@@ -12,11 +12,11 @@ As described in the [LUYA  guide](https://luya.io/guide/app-admin-module) we wil
 
 See the GIF below:
 
-![Creating a module](https://raw.githubusercontent.com/luyadev/luya/master/docs/guide/img/addressbook-create.gif "Creating module with commands")
+![Creating a module](../img/addressbook-create.gif "Creating module with commands")
 
 After successfully executing you'll notice the created file structure in the `modules/addressbook` directory:
 
-![Filesystem](https://raw.githubusercontent.com/luyadev/luya/master/docs/guide/img/addressbook-filetree.png "Creating module with commands")
+![Filesystem](../img/addressbook-filetree.png "Creating module with commands")
 
 ## Configure the module
 
@@ -110,7 +110,7 @@ Again we are using the LUYA code wizard to help us create the corresponding mode
 
 Below you see how to use the wizard to automatically create the contact model `models/Contact.php` and all associated files like the API controller `modules/addressbook/admin/apis/ContactController.php` and the controller `modules/addressbook/admin/controllers/ContactController.php`:
 
-![Creating contact model](https://raw.githubusercontent.com/luyadev/luya/master/docs/guide/img/addressbook-contact-modelcreate.gif "Creating contact model")
+![Creating contact model](../img/addressbook-contact-modelcreate.gif "Creating contact model")
 
 Repeat the process for the `Group` model.
 
@@ -156,7 +156,7 @@ Finally, we are going to import the new modules with the import command:
 
 Before we will see the module in the admin view, we have to set the permissions for the `addressbookadmin` for our user in `System/Groups/Permissions`:
 
-![Settings permissions](https://raw.githubusercontent.com/luyadev/luya/master/docs/guide/img/addressbook-permissions.gif "Settings permissions")
+![Settings permissions](../img/addressbook-permissions.gif "Settings permissions")
 
 ## Linking the group table in the contact table
 
@@ -329,12 +329,12 @@ When clicking on an entry in the list view, we will end up in our detail view. T
 
 After setting up the frontend module, we have to create a module page and choose our new `addressbook` module:
 
-![Creating module page](https://raw.githubusercontent.com/luyadev/luya/master/docs/guide/img/addressbook-createpage.gif "Create module page")
+![Creating module page](../img/addressbook-createpage.gif "Create module page")
 
 With this last step, we have created our own module, more precisely two modules: `addressbook` for frontend rendering and `addressbookadmin` for the administration purpose. For the module `addressbookadmin` we have created a migration file and from this we have automatically generated the needed data tables. Using the LUYA code wizard, we also created the models with the CRUD view for each data table. We also learned how to link the `group` names to the `group_id` field in the `Contact` CRUD view and rendering them as a dropdown select.
 For the frontend module implementation we heavily relied on Yii 2.0 great toolsets to render the table data and only added some inline styling and hover functionality.
 
 Depending on your test data, the final result will look something like this in the frontend view:
 
-![Preview frontend](https://raw.githubusercontent.com/luyadev/luya/master/docs/guide/img/addressbook-demo.gif "Preview frontend")
+![Preview frontend](../img/addressbook-demo.gif "Preview frontend")
 

@@ -2,7 +2,7 @@
 
 As LUYA is built upon the concept of REST APIs, providing headless access to the database content of LUYA is a no brainer. You can either access the [[ngrest.md]] APIs or the CMS admin APIs. Since LUYA admin version 1.1.0 we've added the ability to create API-Users and an overview of which endpoints they can request data from:
 
-![API User overview](https://raw.githubusercontent.com/luyadev/luya/master/docs/guide/img/api-user-overview.png "API User overview")
+![API User overview](../img/api-user-overview.png "API User overview")
 
 In order to see the API Users menu make sure to use luya-admin module in version ~1.1.0 and your group has all permissions.
 

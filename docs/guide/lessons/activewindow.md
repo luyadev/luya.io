@@ -13,7 +13,7 @@ As in the previous examples we will use a LUYA code wizard to create a generic b
 ```
 See the GIF below:
 
-![Creating an Active Window](https://raw.githubusercontent.com/luyadev/luya/master/docs/guide/img/aws-create.gif "Creating an Active Window with LUYA code wizard")
+![Creating an Active Window](../img/aws-create.gif "Creating an Active Window with LUYA code wizard")
 
 ## Adding the Active Window to our group model
 
@@ -156,4 +156,4 @@ We configured the widget to use our defined callback function in the Active Wind
 
 After saving the view file, we have successfully added an Active Window to the *addressbook* module. As you can see, it is fully integrated in our CRUD view, utilizes the already defined [bootstrap table styles](https://getbootstrap.com/docs/4.0/content/tables/) and uses the LUYA CMS notification service:
 
-![Showing the Active Window](https://raw.githubusercontent.com/luyadev/luya/master/docs/guide/img/aws-result.gif "Showing the Active Window")
+![Showing the Active Window](../img/aws-result.gif "Showing the Active Window")

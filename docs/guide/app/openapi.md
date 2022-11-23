@@ -6,7 +6,7 @@ Since version 3.2 of LUYA Admin Module an OpenAPI file generator is available. T
 
 The purpose of the generator is to have documentation where it should belong, in the code, but also provide those descriptions to the Endpoint Consumers.
 
-![OpenAPI Custom Action](https://raw.githubusercontent.com/luyadev/luya/master/docs/guide/img/openapi-code-to-redoc.png "OpenAPI Custom Action")
+![OpenAPI Custom Action](../img/openapi-code-to-redoc.png "OpenAPI Custom Action")
 
 ## Enable OpenAPI Endpoint
 
@@ -19,7 +19,7 @@ In order to enable the OpenAPI Endpoint you can either use `remoteToken` or ` pu
 
 When developer settings are enabled in User Profile (Preferences -> General -> Developer Mode), a new debug panel with OpenAPI informations is shown:
 
-![OpenAPI Toolbar](https://raw.githubusercontent.com/luyadev/luya/master/docs/guide/img/debug-toolbar-openapi-2.png "OpenAPI Toolbar")
+![OpenAPI Toolbar](../img/debug-toolbar-openapi-2.png "OpenAPI Toolbar")
 
 ## ReDoc Viewer
 
@@ -62,7 +62,7 @@ The above `luya\admin\ngrest\base\Api` will be generate all the `luya\rest\Activ
 
 The `actionTest()` requires an param `$id` and will return a `luya\admin\models\Group` instance defined in PHP Doc, therefore this is what would be rendered:
 
-![OpenAPI Custom Action](https://raw.githubusercontent.com/luyadev/luya/master/docs/guide/img/openapi-custom-action.png "OpenAPI Custom Action")
+![OpenAPI Custom Action](../img/openapi-custom-action.png "OpenAPI Custom Action")
 
 When Parsing ActiveRecords the `@property` values of a class will be interpreted as well as `attributeLabels()` and `attributeHints()`.
 

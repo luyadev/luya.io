@@ -26,7 +26,7 @@ There are also a few other caching mechanism available and built in into Yii. Se
 
 It is als possible to cache the whole page response. This dramatically improves the page speed and is recommend to setup whenever its possible. By default the data is in the cache for 2 hours but will be destroyed when you edit or move blocks around on the given page.
 
-![CMS Page Caching](https://raw.githubusercontent.com/luyadev/luya/master/docs/guide/img/page-caching.png "CMS Page Caching")
+![CMS Page Caching](../img/page-caching.png "CMS Page Caching")
 
 Keepp in mind, that when enabled, the whole page will be cached including all blocks, therefore **dynamically generated data in blocks will not be updated**!
 

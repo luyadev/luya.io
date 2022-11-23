@@ -138,7 +138,7 @@ The above example would generate 1 row with 2 columns. As bootstrap 4 has max 12
 
 > important: When enabling the `luya\cms\base\InternalBaseBlock::$isContainer` the `luya\cms\base\InternalBaseBlock::admin()` output wont have **no effect** and is not rendered!
 
-![block with placeholders](https://raw.githubusercontent.com/luyadev/luya/master/docs/guide/img/block-placeholders.png)
+![block with placeholders](../img/block-placeholders.png)
 
 When enabling the cache for layout blocks, the full placeholder content will be cached to. So its very common to disable caching for blocks with placeholders.
 

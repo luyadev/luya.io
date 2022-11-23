@@ -4,7 +4,7 @@ The LUYA installation requires Composer. Please have a look at the [official Com
 
 > Find the [installation Video on Youtube](https://www.youtube.com/watch?v=Ybq878PMe_U) in order to help you install LUYA.
 
-## Composer create-project
+## Create Project
 
 After setting up Composer, we execute the Composer command `create-project` to checkout the **luya-kickstarter** application, an **out of the box** LUYA setup to run your website directly. It is recommended to run the `create-project` command directly from your htdocs/webserver folder like this:
 
@@ -20,7 +20,7 @@ composer create-project luyadev/luya-kickstarter:^1.0
 
 The `create-project` command will create a folder (inside of your current folder, where the `composer create-project` command was executed) named **luya-kickstarter**. 
 
-## Copy Config
+## Config
 
 If the Composer installation is done, switch to **configs** folder inside the application and copy the `.dist` template files to original `.php` files.
 
@@ -30,7 +30,7 @@ cp env.php.dist env.php
 
 Now the database connection inside the `configs/config.php` file needs to fit your MySQL servers' configuration. It is recommended to open all config files once to change values and understand the behavior. In order to understand the config files, read more in the [environment configs section](/guide/installation/environments.html).
 
-## Run Migrate and Import
+## Migrate and Import
 
 After successfully setting up your database connection, you have to reopen your terminal and switch to your project directory and excute the **luya** binary files, which has been installed into your vendor folder by Composer as described below.
 
@@ -48,7 +48,7 @@ Build and import all filesystem configurations into the database with the [impor
 ./vendor/bin/luya import
 ```
 
-## Run admin/setup
+## Setup
 
 Finally execute the [setup console command](/guide/app/console) command, which is going to setup a user, group and permissions:
 

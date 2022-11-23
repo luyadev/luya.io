@@ -4,7 +4,7 @@ The CMS layouts let the "Content Management System" know where to render the con
 
 If you are using the CMS module in your application (which is installed by default in the LUYA kickstarter application) then you can use the CMS layouts.
 
-![CMS Layouts](https://raw.githubusercontent.com/luyadev/luya/master/docs/guide/img/cmslayouts.png "CMS Layouts")
+![CMS Layouts](../img/cmslayouts.png "CMS Layouts")
 
 ## Create new Layout
 
