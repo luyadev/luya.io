@@ -1,5 +1,8 @@
-# LUYA Guide
+---
+title: Intro
+---
 
+# Intro
 
 
 ::: tip THIS IS LUYA

@@ -1,5 +1,5 @@
 export default {
-  title: 'LUYA',
+  title: 'luya.io',
   description: 'BUILD ANY SYSTEM',
   lang: 'en-US',
   themeConfig: {
