@@ -90,11 +90,11 @@ zaa.directive("myDirective", function() {
             'model' : '=',
             'data' : '=',
         },
-        controller: function($scope, $filter) {
+        controller: ['$scope', '$filter', function ($scope, $filter) {
             $scope.$watch(function() { return $scope.model }, function(n, o) {
                 console.log(n, o);
             });
-        },
+        }],
         template : function() {
             return '<div>Use data and model as they are assigned trough scope defintion: <input type="text" ng-model="model" /></div>';
         }
