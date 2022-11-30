@@ -1,6 +1,6 @@
 # Application Assets
 
-Asset files like CSS or JavaScript are resources which you have to integrate in your web project but organize them in a "package" like folders, called Asset Bundles. Assets are based on [Yii2 Asset Bundles](http://www.yiiframework.com/doc-2.0/guide-structure-assets.html) you may read more detailed information about. The LUYA assets describe just another way of including them into you project.
+Asset files like CSS or JavaScript are resources which you have to integrate in your web project but organize them in a "package" like folders, called Asset Bundles. Assets are based on [Yii2 Asset Bundles](https://www.yiiframework.com/doc-2.0/guide-structure-assets.html) you may read more detailed information about. The LUYA assets describe just another way of including them into you project.
 
 Below, an example class of an asset where files are located in `@app/resources` and includes the `css/styles.css` into the view files where the asset is loaded.
 

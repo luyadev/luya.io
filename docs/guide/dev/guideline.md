@@ -96,7 +96,7 @@ The following conventions have to be used when contributing to the LUYA project.
 
 ### PHP
 
-[PSR2 Naming convention](http://www.php-fig.org/psr/psr-2/). This example encompasses some of the rules below as a quick overview:
+[PSR2 Naming convention](https://www.php-fig.org/psr/psr-2/). This example encompasses some of the rules below as a quick overview:
 
 ```php
 <?php

@@ -29,7 +29,7 @@ When including a module into the CMS, the rendering of your module view file wil
 
 ## Title and meta information
 
-LUYA uses the default implementation of the title variable inside the [Yii Titel-Tag](http://www.yiiframework.com/doc-2.0/guide-structure-views.html#setting-page-titles) view object, you can override the title inside an action:
+LUYA uses the default implementation of the title variable inside the [Yii Titel-Tag](https://www.yiiframework.com/doc-2.0/guide-structure-views.html#setting-page-titles) view object, you can override the title inside an action:
 
 ```php
 public function actionIndex()
@@ -73,7 +73,7 @@ $this->registerMetaTag(['name' => 'description', 'content' => 'Description of th
 
 ### Forms
 
-As the csrf validation is enabled by default, you have to integrate them into your forms (if you are not using the ActiveForm Widget). You will find all information here: [Guide to include CSRF Token forms](http://zero-exception.blogspot.ch/2015/01/yii2-using-csrf-token.html). LUYA will auto insert the csrf meta tag to your head section if you are using the CMS Module.
+As the csrf validation is enabled by default, you have to integrate them into your forms (if you are not using the ActiveForm Widget). You will find all information here: [Guide to include CSRF Token forms](https://zero-exception.blogspot.ch/2015/01/yii2-using-csrf-token.html). LUYA will auto insert the csrf meta tag to your head section if you are using the CMS Module.
 
 Quick fix without disabling csrf validation and not using the ActiveForm Widget: 
 
@@ -97,7 +97,7 @@ class MyController extends \luya\web\Controller
 
 ### Controller actions
 
-Controller provides a very flexible way to implement logic into your module following the methodology from [Yii controller structure](http://www.yiiframework.com/doc-2.0/guide-structure-controllers.html).
+Controller provides a very flexible way to implement logic into your module following the methodology from [Yii controller structure](https://www.yiiframework.com/doc-2.0/guide-structure-controllers.html).
 
 Controller actions are pretty powerful functions to enrich your application, basically `module/controller/actions` is the concept in short, therefore some basic examples of use cases are explained below.
 

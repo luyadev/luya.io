@@ -1,6 +1,6 @@
 ## JSON-LD
 
-Modern web applications needs to provide the websites informations in structure way for search engines, therefore you can use `luya\web\JsonLd`. The inheritation and full documentation about the schema itself is available under http://schema.org.
+Modern web applications needs to provide the websites informations in structure way for search engines, therefore you can use `luya\web\JsonLd`. The inheritation and full documentation about the schema itself is available under https://schema.org.
 
 ## Basic usage
 

@@ -120,7 +120,7 @@ You can read more about the configuration of the [[/guide/ngrest/model]].
 
 ## Creating controller and API
 
-Each NgRest CRUD needs an API (to make the REST call, create, update, list which are provided trough [Yii 2 RESTful](http://www.yiiframework.com/doc-2.0/guide-rest-quick-start.html)) and a controller which contains the AngularJS template for your `ngRestConfig()`. The API and the controller are basically only gateways for the output and do relate to the NgRest model:
+Each NgRest CRUD needs an API (to make the REST call, create, update, list which are provided trough [Yii 2 RESTful](https://www.yiiframework.com/doc-2.0/guide-rest-quick-start.html)) and a controller which contains the AngularJS template for your `ngRestConfig()`. The API and the controller are basically only gateways for the output and do relate to the NgRest model:
 
 ### NgRest Controller
 

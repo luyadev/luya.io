@@ -59,7 +59,7 @@ The corresponding view file `views/controller/index.php` could look like this:
 
 The `success` variable is used to determine if the model was successfully saved - that's only required if you do not redirect the user to another page.
 
-See [Yii 2 ActiveForm](http://www.yiiframework.com/doc-2.0/yii-widgets-activeform.html) for more information.
+See [Yii 2 ActiveForm](https://www.yiiframework.com/doc-2.0/yii-widgets-activeform.html) for more information.
 
 ## Image and file uploads
 

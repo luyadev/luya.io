@@ -114,7 +114,7 @@ class TestBlock extends \luya\cms\base\PhpBlock
 
 ## Caching
 
-To speed up your system you can enable the cache for each block by the definition of a [caching component](http://www.yiiframework.com/doc-2.0/guide-caching-data.html#cache-components) in your configs. Block caching is disabled by default for all blocks:
+To speed up your system you can enable the cache for each block by the definition of a [caching component](https://www.yiiframework.com/doc-2.0/guide-caching-data.html#cache-components) in your configs. Block caching is disabled by default for all blocks:
 
 ```php
 class MyTestBlock extends \luya\cms\base\PhpBlock
