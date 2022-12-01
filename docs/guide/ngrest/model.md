@@ -212,7 +212,7 @@ public function ngRestFilters()
 }
 ```
 
-Keep in mind the query provider [yii\data\ActiveDataProvider](http://www.yiiframework.com/doc-2.0/yii-data-activedataprovider.html) will be used to populate your data and the expression will be used as `query` parameter of the ActiveDataProvider which means now the `all()` method needs to be called.
+Keep in mind the query provider [yii\data\ActiveDataProvider](https://www.yiiframework.com/doc-2.0/yii-data-activedataprovider.html) will be used to populate your data and the expression will be used as `query` parameter of the ActiveDataProvider which means now the `all()` method needs to be called.
 
 
 ## Override ngRestFind

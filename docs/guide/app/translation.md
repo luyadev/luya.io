@@ -1,6 +1,6 @@
 # Translation / Messages
 
-This section explains as a summary how to use the [Yii Messaging system](http://www.yiiframework.com/doc-2.0/guide-tutorial-i18n.html#message-translation) inside a LUYA project.
+This section explains as a summary how to use the [Yii Messaging system](https://www.yiiframework.com/doc-2.0/guide-tutorial-i18n.html#message-translation) inside a LUYA project.
 
 ## Application translation
 

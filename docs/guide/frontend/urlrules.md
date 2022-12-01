@@ -37,7 +37,7 @@ You can also use parameters in URL rules:
 'article-detail/<id:\d+>' => 'estore/article/index',
 ```
 
-Visit the [Yii Documentation](http://www.yiiframework.com/doc-2.0/guide-runtime-routing.html#parameterizing-routes) for more details about parameters.
+Visit the [Yii Documentation](https://www.yiiframework.com/doc-2.0/guide-runtime-routing.html#parameterizing-routes) for more details about parameters.
 
 > **CMS Context:** If you are using the module in a CMS context your patterns must be prefix with the module name, otherwise the CMS can not auto replace the new pattern with the CMS context information. For example redirecting from controller foo action index to controller bar action index inside a module both URL rules must be prefix. For foo `['MODULE/name-for-foo-index' => 'MODULE/foo/index']` for bar `['MODULE/name-for-bar-index' => 'MODULE/bar/index']` so they must have the full qualified route with the name of the module used in the config to register the module. Also the patterns **must** prefix the module name.
 

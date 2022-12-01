@@ -208,7 +208,7 @@ We are choosing the module page path because we want full control over the site 
 
 ### Setting up the DefaultController
 
-First we want the functionality of a list view of all contacts. We are using an [active data provider](http://www.yiiframework.com/doc-2.0/guide-output-data-providers.html) for this task. Additionally we want the data output to be grouped by the defined contact groups. After fetching the correct contacts for each group and configuring our desired page size and sort order, we are rendering the **index** view and assigning our active data providers and group models.
+First we want the functionality of a list view of all contacts. We are using an [active data provider](https://www.yiiframework.com/doc-2.0/guide-output-data-providers.html) for this task. Additionally we want the data output to be grouped by the defined contact groups. After fetching the correct contacts for each group and configuring our desired page size and sort order, we are rendering the **index** view and assigning our active data providers and group models.
 
 We also want a detail view of a selected contact. For this we are defining another action function: **actionDetail** with using the contact id as parameter. We are querying the selected record by the assigned id and render it with the **detail** view template.
 
@@ -264,7 +264,7 @@ class DefaultController extends Controller
 
 ### Setting up the index view
 
-For our first view, the list view, we will create the `views/default/index.php` and define a [Yii 2 grid view](http://www.yiiframework.com/doc-2.0/yii-grid-gridview.html). We pass over our **$dataproviders** and **$groups** which were defined in our **DefaultController** above. We parse each contact group, print the group name and render the contact data from the data provider for the current group. We are setting up some styling options for the grid view and define some custom row options as we want to be able to click on a table entry and see the mouse hovering. For the **onclick** event we define the `location.href` change to link to the detail view and some background color changes for the **onmouseover** and **onmouseout** event. This is how it looks in the end:
+For our first view, the list view, we will create the `views/default/index.php` and define a [Yii 2 grid view](https://www.yiiframework.com/doc-2.0/yii-grid-gridview.html). We pass over our **$dataproviders** and **$groups** which were defined in our **DefaultController** above. We parse each contact group, print the group name and render the contact data from the data provider for the current group. We are setting up some styling options for the grid view and define some custom row options as we want to be able to click on a table entry and see the mouse hovering. For the **onclick** event we define the `location.href` change to link to the detail view and some background color changes for the **onmouseover** and **onmouseout** event. This is how it looks in the end:
 
 ```php
 <?php foreach ($groups as $group): ?>
@@ -309,7 +309,7 @@ Again you should work with style sheets, CSS class names and external JavaScript
 
 ### Setting up the detail view
 
-When clicking on an entry in the list view, we will end up in our detail view. To be able to get back fast, we are creating a back button with the correct URL route to our list view. Our detail view uses a Yii2 widget again: the [DetailView](http://www.yiiframework.com/doc-2.0/yii-widgets-detailview.html) widget.
+When clicking on an entry in the list view, we will end up in our detail view. To be able to get back fast, we are creating a back button with the correct URL route to our list view. Our detail view uses a Yii2 widget again: the [DetailView](https://www.yiiframework.com/doc-2.0/yii-widgets-detailview.html) widget.
 
 ```php
 <a href="<?= $route = \luya\helpers\Url::toRoute(['/addressbook']); ?>">Back</a>

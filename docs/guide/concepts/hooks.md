@@ -1,6 +1,6 @@
 # Hook
 
-LUYA has a built in hooking mechanism which allows you to print code in various sections. The `luya\Hook` class is similar to [Yii events](http://www.yiiframework.com/doc-2.0/guide-concept-events.html).
+LUYA has a built in hooking mechanism which allows you to print code in various sections. The `luya\Hook` class is similar to [Yii events](https://www.yiiframework.com/doc-2.0/guide-concept-events.html).
 
 Let´s assume we have a layout file with a section output which is used sometimes but could be blank as well:
 

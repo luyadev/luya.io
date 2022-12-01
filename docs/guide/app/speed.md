@@ -18,7 +18,7 @@ In order to enable the caching, open your config and add the caching to the comp
 
 > When using LUYA deployer, the runtime folder will be recreated for each deployment. You can also force recaching by click the reload button in the admin UI.
 
-There are also a few other caching mechanism available and built in into Yii. See the [supported cache storage](http://www.yiiframework.com/doc-2.0/guide-caching-data.html#supported-cache-storage)
+There are also a few other caching mechanism available and built in into Yii. See the [supported cache storage](https://www.yiiframework.com/doc-2.0/guide-caching-data.html#supported-cache-storage)
 
 ## Page Caching
 
