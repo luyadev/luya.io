@@ -17,17 +17,17 @@ With introduction of Headless System a new API User layer has been introduced. A
 + API Users are unable to login into the admin area (trough UI)
 + None, one or more permission groups can be assigned to an API User.
 
-## PHP Client
+## Admin Data
 
-[LUYA Headless Client](https://luya.io/packages/luyadev--luya-headless): Read the [LUYA Headless client documentation](https://luya.io/packages/luyadev--luya-headless) in order to see how to make calls!
-
-## JWT
-
-In order to configure JWT authentification read more in the JWT & SPA Section: [[app-admin-module-jwt-spa.md]].
+The [PHP Headless Client](https://github.com/luyadev/luya-headless) is the main tool for PHP in order to working with the Admin APIs. Create Data, Read Data, Update Data, common CRUD tasks or upload files into the admin UI.
 
 ## CMS Bridge
 
 In addition to the existing APIs for the CMS, we have also made a module which exposes all required CMS data to a public API, see the [CMS API Bridge Module](https://github.com/luyadev/luya-headless-cms-api). With this module no authorizaion process is required and there are APIs which makes its more easy to consum the data instead of gathering the data by yourself trough the OpenAPI description.
+
+## JWT
+
+In order to login users with a JWT authentification based on the admin UI users list. So its possible to get tokens for your users in order to make permission based operations with the admin UI Apis. [See JWT & SPA Section](../admin/jwtspa.md).
 
 ## Additional Configuration
 
