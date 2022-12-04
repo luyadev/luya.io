@@ -27,7 +27,7 @@ In order to configure JWT authentification read more in the JWT & SPA Section: [
 
 ## CMS Bridge
 
-In addition to the existing APIs for the CMS, we have also made a module which exposes all required CMS data to a public API, see the [CMS API Bridge Module](https://github.com/luyadev/luya-headless-cms-api).
+In addition to the existing APIs for the CMS, we have also made a module which exposes all required CMS data to a public API, see the [CMS API Bridge Module](https://github.com/luyadev/luya-headless-cms-api). With this module no authorizaion process is required and there are APIs which makes its more easy to consum the data instead of gathering the data by yourself trough the OpenAPI description.
 
 ## Additional Configuration
 
