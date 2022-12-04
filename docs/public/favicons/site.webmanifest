@@ -1,0 +1,14 @@
+{
+    "name": "LUYA is a scalable web framework and content management system with the goal to please developers, clients and users alike. Since 2015",
+    "short_name": "LUYA",
+    "icons": [
+        {
+            "src": "/favicons/android-chrome-96x96.png",
+            "sizes": "96x96",
+            "type": "image/png"
+        }
+    ],
+    "theme_color": "#ffffff",
+    "background_color": "#ffffff",
+    "display": "standalone"
+}
