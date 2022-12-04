@@ -25,6 +25,10 @@ With introduction of Headless System a new API User layer has been introduced. A
 
 In order to configure JWT authentification read more in the JWT & SPA Section: [[app-admin-module-jwt-spa.md]].
 
+## CMS Bridge
+
+In addition to the existing APIs for the CMS, we have also made a module which exposes all required CMS data to a public API, see the [CMS API Bridge Module](https://github.com/luyadev/luya-headless-cms-api).
+
 ## Additional Configuration
 
 If you build a website with the LUYA CMS but use the headless client to render the content, you may want to configure the preview URL to point to your headless page.
