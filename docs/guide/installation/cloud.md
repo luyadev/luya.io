@@ -18,7 +18,7 @@ This chart illustrates what is required to make your Webserver stateless:
 
 First you need to Dockerize your LUYA application. There are maybe multiple Docker images available, but for **production** we currently recommend to use https://gitlab.com/zephir.ch/foss/luya-docker. Create a `Dockerfile` which could look like this:
 
-```
+```docker
 FROM registry.gitlab.com/zephir.ch/foss/luya-docker:php8
 
 ## Replace the default server name `luya` with your own server name
@@ -31,7 +31,6 @@ RUN mkdir -p /var/www/html/runtime
 
 RUN chmod 777 /var/www/html/public_html/assets
 RUN chmod 777 /var/www/html/runtime
-
 ```
 
 By default this will load the `luya\Config` with `ENV_PROD`, you can adjust this by chaning the ENV variable `LUYA_CONFIG_ENV` on run or build time.

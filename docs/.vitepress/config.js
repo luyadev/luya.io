@@ -45,7 +45,6 @@ export default {
         items: [
           { text: 'Installation', link: '/guide/installation/' },
           { text: 'Mac OSX', link: '/guide/installation/mac' },
-          { text: 'Windows', link: '/guide/installation/windows' },
           { text: 'Common Problems', link: '/guide/installation/problems' },
           { text: 'Upgrade', link: '/guide/installation/upgrade' },
           { text: 'Structure&Config', link: '/guide/installation/structure' },

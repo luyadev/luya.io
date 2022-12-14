@@ -1,6 +1,6 @@
 # Create a LUYA Application
 
-The LUYA installation requires Composer. Please have a look at the [official Composer website](https://getcomposer.org/doc/00-intro.md#installation-linux-unix-osx) if you haven´t installed it on your system yet.
+The LUYA installation requires Composer. Please have a look at the [official Composer website](https://getcomposer.org/doc/00-intro.md) if you haven´t installed it on your system yet.
 
 ::: tip Video
 See the [installation Video on Youtube](https://www.youtube.com/watch?v=Ybq878PMe_U).
@@ -8,7 +8,7 @@ See the [installation Video on Youtube](https://www.youtube.com/watch?v=Ybq878PM
 
 ## Create Project
 
-After setting up Composer, we execute the Composer command `create-project` to checkout the **luya-kickstarter** application, an **out of the box** LUYA setup to run your website directly. It is recommended to run the `create-project` command directly from your htdocs/webserver folder like this:
+After setting up Composer, we execute the Composer command `create-project` to checkout the [luya-kickstarter](https://github.com/luyadev/luya-kickstarter-bootstrap4) application, an **out of the box** LUYA setup to run your website directly. It is recommended to run the `create-project` command directly from your htdocs/webserver folder like this:
 
 ```sh
 composer create-project luyadev/luya-kickstarter:^1.0
@@ -32,6 +32,8 @@ If the Composer installation is done, switch to **configs** folder inside the ap
 cp env.php.dist env.php
 ```
 
+> On Windows use:  `copy env.php.dist env.php`
+
 Now the database connection inside the `configs/config.php` file needs to fit your MySQL servers' configuration. It is recommended to open all config files once to change values and understand the behavior. In order to understand the config files, read more in the [environment configs section](/guide/installation/environments.html).
 
 ## Migrate and Import
@@ -46,11 +48,15 @@ Run the migration files with the [migrate console command](/guide/app/console):
 ./vendor/bin/luya migrate
 ```
 
+> On Windows use: `php index.php migrate`
+
 Build and import all filesystem configurations into the database with the [import console command](/guide/app/console):
 
 ```sh
 ./vendor/bin/luya import
 ```
+
+> On Windows use: `php index.php import`
 
 ## Setup
 
@@ -59,6 +65,8 @@ Finally execute the [setup console command](/guide/app/console) command, which i
 ```sh
 ./vendor/bin/luya admin/setup
 ```
+
+> On Windows use: `php index.php admin/setup`
 
 The setup process will ask you for an email and password to store your personal login data inside the database (of course the password will be encrypted).
 

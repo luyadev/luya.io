@@ -38,3 +38,4 @@ A package is either an extension or a module. There are a few packages out there
 + [Test Suite](https://github.com/luyadev/luya-testsuite) - Makes testing your LUYA system more easy
 + [Deployer](https://github.com/luyadev/luya-deployer) - Deploy your website
 + [Blog](https://github.com/luyadev/luya-blog) - Blog Widget based on CMS Module
++ [AWS S3](https://github.com/luyadev/luya-aws) - S3 Filesystem, AssetManager

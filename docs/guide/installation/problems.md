@@ -27,7 +27,11 @@ In order to run LUYA with deployer nicely on a production server, the following 
 
 ## Require the dev-master
 
-Maybe you like to test the latest features of LUYA, so you can use the following Composer JSON requirements, but do not forget to read the [UPGRADE.MD](https://github.com/luyadev/luya/blob/master/UPGRADE.md).
+Maybe you like to test the latest features of LUYA, so you can use the following Composer JSON requirements, but do not forget to read the 
+
++ [core UPGRADE.MD](https://github.com/luyadev/luya/blob/master/core/UPGRADE.md).
++ [admin UPGRADE.MD](https://github.com/luyadev/luya-module-admin/blob/master/UPGRADE.md).
++ [cms UPGRADE.MD](https://github.com/luyadev/luya-module-cms/blob/master/UPGRADE.md).
 
 ```json
 "require": {
@@ -36,8 +40,3 @@ Maybe you like to test the latest features of LUYA, so you can use the following
     "luyadev/luya-module-cms" : "dev-master"
 }
 ```
-
-## Ask us!
-
-+ If you are getting problems during the installation of LUYA, unexpected errors or strange behaviors please [create an issue on GitHub](https://github.com/luyadev/luya/issues).
-+ Join the Forum [forum.luya.io](https://forum.luya.io)
