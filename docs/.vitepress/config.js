@@ -61,7 +61,7 @@ export default {
             { text: 'Tags', link: '/guide/concepts/tags' },
             { text: 'HTML Elements', link: '/guide/concepts/elements' },
             { text: 'Hooks', link: '/guide/concepts/hooks' },
-            { text: 'CoImage Lazyloadingre', link: '/guide/concepts/lazyload' },
+            { text: 'Image Lazyloading', link: '/guide/concepts/lazyload' },
             { text: 'Composition', link: '/guide/concepts/composition' },
             { text: 'Deployment & Sync', link: '/guide/concepts/depandsync' },
             { text: 'Headless', link: '/guide/concepts/headless' }
