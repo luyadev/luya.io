@@ -33,9 +33,9 @@ export default {
     ],
     nav: [
       { text: 'Guide', link: '/guide/' },
+      { text: 'Packages', link: '/packages'},
       { text: 'API Docs', link: 'https://api.luya.io' },
       { text: 'Forum', link: 'https://github.com/orgs/luyadev/discussions' },
-      { text: 'Packages', link: 'https://packagist.org/?tags=luya'}
     ],
     sidebar: [
       {
@@ -134,7 +134,7 @@ export default {
           collapsed: true,
           text: 'NgRest CRUD',
           items: [
-            { text: 'Concept', link: '/guide/ngrest/concept' },
+            { text: 'Concept', link: '/guide/ngrest/' },
             { text: 'Model', link: '/guide/ngrest/model' },
             { text: 'API', link: '/guide/ngrest/api' },
             { text: 'Active Windows', link: '/guide/ngrest/activewindow' },

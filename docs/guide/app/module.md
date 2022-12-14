@@ -9,7 +9,7 @@ For instance you can put database logic inside of the ActiveRecord models. A mod
 
 There are two different types of modules:
 
-+ [Admin](/guide/admin/intro) - Contains Models, Migrations Administration, [NgRest CRUD](/guide/ngrest/concept).
++ [Admin](/guide/admin/intro) - Contains Models, Migrations Administration, [NgRest CRUD](../ngrest/).
 + [Frontend](/guide/frontend/intro) - Contains controllers and views, logic for frontend implementations.
 
 > In order to create your custom module you can run the [Console Command](/guide/app/console) `module/create` wizard.
