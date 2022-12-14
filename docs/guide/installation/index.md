@@ -2,7 +2,9 @@
 
 The LUYA installation requires Composer. Please have a look at the [official Composer website](https://getcomposer.org/doc/00-intro.md#installation-linux-unix-osx) if you haven´t installed it on your system yet.
 
-> Find the [installation Video on Youtube](https://www.youtube.com/watch?v=Ybq878PMe_U) in order to help you install LUYA.
+::: tip Video
+See the [installation Video on Youtube](https://www.youtube.com/watch?v=Ybq878PMe_U).
+:::
 
 ## Create Project
 
@@ -12,11 +14,13 @@ After setting up Composer, we execute the Composer command `create-project` to c
 composer create-project luyadev/luya-kickstarter:^1.0
 ```
 
-> Info: For more LUYA Kickstarter packages, check the [kickstarter packages section](https://luya.io/packages).
+::: warning GitHub login credentials
+During the installation you may be asked for the GitHub login credentials. This is normal, because Composer needs to get enough API rate-limit to retrieve the dependent package information from GitHub. For more details, please refer to the [Composer documentation](https://getcomposer.org/doc/articles/troubleshooting.md#api-rate-limit-and-oauth-tokens).
+:::
 
-> Note: During the installation you may be asked for the GitHub login credentials. This is normal, because Composer needs to get enough API rate-limit to retrieve the dependent package information from GitHub. For more details, please refer to the [Composer documentation](https://getcomposer.org/doc/articles/troubleshooting.md#api-rate-limit-and-oauth-tokens).
-
-> Note: In previous versions the fxp Composer plugin was required `composer global require "fxp/composer-asset-plugin:~1.4"` but this has been replaced with [Asset Packagist](https://asset-packagist.org). If the Asset Packagist is not present in the `composer.json`, you might install the fxp plugin as it is a "legacy" project setup.
+::: info FXP
+In previous versions the fxp Composer plugin was required `composer global require "fxp/composer-asset-plugin:~1.4"` but this has been replaced with [Asset Packagist](https://asset-packagist.org). If the Asset Packagist is not present in the `composer.json`, you might install the fxp plugin as it is a "legacy" project setup.
+:::
 
 The `create-project` command will create a folder (inside of your current folder, where the `composer create-project` command was executed) named **luya-kickstarter**. 
 
@@ -84,4 +88,4 @@ This will run the migrate, import and setup command with a default user `admin@a
 docker-compose exec luya_web luya <console_command>
 ```
 
-Since the Dockerimage is running on port 80, the docker-compose maps the internal [https://github.com/luyadev/luya-kickstarter/blob/master/docker-compose.yml#L27](port 80 to your machines port 8080) so you can now access your website in the browser under `localhost:8080`.
+Since the Dockerimage is running on port 80, the docker-compose maps the internal [port 80 to your machines port 8080](https://github.com/luyadev/luya-kickstarter/blob/master/docker-compose.yml#L27) so you can now access your website in the browser under `localhost:8080`.

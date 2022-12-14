@@ -6,6 +6,13 @@ A package is either an extension or a module. There are a few packages out there
 [You can find all packages taged with #luya on Packagist](https://packagist.org/?tags=luya)
 :::
 
+## Kickstarters
+
++ [Unglue Frontend Workflow](https://github.com/zephir/luya-unglue-kickstarter) - A kickstarter with unglue.io without any style deps
++ [Bootstrap 4 Kickstarter](https://github.com/luyadev/luya-kickstarter-bootstrap4) - Kickstart a LUYA with Bootstrap 4
++ [Bootstrap 3 Kickstarter](https://github.com/luyadev/luya-kickstarter) - Kickstart a LUYA with Bootstrap 3
++ [Core Kickstarter](https://github.com/luyadev/luya-kickstarter-core) - Includes only the core without any admin or cms module.
+
 ## Modules
 
 + [Admin Module](https://github.com/luyadev/luya-module-admin)- LUYA Admin UI
