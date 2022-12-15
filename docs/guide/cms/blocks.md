@@ -1,4 +1,4 @@
-# CMS blocks
+# Building Blocks
 
 Blocks are elements used in the CMS module to display and configure data. Blocks are dropped into the placeholders of a [CMS Layout](/guide/cms/cmslayouts). An example of a block could be a paragraph tag where the user can add the content. LUYA CMS module is shipped with some default blocks, but you can create your own elements.
 
@@ -6,7 +6,9 @@ Blocks are elements used in the CMS module to display and configure data. Blocks
 
 ## Create a new block
 
-> Use `./vendor/bin/luya cms/block/create` console command to generate a block.
+::: tip
+Use `./vendor/bin/luya cms/block/create` console command to generate a block.
+:::
 
 You can add blocks to your application or to a module. In either case, the folder where the blocks are stored must be named as **blocks**. Additionally blocks should have the suffix `Block` in their filename.
 
@@ -64,7 +66,9 @@ public function getFieldHelp()
 }
 ```
 
-> Read more about details regarding `luya\cms\base\InternalBaseBlock:config()` in [[app-block-types.md]].
+::: tip Block Types
+Read more about details regarding `luya\cms\base\InternalBaseBlock:config()` in [Block Types](blocktypes)
+:::
 
 As we have switched to `PHPBlock` by default you now have to create also a view file, which is located in the view folder of your application: `app/views/blocks/`. The view itself must have the same name as the class name of your block, e.g. `TextTransformBlock.php`. 
 
@@ -191,7 +195,7 @@ Assuming the below code is the PHP view of your block:
 MyBlockAsset::register($this);
 ```
 
-Now the [[app-assets.md]] is registered in the application view object.
+Now the [Asset](../app/assets) is registered in the application view object.
 
 Its also possible to just register certain JavaScript or CSS code, there fore use `registerJs()` or `registerCss()` directly in the view files of the block.
 

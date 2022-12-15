@@ -84,7 +84,9 @@ $image = $prop->getValue();
 echo Html::img($image, ['class' => 'yourImageClass']);
 ```
 
-> All properties implement the magical method `__toString()` and will return the value from the `getValue()` method by default. Keep in mind that this is only true for the echo or return context. When checking for the existance of a value, explicitely use the `getValue()` method as otherwise the property object is returned, which always resolves to true.
+::: tip
+All properties implement the magical method `__toString()` and will return the value from the `getValue()` method by default. Keep in mind that this is only true for the echo or return context. When checking for the existance of a value, explicitely use the `getValue()` method as otherwise the property object is returned, which always resolves to true.
+:::
 
 ## Access the property
 

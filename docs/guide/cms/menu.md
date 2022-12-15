@@ -1,4 +1,4 @@
-# Menu component
+# Menus & Navigations
 
 The `\luya\cms\Menu` component allows you to build website navigations. The menu component is part of the **CMS** module.
 
@@ -216,4 +216,4 @@ The menu component triggers certain `yii\base\Event`. You can hook on those even
 
 + `eventOnItemFind`: This `luya\cms\frontend\events\MenuItemEvent` is triggered when a menu item is created in the menu. 
 
-> See [[app-cmsproperties]], when working with `luya\cms\frontend\events\BeforeRenderEvent` events in page properties.
+> See [Page Properties](properties), when working with `luya\cms\frontend\events\BeforeRenderEvent` events in page properties.

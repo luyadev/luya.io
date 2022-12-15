@@ -1,7 +1,5 @@
 # OpenAPI Generator
 
-> WIP: This feature is still in Beta and only available when LUYA Admin Module 3.2 is installed.
-
 Since version 3.2 of LUYA Admin Module an OpenAPI file generator is available. The generator creates a JSON OpenAPI Defintion based on all REST UrlRules and routes provided with ControllerMap.
 
 The purpose of the generator is to have documentation where it should belong, in the code, but also provide those descriptions to the Endpoint Consumers.
@@ -10,7 +8,9 @@ The purpose of the generator is to have documentation where it should belong, in
 
 ## Enable OpenAPI Endpoint
 
-> To generate the OpenAPI File the `cebe/php-openapi` Composer package is required, install the library with `composer require cebe/php-openapi`.
+::: warning
+To generate the OpenAPI File the `cebe/php-openapi` Composer package is required, install the library with `composer require cebe/php-openapi`.
+:::
 
 In order to enable the OpenAPI Endpoint you can either use `remoteToken` or ` publicOpenApi` property:
 

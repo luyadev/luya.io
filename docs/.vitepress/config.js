@@ -85,7 +85,7 @@ export default {
             { text: 'JSON-LD', link: '/guide/app/jsonld' },
             { text: 'Modules', link: '/guide/app/module' },
             { text: 'Themes', link: '/guide/app/themes' },
-            { text: 'Queue/Scheduler', link: '/guide/app/queue' },
+            { text: 'Queue / Scheduler', link: '/guide/app/queue' },
             { text: 'OpenAPI', link: '/guide/app/openapi' },
           ]
         },
@@ -120,12 +120,12 @@ export default {
             { text: 'Intro', link: '/guide/admin/intro' },
             { text: 'Assets', link: '/guide/admin/assets' },
             { text: 'Dashboard Objects', link: '/guide/admin/dashboard' },
-            { text: 'Custom Controller&View', link: '/guide/admin/mvc' },
+            { text: 'Custom MVC', link: '/guide/admin/mvc' },
             { text: 'Forms', link: '/guide/admin/forms' },
-            { text: 'Permissions&Menu', link: '/guide/admin/permission' },
-            { text: 'Icons&Css Styles', link: '/guide/admin/styles' },
+            { text: 'Permissions & Menu', link: '/guide/admin/permission' },
+            { text: 'Icons & Css Styles', link: '/guide/admin/styles' },
             { text: 'Create admin API', link: '/guide/admin/api' },
-            { text: 'JWT&SPA', link: '/guide/admin/jwtspa' }
+            { text: 'JWT & SPA', link: '/guide/admin/jwtspa' }
           ]
         },
         {

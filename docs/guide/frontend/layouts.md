@@ -1,4 +1,4 @@
-# Controller layouts
+# Layouts
 
 When using the render method inside a controller, the layout file of your application will be wrapped around the render output. This is the [Yii2 Layout](https://www.yiiframework.com/doc-2.0/guide-structure-views.html#layouts) function but in some cases you may would like to render another layout additionally inside the controller for all the actions. This is why we came up with `$this->renderLayout($viewFile)` which is a method where the behavior is similar to the layout wrapping process of Yii.
 

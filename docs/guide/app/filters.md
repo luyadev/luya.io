@@ -4,7 +4,9 @@ With *Filters* you can modify, crop, resize or use effects on any image provided
 
 The basic concept behind filter classes, is to track filters in VCS system, so you can add a filter and push it into git and your project members does have the same environment as you.
 
-> Use the `./vendor/bin/luya admin/filter` command in order to generate a Filter quickly.
+::: tip
+Use the `./vendor/bin/luya admin/filter` command in order to generate a Filter quickly.
+:::
 
 ## Create a new filter
 
@@ -58,7 +60,7 @@ public function chain()
 }
 ```
 
-In order to read more about the different filters and chain visit the [[app-filter-effects.md]] section.
+In order to read more about the different filters and chain visit the [Filter Effects](filter-effects) section.
 
 As you can see the effect thumbnail use the `luya\admin\base\Filter::THUMBNAIL_MODE_INSET` mode which is a the filter image manipulation system based on the [Imagine Library](https://github.com/avalanche123/Imagine).
 

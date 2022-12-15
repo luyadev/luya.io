@@ -89,6 +89,6 @@ In consequences, this also means that the `luya\web\Composition` localisation in
 
 ## Other language related topics
 
-+ [[app-translation.md]] - Register and create message files.
++ [Translations / Messages](translation) - Register and create message files.
 + `luya\cms\widgets\LangSwitcher` - A widget to switch between languages.
 + `luya\admin\ngrest\base\NgRestModel::$i18n` - Option to enable i18n for NgRest models.

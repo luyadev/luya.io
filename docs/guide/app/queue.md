@@ -1,4 +1,4 @@
-# Queue
+# Queue / Scheduler
 
 > The LUYA admin module is required.
 

@@ -1,18 +1,20 @@
 # Admin modules
 
-An admin module provides the ability to quickly create an admin UI section for your data. The LUYA CRUD system is called [[ngrest-concept.md]] or you can also use [[app-admin-controllerview.md]] in order to render a view with data from a controller.
+An admin module provides the ability to quickly create an admin UI section for your data. The LUYA CRUD system is called [NgRest](../ngrest/index.md) or you can also use [MVC](mvc.md) in order to render a view with data from a controller.
 
 Some features available in the admin UI section:
 
-+ Create, read, update and delete with AngularJS and Yii2 base on Active Records => [[ngrest-concept.md]]
-+ Display custom data with a controller and view file => [[app-admin-module-controllerview.md]]
++ Create, read, update and delete with AngularJS and Yii2 base on Active Records => [NgRest Section](../ngrest/index.md)
++ Display custom data with a controller and view file => [MVC Section](mvc.md)
 + Storage system for uploading images and files => `luya\admin\storage\BaseFileSystemStorage`
-+ Permissions and admin UI menus => [[app-admin-module-permission.md]]
-+ APIs
++ Permissions and admin UI menus => [Permissions Section](permission.md)
++ APIs => [API Section](api.md)
 
 ## Creating an admin module
 
-You can use the [[app-console.md]] `module/create` to scaffold quickly all the required folders and files. The scaffolding command will generate a new folder structure like this:
+::: tip
+You can use the `module/create` to scaffold quickly all the required folders and files. The scaffolding command will generate a new folder structure like this:
+:::
 
 ```
 .
@@ -45,4 +47,6 @@ return [
 ];
 ```
 
-> Hint: Keep in mind, if you are creating a module for admin usage, the admin name in the config must contain a suffix like `mymoduleadmin` otherwise using only `mymodule` for admin modules will give you some disadvantages.
+::: warning
+Keep in mind, if you are creating a module for admin usage, the admin name in the config must contain a suffix like `mymoduleadmin` otherwise using only `mymodule` for admin modules will give you some disadvantages.
+:::

@@ -1,4 +1,4 @@
-# Hook
+# Hooks
 
 LUYA has a built in hooking mechanism which allows you to print code in various sections. The `luya\Hook` class is similar to [Yii events](https://www.yiiframework.com/doc-2.0/guide-concept-events.html).
 

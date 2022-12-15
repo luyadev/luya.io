@@ -1,4 +1,4 @@
-# Composition concept
+# Composition
 
 When dealing with multi lingual websites the `\luya\web\Composition` component is a powerful tool to help building **multi lingual URL rules**, generate websites with **localization prefixes** (e.g. www.example.com/de/ch) or define domains which should automatic trigger a website language trough **host info mapping**.
 

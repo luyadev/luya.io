@@ -12,7 +12,9 @@ There are two different types of modules:
 + [Admin](/guide/admin/intro) - Contains Models, Migrations Administration, [NgRest CRUD](../ngrest/).
 + [Frontend](/guide/frontend/intro) - Contains controllers and views, logic for frontend implementations.
 
-> In order to create your custom module you can run the [Console Command](/guide/app/console) `module/create` wizard.
+::: tip
+In order to create your custom module you can run the [Console Command](/guide/app/console) `module/create` wizard.
+:::
 
 Structure of modules
 

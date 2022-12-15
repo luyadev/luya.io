@@ -2,7 +2,9 @@
 
 A theme can be used to overwrite views of other modules (e.g. app) or other themes with inheritance. As a collection of informations like Assets or Views it's bundled and therefore shareable.
 
-> In order to create your custom theme you can run the [Console Command](/guide/app/console) `theme/create` wizard.
+::: tip
+In order to create your custom theme you can run the [Console Command](/guide/app/console) `theme/create` wizard.
+:::
 
 ## Create a new theme
 
@@ -25,7 +27,9 @@ A theme has a recommend folder structure. Each theme **requires to have a `theme
 + `layouts/theme.php`: The layout file in the `layouts` folder is like the `layout.php` file in Yii applications and requires a `$content` variable.
 + `cmslayouts/theme.php`: The CMS layout [[cms-layouts.md]] which should be taken. Those can be changed in the admin UI.
 
-> Take a look at the LUYA Theme Skeleton Project: https://github.com/luyadev/luya-theme-skeleton
+::: info
+Take a look at the LUYA Theme Skeleton Project: https://github.com/luyadev/luya-theme-skeleton
+:::
 
 This is what these files could look like:
 

@@ -1,4 +1,4 @@
-# Image lazy loading
+# Image Lazyloading
 
 To reduce server load and speed up page requests, LUYA is shipped with a built in `\luya\lazyload\LazyLoad` widget.
 
@@ -12,11 +12,11 @@ This just displays a grey area instead of the image while loading.
 
 ```php
 <?= LazyLoad::widget([
-        'src' =>  $this->publicHtml . '/path/to/image',
-        'width' => 'the-image-width-in-px',
-        'height' => 'the-image-height-in-px',
-        'extraClass' => 'custom-classes'
-    ]);
+    'src' =>  $this->publicHtml . '/path/to/image',
+    'width' => 'the-image-width-in-px',
+    'height' => 'the-image-height-in-px',
+    'extraClass' => 'custom-classes'
+]);
 ?>
 ```
 
@@ -36,7 +36,7 @@ You can try to update the placeholder-image styles by using its class and your c
 > Includes a noscript fallback.
 > Make sure to implement a `nojs` or `no-js` class into you `body` or `html` tag.
 
-```
+```php
 <?= LazyLoad::widget([
         'src' =>  $this->publicHtml . '/path/to/image',
         'placeholderSrc' => $this->publicHtml . '/path/to/image_very_small',
@@ -52,13 +52,13 @@ You can try to update the placeholder-image styles by using its class and your c
 
 To enable base64 encoding of your placeholder image, you have to make sure that your placeholderSrc is an absolute URL and then set `placeholderAsBase64` to `true`.
 
-```
+```php
 <?= LazyLoad::widget([
-        'src' =>  $this->publicHtml . '/path/to/image',
-        'placeholderSrc' => $this->publicHtml . '/path/to/image_very_small',
-        'placeholderAsBase64' => true,
-        'extraClass' => 'custom-classes'
-    ]);
+    'src' =>  $this->publicHtml . '/path/to/image',
+    'placeholderSrc' => $this->publicHtml . '/path/to/image_very_small',
+    'placeholderAsBase64' => true,
+    'extraClass' => 'custom-classes'
+]);
 ?>
 ```
 
@@ -73,10 +73,10 @@ To use the lazyloader with a background image, e.g. on a `<div class="lazy-image
 
 ```php
 <div <?= LazyLoad::widget([
-        'attributesOnly' => true,
-        'src' =>  $this->publicHtml . '/path/to/image',
-        'extraClass' => 'custom-classes'
-    ]); ?> >
+    'attributesOnly' => true,
+    'src' =>  $this->publicHtml . '/path/to/image',
+    'extraClass' => 'custom-classes'
+]); ?> >
 </div>
 
 <!-- Fallback for no-js -->
@@ -102,7 +102,7 @@ $image = Yii::$app->storage->getImage(123);
 Each image wich is fully loaded will trigger the events `lazyimage-loading` and `lazyimage-loaded` on the `document`.
 The `lazyimage-loaded` event provides an object with the imageObject used and the type of the event (`success` or `error`).
 
-```
+```js
 $(document).on("lazyimage-loaded", function(e, image) {
     console.log(image)
 });
@@ -152,5 +152,4 @@ $.lazyLoad({
 
 ## Collect new images
 
-If you add images dynamically (with the correct lazyload markup provided by the widget), you can call `$.lazyLoad('collectImages')`.  
-This will collect all images that aren't already existing and start to observe them.
+If you add images dynamically (with the correct lazyload markup provided by the widget), you can call `$.lazyLoad('collectImages')`. This will collect all images that aren't already existing and start to observe them.

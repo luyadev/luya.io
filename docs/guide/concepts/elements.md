@@ -1,4 +1,4 @@
-# HTML Element Component
+# HTML Elements
 
 The basic idea behind the `\luya\web\Element` component is based on a behavior known from **AngularJS Directives**. In a huge web project you have several HTML parts you may have to use in several locations but with different contents. 
 Lets assume you have a teaser box which contains a title and a picture. So variables are the picture and the title, but the HTML base will be the same on all pages.

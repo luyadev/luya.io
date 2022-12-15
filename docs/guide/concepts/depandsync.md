@@ -22,11 +22,11 @@ We recommend that you deploy the website to the server in an early stadium of th
 
 ## Deployment
 
-The deployment (using [LUYA deployer](https://luya.io/packages/luyadev/luya-deployer)) will mainly publish the Git repository on the production server and runs certain LUYA related tasks, like migration and import commands. It will also ensure the right `env.php` is created on the server based on the deploy.php server name setting `server('prod', ...)`.
+The deployment (using [LUYA deployer](https://github.com/luyadev/luya-deployer)) will mainly publish the Git repository on the production server and runs certain LUYA related tasks, like migration and import commands. It will also ensure the right `env.php` is created on the server based on the deploy.php server name setting `server('prod', ...)`.
 
 1. Set up your production environment on the server (create the database, enable SSH, etc.)
 2. Ensure the config contains the right informations in `luya\Config::ENV_PROD` context.
-3. Install and configure the [LUYA deployer](https://luya.io/packages/luyadev--luya-deployer)
+3. Install and configure the [LUYA deployer]https://github.com/luyadev/luya-deployer)
 4. Deploy your website with the `./vendor/bin/dep luya prod` command.
 5. **First deployment:** Run the `./vendor/bin/luya admin/setup` command **on the production server**. To do so loggin with SSH and rund the admin/setup command.
 
@@ -47,19 +47,19 @@ We recommend to use either the identity or pem strategie: this way you can commi
 ### Example configuration file
 
 ```php
+<?php
+namespace Deployer;
+
 require 'vendor/luyadev/luya-deployer/luya.php';
 
-// define your configuration here. Uncomment the connection strategy of your choice (we recommend pem)
-// Change the $VAR with your information
-server('prod', 'server.servername.com', 22)
-        ->user('$USERNAME')
-        //->identityFile('~/.ssh/identityfile')
-        //->password('$PWD') 
-        //->pemFile('~/.ssh/pemfile.pem')
-        ->stage('prep')
-        ->env('deploy_path', '/home/appname/'); // Define the base path to deploy your project to.
+// define your configuration here
+host('SSHHOST.COM')
+    ->stage('prod')
+    ->port(22)
+    ->user('SSHUSER')
+    ->set('deploy_path', '~/httpdocs');
 
-set('repository', 'git@github.com:$GITHUBUSER/$REPONAME.git');
+set('repository', 'https://USER:PASSWORD@github.com/VENDOR/REPO.git');
 ```
 
 You are now ready to deploy your website to the server and can start to add content on the production environment.

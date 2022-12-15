@@ -1,4 +1,4 @@
-# Module URL rules
+# URL Rules
 
 When dealing with modules, several actions and pages you may would like to use nice readable urls instead of the default routing behavior. To do so, you can configure each module with URL rules corresponding to a route.
 
@@ -39,9 +39,13 @@ You can also use parameters in URL rules:
 
 Visit the [Yii Documentation](https://www.yiiframework.com/doc-2.0/guide-runtime-routing.html#parameterizing-routes) for more details about parameters.
 
-> **CMS Context:** If you are using the module in a CMS context your patterns must be prefix with the module name, otherwise the CMS can not auto replace the new pattern with the CMS context information. For example redirecting from controller foo action index to controller bar action index inside a module both URL rules must be prefix. For foo `['MODULE/name-for-foo-index' => 'MODULE/foo/index']` for bar `['MODULE/name-for-bar-index' => 'MODULE/bar/index']` so they must have the full qualified route with the name of the module used in the config to register the module. Also the patterns **must** prefix the module name.
+::: warning **CMS Context:** 
+If you are using the module in a CMS context your patterns must be prefix with the module name, otherwise the CMS can not auto replace the new pattern with the CMS context information. For example redirecting from controller foo action index to controller bar action index inside a module both URL rules must be prefix. For foo `['MODULE/name-for-foo-index' => 'MODULE/foo/index']` for bar `['MODULE/name-for-bar-index' => 'MODULE/bar/index']` so they must have the full qualified route with the name of the module used in the config to register the module. Also the patterns **must** prefix the module name.
+:::
 
-> **CMS Page Context:** When you place a **module block** in order to render a module controller and the rendered content produces links (for example a user login, and there is a link to another action where user can reset its password) its important to **disable strict render in CMS settings**! Edit Pen -> Expert -> Strict URL Parsing -> Disable
+::: warning **CMS Page Context:** 
+When you place a **module block** in order to render a module controller and the rendered content produces links (for example a user login, and there is a link to another action where user can reset its password) its important to **disable strict render in CMS settings**! Edit Pen -> Expert -> Strict URL Parsing -> Disable
+:::
 
 Below, a short list of regex expressions you may use to parameterize the URLs:
 

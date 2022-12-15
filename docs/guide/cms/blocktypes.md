@@ -32,7 +32,9 @@ Now you can add a field into the above defined type, this is like a configuratio
 ] 
 ```
 
-> Since version 3.4 of LUYA Module CMS its possible to define a `required` property in order to ensure can not be empty.
+::: tip Required Input
+Since version 3.4 of LUYA Module CMS its possible to define a `required` property in order to ensure can not be empty.
+:::
 
 Above, this would create an input variable with a text input field and a label `From Label for the User`. 
 The type of the field can be added into a group you like:
@@ -105,7 +107,7 @@ public function extraVars()
     ];
 }
 ```
-`
+
 In the view you can access the values as follwed:
 
 ```php
@@ -136,7 +138,9 @@ public function config()
 
 The above example would generate 1 row with 2 columns. As bootstrap 4 has max 12 cols the first column would be larger then the second. Now you can enable `luya\cms\base\InternalBaseBlock::$isContainer` which will render the placeholders nicely and different to casual blocks.
 
-> important: When enabling the `luya\cms\base\InternalBaseBlock::$isContainer` the `luya\cms\base\InternalBaseBlock::admin()` output wont have **no effect** and is not rendered!
+::: danger $isContainer has no admin view
+When enabling the `luya\cms\base\InternalBaseBlock::$isContainer` the `luya\cms\base\InternalBaseBlock::admin()` output wont have **no effect** and is not rendered!
+:::
 
 ![block with placeholders](../img/block-placeholders.png)
 

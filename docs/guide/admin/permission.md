@@ -1,4 +1,4 @@
-# Admin permissions
+# Permissions & Menu
 
 LUYA provides an out of the box permission system. Menu entries are bound to the permission system but you can also define custom permissions. In order to update permissions run the `./vendor/bin/luya import` command which will restore all permissions in the database that you can allocate them to a user group.
 

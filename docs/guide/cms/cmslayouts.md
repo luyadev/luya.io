@@ -1,4 +1,4 @@
-# CMS Layout
+# CMS Layouts
 
 The CMS layouts let the "Content Management System" know where to render the content blocks.
 
@@ -67,7 +67,9 @@ You can also define multiple rows, here an advanced example for a layout with 4 
 }
 ```
 
-> If a JSON file is used for the CMS layout the addition of new placeholders must be available in the JSON file as well as this will be the priority source for importing CMS layouts.
+::: warning
+If a JSON file is used for the CMS layout the addition of new placeholders must be available in the JSON file as well as this will be the priority source for importing CMS layouts.
+:::
 
 ## Provide CMS Layouts
 
