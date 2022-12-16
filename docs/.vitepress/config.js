@@ -14,6 +14,11 @@ export default {
     ['meta', { name: "theme-color", content: "#ffffff"}],
   ],
   themeConfig: {
+    algolia: {
+      appId: '1G8O4R6KAE',
+      apiKey: 'cd3194eac138884ec7893add97e541a7',
+      indexName: 'luya'
+    },
     editLink: {
       pattern: 'https://github.com/luyadev/luya.io/edit/master/docs/:path'
     },
