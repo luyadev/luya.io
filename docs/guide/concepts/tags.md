@@ -14,6 +14,8 @@ As the [elements](/guide/concepts/elements) is thought to be a tool for the deve
 As mentioned above, we create a new `TooltipTag` with a PHP file somewhere where you might think it is a good location, it is recommend locate them in the `app/tags` folder:
 
 ```php
+<?php
+
 namespace app\tags;
 
 use luya\tag\BaseTag;
@@ -39,8 +41,7 @@ class TooltipTag extends BaseTag
 }
 ```
 
-When your custom tags are ready they need to be injected into the `luya\TagParser`. 
-In order to inject the created tag from above, add the `$tags` property to your application config (e.g. `configs/env-local.php`):
+When your custom tags are ready they need to be injected into the `luya\TagParser`. In order to inject the created tag from above, add the `$tags` property to your application config (e.g. `configs/env-local.php`):
 
 ```php
 'id' => 'myPage',
