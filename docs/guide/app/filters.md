@@ -10,7 +10,7 @@ Use the `./vendor/bin/luya admin/filter` command in order to generate a Filter q
 
 ## Create a new filter
 
-For creation of a filter extended from the `\luya\admin\base\Filter` add a new file with the filename suffix `Filter` in your LUYA project root folder or module folder `filters` and run the import command.
+For creation of a filter extended from the <class name="luya\admin\base\Filter" /> add a new file with the filename suffix `Filter` in your LUYA project root folder or module folder `filters` and run the import command.
 
 ```php
 <?php
@@ -94,4 +94,4 @@ or you can use the filter name directly which is not recommend as if the filter 
 
 The filter must be exact name like the method identifier() returns from the filter class.
 
-> The `luya\admin\image\Item::applyFilter` returns the new generated `\luya\admin\image\Item` Object where you can access other methods and informations.
+> The <class name="luya\admin\image\Item" method="applyFilter" /> returns the new generated <class name="luya\admin\image\Item" /> Object where you can access other methods and informations.

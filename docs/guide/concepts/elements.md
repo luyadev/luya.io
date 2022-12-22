@@ -1,6 +1,6 @@
 # HTML Elements
 
-The basic idea behind the `\luya\web\Element` component is based on a behavior known from **AngularJS Directives**. In a huge web project you have several HTML parts you may have to use in several locations but with different contents. 
+The basic idea behind the <class name="luya\web\Element" /> component is based on a behavior known from **AngularJS Directives**. In a huge web project you have several HTML parts you may have to use in several locations but with different contents. 
 Lets assume you have a teaser box which contains a title and a picture. So variables are the picture and the title, but the HTML base will be the same on all pages.
 
 Basic example of a HTML partial wich will be reused in different pages with different contents:
@@ -18,7 +18,7 @@ Now you can create a HTML element component for this.
 
 ## Create HTML element component and use it
 
-The default path for the file which contains all configured elements is `@app/views/elements.php` defined by `luya\web\Element::$configFile`. An element is defined by a *name* and a corresponding *closure*. Below, an example setup for the `elements.php` file:
+The default path for the file which contains all configured elements is `@app/views/elements.php` defined by <class name="luya\web\Element" prop="configFile" />. An element is defined by a *name* and a corresponding *closure*. Below, an example setup for the `elements.php` file:
 
 ```php
 <?php
@@ -78,10 +78,7 @@ Of course the above example requires as well that the variables `title`, `descri
 
 # Automatic styleguide from elements 
 
-LUYA provides a styleguide module which renders all the available elements with example content, so you can share all the elements with other designer to discuss and test changes based on elements instead on a finished web page. 
-This gives you the ability to make more specific changes and test them properly before the final implementation.
-
-First adding the LUYA styleguide module to your Composer JSON:
+LUYA provides a styleguide module which renders all the available elements with example content, so you can share all the elements with other designer to discuss and test changes based on elements instead on a finished web page. This gives you the ability to make more specific changes and test them properly before the final implementation. First adding the LUYA styleguide module to your Composer JSON:
 
 ```sh
 composer require luyadev/luya-module-styleguide

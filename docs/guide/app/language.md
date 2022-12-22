@@ -8,7 +8,7 @@ Keep in mind that the `language` property of your application is the main settin
 
 As LUYA is developed as a modular system the languages must be configured in several parts of the system. The multi lingual support works with or without CMS.
 
-There is a component known as [composition component](/guide/concepts/composition) which is dealing with the language settings. The component is invoked by the application boot process and changes the base URL inside the urlManager based on your configuration. If the composition is actived and not hidden it will manipulate the `yii\base\Application::$language`. So it can override your language from the configuration.
+There is a component known as [composition component](/guide/concepts/composition) which is dealing with the language settings. The component is invoked by the application boot process and changes the base URL inside the urlManager based on your configuration. If the composition is actived and not hidden it will manipulate the <class name="yii\base\Application" prop="language" />. So it can override your language from the configuration.
 
 You always have to define the default language of your application configs:
 
@@ -19,8 +19,8 @@ You always have to define the default language of your application configs:
 ],
 ```
 
-+ `luya\web\Composition::$hidden`: (boolean) If this website is not multi lingual you can hide the composition, other whise you have to enable this.
-+ `luya\web\Composition::$default`: (array) Contains the default setup for the current language, this must match your language system configuration.
++ <class name="luya\web\Composition" prop="hidden" />: (boolean) If this website is not multi lingual you can hide the composition, other whise you have to enable this.
++ <class name="luya\web\Composition" prop="default" />: (array) Contains the default setup for the current language, this must match your language system configuration.
 
 Now you have set the default language of the application to **en** and the language prefix is available and will be appended to all urls. If hidden is enabled, it would still set the language, but would not prepend the string ot every url.
 
@@ -41,7 +41,7 @@ There are two ways to retrieve the current active language:
 
 > Instead of using the locales system, we recommend you to make usage of the PHP intl extension, which is commonly available. Therfore e.g. you use `Yii::$app->formatter->asDatetime($time, 'MMMM yyyy')` instead of  `strftime("%B %Y", $date);`. Take a look at the formating syntax here http://userguide.icu-project.org/formatparse/datetime
 
-As the composition component can override the `yii\base\Application::$language` which is the base property for all translations within a Yii system you can define localisations for each language. Localisation are usually set trough setlocale() this is what LUYA does in the `luya\traits\ApplicationTrait`. You can define a localisation file for each language with the `luya\traits\ApplicationTrait::$locales` property, for example when language `de` is given it should take the `de_CH.utf8` locale file:
+As the composition component can override the <class name="yii\base\Application" prop="language" /> which is the base property for all translations within a Yii system you can define localisations for each language. Localisation are usually set trough setlocale() this is what LUYA does in the <class name="luya\traits\ApplicationTrait" />. You can define a localisation file for each language with the <class name="luya\traits\ApplicationTrait" prop="locales" /> property, for example when language `de` is given it should take the `de_CH.utf8` locale file:
 
 ```php
 'locales' => [
@@ -54,7 +54,7 @@ This is configured in the root level of your application config.
 
 ## Domain Mapping
 
-In order to map a given domain to language use `luya\web\Composition::$hostInfoMapping`:
+In order to map a given domain to language use <class name="luya\web\Composition" prop="hostInfoMapping" />:
 
 ```php
 'hostInfoMapping' => [
@@ -83,12 +83,12 @@ $countryShortCode = Yii::$app->composition['countryShortCode'];
 
 ## Language Parameter for APIs
 
-Since version 3.1 of LUYA Admin the [ConentNegotiator](https://www.yiiframework.com/doc/api/2.0/yii-filters-contentnegotiator) correctly receives all available LUYA Admin languages. For instance, when you have setup `fr`, `de` and `en`, then the ContentNegotiator will listen to `Vary` `Accept` or `Accept-Language` Header, as well for `_lang` get param. If the content negotiator can detected one of the given languages in those methods, the `Yii::$app->language` will recieve this value, which will also be used to deocde/encode `luya\admin\ngrest\base\NgRestModel::$i18n` attributes.
+Since version 3.1 of LUYA Admin the [ConentNegotiator](https://www.yiiframework.com/doc/api/2.0/yii-filters-contentnegotiator) correctly receives all available LUYA Admin languages. For instance, when you have setup `fr`, `de` and `en`, then the ContentNegotiator will listen to `Vary` `Accept` or `Accept-Language` Header, as well for `_lang` get param. If the content negotiator can detected one of the given languages in those methods, the `Yii::$app->language` will recieve this value, which will also be used to deocde/encode <class name="luya\admin\ngrest\base\NgRestModel" prop="i18n" /> attributes.
 
-In consequences, this also means that the `luya\web\Composition` localisation in the URL (e.g. `de/foobar`) has no effect when working with APIs, either use HTTP Headers or `_lang` get parameter. In order restore the behavior before 3.1 which has taken the composition language path into account, you can configure `luya\admin\components\AdminLanguage::$activeShortCodeCallable`, but its not recommended.
+In consequences, this also means that the <class name="luya\web\Composition" /> localisation in the URL (e.g. `de/foobar`) has no effect when working with APIs, either use HTTP Headers or `_lang` get parameter. In order restore the behavior before 3.1 which has taken the composition language path into account, you can configure <class name="luya\admin\components\AdminLanguage" prop="activeShortCodeCallable" />, but its not recommended.
 
 ## Other language related topics
 
 + [Translations / Messages](translation) - Register and create message files.
-+ `luya\cms\widgets\LangSwitcher` - A widget to switch between languages.
-+ `luya\admin\ngrest\base\NgRestModel::$i18n` - Option to enable i18n for NgRest models.
++ <class name="luya\cms\widgets\LangSwitcher" /> - A widget to switch between languages.
++ <class name="luya\admin\ngrest\base\NgRestModel" prop="i18n" /> - Option to enable i18n for NgRest models.

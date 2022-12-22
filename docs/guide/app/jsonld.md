@@ -1,6 +1,6 @@
 ## JSON-LD
 
-Modern web applications needs to provide the websites informations in structure way for search engines, therefore you can use `luya\web\JsonLd`. The inheritation and full documentation about the schema itself is available under https://schema.org.
+Modern web applications needs to provide the websites informations in structure way for search engines, therefore you can use <class name="luya\web\JsonLd" />. The inheritation and full documentation about the schema itself is available under https://schema.org.
 
 ## Basic usage
 
@@ -41,7 +41,7 @@ JsonLd::blogPosting()
     ->setPublisher($organisation)
 ```
 
-Currently we do not have all possible types implemented but you can always register them by yourself by calling `luya\web\JsonLd::addGraph()` with an array which contains the defintions:
+Currently we do not have all possible types implemented but you can always register them by yourself by calling <class name="luya\web\JsonLd" method="addGraph" /> with an array which contains the defintions:
 
 ```php
 luya\web\JsonLd::addGraph([
@@ -52,9 +52,7 @@ luya\web\JsonLd::addGraph([
 
 ## Value Types
 
-Some properties require a given type of value, therefore we have Value objects. Some methods can require those objects in order to make sure the correct value is passed to the properties, otherwise you could enter values which are not valid for the given key. 
-
-An example for a value object with an URL to a given image:
+Some properties require a given type of value, therefore we have Value objects. Some methods can require those objects in order to make sure the correct value is passed to the properties, otherwise you could enter values which are not valid for the given key. An example for a value object with an URL to a given image:
 
 ```php
 $image = (new ImageObject())
@@ -65,11 +63,11 @@ The value object will then parse the input correctly for the given schema proper
 
 |Name|Usage|
 |----|-----|
-|`luya\web\jsonld\DateTimeValue`|Used for timestamps with time.
-|`luya\web\jsonld\DateValue`|Used for date values.
-|`luya\web\jsonld\DurationValue`|Time periods as duration.
-|`luya\web\jsonld\UrlValue`|Used for paths to images or websites (links).
-|`luya\web\jsonld\TextValue`|Used when objects needs to get shorten or encode the text values is required.
+|<class name="luya\web\jsonld\DateTimeValue" />|Used for timestamps with time.
+|<class name="luya\web\jsonld\DateValue" />|Used for date values.
+|<class name="luya\web\jsonld\DurationValue" />|Time periods as duration.
+|<class name="luya\web\jsonld\UrlValue" />|Used for paths to images or websites (links).
+|<class name="luya\web\jsonld\TextValue" />|Used when objects needs to get shorten or encode the text values is required.
 
 ## Advanced usage
 

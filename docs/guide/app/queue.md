@@ -6,7 +6,7 @@ Since LUYA Admin version 2.0, the ([Yii Queue](https://github.com/yiisoft/yii2-q
 
 The component is configured as `adminqueue` based on the Database `yii\queue\db\Queue` integration. 
 
-The admin module has a default integration for scheduling jobs when working with selects (dropdowns) and checkbox, so you are able to schedule those changes out of the box! See Checkbox (ToggleStatus) `luya\admin\ngrest\plugins\ToggleStatus::$scheduling` and Select `luya\admin\ngrest\plugins\Select::$scheduling`.
+The admin module has a default integration for scheduling jobs when working with selects (dropdowns) and checkbox, so you are able to schedule those changes out of the box! See Checkbox (ToggleStatus) <class name="luya\admin\ngrest\plugins\ToggleStatus" prop="scheduling" /> and Select <class name="luya\admin\ngrest\plugins\Select" prop="scheduling" />.
 
 ## Configure to run
 
@@ -18,7 +18,7 @@ There are 3 different options to enable to adminqueue, by default the admin queu
 
 ### "Fake Cronjob" (Auto Bootstrap Queue)
 
-The fake cron job will run each 25 minutes whether users request the websites in the frontend or sites are visited in the administration area. This is called a "fake cronjob" and should not be taken for large queue jobs. So take into account that frontend users might visit the website and process the queue. In order to enable the fake cronjob set `luya\admin\Module::$autoBootstrapQueue` to true, in the admin module config:
+The fake cron job will run each 25 minutes whether users request the websites in the frontend or sites are visited in the administration area. This is called a "fake cronjob" and should not be taken for large queue jobs. So take into account that frontend users might visit the website and process the queue. In order to enable the fake cronjob set <class name="luya\admin\Module" prop="autoBootstrapQueue" /> to true, in the admin module config:
 
 ```php
 'modules' => [
@@ -30,11 +30,11 @@ The fake cron job will run each 25 minutes whether users request the websites in
 ]
 ```
 
-The fake cronjob won't be executed on console (cli) commands. The information about last run timestamp is stored in `luya\admin\models\Config` with identifier `luya\admin\models\Config::CONFIG_QUEUE_TIMESTAMP`.
+The fake cronjob won't be executed on console (cli) commands. The information about last run timestamp is stored in <class name="luya\admin\models\Config" /> with identifier `luya\admin\models\Config::CONFIG_QUEUE_TIMESTAMP`.
 
 ### Cronjob (admin/queue Command)
 
-In shared hosting enviroments the best usage for the admins queue scheduler system is to setup a cronjob which runs every 5 minutes (ary at any other frequents depending on your needs). Make sure that `luya\admin\Module::$autoBootstrapQueue` is disabled un setup a cronjob with runs the `luya\admin\commands\QueueController` as `admin/queue` command:
+In shared hosting enviroments the best usage for the admins queue scheduler system is to setup a cronjob which runs every 5 minutes (ary at any other frequents depending on your needs). Make sure that <class name="luya\admin\Module" prop="autoBootstrapQueue" /> is disabled un setup a cronjob with runs the <class name="luya\admin\commands\QueueController" /> as `admin/queue` command:
 
 ```sh
 /vendor/bin/luya admin/queue
@@ -50,9 +50,9 @@ Since version 2.0.4 the native implementation of the [Yii Queue](https://github.
 
 The verbose option helps to debug and should be disabled in production.
 
-> The original queue/listen command won't store any timestamp information about last run in the `luya\admin\models\Config` like the fake cronjob does.
+> The original queue/listen command won't store any timestamp information about last run in the <class name="luya\admin\models\Config" /> like the fake cronjob does.
 
-When using the `queue/listen` command its recommend to enable `luya\admin\storage\BaseFileSystemStorage::$queueFilters` because this option will process the image filter creation in the queue instead of the users browser. This will therefore moved the large memory load from the webserver to the instance which is running the `queue/listen` command. Add all your application [[/guide/app/filters]] to the `luya\admin\storage\BaseFileSystemStorage::$queueFiltersList` list, as only the listed filters will be generated.
+When using the `queue/listen` command its recommend to enable <class name="luya\admin\storage\BaseFileSystemStorage" prop="queueFilters" /> because this option will process the image filter creation in the queue instead of the users browser. This will therefore moved the large memory load from the webserver to the instance which is running the `queue/listen` command. Add all your application [filters](filters) to the <class name="luya\admin\storage\BaseFileSystemStorage" prop="queueFiltersList" /> list, as only the listed filters will be generated.
 
 ## Push a Job into the Queue
 
@@ -62,7 +62,7 @@ The response from the push method is always the queue id, so you can check or st
 
 ## Retry & Errors
 
-The Queue is by default conigured to allow 5 retrys of an error job each 5 minutes. So assuming the exectued job fails (throws a `luya\Exception` for instance) the queue waits 5 minutes until a next try is executed. This will be repeated until 5 trys are processed, then the job will be removed from the queue with status failed.
+The Queue is by default conigured to allow 5 retrys of an error job each 5 minutes. So assuming the exectued job fails (throws a <class name="luya\Exception" /> for instance) the queue waits 5 minutes until a next try is executed. This will be repeated until 5 trys are processed, then the job will be removed from the queue with status failed.
 
 An exception is therefore the expected error format to ensure the job will retry again. If the exception is part of your application ensure to surround the job logic with a try catch block.
 
@@ -82,4 +82,4 @@ $config->component('storage', [
 ]);
 ```
 
-See `luya\admin\storage\BaseFileSystemStorage::$queueFilters` for more details.
+See <class name="luya\admin\storage\BaseFileSystemStorage" prop="queueFilters" /> for more details.

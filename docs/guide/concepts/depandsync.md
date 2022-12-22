@@ -83,7 +83,7 @@ Terminal commands:
 
 In case an error occurs when executing the `admin/proxy` command, executing the `admin/proxy/clear` command first might help (you will have to enter the url, identifier and token after resetting the configuration with the `clear` command).
 
-For details and more commands, see `luya\admin\commands\ProxyController`.
+For details and more commands, see <class name="luya\admin\commands\ProxyController" />.
 
 ## Deploy prep env
 

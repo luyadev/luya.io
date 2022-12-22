@@ -1,8 +1,6 @@
 # Image Lazyloading
 
-To reduce server load and speed up page requests, LUYA is shipped with a built in `\luya\lazyload\LazyLoad` widget.
-
-You can use the Lazyload widget in 3 different ways:
+To reduce server load and speed up page requests, LUYA is shipped with a built in <class name="luya\lazyload\LazyLoad" /> widget. You can use the Lazyload widget in 3 different ways:
 
 ## Basic usage
 
@@ -85,7 +83,7 @@ To use the lazyloader with a background image, e.g. on a `<div class="lazy-image
 
 ## Using lazy loader with storage component
 
-Using the lazy loader with a storage component `\luya\admin\image\Item` is easier because you can automatically get the width and height from the storage component:
+Using the lazy loader with a storage component <class name="luya\admin\image\Item" /> is easier because you can automatically get the width and height from the storage component:
 
 ```php
 $image = Yii::$app->storage->getImage(123);

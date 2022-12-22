@@ -8,7 +8,7 @@ Make sure that your webserver points to the `public_html` directory, otherwise s
 
 ## DNS Wildcard
 
-Use the `luya\web\Composition::$allowedHosts` property inside the composition component in order to prevent DNS wildcard hijacking.
+Use the <class name="luya\web\Composition" prop="allowedHosts" /> property inside the composition component in order to prevent DNS wildcard hijacking.
 
 ```php
 'composition' => [
@@ -34,7 +34,7 @@ When enabling `ensureSecureConnection` a few other security mechnism are trigger
 
 ## Secure login
 
-We recommend to enable `luya\admin\Module::$secureLogin` which will send you a token by email you have to enter. As maybe your customers do not use strong passwords we recommend to enable this option. In order to use $secureLogin your mail component must be configure well in order to send emails with secure tokens.
+We recommend to enable <class name="luya\admin\Module" prop="secureLogin" /> which will send you a token by email you have to enter. As maybe your customers do not use strong passwords we recommend to enable this option. In order to use $secureLogin your mail component must be configure well in order to send emails with secure tokens.
 
 ```php
 'admin' => [
@@ -49,7 +49,7 @@ Since admin version 3.0 its also possible to setup 2FA login wiht OTP trough any
 
 ## Strong admin user password policy
 
-We recommend to enable the `luya\admin\Module::$strongPasswordPolicy` property which is availabe since `luya-module-admin` version 1.1.1 and enabled by default since 1.2.0. This property makes sure the user has to enter a strong password with: uppercase, lowercase, special chars, digits and numbers with an min length of 8 chars.
+We recommend to enable the <class name="luya\admin\Module" prop="strongPasswordPolicy" /> property which is availabe since `luya-module-admin` version 1.1.1 and enabled by default since 1.2.0. This property makes sure the user has to enter a strong password with: uppercase, lowercase, special chars, digits and numbers with an min length of 8 chars.
 
 ```php
 'admin' => [
@@ -60,7 +60,7 @@ We recommend to enable the `luya\admin\Module::$strongPasswordPolicy` property w
 
 ## Email verification
 
-With enabling of `luya\admin\Module::$emailVerification` the user can not change its e-mail until the verification code (which has been sent to the current email) has been entered. This makes it harder to overtake the current account and also not to lock yourself out by entering a wrong email.
+With enabling of <class name="luya\admin\Module" prop="emailVerification" /> the user can not change its e-mail until the verification code (which has been sent to the current email) has been entered. This makes it harder to overtake the current account and also not to lock yourself out by entering a wrong email.
 
 ```php
 'admin' => [

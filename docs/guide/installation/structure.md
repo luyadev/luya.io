@@ -1,6 +1,6 @@
 # Structure & Config
 
-See the tipical folder structure of a LUYA application and read more about the `luya\Config` object in order to configure your application.
+See the tipical folder structure of a LUYA application and read more about the <class name="luya\Config" /> object in order to configure your application.
 
 ## Application Structure
 
@@ -40,7 +40,7 @@ This is how a standard LUYA kickstarter application hierarchy should look and wh
 
 Config files (e.g. `configs/env-local.php` or `configs/env-prod.php`) return a configuration array.
 
-> Since version 1.0.21 of LUYA core the `luya\Config` is used to generate configs (`configs/config.php`):
+> Since version 1.0.21 of LUYA core the <class name="luya\Config" /> is used to generate configs (`configs/config.php`):
 
 ```php
 define('YII_DEBUG', true);
@@ -112,7 +112,7 @@ return $config->toArray(\luya\Config::ENV_PROD);
 
 ## Console and Web
 
-Since the introduction of `luya\Config` its possible to set components for either console or web runtime, assuming you have `cookieValidationKey` in `request` component which is only valid on web runtime you can use `luya\Config::webComponent()` to register the component:
+Since the introduction of <class name="luya\Config" /> its possible to set components for either console or web runtime, assuming you have `cookieValidationKey` in `request` component which is only valid on web runtime you can use <class name="luya\Config" method="webComponent" /> to register the component:
 
 ```php
 $config->webComponent('request', [
@@ -159,7 +159,7 @@ Depending on console or web request would resolve:
 
 ## Environments
 
-As a key concept of LUYA is to don't repeat yourself with `luya\Config` a configuration file for different hosts can be done in a single file using `env()`. Assuming a database connection which has different connection details on different hosts (prep and prod) define the `yii\db\Connection` as followed:
+As a key concept of LUYA is to don't repeat yourself with <class name="luya\Config" /> a configuration file for different hosts can be done in a single file using `env()`. Assuming a database connection which has different connection details on different hosts (prep and prod) define the <class name="yii\db\Connection" /> as followed:
 
 ```php
 $config->component('db', [
@@ -222,9 +222,6 @@ use Yii;
 use yii\base\BootstrapInterface;
 use luya\web\Application;
 
-/**
- *
- */
 class Bootstrap implements BootstrapInterface
 {
     public function bootstrap($app)
@@ -242,7 +239,6 @@ class Bootstrap implements BootstrapInterface
         ]);
         
         if (YII_ENV_PROD) {
-            
             /**
              * As the error handler is already registered before the bootstraping sequence, we can not configure properties via 
              * DI container and have to override the application component properties.
@@ -300,7 +296,7 @@ Create a `composer.json`:
 
 Now you can include the private LUYA DI package into your projects:
 
-```
+```json
 "require" : {
     "mycompanyvendor/luya-di" : "^1.0",
 },

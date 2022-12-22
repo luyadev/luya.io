@@ -23,7 +23,7 @@ From the example above the CSS file `style.css` would be looked up in the locati
 
 ### Using the Asset
 
-To use an asset bundle, register it with a view by calling the `yii\web\AssetBundle::register()` method. E. g. in a view template you can register an asset bundle like the following:
+To use an asset bundle, register it with a view by calling the <class name="yii\web\AssetBundle" method="register" /> method. E. g. in a view template you can register an asset bundle like the following:
 
 ```php
 use app\assets\AppAsset;
@@ -35,7 +35,7 @@ AppAsset::register($this);  // $this represents the view object
 If you are registering an asset bundle in other places, you should provide the needed view object. E. g. to register an asset bundle in a widget class you can get the view object by `$this->view`.
 
 When an asset bundle is registered with a view, behind the scenes Yii will register all its dependent asset bundles. And if an asset bundle is located in a directory inaccessible through the Web, it will be published to a Web directory. 
-Only when the view renders a page, it will generate `link` and `script` tags for the CSS and JavaScript files listed in the registered bundles. The order of these tags is determined by the dependencies among the registered bundles and the order of the assets listed in the `yii\web\AssetBundle::$css` and `yii\web\AssetBundle::$js` properties.
+Only when the view renders a page, it will generate `link` and `script` tags for the CSS and JavaScript files listed in the registered bundles. The order of these tags is determined by the dependencies among the registered bundles and the order of the assets listed in the <class name="yii\web\AssetBundle" prop="css" /> and <class name="yii\web\AssetBundle" prop="js" /> properties.
 
 ### Publish Options
 

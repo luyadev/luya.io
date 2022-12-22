@@ -1,6 +1,6 @@
 # Block config and type
 
-Here we are diving a bit deeper understand what the `config()` method of a block contains and which kind of types can be used. First we have to explain the available types of configurations and which are used to be configured by the user or the developer.
+Here we are diving a bit deeper understand what the <class name="luya\cms\base\PhpBlock" method="config" /> method of a block contains and which kind of types can be used. First we have to explain the available types of configurations and which are used to be configured by the user or the developer.
 
 ## Block input / Output configuration
 
@@ -20,7 +20,7 @@ return [
 |----|--------
 |vars|Variables where to user can enter data according to your type (select, text, radio, etc.).
 |cfgs|Those options are shown as well in the admin UI and are meant to be used optional options which could be use for developers.
-|placeholders|Defined placeholders allows you to mark an area where other blocks can be dropped and rendered. A common usecase could be a div with given class where dropping nested blocks is allowed. Its very common to enable `luya\cms\base\InternalBaseBlock::$isContainer` property when working with placeholders, this will render the block nicely with cols and rows (if configured).
+|placeholders|Defined placeholders allows you to mark an area where other blocks can be dropped and rendered. A common usecase could be a div with given class where dropping nested blocks is allowed. Its very common to enable <class name="luya\cms\base\InternalBaseBlock" prop="isContainer" /> property when working with placeholders, this will render the block nicely with cols and rows (if configured).
 
 Now you can add a field into the above defined type, this is like a configuration of a field which must contain `var`, `label` and `type`:
 
@@ -50,7 +50,7 @@ return [
 ## Input block types
 
 
-There are several types you can use to generate your block controllers. Each class which support those types implements the `\luya\admin\base\TypesInterface` where you can use the type names as constant.
+There are several types you can use to generate your block controllers. Each class which support those types implements the <class name="luya\admin\base\TypesInterface" /> where you can use the type names as constant.
 
 |Type Name            |Constants|Description
 |---------------------|---------|-----------
@@ -136,10 +136,10 @@ public function config()
 }
 ```
 
-The above example would generate 1 row with 2 columns. As bootstrap 4 has max 12 cols the first column would be larger then the second. Now you can enable `luya\cms\base\InternalBaseBlock::$isContainer` which will render the placeholders nicely and different to casual blocks.
+The above example would generate 1 row with 2 columns. As bootstrap 4 has max 12 cols the first column would be larger then the second. Now you can enable <class name="luya\cms\base\InternalBaseBlock" prop="isContainer" /> which will render the placeholders nicely and different to casual blocks.
 
 ::: danger $isContainer has no admin view
-When enabling the `luya\cms\base\InternalBaseBlock::$isContainer` the `luya\cms\base\InternalBaseBlock::admin()` output wont have **no effect** and is not rendered!
+When enabling the <class name="luya\cms\base\InternalBaseBlock" prop="isContainer" /> the <class name="luya\cms\base\InternalBaseBlock" method="admin" /> output wont have **no effect** and is not rendered!
 :::
 
 ![block with placeholders](../img/block-placeholders.png)
@@ -166,12 +166,12 @@ An example of how a view file for this layout block with placeholders could look
 
 ## Block injectors
 
-A very common scenario is to collect data from an ActiveRecord model, display the items and select them (e.g. via select or checkbox) and then access the selected model rows via `extraVars`. To achieve this a lot of code is required inside your blocks, which is good to understand what and why things happens, but if you need to get results quickly injectors are going to help you manage this kind of tasks.
+A very common scenario is to collect data from an ActiveRecord model, display the items and select them (e.g. via select or checkbox) and then access the selected model rows via <class name="luya\cms\base\PhpBlock" method="extraVars" />. To achieve this a lot of code is required inside your blocks, which is good to understand what and why things happens, but if you need to get results quickly injectors are going to help you manage this kind of tasks.
 
-Injectors can, as the name already says, inject data into your `config()` method and assign custom data to `extraVars()`.
+Injectors can, as the name already says, inject data into your <class name="luya\cms\base\PhpBlock" method="config" /> method and assign custom data to <class name="luya\cms\base\PhpBlock" method="extraVars" />.
 
 Lets assume we have news articles from an ActiveRecord model which you want to select inside the admin UI area and return the selected model rows. 
-This can be defined via the `injectors()` method as a new injector as in the example below:
+This can be defined via the <class name="luya\cms\base\PhpBlock" method="injectors" /> method as a new injector as in the example below:
 
 ```php
 class MyBlock extends \luya\cms\base\PhpBlock
@@ -208,20 +208,20 @@ The following Injectors are currently available:
 
 |Class        |Description
 |---        |---
-|`\luya\cms\injectors\ActiveQueryCheckboxInjector`|Generates as checkbox selection from an ActiveRecord and assign the selected model rows into the extraVars section. In order to select only a specific fields add the `select()` to the ActiveRecord find ActiveQuery.
-|`\luya\cms\injectors\ActiveQueryRadioInjector`|Generates a radio list 
-|`\luya\cms\injectors\ActiveQuerySelectInjector.php`|Generates a dropdown select
-|`\luya\cms\injectors\LinkInjector`|Generates an ability to select a link and returns the correct URL to the link based on the user selection.
-|`\luya\cms\injectors\TagInjector`|Generates a checkbox to select all available admin tags and provides API to return those selected tags.
+|<class name="luya\cms\injectors\ActiveQueryCheckboxInjector" />|Generates as checkbox selection from an ActiveRecord and assign the selected model rows into the extraVars section. In order to select only a specific fields add the `select()` to the ActiveRecord find ActiveQuery.
+|<class name="luya\cms\injectors\ActiveQueryRadioInjector" />|Generates a radio list 
+|<class name="luya\cms\injectors\ActiveQuerySelectInjector" />|Generates a dropdown select
+|<class name="luya\cms\injectors\LinkInjector" />|Generates an ability to select a link and returns the correct URL to the link based on the user selection.
+|<class name="luya\cms\injectors\TagInjector" />|Generates a checkbox to select all available admin tags and provides API to return those selected tags.
 
 ### Injector API
 
-Each injector object generate trough the `luya\cms\base\InternalBaseBlock::injectors` method can be access trough the magical array access. Let´ assume you are registering the TagInjector:
+Each injector object generate trough the <class name="luya\cms\base\InternalBaseBlock" method="injectors" /> method can be access trough the magical array access. Let´ assume you are registering the TagInjector:
 
 ```php
 public function injectors()
 {
-    return ['tags' => new TagInjector()};
+    return ['tags' => new TagInjector()];
 }
 ```
 

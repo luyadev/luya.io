@@ -67,10 +67,10 @@ public function getFieldHelp()
 ```
 
 ::: tip Block Types
-Read more about details regarding `luya\cms\base\InternalBaseBlock:config()` in [Block Types](blocktypes)
+Read more about details regarding <class name="luya\cms\base\InternalBaseBlock" method="config" /> in [Block Types](blocktypes)
 :::
 
-As we have switched to `PHPBlock` by default you now have to create also a view file, which is located in the view folder of your application: `app/views/blocks/`. The view itself must have the same name as the class name of your block, e.g. `TextTransformBlock.php`. 
+As we have switched to <class name="luya\cms\base\PhpBlock" /> by default you now have to create also a view file, which is located in the view folder of your application: `app/views/blocks/`. The view itself must have the same name as the class name of your block, e.g. `TextTransformBlock.php`. 
 
 In the example above, the view file should look like this:
 
@@ -88,12 +88,12 @@ In order to retrieve values from configurations (`$this->[METHOD]`):
 
 |Type|Method
 |----|------
-|var|`luya\cms\base\PhpBlockView::varValue()`
-|cfg|`luya\cms\base\PhpBlockView::cfgValue()`
-|extra|`luya\cms\base\PhpBlockView::extraValue()`
-|placeholder|`luya\cms\base\PhpBlockView::placeholderValue()`
+|var|<class name="luya\cms\base\PhpBlockView" method="varValue" />
+|cfg|<class name="luya\cms\base\PhpBlockView" method="cfgValue" />
+|extra|<class name="luya\cms\base\PhpBlockView" method="extraValue" />
+|placeholder|<class name="luya\cms\base\PhpBlockView" method="placeholderValue" />
 
-Check the `\luya\cms\base\PhpBlockView` for full method reference to use inside the PHP block view.
+Check the <class name="luya\cms\base\PhpBlockView" /> for full method reference to use inside the PHP block view.
 
 ## Register and import
 
@@ -107,7 +107,7 @@ This will add or update the block into the CMS system. If you rename or remove a
 
 ### Module blocks
 
-When you add a block inside of a module you have to define the `$module` properties, this will ensure the view file will be found in the correct folder. This way, you can redistributed blocks with your own package to other users:
+When you add a block inside of a module you have to define the <class name="luya\cms\base\PhpBlock" prop="module" /> properties, this will ensure the view file will be found in the correct folder. This way, you can redistributed blocks with your own package to other users:
 
 ```php
 class TestBlock extends \luya\cms\base\PhpBlock
@@ -118,7 +118,7 @@ class TestBlock extends \luya\cms\base\PhpBlock
 
 ## Caching
 
-To speed up your system you can enable the cache for each block by the definition of a [caching component](https://www.yiiframework.com/doc-2.0/guide-caching-data.html#cache-components) in your configs. Block caching is disabled by default for all blocks:
+To speed up your system you can enable the cache for each block by the definition of a [caching component](https://www.yiiframework.com/doc-2.0/guide-caching-data.html#cache-components) in your configs. Block caching is disabled by default for all blocks <class name="luya\cms\base\PhpBlock" prop="cacheEnabled" />
 
 ```php
 class MyTestBlock extends \luya\cms\base\PhpBlock
@@ -127,7 +127,7 @@ class MyTestBlock extends \luya\cms\base\PhpBlock
 }
 ```
 
-This will cache the block for 60 minutes but you can adjust the number of seconds the block should be cached by defining the cacheExpiration property:
+This will cache the block for 60 minutes but you can adjust the number of seconds the block should be cached by defining the <class name="luya\cms\base\PhpBlock" prop="cacheExpiration" /> property:
 
 ```php
 public $cacheExpiration = 60;
@@ -137,7 +137,7 @@ You can enable block caching for a block event if the caching component is not r
 
 ## Env / Context Information
 
-Each block is placed in an environment (env) you can access those information inside your block logic:
+Each block is placed in an environment (env) you can access those information inside your block with <class name="luya\cms\base\PhpBlock" method="getEnvOption" />logic:
 
 ```php
 $this->getEnvOption($key, $defaultValue);
@@ -148,7 +148,7 @@ The following keys are available:
 + **id**: Return the unique identifier from the CMS context
 + **blockId**: Returns the id of this block (unique identifier)
 + **context**: Returns frontend or backend to find out in which context you are.
-+ **pageObject**: Returns the `\luya\cms\models\NavItem` object where you can run `luya\cms\models\NavItem::getNav()` to retrieve the `\luya\cms\models\Nav` object.
++ **pageObject**: Returns the <class name="luya\cms\models\NavItem" /> object where you can run <class name="luya\cms\models\NavItem" method="getNav" /> to retrieve the <class name="luya\cms\models\Nav" /> object.
 + **isFirst**: Returns whether this block is the first in its placeholder or not.
 + **isLast**: Return whether his block is the last in its placeholder or not.
 + **index**: Returns the number of the index/position within this placheholder.
@@ -187,7 +187,7 @@ If there is a property defined you will get the property object otherwise return
 
 ## Register Assets and JavaScript/CSS
 
-Sometimes your block should also register some CSS or JavaScript files, therefore you can access the global `\luya\web\View` object inside of your PHP view template. It is quite similar to registering other assets with the difference that you are accessing the global scope view instead of the view on `$this`.
+Sometimes your block should also register some CSS or JavaScript files, therefore you can access the global <class name="luya\web\View" /> object inside of your PHP view template. It is quite similar to registering other assets with the difference that you are accessing the global scope view instead of the view on `$this`.
 
 Assuming the below code is the PHP view of your block:
 
@@ -225,7 +225,7 @@ $this->registerCss("
 
 To implement AJAX inside a block the following concept is used:
 
-+ `\luya\cms\base\InternalBaseBlock::createAjaxLink()`: Create the link to the callback, this URL must be used for your AJAX requests.
++ <class name="luya\cms\base\InternalBaseBlock" method="createAjaxLink" />: Create the link to the callback, this URL must be used for your AJAX requests.
 + `callback...()`: Define a callback, you have to prefix the method with *callback*.
 
 Create a callback and define all parameters. The callback is what the URL returns to your JavaScript which can be HTML or JSON.
@@ -280,7 +280,7 @@ class MySuperGroup extends \luya\cms\base\BlockGroup
 
 > The position of the block will start from lower to higher, means 1 will be at the top of the groups list in the administration and even higher will be more at the bottom.
 
-The folder will be created on import. Now blocks can belong to this folder, to do so override the `\luya\cms\base\BlockInterface::blockGroup` method of your block:
+The folder will be created on import. Now blocks can belong to this folder, to do so override the <class name="luya\cms\base\BlockInterface" method="blockGroup"/> method of your block:
 
 ```php
 public function blockGroup()
@@ -300,7 +300,7 @@ You can also use one of the predefined group block class:
 
 ## Block variations
 
-In order to extend a block with a special behaviour the `blockVariations` property of the `cmsadmin` module can be configured inside your general config like in the example below:
+In order to extend a block with a special behaviour the <class name="luya\cms\admin\Module" prop="blockVariations" /> property of the `cmsadmin` module can be configured inside your general config like in the example below:
 
 ```php
 'cmsadmin' => [

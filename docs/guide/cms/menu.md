@@ -1,9 +1,8 @@
 # Menus & Navigations
 
-The `\luya\cms\Menu` component allows you to build website navigations. The menu component is part of the **CMS** module.
+The <class name="luya\cms\Menu" /> component allows you to build website navigations. The menu component is part of the **CMS** module.
 
-You can access the `\luya\cms\Menu` component trough `Yii::$app->menu`. This component help you to create menus, find childs, get items of containers, get property data and much more. 
-The menu component is automatically registered when adding the CMS module to your config.
+You can access the <class name="luya\cms\Menu" /> component trough `Yii::$app->menu`. This component help you to create menus, find childs, get items of containers, get property data and much more. The menu component is automatically registered when adding the CMS module to your config.
 
 The menu component is registered automatically in your config, if you need to configure or modify settings the registration of the componeont looks like this:
 
@@ -19,23 +18,23 @@ return [
 ]
 ```
 
-When you request a menu item, you will always get a `\luya\cms\menu\Item` object which provides a lot of getter methods.
+When you request a menu item, you will always get a <class name="luya\cms\menu\Item" /> object which provides a lot of getter methods.
 
-The menu component automatically loads the `\luya\cms\Menu::getCurrent()` active menu item based on your current language which will be evaluated by the `\luya\web\Composition` component.
+The menu component automatically loads the <class name="luya\cms\Menu" method="getCurrent" /> active menu item based on your current language which will be evaluated by the <class name="luya\web\Composition" /> component.
 
 ## Get the current page
 
-One of the most important features is to get the current active menu item, to retrieve the current menu object use `\luya\cms\Menu::getCurrent()`:
+One of the most important features is to get the current active menu item, to retrieve the current menu object use <class name="luya\cms\Menu" method="getCurrent" />:
 
 ```php
 Yii::$app->menu->current->link; // same as: Yii::$app->menu->getCurrent()->getLink():
 ```
 
-Where `\luya\cms\Menu::getCurrent()` returns a `\luya\cms\menu\Item` you can access other information like `\luya\cms\menu\Item::getLink()`, `\luya\cms\menu\Item::getTitle()` etc.
+Where <class name="luya\cms\Menu" method="getCurrent" /> returns a <class name="luya\cms\menu\Item" /> you can access other information like <class name="luya\cms\menu\Item" method="getLink" />, <class name="luya\cms\menu\Item" method="getTitle" /> etc.
 
 ## Get the homepage
 
-To get the homepage object use `\luya\cms\Menu::getHome` method which will return a `\luya\cms\menu\Item` as well:
+To get the homepage object use <class name="luya\cms\Menu" method="getHome" /> method which will return a <class name="luya\cms\menu\Item" /> as well:
 
 ```php
 Yii::$app->menu->home->title; // same as: Yii::$app->menu->getHome()->getTitle();
@@ -43,9 +42,9 @@ Yii::$app->menu->home->title; // same as: Yii::$app->menu->getHome()->getTitle()
 
 ## Building menu navigation
 
-To list navigation data of the menu use the `\luya\cms\Menu::find()` method which returns a `\luya\cms\menu\Query` object you can defined where statements and return either `\luya\cms\menu\Query::one()`, `\luya\cms\menu\Query::all()` or `\luya\cms\menu\Query::count()`. As shortcut you can use the `\luya\cms\Menu::findAll()` or `\luya\cms\Menu::findOne()` method.
+To list navigation data of the menu use the <class name="luya\cms\Menu" method="find" /> method which returns a <class name="luya\cms\menu\Query" /> object you can defined where statements and return either <class name="luya\cms\menu\Query" method="one" />, <class name="luya\cms\menu\Query" method="all" /> or <class name="luya\cms\menu\Query" method="count" />. As shortcut you can use the <class name="luya\cms\Menu" method="findAll" /> or <class name="luya\cms\Menu" method="findOne" /> method.
 
-Using `\luya\cms\menu\Query::one()` or `\luya\cms\Menu::findOne()` return an `\luya\cms\menu\Item`. Foreachable responses from `\luya\cms\menu\Query::all()` or `\luya\cms\Menu::findAll()` return an `\luya\cms\menu\Iterator` instead.
+Using <class name="luya\cms\menu\Query" method="one" /> or <class name="luya\cms\Menu" method="findOne" /> return an <class name="luya\cms\menu\Item" />. Foreachable responses from <class name="luya\cms\menu\Query" method="all" /> or <class name="luya\cms\Menu" method="findAll" /> return an <class name="luya\cms\menu\Iterator" /> instead.
 
 #### find()
 
@@ -59,7 +58,7 @@ As navigations are stored in containers you mostly want to return the root level
 </ul>
 
 ```
-Which is equals to the `\luya\cms\Menu::findAll()` method with where parameters:
+Which is equals to the <class name="luya\cms\Menu" method="findAll" /> method with where parameters:
 
 ```php
 <ul>
@@ -77,7 +76,7 @@ findAll(['parent_nav_id' => 0, 'container' => 'footer']);
 
 #### where()
 
-You can also use `where()` expression to customize the menu output:
+You can also use <class name="luya\cms\menu\Query" method="where" /> expression to customize the menu output:
 
 ```php
 Yii::$app->menu->find()->where(['!=', 'is_active', 0])->andWhere(['==', 'parent_nav_id', 0])->all();
@@ -89,7 +88,7 @@ Using in conditions:
 Yii::$app->menu->find()->where(['in', 'id', [1,2,3,4,5,6]])->all();
 ```
 
-The following `where()` operators are available inside a condition:
+The following <class name="luya\cms\menu\Query" method="where" /> operators are available inside a condition:
 
 |Operator|Description
 |---|---
@@ -103,7 +102,7 @@ The following `where()` operators are available inside a condition:
 
 #### findOne()
 
-To retrieve just a single menu item from the menu component based on *equal* where condition, you can use the `\luya\cms\Menu::findOne` method:
+To retrieve just a single menu item from the menu component based on *equal* where condition, you can use the <class name="luya\cms\Menu" method="findOne" /> method:
 
 ```php
 Yii::$app->menu->findOne(['id' => 1])->link;
@@ -119,7 +118,7 @@ Yii::$app->menu->find()->where(['parent_nav_id' => 0])->with(['hidden'])->all();
 
 ## Breadcrumbs
 
-To get the current breadcrumbs of the current menu item you can use the item object method `\luya\cms\menu\Item::getTeardown` to collect all items downwards from the current item, teardown contains the menu itself, `\luya\cms\menu\Item::getParents} is almost equals but without the element itself you have applied the method. The `\luya\cms\menu\Item::getTeardown` method works of course on every `\luya\cms\menu\Item`, so you can teardown whatever you like to:
+To get the current breadcrumbs of the current menu item you can use the item object method <class name="luya\cms\menu\Item" method="getTeardown" /> to collect all items downwards from the current item, teardown contains the menu itself, <class name="luya\cms\menu\Item" method="getParents" /> is almost equals but without the element itself you have applied the method. The <class name="luya\cms\menu\Item" method="getTeardown" /> method works of course on every <class name="luya\cms\menu\Item" />, so you can teardown whatever you like to:
 
 ```php
 <ol>
@@ -132,7 +131,7 @@ To get the current breadcrumbs of the current menu item you can use the item obj
 
 ## Menu Levels
 
-Sometimes you have navigation which should stick based on the previous item, assuming you have 2 menus, one on the top and the other on the left side, in order to display the second menu based on the current active menu you can use `luya\cms\Menu::getLevelContainer`:
+Sometimes you have navigation which should stick based on the previous item, assuming you have 2 menus, one on the top and the other on the left side, in order to display the second menu based on the current active menu you can use <class name="luya\cms\Menu" method="getLevelContainer" />:
 
 ```php
 // you print the first menu somewhere:
@@ -150,7 +149,7 @@ foreach (Yii::$app->menu->getLevelContainer(2) as $secondItem) {
 
 There is also a possibility to inject data into the menu component direct from every part of your web application. An item inject gives a module the possibility to add items into the menu container.
 
-The most important property of the `InjectItem` class is the `childOf` definition, this is where you have to define who is the parent *nav_item.id*. An item injection should be done during the after load event to attach at the right initializer moment of the item, but could be done any time. To inject an item use the `\luya\cms\Menu::injectItem` method on the menu container like below:
+The most important property of the <class name="luya\cms\menu\InjectItem" /> class is the `childOf` definition, this is where you have to define who is the parent *nav_item.id*. An item injection should be done during the after load event to attach at the right initializer moment of the item, but could be done any time. To inject an item use the <class name="luya\cms\Menu" method="injectItem" />` method on the menu container like below:
 
 ```php
 Yii::$app->menu->injectItem(new InjectItem([
@@ -196,7 +195,7 @@ Or as example inside the application configuration:
 
 ## Events
 
-The menu component triggers certain `yii\base\Event`. You can hook on those events in the configuration for your `luya\cms\menu\Component`:
+The menu component triggers certain <class name="yii\base\Event" />. You can hook on those events in the configuration for your <class name="luya\cms\menu\Component" />:
 
 ```php
 'components' => [
@@ -214,6 +213,6 @@ The menu component triggers certain `yii\base\Event`. You can hook on those even
 ]
 ```
 
-+ `eventOnItemFind`: This `luya\cms\frontend\events\MenuItemEvent` is triggered when a menu item is created in the menu. 
++ `eventOnItemFind`: This <class name="luya\cms\frontend\events\MenuItemEvent" /> is triggered when a menu item is created in the menu. 
 
-> See [Page Properties](properties), when working with `luya\cms\frontend\events\BeforeRenderEvent` events in page properties.
+> See [Page Properties](properties), when working with <class name="luya\cms\frontend\events\BeforeRenderEvent" /> events in page properties.

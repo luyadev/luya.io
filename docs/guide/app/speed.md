@@ -4,9 +4,7 @@ There are a few things you can do to speed up your application when running LUYA
 
 ## Caching
 
-You should always enable caching in production! Caching stores data inside the runtime folder which will reduce the number of SQL requests. The LUYA admin UI and CMS module are using the caching system where often for large and time consuming tasks.
-
-In order to enable the caching, open your config and add the caching to the components section:
+You should always enable caching in production! Caching stores data inside the runtime folder which will reduce the number of SQL requests. The LUYA admin UI and CMS module are using the caching system where often for large and time consuming tasks. In order to enable the caching, open your config and add the caching to the components section:
 
 ```php
 'components' => [
@@ -22,8 +20,6 @@ There are also a few other caching mechanism available and built in into Yii. Se
 
 ## Page Caching
 
-> since CMS 3.0
-
 It is als possible to cache the whole page response. This dramatically improves the page speed and is recommend to setup whenever its possible. By default the data is in the cache for 2 hours but will be destroyed when you edit or move blocks around on the given page.
 
 ![CMS Page Caching](../img/page-caching.png "CMS Page Caching")
@@ -36,13 +32,9 @@ In order to reduce the SQL requests you can also enable schema caching in your d
 
 ```php
 'components' => [
-
-    // ...
-    
     'db' => [
         'class' => 'yii\db\Connection',
-        // ...
-        'enableSchemaCache' => true,
+        'enableSchemaCache' => true, // <--
     ]
 ]
 ```

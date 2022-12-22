@@ -25,7 +25,7 @@ A theme has a recommend folder structure. Each theme **requires to have a `theme
 + `theme.json`: The theme configuration file contains all information about the theme itself like the name, description and optional array with path maps.
 + `composer.json`: The Composer configuration file is required to push the package to packagist and makes the installation process very fast.
 + `layouts/theme.php`: The layout file in the `layouts` folder is like the `layout.php` file in Yii applications and requires a `$content` variable.
-+ `cmslayouts/theme.php`: The CMS layout [[cms-layouts.md]] which should be taken. Those can be changed in the admin UI.
++ `cmslayouts/theme.php`: The CMS layout [CMS Layouts](../cms/cmslayouts) which should be taken. Those can be changed in the admin UI.
 
 ::: info
 Take a look at the LUYA Theme Skeleton Project: https://github.com/luyadev/luya-theme-skeleton
@@ -105,7 +105,7 @@ After a succesfull import of the new theme, the theme itself can be activated in
 
 ![theme-management](../img/theme-management.png "LUYA theme management")
 
-> For developing purposes themes can also be activated withing the `luya\theme\ThemeManager` component with `luya\theme\ThemeManager::$activeThemeName` property.
+> For developing purposes themes can also be activated withing the <class name="luya\theme\ThemeManager" /> component with <class name="luya\theme\ThemeManager" prop="activeThemeName" /> property.
 
 ## Additional path map (`pathMap`)
 
@@ -157,7 +157,6 @@ The order of view inheritance (pathMap) will looks like this:
 2. @app/views => [ @app/views, @blueTheme/views, @blankTheme/views ]
 3. @blueTheme/views => [ @app/views, @blueTheme/views, @blankTheme/views ]
 3. @blankTheme/views => [ @app/views, @blueTheme/views, @blankTheme/views ]
-
 
 At first search the requested path in the first column. On a match searching in the list of theme paths for a exists file in the defined order.
 

@@ -1,6 +1,6 @@
 # Hooks
 
-LUYA has a built in hooking mechanism which allows you to print code in various sections. The `luya\Hook` class is similar to [Yii events](https://www.yiiframework.com/doc-2.0/guide-concept-events.html).
+LUYA has a built in hooking mechanism which allows you to print code in various sections. The <class name="luya\Hook" /> class is similar to [Yii events](https://www.yiiframework.com/doc-2.0/guide-concept-events.html).
 
 Let´s assume we have a layout file with a section output which is used sometimes but could be blank as well:
 
@@ -25,9 +25,7 @@ Let´s assume we have a layout file with a section output which is used sometime
 
 ## Hooks setup
 
-Now a hooking listener is setup which is listening to the identifier `layoutFooter`. After setting up the hook listener, the `luya\Hook` can be filled with content from various files like blocks, controllers or widgets.
-
-Let´s assume we have a controller with an action:
+Now a hooking listener is setup which is listening to the identifier `layoutFooter`. After setting up the hook listener, the <class name="luya\Hook" /> can be filled with content from various files like blocks, controllers or widgets. Let´s assume we have a controller with an action:
 
 ```php
 class DefaultController extends \luya\web\Controller
@@ -63,7 +61,7 @@ class DefaultController extends \luya\web\Controller
 }
 ```
 
-If `luya\Hook::on()` is called multiple times in a request cycle the output will concated and sorted by execution time.
+If <class name="luya\Hook" method="on" /> is called multiple times in a request cycle the output will concated and sorted by execution time.
 
 ## Using array output
 
@@ -80,7 +78,7 @@ Hook::on('fooBarArray', function($hook) {
 });
 ```
 
-As the `luya\Hook::iterate()` method can be called multiple times the hook iteration array contains now 4 elements which can be rendered as following:
+As the <class name="luya\Hook" method="iterate" /> method can be called multiple times the hook iteration array contains now 4 elements which can be rendered as following:
 
 ```php
 <ul>

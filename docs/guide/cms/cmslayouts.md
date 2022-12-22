@@ -73,7 +73,7 @@ If a JSON file is used for the CMS layout the addition of new placeholders must 
 
 ## Provide CMS Layouts
 
-There are two ways of defining a CMS layout in order for importing them. Either use the folder structure, where it requires a folder named `cmslayouts` or there is an option to defined them inside the `luya\cms\admin\Module::$cmsLayouts` property.
+There are two ways of defining a CMS layout in order for importing them. Either use the folder structure, where it requires a folder named `cmslayouts` or there is an option to defined them inside the <class name="luya\cms\admin\Module" prop="cmsLayouts" /> property.
 
 ```php
 'cmsadmin' => [

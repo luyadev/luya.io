@@ -33,7 +33,7 @@ RUN chmod 777 /var/www/html/public_html/assets
 RUN chmod 777 /var/www/html/runtime
 ```
 
-By default this will load the `luya\Config` with `ENV_PROD`, you can adjust this by chaning the ENV variable `LUYA_CONFIG_ENV` on run or build time.
+By default this will load the <class name="luya\Config" /> with `ENV_PROD`, you can adjust this by chaning the ENV variable `LUYA_CONFIG_ENV` on run or build time.
 
 ## Configure your Application
 

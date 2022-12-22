@@ -52,7 +52,7 @@ export default {
           { text: 'Mac OSX', link: '/guide/installation/mac' },
           { text: 'Common Problems', link: '/guide/installation/problems' },
           { text: 'Upgrade', link: '/guide/installation/upgrade' },
-          { text: 'Structure&Config', link: '/guide/installation/structure' },
+          { text: 'Structure & Config', link: '/guide/installation/structure' },
           { text: 'Environments', link: '/guide/installation/environments' },
           { text: 'Cloud & Docker', link: '/guide/installation/cloud' }
         ]

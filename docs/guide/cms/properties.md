@@ -1,6 +1,6 @@
 # CMS page properties
 
-Page properties are personalised settings you can apply to specific pages. Once a property has defined, it can be applied to every page. 
+Page <class name="luya\admin\base\Property" /> are personalised settings you can apply to specific pages. Once a property has defined, it can be applied to every page. 
 
 Let us assume you would like to use different colors on different pages, therefore you can create a color property where the user can select a specific color for each page. Once the property is set you can use them in your view files, or [blocks](/guide/cms/blocks), or [cms layouts](/guide/cms/cmslayouts) components.
 
@@ -46,20 +46,20 @@ After running the import command, you will see the property in the CMS admin. To
 3. Press *Page properties*.
 4. Here you can find all the properties which you have defined as described above.
 
-In order to understand the methods in depth refer to the API Guide `\luya\admin\base\Property`.
+In order to understand the methods in depth refer to the API Guide <class name="luya\admin\base\Property" />.
 
 There is a set of predefined properties provided from which you can extend because some uses cases require that you override the `getValue()` method in order to change the value output. As this is a common scenario we have built classes so you can abstract this.
 
 Predefined properties you might extend from:
 
-+ `luya\admin\base\ImageProperty`
-+ `luya\admin\base\CheckboxProperty`
-+ `luya\admin\base\CheckboxArrayProperty`
-+ `luya\admin\base\RadioProperty`
++ <class name="luya\admin\base\ImageProperty" />
++ <class name="luya\admin\base\CheckboxProperty" />
++ <class name="luya\admin\base\CheckboxArrayProperty" />
++ <class name="luya\admin\base\RadioProperty "/>
 
 #### Image property Example
 
-The image property is often used to return the path of an uploaded image, so you can abstract your property from `\luya\admin\base\ImageProperty` like in the example below:
+The image property is often used to return the path of an uploaded image, so you can abstract your property from <class name="luya\admin\base\ImageProperty" /> like in the example below:
 
 ```php
 class MyImageProperty extends \luya\admin\base\ImageProperty
@@ -126,7 +126,7 @@ A very common scenario is to add properties to an existing menu item like an ima
 <?php endforeach; ?>
 ```
 
-> When dealing with large menus you can preload the models (including properties) for a given menu query by using `luya\cms\menu\Query::preloadModels` or `luya\cms\Menu::findAll` with the second statement `true`.
+> When dealing with large menus you can preload the models (including properties) for a given menu query by using <class name="luya\cms\menu\Query" prop="preloadModels" /> or <class name="luya\cms\Menu" method="findAll" /> with the second argument `true`.
 
 #### Access in layouts
 
@@ -156,7 +156,7 @@ You can use events inside your block to modify the behavior of your page:
 
 |Name | Description |
 |---  | ---
-|`EVENT_BEFORE_RENDER`    |This event will be triggered before the page get rendered, you can set `$event->isValid` to `false` to prevent the system from further outputs.
+|`EVENT_BEFORE_RENDER`|This event will be triggered before the page get rendered, you can set `$event->isValid` to `false` to prevent the system from further outputs.
 
 Example of `EVENT_BEFORE_RENDER`:
 
@@ -174,6 +174,3 @@ public function beforeRender($event)
     }
 }
 ```
-
-
-

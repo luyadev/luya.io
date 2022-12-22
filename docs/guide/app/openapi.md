@@ -12,10 +12,10 @@ The purpose of the generator is to have documentation where it should belong, in
 To generate the OpenAPI File the `cebe/php-openapi` Composer package is required, install the library with `composer require cebe/php-openapi`.
 :::
 
-In order to enable the OpenAPI Endpoint you can either use `remoteToken` or ` publicOpenApi` property:
+In order to enable the OpenAPI Endpoint you can either use <class name="luya\web\Application" prop="remoteToken" /> or <class name="luya\admin\Module" prop="publicOpenApi" /> property:
 
-+ `remoteToken`: If a `luya\web\Application::remoteToken` is defined, the `?token=sha1($remoteToken)` param can be used to retrieve the OpenAPI defintion: `https://yourdomain.com/admin/api-admin-remote/openapi?token=8843d7f92416211de9ebb963ff4ce28125932878` (where token is an sha1 encoded value of remoteToken)
-+ `publicOpenApi`: Enable `luya\admin\Module::$publicOpenApi` will expose the Endpoint `https://yourdomain.com/admin/api-admin-remote/openapi` to everyone, without any authentication or token.
++ `remoteToken`: If a <class name="luya\web\Application" prop="remoteToken" /> is defined, the `?token=sha1($remoteToken)` param can be used to retrieve the OpenAPI defintion: `https://yourdomain.com/admin/api-admin-remote/openapi?token=8843d7f92416211de9ebb963ff4ce28125932878` (where token is an sha1 encoded value of remoteToken)
++ `publicOpenApi`: Enable <class name="luya\admin\Module" prop="publicOpenApi" /> will expose the Endpoint `https://yourdomain.com/admin/api-admin-remote/openapi` to everyone, without any authentication or token.
 
 When developer settings are enabled in User Profile (Preferences -> General -> Developer Mode), a new debug panel with OpenAPI informations is shown:
 
@@ -58,9 +58,9 @@ class LangController extends Api
 }
 ```
 
-The above `luya\admin\ngrest\base\Api` will be generate all the `luya\rest\ActiveController` actions like list, detail view, create, update and delete. The specifications will be taken from the ActiveRecord isntance defined in $modelClass (luya\admin\models\Lang in the above case).
+The above <class name="luya\admin\ngrest\base\Api" /> will be generate all the <class name="luya\rest\ActiveController" /> actions like list, detail view, create, update and delete. The specifications will be taken from the ActiveRecord isntance defined in $modelClass (luya\admin\models\Lang in the above case).
 
-The `actionTest()` requires an param `$id` and will return a `luya\admin\models\Group` instance defined in PHP Doc, therefore this is what would be rendered:
+The `actionTest()` requires an param `$id` and will return a <class name="luya\admin\models\Group" /> instance defined in PHP Doc, therefore this is what would be rendered:
 
 ![OpenAPI Custom Action](../img/openapi-custom-action.png "OpenAPI Custom Action")
 
@@ -117,7 +117,7 @@ With the Yii Framework its very convient to make use of `actions()` definition a
 
 ## Change Verb
 
-In order to ensure all the actions have the correct verbs its recommend to use the `luya\base\Module::$rulRule` variable, which can declare or override actuall `yii\rest\UrlRule` patters or add extraPattersn:
+In order to ensure all the actions have the correct verbs its recommend to use the <class name="luya\base\Module" prop="urlRules" /> variable, which can declare or override actuall <class name="yii\rest\UrlRule" /> patters or add extraPattersn:
 
 An example of how to defined whether an actrin is only allowed for post or not, which is also taken into account when rendering the OpenAPI file:
 
@@ -140,7 +140,7 @@ The first example will map `POST api-admin-timestamp` to the index action, the s
 
 ## OpenAPI Client
 
-In order to consum the OpenAPI trough OpenAPI Client you have to turn off `luya\admin\Module::$jsonCruft` behavior in the `luya\Config` for the Admin Module:
+In order to consum the OpenAPI trough OpenAPI Client you have to turn off <class name="luya\admin\Module" prop="jsonCruft" /> behavior in the <class name="luya\Config" /> for the Admin Module:
 
 ```php
  'admin' => [

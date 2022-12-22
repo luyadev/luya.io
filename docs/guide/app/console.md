@@ -100,9 +100,9 @@ Now you could run the sync command like all other commands with `./vendor/bin/lu
 
 ### Views and UrlManger
 
-Its very often case where you like to render a view and send a mail inside a console command, like batch processing some data (newsletter for example). Therefore your views use the `luya\helpers\Url` class in order to generate urls.
+Its very often case where you like to render a view and send a mail inside a console command, like batch processing some data (newsletter for example). Therefore your views use the <class name="luya\helpers\Url" /> class in order to generate urls.
 
-As the console command does not know your web server URL and there is no parameter of your web server url, therefore LUYA has a special configuration property called `luya\traits\ApplicationTrait::$consoleHostInfo`.
+As the console command does not know your web server URL and there is no parameter of your web server url, therefore LUYA has a special configuration property called <class name="luya\traits\ApplicationTrait" prop="consoleHostInfo" />.
 
 This value will be used when defined as base URL for the urlManager.
 

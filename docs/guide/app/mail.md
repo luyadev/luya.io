@@ -1,6 +1,6 @@
 # LUYA Mail Component
 
-LUYA comes with a `luya\components\Mail` component that uses PHPMailer. You can access the mail component with `Yii::$app->mail` and start sending mails. To configure the component, override the class properties in your config as follows:
+LUYA comes with a <class name="luya\components\Mail" /> component that uses PHPMailer. You can access the mail component with `Yii::$app->mail` and start sending mails. To configure the component, override the class properties in your config as follows:
 
 ```php
 'components' => [
@@ -15,7 +15,7 @@ LUYA comes with a `luya\components\Mail` component that uses PHPMailer. You can 
 ]
 ```
 
-> Often there are different configuration needed which are depending on your hosting provider. Please have a closer look to `luya\components\Mail` to understand how and what can be configured to match the requirements of your email hosting provider.
+> Often there are different configuration needed which are depending on your hosting provider. Please have a closer look to <class name="luya\components\Mail" /> to understand how and what can be configured to match the requirements of your email hosting provider.
 
 In order to test your configurations you can run the console command `health/mailer`. The command will try to connect to your mail server trough your provided credentials. By default the mailer component requires a SMTP Server and is not using PHPs mail function.
 

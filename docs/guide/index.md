@@ -4,7 +4,6 @@ title: Intro
 
 # Intro
 
-
 ::: tip THIS IS LUYA
 + LUYA is **not a one-click** installation product like WordPress and others.
 + **Configuration** data is stored in versioned files (not in the database).
