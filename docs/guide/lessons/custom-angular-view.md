@@ -2,7 +2,7 @@
 
 Sometimes you just want to create your own view within the admin module with your own AngularJS controller, view and API responses. Therefore this lessons shows you what is needed, how to register and create a quick basic view within minutes.
 
-This lesson assumes, that you already have an admin UI module registered and running, see [[lesson-module.md]].
+This lesson assumes, that you already have an admin UI module registered and running, see [Module Lesson](module.md)
 
 ## Register menu
 
@@ -59,7 +59,7 @@ class FinderController extends Controller
 
 Create a the view file for the index action of the controller:
 
-```
+```js
 <script>
 zaa.bootstrap.register('MyController', ['$scope', '$http', function($scope, $http) {
 

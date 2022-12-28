@@ -2,7 +2,7 @@
 
 As APIs are the base concept of LUYA admin, you can modify and tweak them with a few changes in order to increase or customize the default behavior.
 
-Every API endpoint must be extending from the `luya\admin\ngrest\base\Api` class and define the `luya\admin\ngrest\base\Api::$modelClass`. A very basic implementation could look like this:
+Every API endpoint must be extending from the <class name="luya\admin\ngrest\base\Api" /> class and define the <class name="luya\admin\ngrest\base\Api" prop="modelClass" />. A very basic implementation could look like this:
 
 ```php
 class MyEndpoint extends Api
@@ -13,7 +13,7 @@ class MyEndpoint extends Api
 
 ## Expand Relations
 
-Its very common to join relation data for index list view in order to reduce SQL queries. To do so define the `luya\admin\ngrest\base\Api::withRelations()` method inside your API. This can be either an array with relations which will be passed to `index, list and view` or an array with a subdefintion in order to define which relation should be used in which scenario.
+Its very common to join relation data for index list view in order to reduce SQL queries. To do so define the <class name="luya\admin\ngrest\base\Api" method="withRelations" /> method inside your API. This can be either an array with relations which will be passed to `index, list and view` or an array with a subdefintion in order to define which relation should be used in which scenario.
 
 ```php
 public function withRelations()
@@ -22,7 +22,7 @@ public function withRelations()
 }
 ```
 
-The above relations will be auto added trough `yii\db\ActiveQuery::with()` if defined in `?expand=user,images`. In order to define view specific actions:
+The above relations will be auto added trough <class name="yii\db\ActiveQuery" method="with" /> if defined in `?expand=user,images`. In order to define view specific actions:
 
 ```php
 public function withRelations()
@@ -35,7 +35,7 @@ public function withRelations()
 }
 ```
 
-The Yii Framework has a very convenient way to work with model sub relations, using [expand](https://www.yiiframework.com/doc/guide/2.0/en/rest-resources) can also "unfold" sub relations when defined in `luya\admin\ngrest\base\NgRestModel::extraFields()`.
+The Yii Framework has a very convenient way to work with model sub relations, using [expand](https://www.yiiframework.com/doc/guide/2.0/en/rest-resources) can also "unfold" sub relations when defined in <class name="luya\admin\ngrest\base\NgRestModel" method="extraFields" />.
 
 ```php
 class XYZ extends NgRestModel
@@ -52,11 +52,11 @@ class XYZ extends NgRestModel
 }
 ```
 
-> The `luya\admin\ngrest\base\Api::withRelations()` will **eager load** the data, but in order to expand sub relations e.g. `user.country` the country relation must be defined in `luya\admin\ngrest\base\NgRestModel::extraFields()` `array_merge(['country'], parent::extraFields())` inside the User model.
+> The <class name="luya\admin\ngrest\base\Api" method="withRelations" /> will **eager load** the data, but in order to expand sub relations e.g. `user.country` the country relation must be defined in <class name="luya\admin\ngrest\base\NgRestModel" method="extraFields" /> `array_merge(['country'], parent::extraFields())` inside the User model.
 
 ## Pagination
 
-The LUYA API automaticcally enabled pagination after 200 rows, but you can also force this settings by configure the `luya\admin\ngrest\base\Api::$pagination` property:
+The LUYA API automaticcally enabled pagination after 200 rows, but you can also force this settings by configure the <class name="luya\admin\ngrest\base\Api" prop="pagination" /> property:
 
 ```php
 public $pagination = ['defaultPageSize' => 50];
@@ -73,7 +73,7 @@ public $pagination = [
 
 ## Extend index query
 
-You can override the prepare index query to preload relation data with `luya\admin\ngrest\base\Api::prepareIndexQuery()` if you just have to load relations we recommend to use `luya\admin\ngrest\base\Api::withRelations()` instead.
+You can override the prepare index query to preload relation data with <class name="luya\admin\ngrest\base\Api" method="prepareIndexQuery" /> if you just have to load relations we recommend to use <class name="luya\admin\ngrest\base\Api" method="withRelations" /> instead.
 
 ```php
 public function prepareIndexQuery()
@@ -86,7 +86,7 @@ Make sure to call the parent implementation!
 
 ## Extra URL Rules
 
-Since core 1.0.10 and admin 1.2.2 you can also provide some extra patterns for your APIs. With the configuration of `luya\base\Module::$apiRules` you can give every API a customized setup. As the rules are defined trough `yii\rest\UrlRule` you can now set extra pattern, exclude given actions or change tokens.
+Since core 1.0.10 and admin 1.2.2 you can also provide some extra patterns for your APIs. With the configuration of <class name="luya\base\Module" prop="apiRules" /> you can give every API a customized setup. As the rules are defined trough <class name="yii\rest\UrlRule" /> you can now set extra pattern, exclude given actions or change tokens.
 
 An example of adding a semantic get request action could look like this:
 
@@ -120,7 +120,7 @@ In the traditional way you would have to run the action `actionComments` like fo
 
 ## Filtering
 
-Sometimes you need to have additional filtering methods for a given API requests, therefore `yii\data\DataFilter` is ussed. Assuming you'd like filter row for a given where condition, like groups you have to create a Filtering Model and declare the filter model in the API.
+Sometimes you need to have additional filtering methods for a given API requests, therefore <class name="yii\data\DataFilter" /> is ussed. Assuming you'd like filter row for a given where condition, like groups you have to create a Filtering Model and declare the filter model in the API.
 
 Define the filter model:
 

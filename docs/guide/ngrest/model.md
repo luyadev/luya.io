@@ -1,16 +1,18 @@
 # NgRest Model
 
-The `luya\admin\ngrest\base\NgRestModel` is the base class for the API. It is implementing the `yii\db\ActiveRecord` class in order to find, update, create and delete database table data.
+The <class name="luya\admin\ngrest\base\NgRestModel" /> is the base class for the API. It is implementing the <class name="yii\db\ActiveRecord" /> class in order to find, update, create and delete database table data.
 
-> You should read the [[ngrest-concept.md]] in order to understand what the NgRest model is all about.
+::: tip
+You should read the [concept](index.md) in order to understand what the NgRest model is all about.
+:::
 
 ## Where do I configure it?
 
-Each NgRest model does have a `luya\admin\ngrest\base\NgRestModel::ngrestAttributeTypes()` method where you can define which type of fields you have and `luya\admin\ngrest\base\NgRestModel::ngRestConfig()` where you can define the fields for the specific scope (crud, list, create).
+Each NgRest model does have a <class name="luya\admin\ngrest\base\NgRestModel" method="ngrestAttributeTypes" /> method where you can define which type of fields you have and <class name="luya\admin\ngrest\base\NgRestModel" method="ngRestConfig" /> where you can define the fields for the specific scope (crud, list, create).
 
 #### Define attribute types
 
-To define an attribute type for a specific attribute you have to override the `luya\admin\ngrest\base\NgRestModel::ngrestAttributeTypes()` method by returning an array where the key is the field and value the config of the [NgRest Plugin](/guide/ngrest/plugins).
+To define an attribute type for a specific attribute you have to override the <class name="luya\admin\ngrest\base\NgRestModel" method="ngrestAttributeTypes" /> method by returning an array where the key is the field and value the config of the [NgRest Plugin](plugins.md).
 
 An example of a definitions:
 
@@ -28,9 +30,9 @@ public function ngrestAttributeTypes()
 }
 ```
 
-A definition contains always the attribute (as key) and the NgRest plugin config. If you have to pass arguments to the plugin object you can define an array where the first key is the name of the plugin and the other keys are the plugin properties. Take a look at all [NgRest Plugins](/guide/ngrest/plugins).
+A definition contains always the attribute (as key) and the NgRest plugin config. If you have to pass arguments to the plugin object you can define an array where the first key is the name of the plugin and the other keys are the plugin properties. Take a look at all [NgRest Plugins](plugins.md).
 
-> Keep in mind that when a plugin is attached to a field, it will override the original value from the database. Examples are shown in the [Select Plugin Guide](/guide/ngrest/plugin-select)
+> Keep in mind that when a plugin is attached to a field, it will override the original value from the database. Examples are shown in the [Select Plugin Guide](plugin-select.md)
 
 #### Scope and NgRest config
 
@@ -42,9 +44,8 @@ There are different scope pointers you can configure in order to tell your forms
 |create    |Forms to create a new record with the given columns.
 |update    |Forms to update an existing record with the given columns.
 |delete    |Define whether items of the data table can be deleted or not. To activate deletion set this pointer to `true`.
-|aw        |Attach a [[/guide/ngrest/activewindow]] to each row in the list overview, e.g. a button next to edit button.
 
-As you know what section/scope you can define with your already defined attributes you have to define the `luya\admin\ngrest\base\NgRestModel::ngRestConfig()` method, this could look as followed:
+As you know what section/scope you can define with your already defined attributes you have to define the <class name="luya\admin\ngrest\base\NgRestModel" method="ngRestScopes" /> method, this could look as followed:
 
 ```php
 public function ngRestScopes()
@@ -57,14 +58,13 @@ public function ngRestScopes()
 }
 ```
 
-The primary key column will be auto added to the list scope, in order to hide the ID column or other columns set `luya\admin\ngrest\base\Plugin::$hideInList` to `true` in `ngRestAttributeTypes()`. Be sure that the attribute is added to the `list` scope in `ngRestScopes()`:
+The primary key column will be auto added to the list scope, in order to hide the ID column or other columns set <class name="luya\admin\ngrest\base\Plugin" prop="hideInList" /> to `true` in `ngRestAttributeTypes()`. Be sure that the attribute is added to the `list` scope in `ngRestScopes()`:
 
 ```php
 public function ngRestAttributeTypes()
 {
     return [
         'id' => ['number', 'hideInList' => true],
-        //...
     ];
 }
 
@@ -72,7 +72,6 @@ public function ngRestScopes()
 {
     return [
         ['list', ['id', /* ... */ ]],
-        //...
     ];
 }
 ```
@@ -91,11 +90,11 @@ public function ngRestScopes()
 }
 ``` 
 
-This will trigger the `luya\admin\ngrest\base\NgRestModel::delete()` method and will irrevocable remove the given record. You can override the `luya\admin\ngrest\base\NgRestModel::delete()` method to change the behavior of a deletion or using `luya\admin\traits\SoftDeleteTrait`.
+This will trigger the <class name="luya\admin\ngrest\base\NgRestModel" method="delete" /> method and will irrevocable remove the given record. You can override the <class name="luya\admin\ngrest\base\NgRestModel" method="delete" /> method to change the behavior of a deletion or using <class name="luya\admin\traits\SoftDeleteTrait" />.
 
 ## Multlingual / i18n fields
 
-You can define all fields as multi lingual by the following setting:
+You can define all fields as multi lingual by the following setting the <class name="luya\admin\ngrest\base\NgRestModel" prop="i18n" />:
 
 ```php
 public $i18n = ['title', 'description'];
@@ -105,19 +104,21 @@ This will automatically enable the options to add content for all languages to e
 
 When casting a field as i18n it will save the multi lingual data in JSON format in the database.
 
-> All i18n fields must be type of varchar or text in the database as it is JSON encodes the input array in the database table field.
+::: warning
+All i18n fields must be type of varchar or even better as text in the database as it is JSON encodes the input array in the database table field. Which mostly requires more then 255 chars.
+:::
 
 The i18n fields will be saved as JSON with a string entry for every CMS language. If you access a field, the value for the current CMS language will be automatically extracted. To access the i18n fields as JSON without the automatic conversion, use `$this->getOldAttribute('FIELDNAME')`. This is helpful when manually wanting to check/validate the entries for every language.
 
 ## Extra fields
 
-Sometimes you want to define fields which are not part of the ActiveRecord model and are not part of the database table, e. g. you want to display a count of registered users on the CRUD list. To achieve this you may use the `extraFields` principal combined with the `yii\base\BaseObject` getter/setter information.
+Sometimes you want to define fields which are not part of the ActiveRecord model and are not part of the database table, e. g. you want to display a count of registered users on the CRUD list. To achieve this you may use the <class name="luya\admin\ngrest\base\NgRestModel" method="extraFields" /> principal combined with the <class name="yii\base\BaseObject" /> getter/setter information.
 
 Extra fields require:
 
 + A getter method. `getRegisteredCount()`
-+ A defintion entry in `\luya\admin\ngrest\base\NgRestModel::ngRestExtraAttributeTypes()`. `'registeredCount' => 'number'`
-+ A validation rule assigned to the attribute name using `\luya\admin\ngrest\base\NgRestModel::rules()`.  `['registeredCount', 'safe']`
++ A defintion entry in <class name="luya\admin\ngrest\base\NgRestModel" method="ngRestExtraAttributeTypes" />. `'registeredCount' => 'number'`
++ A validation rule assigned to the attribute name using <class name="luya\admin\ngrest\base\NgRestModel" method="rules" />.  `['registeredCount', 'safe']`
 
 ```php
 public function getRegisteredCount()
@@ -126,7 +127,7 @@ public function getRegisteredCount()
 }
 ```
 
-Now we have an extraField with the name `registeredCount`. When accessing this extra field the getter method `getRegisteredCount()` will execute and the number of users will be returned. In order to get this additional into the CRUD list grid view you have to define the extra field in `\luya\admin\ngrest\base\NgRestModel::ngRestExtraAttributeTypes()` like the other not extra attribute fields.
+Now we have an extraField with the name `registeredCount`. When accessing this extra field the getter method `getRegisteredCount()` will execute and the number of users will be returned. In order to get this additional into the CRUD list grid view you have to define the extra field in <class name="luya\admin\ngrest\base\NgRestModel" method="ngRestExtraAttributeTypes" /> like the other not extra attribute fields.
 
 ```php
 public function ngRestExtraAttributeTypes()
@@ -137,9 +138,9 @@ public function ngRestExtraAttributeTypes()
 }
 ```
 
-> The `ngRestExtraAttributeTypes()` defined attributes will be automatically added to `luya\luya\admin\ngrest\base\NgRestModel::extraFields()`.
+> The <class name="luya\admin\ngrest\base\NgRestModel" method="ngRestExtraAttributeTypes" /> defined attributes will be automatically added to <class name="luya\admin\ngrest\base\NgRestModel" method="extraFields" /> section.
 
-In order to work with this new defined extraibue pass the extra to the `\luya\admin\ngrest\base\NgRestModel::ngRestScopes()` definition.
+In order to work with this new defined extraibue pass the extra to the <class name="luya\admin\ngrest\base\NgRestModel" method="ngRestScopes" /> definition.
 
 ```php
 public function ngRestScopes($)
@@ -151,7 +152,7 @@ public function ngRestScopes($)
 }
 ```
 
-Its also required to add a validation rule using `\luya\admin\ngrest\base\NgRestModel::rules()` for the given attribute, as all attributes defined in `\luya\admin\ngrest\base\NgRestModel::ngRestScopes()` will be looked up in the list of `\luya\admin\ngrest\base\NgRestModel::rules()`.
+Its also required to add a validation rule using <class name="luya\admin\ngrest\base\NgRestModel" method="rules" /> for the given attribute, as all attributes defined in <class name="luya\admin\ngrest\base\NgRestModel" method="ngRestScopes" /> will be looked up in the list of <class name="luya\admin\ngrest\base\NgRestModel" method="rules" />.
 
 #### Extra Attribute without Value
 
@@ -160,17 +161,17 @@ In certain siutation the extra field is not bound to any data, therefore you can
 ```php
 public function ngRestExtraAttributeTypes()
 {
-     return [
+    return [
         'id.indexField' => ['index'],
     ];
 }
 ```
 
-This will use the root attribute id which is present in the view, this can be usefull when using `luya\admin\ngrest\plugins\Angular` plugins.
+This will use the root attribute id which is present in the view, this can be usefull when using <class name="luya\admin\ngrest\plugins\Angular" /> plugins.
 
 ## Default Order (Sorting)
 
-By default the gird list is sorted by the primary key (mostly known as ID) in descending direction. To override the default implement just override the `ngRestListOrder` method with an array where the key is the field and value the direction of sorting.
+By default the gird list is sorted by the primary key (mostly known as ID) in descending direction. To override the default implement just override the <class name="luya\admin\ngrest\base\NgRestModel" method="ngRestListOrder" /> method with an array where the key is the field and value the direction of sorting.
 
 ```php
 public function ngRestListOrder()
@@ -183,11 +184,11 @@ Now the default ordering of the grid list data is by the field *timestamp_create
 + `SORT_ASC` = From lower to bigger chars/numbers *1,2,3,..*
 + `SORT_DESC` = From bigger to lower chars/numbers *...,3,2,1*
 
-> In order allow sorting for joined fields (using e.g. SelectModel) take a look at `luya\admin\ngrest\base\Plugin::setSortField()`
+> In order allow sorting for joined fields (using e.g. SelectModel) take a look at <class name="luya\admin\ngrest\base\Plugin" method="setSortField" />.
 
 ## Group by Field Value
 
-To generate more user friendly CRUD list panels the ability to group fields helps a lot in case of usability. This will automatically group the field values for the defined field and removes the column if the defined group field. To define a default group by policy override the `\luya\admin\ngrest\base\NgRestModel::ngRestGroupByField()` method by returning a string with the field name where the group should be applied to:
+To generate more user friendly CRUD list panels the ability to group fields helps a lot in case of usability. This will automatically group the field values for the defined field and removes the column if the defined group field. To define a default group by policy override the <class name="luya\admin\ngrest\base\NgRestModel" method="ngRestGroupByField" /> method by returning a string with the field name where the group should be applied to:
 
 ```php
 public function ngRestGroupByField()
@@ -200,7 +201,7 @@ The field (e. g. `cat_id`) must exist in the list pointer config array.
 
 ## Grid list adding user filters
 
-Sometimes the users should be able to filter the CRUD list data based on different `where conditions. Let´s assume we have some calendar data with huge amount of data. Now the admin UI user should have the possibility to see already past calendar entries and upcoming calendar entries. To do so we create a new filter for this NgRest model. To provide filters we have to override the method `\luya\admin\ngrest\base\NgRestModel::ngRestFilters()` and provide an array with a name and a find statement to collect the data, e.g. based on the example described above:
+Sometimes the users should be able to filter the CRUD list data based on different where conditions. Let´s assume we have some calendar data with huge amount of data. Now the admin UI user should have the possibility to see already past calendar entries and upcoming calendar entries. To do so we create a new filter for this NgRest model. To provide filters we have to override the method <class name="luya\admin\ngrest\base\NgRestModel" method="ngRestFilters" /> and provide an array with a name and a find statement to collect the data, e.g. based on the example described above:
 
 ```php
 public function ngRestFilters()
@@ -217,7 +218,7 @@ Keep in mind the query provider [yii\data\ActiveDataProvider](https://www.yiifra
 
 ## Override ngRestFind
 
-In order to customize the grid list query to hide (or join) data from the grid list view you can override the `\luya\admin\ngrest\base\NgRestModel::ngRestFind()` public static method. This method will be called to retrieve all your data, e.g. we want to list all news entries which have the status `is_archived` and not 1 (represents an archived news message) than you could override the ngRestFind method as followed:
+In order to customize the grid list query to hide (or join) data from the grid list view you can override the <class name="luya\admin\ngrest\base\NgRestModel" method="ngRestFind" /> public static method. This method will be called to retrieve all your data, e.g. we want to list all news entries which have the status `is_archived` and not 1 (represents an archived news message) than you could override the ngRestFind method as followed:
 
 ```php
 public static function ngRestFind()
@@ -261,7 +262,7 @@ When using an angular service injection, make sure to use strict di which is req
 
 ## CRUD Relation Tabs
 
-Sometimes it is useful and common to directly manage relational data inside the current NgRest CRUD. Therefore we have created something called `\luya\admin\ngrest\base\NgRestModel::ngRestRelations()`. Inside this method you can define relations which are also based on the NgRest concept.
+Sometimes it is useful and common to directly manage relational data inside the current NgRest CRUD. Therefore we have created something called <class name="luya\admin\ngrest\base\NgRestModel" method="ngRestRelations" />. Inside this method you can define relations which are also based on the NgRest concept.
 
 ```php
 public function ngRestRelations()
@@ -281,24 +282,24 @@ public function getSales()
 }
 ``` 
 
-Take a look at `luya\admin\ngrest\base\NgRestRelation` for the full object configuration properties.
+Take a look at <class name="luya\admin\ngrest\base\NgRestRelation" /> for the full object configuration properties.
 
 
-The above example will use the `getSales()` method of the current model where you are implementing this relation. The `getSales()` must return an `yii\db\QueryInterface` Object, for example you can use `$this->hasMany(Model, ['key' => 'rel'])` or `new \yii\db\Query()`.
+The above example will use the `getSales()` method of the current model where you are implementing this relation. The `getSales()` must return an <class name="yii\db\QueryInterface" /> Object, for example you can use `$this->hasMany(Model, ['key' => 'rel'])` or `new \yii\db\Query()`.
 
-> Tip: If you generate an NgRest model for a relation which is not used in any other situations you can hide those items from the menu, but not from the permission system. To hide en element add the hiddenInMenu option in the `\luya\admin\base\Module::getMenu()` method of the module as following: `itemApi('name', 'route', 'icon', 'api', ['hiddenInMenu' => true])`.
+> Tip: If you generate an NgRest model for a relation which is not used in any other situations you can hide those items from the menu, but not from the permission system. To hide en element add the hiddenInMenu option in the <class name="luya\admin\base\Module" method="getMenu" /> method of the module as following: `itemApi('name', 'route', 'icon', 'api', ['hiddenInMenu' => true])`.
 
 If you like to display the name of the current element in the tabe you can define `'tabLabelAttribute' => 'fieldName'` where fieldName is the name of the attribute in the list overview.
 
 ## Soft Deletion 
 
-We have also added a soft delete trait `\luya\admin\traits\SoftDeleteTrait` which is going to override the default implementation of the `delete` method. When enabled and configure, the soft delete trait will only mark the datarecord to `is_deleted = 1` instead of removing it from the database.
+We have also added a soft delete trait <class name="luya\admin\traits\SoftDeleteTrait" /> which is going to override the default implementation of the `delete` method. When enabled and configure, the soft delete trait will only mark the datarecord to `is_deleted = 1` instead of removing it from the database.
 
 ```php
 use luya\admin\traits\SoftDeleteTrait;
 ```
 
-By default, soft delete trait will use the field `is_deleted` to find and delete data records, you can configure the field by overriding the `luya\admin\traits\SoftDeleteTrait::fieldStateDescriber()` method as followed:
+By default, soft delete trait will use the field `is_deleted` to find and delete data records, you can configure the field by overriding the <class name="luya\admin\traits\SoftDeleteTrait" method="fieldStateDescriber" /> method as followed:
 
 ```php
 public static function fieldStateDescriber()
@@ -312,9 +313,7 @@ public static function fieldStateDescriber()
 
 ## Scenarios
 
-The REST API uses the `restcreate` and `restupdate` scenarios in order to apply the rules. By default those rules are equals to the `default` rules which is generated by the `luya\admin\ngrest\base\NgRestModel::scenarios()` method.
-
-If you want to customize the REST scenarios fields as they may differ from the default rule based scenario fields you can override those fields:
+The REST API uses the `restcreate` and `restupdate` scenarios in order to apply the rules. By default those rules are equals to the `default` rules which is generated by the <class name="luya\admin\ngrest\base\NgRestModel" method="scenarios" /> method. If you want to customize the REST scenarios fields as they may differ from the default rule based scenario fields you can override those fields:
 
 ```php
 public function scenarios()

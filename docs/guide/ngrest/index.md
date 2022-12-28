@@ -9,15 +9,16 @@ The word *NgRest* is explained as follows: A**Ng**ular**Rest** (Representational
 
 ![ngrest-crud](../img/ngrest-crud.png "NgRest Image")
 
-> **Quick NgRest CRUD setup instructions:**
-> 1. Create a (admin) module `./vendor/bin/luya module/create`.
-> 2. Add the module to your application config within the modules section (see the generated README.md file in the module).
-> 3. Create a migration with a database table `./vendor/bin/luya migrate/create mytable modulename`.
-> 4. After preparation of the migration file (adding table and fields) run the migration command `./vendor/bin/luya migrate`.
-> 5. Run `./vendor/bin/luya admin/crud/create` and provide the needed information (like module name, table name, etc.).
-> 6. Copy the terminal output to the previous generated module file: `<YOUR_MODULE>/admin/Module.php`.
-> 7. Run the import command `./vendor/bin/luya import`
-> 8. Set permission in admin UI under `System -> User groups -> Permission`
+::: tip Quick NgRest CRUD setup instructions
+1. Create a (admin) module `./vendor/bin/luya module/create`.
+2. Add the module to your application config within the modules section (see the generated README.md file in the module).
+3. Create a migration with a database table `./vendor/bin/luya migrate/create mytable modulename`.
+4. After preparation of the migration file (adding table and fields) run the migration command `./vendor/bin/luya migrate`.
+5. Run `./vendor/bin/luya admin/crud/create` and provide the needed information (like module name, table name, etc.).
+6. Copy the terminal output to the previous generated module file: `<YOUR_MODULE>/admin/Module.php`.
+7. Run the import command `./vendor/bin/luya import`
+8. Set permission in admin UI under `System -> User groups -> Permission`
+:::
 
 #### Steps to understand and create an NgRest CRUD
 
@@ -35,7 +36,7 @@ Setup CRUD:
 
 ## Creating the model
 
-We assume you have a made a table via the migrations (in your example below we assume you make a team module with members) and execute the migrations. Now you can create an `ActiveRecord` model for the provided table. The model represents the data source for the REST API, you can create the model with the gii module extension or you can also generate the model and the rest of the classes with the `admin/crud/create` cli command.
+We assume you have a made a table via the migrations (in your example below we assume you make a team module with members) and execute the migrations. Now you can create an <class name="luya\admin\ngrest\base\NgRestModel" /> model for the provided table. The model represents the data source for the REST API, you can create the model with the gii module extension or you can also generate the model and the rest of the classes with the `admin/crud/create` cli command.
 
 Lets have a closer look how your model should look like, in our member example of the team module:
 
@@ -97,34 +98,34 @@ class Member extends \luya\admin\ngrest\base\NgRestModel
      * This is the api endpoint for the NgRest implementation, so the NgRest config needs to know where should
      * all the angular calls go.
      */
-     public static function ngRestApiEndpoint()
-     {
+    public static function ngRestApiEndpoint()
+    {
         return 'api-team-member';
-     }
+    }
      
-     /**
-      * @return array Returns an array with each scope containing which fields.
-      */
-     public function ngRestScopes()
-     {
-         return [
-             ['list', ['title', 'name']],
-             [['create', 'update'], ['title', 'name', 'text']],
-             ['delete', false],
-         ];
-     }
+    /**
+     * @return array Returns an array with each scope containing which fields.
+    */
+    public function ngRestScopes()
+    {
+        return [
+            ['list', ['title', 'name']],
+            [['create', 'update'], ['title', 'name', 'text']],
+            ['delete', false],
+        ];
+    }
 }
 ```
 
-You can read more about the configuration of the [[/guide/ngrest/model]].
+You can read more about the configuration of the [model](model.md).
 
 ## Creating controller and API
 
-Each NgRest CRUD needs an API (to make the REST call, create, update, list which are provided trough [Yii 2 RESTful](https://www.yiiframework.com/doc-2.0/guide-rest-quick-start.html)) and a controller which contains the AngularJS template for your `ngRestConfig()`. The API and the controller are basically only gateways for the output and do relate to the NgRest model:
+Each NgRest CRUD needs an API (to make the REST call, create, update, list which are provided trough [Yii 2 RESTful](https://www.yiiframework.com/doc-2.0/guide-rest-quick-start.html)) and a controller which contains the AngularJS template for your <class name="luya\admin\ngrest\base\NgRestModel" method="ngRestConfig" />. The API and the controller are basically only gateways for the output and do relate to the NgRest model:
 
 ### NgRest Controller
 
-The NgRest controller will prepare and render the forms based on your model. Therefore define the `luya\admin\ngrest\base\Controller::$modelClass` property with fresh created `luya\admin\ngrest\base\NgRestModel`.
+The NgRest controller will prepare and render the forms based on your model. Therefore define the <class name="luya\admin\ngrest\base\Controller" prop="modelClass" /> property with fresh created <class name="luya\admin\ngrest\base\NgRestModel" />.
 
 ```php
 <?php
@@ -136,7 +137,7 @@ class MemberController extends \luya\admin\ngrest\base\Controller
 }
 ```
 
-In order to extend the settings dropdown menu on right top corner you can define `luya\admin\ngrest\base\Controller::$globalButtons` which can interact with AngularJS or a controller action.
+In order to extend the settings dropdown menu on right top corner you can define <class name="luya\admin\ngrest\base\Controller" prop="globalButtons" /> which can interact with AngularJS or a controller action.
 
 ```php
 public $globalButtons = [
@@ -157,9 +158,7 @@ This would generate a new button in the settings dropdown which would call the a
 
 ### NgRest API
 
-The API controller will return the REST formatted data from your model.
-
-The API controller needs to know from which configuration of the API it should be build from, therefore define the `luya\admin\ngrest\base\Api::$modelClass` property with your defined `luya\admin\ngrest\base\NgRestModel`.
+The API controller will return the REST formatted data from your model. The API controller needs to know from which configuration of the API it should be build from, therefore define the <class name="luya\admin\ngrest\base\Api" prop="$modelClass" /> property with your defined <class name="luya\admin\ngrest\base\NgRestModel" />.
 
 ```php
 <?php
@@ -171,13 +170,13 @@ class MemberController extends \luya\admin\ngrest\base\Api
 }
 ```
 
-By default the pagination (pager) will be enabled if the count of rows is more then 250. You can disabled this behavior by turning of the `luya\admin\ngrest\base\Api::$autoEnablePagination`.
+By default the pagination (pager) will be enabled if the count of rows is more then 250. You can disabled this behavior by turning of the <class name="luya\admin\ngrest\base\Api" prop="autoEnablePagination" />.
 
 ```php
 public $autoEnablePagination = false;
 ```
 
-You can also force the API to always generate a pagination by setting `luya\admin\ngrest\base\Api::$pagination` property as followed:
+You can also force the API to always generate a pagination by setting <class name="luya\admin\ngrest\base\Api" prop="pagination" /> property as followed:
 
 ```php
 public $pagination = ['pageSize' => 100];
@@ -189,7 +188,7 @@ The last part of the NgRest process is to let your application know where your A
 
 ### API endpoint
 
-To let your application know which API´s are registered and where to find them. You have to open the admin module class of the module where the NgRest CRUD is located and add a linking entry into the {luya\admin\base\Module::$apis` property.
+To let your application know which API´s are registered and where to find them. You have to open the admin module class of the module where the NgRest CRUD is located and add a linking entry into the <class name="luya\admin\base\Module" prop="apis" /> property.
 
 ```php
 <?php
@@ -211,7 +210,7 @@ There are a few rules in how to choose the correct API endpoint name:
 
 ### Add to menu
 
-To store the permission information of your newly created NgRest CRUD you have to override the `getMenu()` method of your module class where the NgRest CRUD belongs to.
+To store the permission information of your newly created NgRest CRUD you have to override the <class name="luya\admin\Module" method="getMenu" /> method of your module class where the NgRest CRUD belongs to.
 
 ```php
 public function getMenu()

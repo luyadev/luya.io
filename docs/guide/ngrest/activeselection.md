@@ -1,14 +1,14 @@
-# Active Selection
+# Active Selections
 
-Active Selections are anlog to [[ngrest-activebutton.md]]. When `luya\admin\ngrest\base\NgRestModel::ngRestActiveSelections()` are defined, checkboxes will appear in the CRUD list (overview of all records) and a the active selection buttons are visible in the bottom. A click on the button interacts with the selected items/rows.
+<class name="luya\admin\ngrest\base\ActiveSelection" /> are anlog to [Active Buttons](activebutton.md). When <class name="luya\admin\ngrest\base\NgRestModel" method="ngRestActiveSelections" /> are defined, checkboxes will appear in the CRUD list (overview of all records) and a the active selection buttons are visible in the bottom. A click on the button interacts with the selected items/rows.
 
-There are built in Active Selections you can use and configure or you can create your own Active Selections and attach them to an [[/guide/ngrest/model]].
+There are built in Active Selections you can use and configure or you can create your own Active Selections and attach them to an [NgRestModel](model.md)
 
-+ `luya\admin\selections\DeleteActiveSelection`
++ <class name="luya\admin\selections\DeleteActiveSelection" />
 
 ## Inline
 
-Compare to [[ngrest-activebutton.md]] or [[/guide/ngrest/activewindow]] Active Selections can be defined inline as anonymus function inside the [[/guide/ngrest/model]] `luya\admin\ngrest\base\NgRestModel::ngRestActiveSelections()` method.
+Compare to [Active Buttons](activebutton.md) or [Active Windows](activewindow.md), the Active Selections can be defined inline as anonymus function inside the [NgRestModel](model.md) <class name="luya\admin\ngrest\base\NgRestModel" method="ngRestActiveSelections" /> method.
 
 #### Basic Usage
 
@@ -35,7 +35,7 @@ public function ngRestActiveSelections()
 
 #### Advanced Response
 
-Its possible to send a reload event, as well as customized success or error messages, therefore a second parameter of the callable is required which takes the `luya\admin\ngrest\base\ActiveSelection` context object.
+Its possible to send a reload event, as well as customized success or error messages, therefore a second parameter of the callable is required which takes the <class name="luya\admin\ngrest\base\ActiveSelection" /> context object.
 
 ```php
 public function ngRestActiveSelections()
@@ -61,7 +61,7 @@ public function ngRestActiveSelections()
 
 ## Standalone 
 
-In order to make a configurable and shareable Active Select extends from `luya\admin\ngrest\base\ActiveSelection` and override the `luya\admin\ngrest\base\ActiveSelection::handle()` method, see `luya\admin\selections\DeleteActiveSelection` as example.
+In order to make a configurable and shareable Active Select extends from <class name="luya\admin\ngrest\base\ActiveSelection" /> and override the <class name="luya\admin\ngrest\base\ActiveSelection" method="handle" /> method, see <class name="luya\admin\selections\DeleteActiveSelection" /> as example.
 
 ```php
 class DeleteActiveSelection extends ActiveSelection
@@ -102,7 +102,7 @@ class DeleteActiveSelection extends ActiveSelection
 
 ## Attaching
 
-Use the `luya\admin\ngrest\base\NgRestModel::ngRestActiveSelections()` method insde the desired [[/guide/ngrest/model]]:
+Use the <class name="luya\admin\ngrest\base\NgRestModel" method="ngRestActiveSelections" /> method insde the desired [NgRestModel](model.md):
 
 ```php
 public function ngRestActiveSelections()

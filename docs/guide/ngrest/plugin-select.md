@@ -6,9 +6,9 @@ Generates a dropdown (select) field based on given values.
 
 There are 3 different types of plugins:
 
-+ `luya\admin\ngrest\plugins\SelectArray`: Take dropdown values from an arrayy
-+ `luya\admin\ngrest\plugins\SelectRelationActiveQuery`: Determine Values from a Yii relation. Best performance and therefore recommend!
-+ `luya\admin\ngrest\plugins\SelectModel`: Database Query based select, bad performance but quick setup. Should not be used when making selects in a large table.
++ <class name="luya\admin\ngrest\plugins\SelectArray" />: Take dropdown values from an arrayy
++ <class name="luya\admin\ngrest\plugins\SelectRelationActiveQuery" />: Determine Values from a Yii relation. Best performance and therefore recommend!
++ <class name="luya\admin\ngrest\plugins\SelectModel" />: Database Query based select, bad performance but quick setup. Should not be used when making selects in a large table.
 
 ### SelectArray
 
@@ -25,7 +25,7 @@ public function ngrestAttributeTypes()
 
 ### SelectRelationActiveQuery
 
-When dealing with large tables the `luya\admin\ngrest\plugins\SelectRelationActiveQuery` class can handle large amount of data but there is no model callback for the label fields, it returns raw SQL data. In order to use this plugin you need to have a `hasOne` relation.
+When dealing with large tables the <class name="luya\admin\ngrest\plugins\SelectRelationActiveQuery" /> class can handle large amount of data but there is no model callback for the label fields, it returns raw SQL data. In order to use this plugin you need to have a `hasOne` relation.
 
 ```php
 'user_id' => [
@@ -35,7 +35,7 @@ When dealing with large tables the `luya\admin\ngrest\plugins\SelectRelationActi
 ]
 ```
 
-In order to access the data through a eager loaded relation, the relation name must be omited into the config. Assuming the example above `getUser()` would return a `$this->hasOne()` relation definition the `luya\admin\ngrest\plugins\SelectRelationActiveQuery::$relation` property can be configured to load the data from this relation:
+In order to access the data through a eager loaded relation, the relation name must be omited into the config. Assuming the example above `getUser()` would return a `$this->hasOne()` relation definition the <class name="luya\admin\ngrest\plugins\SelectRelationActiveQuery" prop="relation" /> property can be configured to load the data from this relation:
 
 ```php
 'user_id' => [
@@ -46,7 +46,7 @@ In order to access the data through a eager loaded relation, the relation name m
 ]
 ```
 
-In order to eager load the `user` relation withing API list calls, the `with()` defintion can be configured in `luya\admin\ngrest\base\Api::prepareListQuery()`:
+In order to eager load the `user` relation withing API list calls, the `with()` defintion can be configured in <class name="luya\admin\ngrest\base\Api" method="prepareListQuery" />:
 
 ```php
 public function prepareListQuery()
@@ -57,13 +57,16 @@ public function prepareListQuery()
 
 ### SelectModel
 
-Create a dropdown selection based on a `yii\db\ActiveRecord` model class:
+::: danger
+Whenever possible, do not use this plugin. In complex cases, it makes the application slow.
+:::
+
+Create a dropdown selection based on a <class name="yii\db\ActiveRecord" /> model class:
 
 ```php
 public function ngrestAttributeTypes()
 {
     return [
-        // ...
         'genres' => [
             'selectModel', 
             'modelClass' => Customers::className(), 
@@ -74,9 +77,7 @@ public function ngrestAttributeTypes()
 }
 ```
 
-You can define more options for the select model like `where statements and which fields should be displayed take a look at class API `luya\admin\ngrest\plugins\SelectModel` for more information.
-
-In order to generate a custom label field you can also pass a closure function:
+You can define more options for the select model like `where` statements and which fields should be displayed take a look at class API <class name="luya\admin\ngrest\plugins\SelectModel" /> for more information. In order to generate a custom label field you can also pass a closure function:
 
 ```php
 'labelField' => function($model) {
@@ -84,32 +85,34 @@ In order to generate a custom label field you can also pass a closure function:
 }
 ```
 
-> **Attention** Please keep in mind this plugin will override the default values from the database to display the REST API data. To prevent such a behavior use `luya\admin\ngrest\plugins\SelectRelationActiveQuery` instead.
-> 
-> ```php
-> public function getCustomer()
-> {
->     return $this->hasOne(Customer::class, ['id' => 'customer_id']);
-> }
-> ```
-> 
-> The above example **will not work** if the customer_id field as the value is already observed from the `selectModel` plugin. You can always access the old data (before the after find event) like this:
-> 
-> ```php
-> public function getOriginalCustomerId()
-> {
->     return $this->getOldAttribute('customer_id');
-> }
->     
-> public function getCustomer()
-> {
->     return $this->hasOne(Customer::class, ['id' => 'originalCustomerId']);
-> }
-> ```
+::: danger
+Please keep in mind this plugin will override the default values from the database to display the REST API data, this can have bad side effects. To prevent such a behavior use <class name="luya\admin\ngrest\plugins\SelectRelationActiveQuery" /> instead!
+ 
+```php
+public function getCustomer()
+{
+    return $this->hasOne(Customer::class, ['id' => 'customer_id']);
+}
+```
+
+The above example **will not work** if the customer_id field as the value is already observed from the `selectModel` plugin. You can always access the old data (before the after find event) like this:
+ 
+```php
+public function getOriginalCustomerId()
+{
+    return $this->getOldAttribute('customer_id');
+}
+     
+public function getCustomer()
+{
+    return $this->hasOne(Customer::class, ['id' => 'originalCustomerId']);
+}
+```
+:::
 
 ## Handling `null` empty values
 
-By default a **no selection** or a **reset of a currently selected** item will assign the value `null` to this field as defined in `luya\admin\ngrest\plugins\Select::$initValue`. This might make problem with handling empty [Yii validation rule inputs](https://www.yiiframework.com/doc/guide/2.0/en/input-validation#handling-empty-inputs) as `null` wont be threated. Therfore you could change initValue to `0` or change the validation rules to have a default value on empty:
+By default a **no selection** or a **reset of a currently selected** item will assign the value `null` to this field as defined in <class name="luya\admin\ngrest\plugins\Select" prop="initValue" />. This might make problem with handling empty [Yii validation rule inputs](https://www.yiiframework.com/doc/guide/2.0/en/input-validation#handling-empty-inputs) as `null` wont be threated. Therfore you could change initValue to `0` or change the validation rules to have a default value on empty:
 
 ```php
 return [

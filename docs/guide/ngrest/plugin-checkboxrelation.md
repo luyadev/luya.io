@@ -7,7 +7,7 @@ Ability to make an checkbox input where you can select items from another table 
 
 ## Active query relation
 
-The `luya\admin\ngrest\plugins\CheckboxRelationActiveQuery` plugin is the recommend way to work with via/junction tables or in other words, make a checkbox relation based on an active query relation definition inside your model:
+The <class name="luya\admin\ngrest\plugins\CheckboxRelationActiveQuery" /> plugin is the recommend way to work with via/junction tables or in other words, make a checkbox relation based on an active query relation definition inside your model:
 
 ```php
 class User extends \luya\admin\ngrest\base\NgRestModel
@@ -51,7 +51,7 @@ The difference is mainly to use a variable which is used to store and get data f
 
 ## No relation definition
 
-The `luya\admin\ngrest\plugins\CheckboxRelation` plugin is the quick and raw solution when working without relation definitions is needed.
+The <class name="luya\admin\ngrest\plugins\CheckboxRelation" /> plugin is the quick and raw solution when working without relation definitions is needed.
 
 Below, an example of a user model where you can select the related groups and stored in a via/ref table named `admin_user_group`:
 

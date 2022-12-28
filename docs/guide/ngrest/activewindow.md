@@ -1,6 +1,6 @@
-# NgRest Active Window
+# Active Windows
 
-An *NgRest ActiveWindow* is a concept to attach a modal window into a [NgRest CRUD list](index). The Active Window is always bound to an **ID** of an item and is represented as a button with an icon and/or an alias, e.g. a button in the CRUD list:
+An <class name="luya\admin\ngrest\base\ActiveWindow" /> is a concept to attach a modal window into a [NgRest CRUD list](index). The Active Window is always bound to an **ID** of an item and is represented as a button with an icon and/or an alias, e.g. a button in the CRUD list:
 
 ![button](../img/aw_button.png "Active Window button")
 
@@ -10,7 +10,9 @@ An example of an Active Window (Change Password) when clicked:
 
 ## Create an Active Window
 
-> Use the [`admin/active-window` console command](/guide/app/console) to generate a new Active Window.
+::: tip
+Use the [`admin/active-window` console command](/guide/app/console) to generate a new Active Window.
+:::
 
 A very basic example class with the name *TestActiveWindow* just renders an index and contains a callback:
 
@@ -50,7 +52,7 @@ Calling the callbacks
 
 ## Attaching the class
 
-In order to add an Active Window into your NgRest config it has to be added in the `luya\admin\ngrest\base\NgRestModel::ngRestActiveWindows()` method. As the Active Window contains the `yii\base\BaseObject` as extend class you can configure all public properties while the class is loading. Below, an example of how to load an Active Window class and define `label` and `icon` public properties. The alias and icon properties are present in every Active Window and can always be overridden.
+In order to add an Active Window into your NgRest config it has to be added in the <class name="luya\admin\ngrest\base\NgRestModel" method="ngRestActiveWindows" /> method. As the Active Window contains the <class name="yii\base\BaseObject" /> as extend class you can configure all public properties while the class is loading. Below, an example of how to load an Active Window class and define `label` and `icon` public properties. The alias and icon properties are present in every Active Window and can always be overridden.
 
 ```php
 public function ngRestActiveWindows()
@@ -82,7 +84,7 @@ To render view files you can run the method `$this->render()` inside your Active
 
 ## How to make a Button
 
-In order to create a button with a callback we use the `luya\admin\ngrest\aw\CallbackButtonWidget` widget. 
+In order to create a button with a callback we use the <class name="luya\admin\ngrest\aw\CallbackButtonWidget" /> widget. 
 
 Example of a view file:
 
@@ -101,9 +103,9 @@ public function callbackHelloWorld($name)
 
 There are a few built in widgets you can use:
 
-+ `luya\admin\ngrest\aw\CallbackButtonWidget` - Generate a button with a click to a callback.
-+ `luya\admin\ngrest\aw\CallbackButtonFileDownloadWidget` - Generate a button which will then provide a download of a given file.
-+ `luya\admin\ngrest\aw\ActiveWindowFormWidget` - Generate a form to submit data to a callback.
++ <class name="luya\admin\ngrest\aw\CallbackButtonWidget" /> - Generate a button with a click to a callback.
++ <class name="luya\admin\ngrest\aw\CallbackButtonFileDownloadWidget" /> - Generate a button which will then provide a download of a given file.
++ <class name="luya\admin\ngrest\aw\ActiveWindowFormWidget" /> - Generate a form to submit data to a callback.
 
 ## Generate a form
 
@@ -112,10 +114,8 @@ You can also use the callback from the widget to create a form sending data to a
 ```php
 <?php
 use luya\admin\ngrest\aw\ActiveWindowFormWidget;
-
-/* @var $this \luya\admin\ngrest\base\ActiveWindowView */
-/* @var $form \luya\admin\ngrest\aw\ActiveWindowFormWidget */ 
-
+/** @var \luya\admin\ngrest\base\ActiveWindowView $this */
+/** @var \luya\admin\ngrest\aw\ActiveWindowFormWidget $form */ 
 ?>
 <div>
     <?php $form = ActiveWindowFormWidget::begin(['callback' => 'post-data', 'buttonValue' => 'Submit']); ?>
@@ -137,11 +137,9 @@ public function callbackPostData($firstname, $lastname)
 
 ## AngularJS in view files
 
-As the admin UI is written in AngularJS which let´s you easily create inline AngularJS controllers to interact with your Active Window class.
+As the admin UI is written in AngularJS which let´s you easily create inline AngularJS controllers to interact with your Active Window class. The below view file shows an AngularJS controller which collects data from the the controller assigned into the view but uses `ng-repeat to display and render the data.
 
-The below view file shows an AngularJS controller which collects data from the the controller assigned into the view but uses `ng-repeat to display and render the data.
-
-```php
+```js
 <script>
 zaa.bootstrap.register('InlineController', ['$scope', function($scope) {
 
@@ -161,9 +159,7 @@ zaa.bootstrap.register('InlineController', ['$scope', function($scope) {
 </div>
 ```
 
-After the Active Window response from the function `addToList` has received the Active Window will be reloaded. This is just a very quick integration example and it does not give the user a true AngularJS experience but shows you how to deliver solutions in a very short time.
-
-When working with angular you might want to trigger some of the functions of the CRUD, here a list of what functions are callable and what they do:
+After the Active Window response from the function `addToList` has received the Active Window will be reloaded. This is just a very quick integration example and it does not give the user a true AngularJS experience but shows you how to deliver solutions in a very short time. When working with angular you might want to trigger some of the functions of the CRUD, here a list of what functions are callable and what they do:
 
 |Function|Description
 |--------|-----------
@@ -177,7 +173,7 @@ When working with angular you might want to trigger some of the functions of the
 ## Button permission level
 
 In addition to button condition a permission level can be set. This will ensure displaying the buttons only when proper permission level is met.
-This can be defined with the `permissionLevel` atrribute. Example:
+This can be defined with the <class name="luya\admin\ngrest\base\ActiveWindow" prop="permissionLevel" /> atrribute. Example:
 
 ```php
 public function ngRestActiveWindows()
@@ -208,9 +204,9 @@ The admin UI of LUYA provides some basic reusable Active Windows which you can r
 
 |Class|Description
 |--|--|
-|`\luya\admin\aws\TaggableActiveWindow`|Provides the option to set tags for the given record.
-|`\luya\admin\aws\ImageSelectCollectionActiveWindow`|Select images from the file manager and store them in a reference table.
-|`\luya\admin\aws\FlowActiveWindow`|Provides an image uploader (flow uploader) which are hidden in the filemanager and stored in a reference table.
-|`\luya\admin\aws\DetailViewActiveWindow`|A detail view where you can define the attributes with the given type or just print all fields with the corresponding value.
-|`\luya\admin\aws\ChangePasswordActiveWindow`|An option to change the password.
-|`\luya\admin\aws\CoordinatesActiveWindow`|Provides a view where you can find coordinates for a given location.
+|<class name="luya\admin\aws\TaggableActiveWindow" />|Provides the option to set tags for the given record.
+|<class name="luya\admin\aws\ImageSelectCollectionActiveWindow" />|Select images from the file manager and store them in a reference table.
+|<class name="luya\admin\aws\FlowActiveWindow" />|Provides an image uploader (flow uploader) which are hidden in the filemanager and stored in a reference table.
+|<class name="luya\admin\aws\DetailViewActiveWindow" />|A detail view where you can define the attributes with the given type or just print all fields with the corresponding value.
+|<class name="luya\admin\aws\ChangePasswordActiveWindow" />|An option to change the password.
+|<class name="luya\admin\aws\CoordinatesActiveWindow" />|Provides a view where you can find coordinates for a given location.

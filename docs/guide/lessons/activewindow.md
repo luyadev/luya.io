@@ -148,7 +148,7 @@ use luya\admin\ngrest\aw\ActiveWindowFormWidget;
 <?php $form::end(); ?>
 ```
 
-As you can see, we have used the `luya\admin\ngrest\aw\ActiveWindowFormWidget`. Besides the `luya\admin\ngrest\aw\CallbackButtonWidget` it is mostly what you will need to create a simple Active Window form with additional functionality. 
+As you can see, we have used the <class name="luya\admin\ngrest\aw\ActiveWindowFormWidget" />. Besides the <class name="luya\admin\ngrest\aw\CallbackButtonWidget" /> it is mostly what you will need to create a simple Active Window form with additional functionality. 
 
 We configured the widget to use our defined callback function in the Active Window class and show a button label. We have also used the option to close the Active Window when receiving a success message from the callback.
 

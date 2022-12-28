@@ -1,16 +1,16 @@
 # Active Buttons
 
-Active Buttons are analog to [[/guide/ngrest/activewindow]], a button you can attach to a given NgRest CRUD row with a handler which can then interact with the Active Record class.
+<class name="luya\admin\ngrest\base\ActiveButton" /> are analog to [Active Windows](activewindow.md), a button you can attach to a given NgRest CRUD row with a handler which can then interact with the Active Record class.
 
-There are built in Active Buttons you can use and configure or you can create your own Active Buttons and attach them to an [[/guide/ngrest/model]].
+There are built in Active Buttons you can use and configure or you can create your own Active Buttons and attach them to an [NgRestModel](model.md).
 
-+ `luya\admin\buttons\DuplicateActiveButton`
-+ `luya\admin\buttons\TimestampActiveButton`
-+ `luya\admin\buttons\ToggleStatusActiveButton`
++ <class name="luya\admin\buttons\DuplicateActiveButton" />
++ <class name="luya\admin\buttons\TimestampActiveButton" />
++ <class name="luya\admin\buttons\ToggleStatusActiveButton" />
 
 ## Creating an Active Button
 
-There is a base class for all Active Buttons called `luya\admin\ngrest\base\ActiveButton`, the final implementation only requires a handler method.
+There is a base class for all Active Buttons called <class name="luya\admin\ngrest\base\ActiveButton" />, the final implementation only requires a handler method.
 
 An example Active Button which duplicates a row from the attached model.
 
@@ -49,13 +49,13 @@ class DuplicateActiveButton extends ActiveButton
 }
 ```
 
-The handle method must return `luya\admin\ngrest\base\ActiveButton::sendSuccess()` or `luya\admin\ngrest\base\ActiveButton::sendError()` in order to make a correct API response to the grid view.
+The handle method must return <class name="luya\admin\ngrest\base\ActiveButton" method="sendSuccess" /> or <class name="luya\admin\ngrest\base\ActiveButton" method="sendError" /> in order to make a correct API response to the grid view.
 
-Als you can triggere events for certain situations. Assuming you are going to modify the value of a column isnide this CRUD, a forced reload of the CRUD list can be done trough `luya\admin\ngrest\base\ActiveButton::sendReloadEvent()`.
+Als you can triggere events for certain situations. Assuming you are going to modify the value of a column isnide this CRUD, a forced reload of the CRUD list can be done trough <class name="luya\admin\ngrest\base\ActiveButton" method="sendReloadEvent" />.
 
 ## Attaching the Button
 
-An Active Button can be attached inside every `luya\admin\ngrest\base\NgRestModel` model trough the `luya\admin\ngrest\base\NgRestModel::ngRestActiveButtons()` method.
+An Active Button can be attached inside every <class name="luya\admin\ngrest\base\NgRestModel" /> model trough the <class name="luya\admin\ngrest\base\NgRestModel" method="ngRestActiveButtons" /> method.
 
 ```php
 public function ngRestActiveButtons()
