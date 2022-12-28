@@ -4,7 +4,7 @@ If you want to create your own custom API without using the LUYA NgRest base API
 
 ## API Controller File
 
-Make sure to extend from `\luya\admin\base\RestController`. If you want to provide the default route, make sure to define the `actionIndex()` like this:
+Make sure to extend from <class name="luya\admin\base\RestController" />. If you want to provide the default route, make sure to define the `actionIndex()` like this:
 
 ```php
 namespace app\modules\yourmodule\admin\apis;
@@ -25,7 +25,7 @@ class MyController extends \luya\admin\base\RestController
 
 ## Register the API in Module
 
-Define the endpoint in `$apis` property in `Module.php` for the custom API like a normal NgRest API: (assuming you're defining the API inside a module)
+Define the endpoint in <class name="luya\admin\Module" prop="apis" /> property in `Module.php` for the custom API like a normal NgRest API: (assuming you're defining the API inside a module)
 
 ```php
 public $apis = [
@@ -33,7 +33,7 @@ public $apis = [
 ];
 ```
 
-In order to make your API listen to differnt method types you can use $apiRules:
+In order to make your API listen to differnt method types you can use <class name="luya\admin\Module" prop="apiRules" />:
 
 ```php
 public $apiRules = [
@@ -46,7 +46,7 @@ public $apiRules = [
 ];
 ```
 
-An example of how to override the `yii\rest\UrlRule` patterns:
+An example of how to override the <class name="yii\rest\UrlRule" /> patterns:
 
 ```php
 public $apis = [

@@ -69,19 +69,3 @@ Below, the table shows you which icon stands for what. The full set of usable ic
 | Sort icon | <i class="material-icons">keyboard_arrow_down</i> <i class="material-icons">keyboard_arrow_up</i> | `keyboard_arrow_down` / `keyboard_arrow_up` |
 | Folder icon | <i class="material-icons">folder</i> | `folder` |
 | Create folder icon | <i class="material-icons">create_new_folder</i> | `create_new_folder` |
-
-
-## Forms
-
-The syntax we use to build the forms in LUYA admin UI is as follows:
-
-```html
-<div class="form-group form-side-by-side">
-    <div class="form-side form-side-label">
-        <label>Label</label>
-    </div>
-    <div class="form-side">
-        <input type="text" class="form-control" />
-    </div>
-</div>
-```

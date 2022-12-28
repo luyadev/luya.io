@@ -4,7 +4,7 @@ In order to use a controller to prepare your data you have to assign those into 
 
 ## Generate custom controller and view
 
-Let´s assume you have already registered your admin module ([[/guide/admin/intro]]). Next let´s create a new controller in the `controllers` folder of your admin folder:
+Let´s assume you have already registered your [admin module](intro.md). Next let´s create a new controller in the `controllers` folder of your admin folder:
 
 ```php
 <?php
@@ -51,13 +51,15 @@ public function getMenu()
 
 You have now told the administration module that there is a new menu entry. All you have to do is now run the `./vendor/bin/luya import` command and assign the new permissions to your admin UI.
 
-> Important! Do not forget to run `import` command **and** assign the permission to your Administration Group in the admin UI afterwards!
+::: warning
+Do not forget to run `import` command **and** assign the permission to your Administration Group in the admin UI afterwards!
+:::
 
-You could also use `luya\admin\componenets\AdminMenuBuilder::nodeRoute()` which would not have a group and item which gives you a larger screen to build your custom views.
+You could also use <class name="luya\admin\componenets\AdminMenuBuilder" method="nodeRoute" /> which would not have a group and item which gives you a larger screen to build your custom views.
 
 ## Custom view inline AngularJS controller
 
-If you would like to make a view file without any asset integration you can just bootstrap an inline angular controller within your view file like this :
+If you would like to make a view file without any asset integration you can just bootstrap an inline angular controller within your view file like this:
 
 ```php
 <script>
@@ -73,4 +75,4 @@ zaa.bootstrap.register('FinderController', ['$scope', function($scope) {
 </div>
 ```
 
-You could also register a java script file within an [[/guide/admin/assets]].
+You could also register a java script file within an [admin asset](assets.md).

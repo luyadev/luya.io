@@ -1,7 +1,7 @@
 
 # Working with forms
 
-This example shows how to use a `yii\widgets\ActiveForm` in a controller which uses a [NgRest Model](../ngrest/model). 
+This example shows how to use a <class name="yii\widgets\ActiveForm" /> in a controller which uses a [NgRest Model](../ngrest/model). 
 
 ::: tip
 When using the CMS, there is an [visual form builder module](https://github.com/luyadev/luya-module-forms) available as package.
@@ -69,13 +69,13 @@ In order to enable image and file upload you can just use the file input:
 <?= $activeForm->field($form, 'attachment[]')->fileInput(['multiple' => true, 'accept' => 'file/*']) ?>
 ```
 
-Validation inside the model is done by `luya\admin\ngrest\validators\StorageUploadValidator`. This will not only validate but also save the file in LUYA admin storage [Storage](../app/storage)
+Validation inside the model is done by <class name="luya\admin\ngrest\validators\StorageUploadValidator" />. This will not only validate but also save the file in LUYA admin storage [Storage](../app/storage)
 
 ```php
 [['attachment'], StorageUploadValidator::class, 'multiple' => true],
 ```
 
-In order to display the data inside the NgRest CRUD system you have to apply the `luya\admin\ngrest\plugins\FileArray` plugin for the given field name:
+In order to display the data inside the NgRest CRUD system you have to apply the <class name="luya\admin\ngrest\plugins\FileArray" /> plugin for the given field name:
 
 ```php
 /**

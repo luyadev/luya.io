@@ -1,4 +1,4 @@
-# Admin modules
+# Admin Module
 
 An admin module provides the ability to quickly create an admin UI section for your data. The LUYA CRUD system is called [NgRest](../ngrest/index.md) or you can also use [MVC](mvc.md) in order to render a view with data from a controller.
 
@@ -6,7 +6,7 @@ Some features available in the admin UI section:
 
 + Create, read, update and delete with AngularJS and Yii2 base on Active Records => [NgRest Section](../ngrest/index.md)
 + Display custom data with a controller and view file => [MVC Section](mvc.md)
-+ Storage system for uploading images and files => `luya\admin\storage\BaseFileSystemStorage`
++ Storage system for uploading images and files => <class name="luya\admin\storage\BaseFileSystemStorage" />
 + Permissions and admin UI menus => [Permissions Section](permission.md)
 + APIs => [API Section](api.md)
 

@@ -1,4 +1,4 @@
-# Frontend module
+# Frontend Module
 
 If specific logic have to be applied to your website, e. g. a form where user can input data or you may load data from a database and render a custom view then you can create a frontend module. The module can be integrated into your CMS or called directly via the module url.
 
@@ -6,7 +6,7 @@ Frontend modules are also a very common way to redistributed logic of a controll
 
 ### View rendering options
 
-As already mentioned, frontend modules commonly contain controller logic but may use the view files from the project where the module in integrated. Therefore a possibility is provided which let you regulate where the view files of a module should be rendered.
+As already mentioned, frontend modules commonly contain controller logic but may use the view files from the project where the module in integrated. Therefore a possibility is provided which let you regulate where the view files of a module should be rendered, by using <class name="luya\base\Module" prop="useAppViewPath" />
 
 ```php
 <?php
@@ -84,7 +84,7 @@ Quick fix without disabling csrf validation and not using the ActiveForm Widget:
 </form>
 ```
 
-In order to disable the csrf validation set `$enableCsrfValidation` to `false` inside your Controller.
+In order to disable the csrf validation set <class name="yii\web\Controller" prop="enableCsrfValidation" /> to `false` inside your Controller.
 
 ```php
 class MyController extends \luya\web\Controller

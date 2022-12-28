@@ -128,9 +128,9 @@ export default {
             { text: 'Custom MVC', link: '/guide/admin/mvc' },
             { text: 'Forms', link: '/guide/admin/forms' },
             { text: 'Permissions & Menu', link: '/guide/admin/permission' },
-            { text: 'Icons & Css Styles', link: '/guide/admin/styles' },
-            { text: 'Create admin API', link: '/guide/admin/api' },
-            { text: 'JWT & SPA', link: '/guide/admin/jwtspa' }
+            { text: 'Custom Admin API', link: '/guide/admin/api' },
+            { text: 'JWT & SPA', link: '/guide/admin/jwtspa' },
+            { text: 'Icons & Css Styles', link: '/guide/admin/styles' }
           ]
         },
         {

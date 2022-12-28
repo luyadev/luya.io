@@ -4,7 +4,7 @@ When dealing with modules, several actions and pages you may would like to use n
 
 ## Configure rules
 
-To configure a new rule you have to open the module file (`Module.php`) of the `luya\base\Module` where you want to add new URL rules. Now you can add rules to the `$urlRules` property, which is an array where you have to add a new item. Each item must contain a route and a pattern.
+To configure a new rule you have to open the module file (`Module.php`) of the <class name="luya\base\Module" /> where you want to add new URL rules. Now you can add rules to the <class name="luya\base\Module" prop="urlRules" /> property, which is an array where you have to add a new item. Each item must contain a route and a pattern.
 
 ```php
 <?php
@@ -59,7 +59,7 @@ Below, a short list of regex expressions you may use to parameterize the URLs:
 
 ## Using the rule to make a link
 
-When you have defined URL rules for your module you may want to use them in your view and/or controller files to generate the links that the user can click on it. To make links we use the `luya\helpers\Url` class. Lets assume we create links for the above created rule patterns:
+When you have defined URL rules for your module you may want to use them in your view and/or controller files to generate the links that the user can click on it. To make links we use the <class name="luya\helpers\Url" /> class. Lets assume we create links for the above created rule patterns:
 
 ```php
 \luya\helpers\Url::toRoute(['/estore/basket/index']);
@@ -71,11 +71,11 @@ And a the parameterized route:
 \luya\helpers\Url::toRoute(['/estore/article/index', 'id' => 123]);
 ```
 
-> Its also possible to make links for given Page IDs or Module Names inside the CMS therefore take a look at CMS `luya\cms\helpers\Url` which inherits from `luya\helpers\Url`
+> Its also possible to make links for given Page IDs or Module Names inside the CMS therefore take a look at CMS <class name="luya\cms\helpers\Url" /> which inherits from <class name="luya\helpers\Url" />
 
 ## Multilingual language patterns
 
-If you have multi lingual pages you need patterns for different languages which can be defined in your `$urlRules` configuration too. This will only work when defining the rules inside a module.
+If you have multi lingual pages you need patterns for different languages which can be defined in your `$urlRules` configuration too. This will only work when defining the rules inside a module. Take a look at LUYA's default <class name="luya\web\UrlRule" /> object:
 
 ```php
 public $urlRules = [
@@ -104,7 +104,7 @@ In order to define the URL rules from the urlManager config scope, you can just 
 
 > When composition is enabled, it will take the correct route for the current language and prefix the pattern if enable in composition config.
 
-To verify which composition language is used you can dump `Yii::$app->composition->langShortCode`. The `luya\web\Composition` component is taking care of LUYA multi language websites and is registered by default for all LUYA projects.
+To verify which composition language is used you can dump `Yii::$app->composition->langShortCode`. The <class name="luya\web\Composition" /> component is taking care of LUYA multi language websites and is registered by default for all LUYA projects.
 
 ## Application Controller Routes
 
@@ -138,7 +138,7 @@ In order to get an URL which is accessable, we need to set an URL rule in the co
 ]
 ```
 
-Now the URL creation can be done with the `luya\helpers\Url` helper, as the rule will take precedence over the CMS `luya\cms\frontend\components\CatchAllUrlRule`:
+Now the URL creation can be done with the <class name="luya\helpers\Url" /> helper, as the rule will take precedence over the CMS <class name="luya\cms\frontend\components\CatchAllUrlRule" />:
 
 ```php
 $url = \luya\helpers\Url::toRoute(['/ajax/data']);
