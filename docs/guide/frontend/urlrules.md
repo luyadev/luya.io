@@ -90,17 +90,19 @@ public $urlRules = [
 ];
 ```
 
-In order to define the URL rules from the urlManager config scope, you can just prefix the route with the given composition pattern. So the same example from above inside the config would look like this:
+In order to define the URL rules from the urlManager config scope, you can just prefix the route with the given composition pattern. The example above would internally generate the following url rules in the url manager:
 
 ```php
 'urlManager' => [
     'rules' => [
         'basket' => 'en/estore/basket/default',
         'warenkorb' => 'de/estore/basket/default',
-        'panier' => 'fr/estore/basek/default',
+        'panier' => 'fr/estore/basket/default',
     ],
 ],
 ```
+
+This also means that the given url rules are available when its required to point to a certain language like `Url::toRoute(['fr/estore/basket/default'])` will return `panier`.
 
 > When composition is enabled, it will take the correct route for the current language and prefix the pattern if enable in composition config.
 
