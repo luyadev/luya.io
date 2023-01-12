@@ -143,15 +143,11 @@ Create the controller, change response format to JSON and return an array:
 
 ```php
 <?php
-
-namespace app\controllers;
-
 class AjaxController extends \luya\web\Controller
 {
     public function actionData()
     {
-        \Yii::$app->response->format = \yii\web\Response::FORMAT_JSON;
-        return ['foo' => 'bar'];
+        return $this->asJson(['foo' => 'bar']);
     }
 }
 ```
@@ -159,7 +155,6 @@ class AjaxController extends \luya\web\Controller
 In order to get an URL which is accessable, we need to set an URL rule in the config of the components section:
 
 ```php
-// ... 
 'urlManager' => [
     'rules' => [
         'ajax-data' => 'ajax/data',
