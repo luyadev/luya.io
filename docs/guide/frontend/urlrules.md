@@ -110,7 +110,7 @@ To verify which composition language is used you can dump `Yii::$app->compositio
 
 ## Retrieve Current Rule in CMS Context
 
-When you have a CMS `Page as Module` or using the `Module Block` inside a page, the resolved URL Rule its accessible via <class name="luya\cms\Menu" method="getCurrentUrlRule">. This allows you to access the params of the URL Rule inside layout files. If there is no URL Rule resolved, the return value is `null`. Below an example of how to access the method via the menu and an example response:
+When you have a CMS `Page as Module` or using the `Module Block` inside a page, the resolved URL Rule its accessible via <class name="luya\cms\Menu" method="getCurrentUrlRule" />. This allows you to access the params of the URL Rule inside layout files. If there is no URL Rule resolved, the return value is `null`. Below an example of how to access the method via the menu and an example response:
 
 ```php
 var_dump(Yii::$app->menu->getCurrentUrlRule());
@@ -142,7 +142,6 @@ When the CMS module is enabled it will take over all URLs who are not covered by
 Create the controller, change response format to JSON and return an array:
 
 ```php
-<?php
 class AjaxController extends \luya\web\Controller
 {
     public function actionData()
