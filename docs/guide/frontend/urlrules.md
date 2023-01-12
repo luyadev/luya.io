@@ -108,6 +108,33 @@ This also means that the given url rules are available when its required to poin
 
 To verify which composition language is used you can dump `Yii::$app->composition->langShortCode`. The <class name="luya\web\Composition" /> component is taking care of LUYA multi language websites and is registered by default for all LUYA projects.
 
+## Retrieve Current Rule in CMS Context
+
+When you have a CMS `Page as Module` or using the `Module Block` inside a page, the resolved URL Rule its accessible via <class name="luya\cms\Menu" method="getCurrentUrlRule">. This allows you to access the params of the URL Rule inside layout files. If there is no URL Rule resolved, the return value is `null`. Below an example of how to access the method via the menu and an example response:
+
+```php
+var_dump(Yii::$app->menu->getCurrentUrlRule());
+/*
+(
+    [module] => gallery
+    [route] => gallery/alben/index
+    [params] => Array
+        (
+            [catId] => 3
+            [title] => food
+        )
+
+)
+```
+
+The above route is defined in the [Gallery Module](https://github.com/luyadev/luya-module-gallery/blob/master/src/frontend/Module.php) with the following value:
+
+```php
+public $urlRules = [
+    ['pattern' => 'gallery/kategorie/<catId:\d+>/<title:[a-zA-Z0-9\-]+>/', 'route' => 'gallery/alben/index'],
+];
+```
+
 ## Application Controller Routes
 
 When the CMS module is enabled it will take over all URLs who are not covered by URL rules in the URL manager, otherwise the CMS won't have the ability to generate pages with slugs and nested subpages. When working with "default" Yii Framework controllers an URL rule is required to get accessable web URL. Let's assume we have a controller which returns data for an async request, we would like to access the URL in order to make an AJAX call somewhere in the layout.
