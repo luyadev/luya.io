@@ -1,5 +1,6 @@
 import DefaultTheme from 'vitepress/theme'
 import ApiClass from '../../../components/ApiClass.vue'
+import './vars.css'
 
 export default {
   ...DefaultTheme,
