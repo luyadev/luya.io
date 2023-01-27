@@ -13,7 +13,7 @@ In order to fix this, make sure you have the same default language short code in
 + When you encounter errors with Composer install/update, make sure you have installed the version **1.0.0** of Composer, in order to update your Composer run `composer self-update`.
 + As Yii requires the `fxp/composer-asset-plugin` make sure you have at least version `1.4` of the plugin installed, in order to update the Composer asset plugin run `composer global require "fxp/composer-asset-plugin:~1.4"`.
 
-## Logout after Login
+## Admin Module Logout after Login
 
 If there are random logouts, or immediat logouts after, this is either a problem of being behind a loadbalancer, the ip changes a lot or a problem with the webserver:
 
@@ -32,7 +32,7 @@ $config->webComponent('request', [
 ```
 SetEnvIf Authorization .+ HTTP_AUTHORIZATION=$0 # php-fastci support
 RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}] # php-fpm support
-``
+```
 
 ## Server requirements
 
