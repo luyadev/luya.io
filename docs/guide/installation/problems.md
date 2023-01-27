@@ -13,11 +13,32 @@ In order to fix this, make sure you have the same default language short code in
 + When you encounter errors with Composer install/update, make sure you have installed the version **1.0.0** of Composer, in order to update your Composer run `composer self-update`.
 + As Yii requires the `fxp/composer-asset-plugin` make sure you have at least version `1.4` of the plugin installed, in order to update the Composer asset plugin run `composer global require "fxp/composer-asset-plugin:~1.4"`.
 
+## Logout after Login
+
+If there are random logouts, or immediat logouts after, this is either a problem of being behind a loadbalancer, the ip changes a lot or a problem with the webserver:
+
++ Disabled <class name="luya\admin\Module" prop="logoutOnUserIpChange" /> in your admin module config.
++ Disabled secure connection check <class name="luya\traits\ApplicationTrait" prop="ensureSecureConnection" />
++ Disabled secure headers check in <class name="yii\web\Request" prop="secureHeaders" />
+
+```
+$config->webComponent('request', [
+    'secureHeaders' => [],
+]);
+```
+
++ Check for correct htaccess or nginx setup
+
+```
+SetEnvIf Authorization .+ HTTP_AUTHORIZATION=$0 # php-fastci support
+RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}] # php-fpm support
+``
+
 ## Server requirements
 
 In order to run LUYA with deployer nicely on a production server, the following components should be installed (we use the most common components Apache2 and MySQL, of course you can run LUYA with other database components and webservers like nginx):
 
-+ PHP 7.1 (or higher) (PHP 7.0 and PHP 5.6 should work but its not tested anymore)
++ PHP 7.4 (or higher) (PHP 7.0 and PHP 5.6 should work but its not tested anymore)
 + MySQL 5.5 (or higher)
 + PHP extensions: curl, fileinfo, mbstring, icu, phar, zip
 + Apache modules: mod_rewrite
