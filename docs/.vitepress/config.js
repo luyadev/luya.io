@@ -44,7 +44,6 @@ export default {
     ],
     sidebar: [
       {
-        collapsible: true,
         collapsed: true,
         text: 'Installation',
         items: [
@@ -58,7 +57,6 @@ export default {
         ]
       },
       {
-          collapsible: true,
           collapsed: true,
           text: 'Key Concepts',
           items: [
@@ -73,7 +71,6 @@ export default {
           ]
         },
         {
-          collapsible: true,
           collapsed: true,
           text: 'Application',
           items: [
@@ -95,7 +92,6 @@ export default {
           ]
         },
         {
-          collapsible: true,
           collapsed: true,
           text: 'CMS',
           items: [
@@ -107,7 +103,6 @@ export default {
           ]
         },
         {
-          collapsible: true,
           collapsed: true,
           text: 'Frontend Module',
           items: [
@@ -118,7 +113,6 @@ export default {
           ]
         },
         {
-          collapsible: true,
           collapsed: true,
           text: 'Admin Module',
           items: [
@@ -134,7 +128,6 @@ export default {
           ]
         },
         {
-          collapsible: true,
           collapsed: true,
           text: 'NgRest CRUD',
           items: [
@@ -151,7 +144,6 @@ export default {
           ]
         },
         {
-          collapsible: true,
           collapsed: true,
           text: 'Lessons',
           items: [
@@ -163,7 +155,6 @@ export default {
           ]
         },
         {
-          collapsible: true,
           collapsed: true,
           text: 'Developers',
           items: [
