@@ -49,17 +49,29 @@ define('YII_ENV', 'prep');
 $config = new Config('testapp', dirname(__DIR__), [
     'siteTitle' => 'My Test App',
     'defaultRoute' => 'cms',
+    'ensureSecureConnection' => true,
+    'aliases' => [
+        '@bower' => '@vendor/bower-asset',
+        '@npm'   => '@vendor/npm-asset',
+    ],
     'modules' => [
         'admin' => [
             'class' => 'luya\admin\Module',
-            'secureLogin' => true,
+            'secureLogin' => false, // when enabling secure login, the mail component must be proper configured otherwise the auth token mail will not send.
+            'strongPasswordPolicy' => false, // If enabled, the admin user passwords require strength input with special chars, lower, upper, digits and numbers
+            'interfaceLanguage' => 'en', // Admin interface default language.
+            'autoBootstrapQueue' => true, // Enables the fake cronjob by default, read more about queue/scheduler: https://luya.io/guide/app-queue
+            'logoutOnUserIpChange' => true,
         ],
+        // See all frontend CMS options: https://luya.io/api/luya-cms-frontend-Module
         'cms' => [
             'class' => 'luya\cms\frontend\Module',
+            'contentCompression' => true, // compressing the cms output (removing white spaces and newlines)
         ],
+        // See all admin CMS options: https://luya.io/api/luya-cms-admin-Module
         'cmsadmin' => [
             'class' => 'luya\cms\admin\Module',
-        ]
+        ],
     ],
     'components' => [
         'db' => [
@@ -75,9 +87,6 @@ $config = new Config('testapp', dirname(__DIR__), [
             ],
             'hidden' => true,
         ],
-    ],
-    'bootstrap' => [
-        'cms',
     ]
 ]);
 
