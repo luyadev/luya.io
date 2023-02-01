@@ -43,13 +43,15 @@ Config files (e.g. `configs/env-local.php` or `configs/env-prod.php`) return a c
 > Since version 1.0.21 of LUYA core the <class name="luya\Config" /> is used to generate configs (`configs/config.php`):
 
 ```php
-define('YII_DEBUG', true);
-define('YII_ENV', 'prep');
 
-$config = new Config('testapp', dirname(__DIR__), [
-    'siteTitle' => 'My Test App',
+<?php
+
+use luya\Config;
+
+$config = new Config('myproject', dirname(__DIR__), [
+    'siteTitle' => 'My Project',
     'defaultRoute' => 'cms',
-    'ensureSecureConnection' => true,
+    'basePath' => dirname(__DIR__),
     'aliases' => [
         '@bower' => '@vendor/bower-asset',
         '@npm'   => '@vendor/npm-asset',
@@ -63,12 +65,10 @@ $config = new Config('testapp', dirname(__DIR__), [
             'autoBootstrapQueue' => true, // Enables the fake cronjob by default, read more about queue/scheduler: https://luya.io/guide/app-queue
             'logoutOnUserIpChange' => true,
         ],
-        // See all frontend CMS options: https://luya.io/api/luya-cms-frontend-Module
         'cms' => [
             'class' => 'luya\cms\frontend\Module',
-            'contentCompression' => true, // compressing the cms output (removing white spaces and newlines)
+            'contentCompression' => true,
         ],
-        // See all admin CMS options: https://luya.io/api/luya-cms-admin-Module
         'cmsadmin' => [
             'class' => 'luya\cms\admin\Module',
         ],
@@ -78,33 +78,65 @@ $config = new Config('testapp', dirname(__DIR__), [
             'class' => 'yii\db\Connection',
             'charset' => 'utf8',
         ],
-        'cache' => [
-            'class' => 'yii\caching\FileCache',
-        ],
         'composition' => [
-            'default' => [
-                'langShortCode' => 'en'
-            ],
-            'hidden' => true,
+            'hidden' => true, // no languages in your url (most case for pages which are not multi lingual)
+            'default' => ['langShortCode' => 'en'], // the default language for the composition should match your default language shortCode in the language table.
         ],
-    ]
+    ],
 ]);
-
-$config->component('db', [
-    'dsn' => 'mysql:host=LOCAL_HOST;dbname=LOCAL_NAME',
-    'username' => 'LOCAL_USER',
-    'password' => 'LOCAL_PW',
-])->env(Config::ENV_LOCAL);
-
-$config->component('db', [
-    'dsn' => 'mysql:host=PROD_HOST;dbname=PROD_NAME',
-    'username' => 'PROD_USER',
-    'password' => 'PROD_PW',
-])->env(Config::ENV_PROD);
 
 $config->webComponent('request', [
-    'cookieValidationKey' => 'XYZ',
+    'cookieValidationKey' => 'skldfj23094r8s0dfjlsdfj23lerjhlsdfu3',
 ]);
+
+/************ LOCAL ************/
+
+$config->env(Config::ENV_LOCAL, function (Config $config) {
+    $config->callback(function () {
+        define('YII_DEBUG', true);
+        define('YII_ENV', 'local');
+    });
+
+    // docker mysql config
+    $config->component('db', [
+        'dsn' => 'mysql:host=DB_HOST;dbname=DB_NAME',
+        'username' => 'DB_USERNAME',
+        'password' => 'DB_PASSWORD',
+    ]);
+    
+    // debug and gii on local env
+    $config->module('debug', [
+        'class' => 'yii\debug\Module',
+        'allowedIPs' => ['*'],
+    ]);
+    $config->module('gii', [
+        'class' => 'yii\gii\Module',
+        'allowedIPs' => ['*'],
+    ]);
+
+    $config->bootstrap(['debug', 'gii']);
+});
+
+/************ PROD ************/
+
+$config->env(Config::ENV_PROD, function (Config $config) {
+    $config->component('db', [
+        'dsn' => 'mysql:host=DB_HOST;dbname=DB_NAME',
+        'username' => 'DB_USERNAME',
+        'password' => 'DB_PASSWORD',
+        'enableSchemaCache' => true,
+        'schemaCacheDuration' => 0,
+    ]);
+
+    $config->component('cache', [
+        'class' => 'yii\caching\FileCache'
+    ]);
+    
+    $config->application([
+        'ensureSecureConnection' => true, // https://luya.io/guide/app/security
+    ]);
+});
+
 
 return $config;
 ```
