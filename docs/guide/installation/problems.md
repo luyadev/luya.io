@@ -17,8 +17,8 @@ In order to fix this, make sure you have the same default language short code in
 
 If there are random logouts, or immediat logouts after, this is either a problem of being behind a loadbalancer, the ip changes a lot or a problem with the webserver:
 
-+ Disabled <class name="luya\admin\Module" prop="logoutOnUserIpChange" /> in your admin module config. See [example config](structure#configuration-files-and-config-builder)
-+ Disabled secure connection check <class name="luya\traits\ApplicationTrait" prop="ensureSecureConnection" />. See [example config](structure#configuration-files-and-config-builder)
++ Disabled <class name="luya\admin\Module" prop="logoutOnUserIpChange" /> in your admin module config, see [example config](structure#configuration-files-and-config-builder)
++ Disabled secure connection check <class name="luya\traits\ApplicationTrait" prop="ensureSecureConnection" />, see [example config](structure#configuration-files-and-config-builder)
 + Disabled secure headers check in <class name="yii\web\Request" prop="secureHeaders" />
 
 ```
