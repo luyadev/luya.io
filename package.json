@@ -6,7 +6,7 @@
   "repository": "https://github.com/luyadev/luya.io",
   "license": "MIT",
   "devDependencies": {
-    "vitepress": "^1.0.0-alpha.65",
+    "vitepress": "^1.0.0-alpha.71",
     "vue": "^3.2.47"
   },
   "scripts": {
