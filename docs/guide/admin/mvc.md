@@ -71,7 +71,7 @@ zaa.bootstrap.register('FinderController', ['$scope', function($scope) {
 }]);
 </script>
 <div class="luya-content" ng-controller="FinderController">
-    <h1>`title`</div>
+    <h1>{{ title }}</div>
 </div>
 ```
 
