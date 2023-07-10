@@ -590,10 +590,10 @@ vite@4.4.0-beta.3:
   optionalDependencies:
     fsevents "~2.3.2"
 
-vitepress@^1.0.0-beta.4:
-  version "1.0.0-beta.4"
-  resolved "https://registry.yarnpkg.com/vitepress/-/vitepress-1.0.0-beta.4.tgz#fcb6f961e0ff15da30fd002ad7a89c6db9018973"
-  integrity sha512-dpWnpdUFrKU9spTAHaxfkYauFAaIokQwr/1Kx2ipGvHDij47ebuHXF/O7gD+5xnpwV3eUb8Z2zPVZn1kbGu9lQ==
+vitepress@^1.0.0-beta.5:
+  version "1.0.0-beta.5"
+  resolved "https://registry.yarnpkg.com/vitepress/-/vitepress-1.0.0-beta.5.tgz#8cccf89df6a7c8b446d6b17008ce65d94ace2280"
+  integrity sha512-/RjqqRsSEKkzF6HhK5e5Ij+bZ7ETb9jNCRRgIMm10gJ+ZLC3D1OqkE465lEqCeJUgt2HZ6jmWjDqIBfrJSpv7w==
   dependencies:
     "@docsearch/css" "^3.5.1"
     "@docsearch/js" "^3.5.1"
