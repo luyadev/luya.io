@@ -61,3 +61,12 @@ Maybe you like to test the latest features of LUYA, so you can use the following
     "luyadev/luya-module-cms" : "dev-master"
 }
 ```
+
+If compatibility issues arise with dependencies, you can attempt to alias the `dev-master` as a specific alternative, for example:
+
+```
+"require": {
+    "luyadev/luya-module-admin": "dev-master as 4.9",
+    "luyadev/luya-module-cms": "dev-master as 4.5"
+}
+```
