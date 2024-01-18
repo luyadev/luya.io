@@ -29,7 +29,7 @@ After updating with Composer, run the following command to upgrade the database:
 ./vendor/bin/luya migrate
 ```
 
-Now refresh all existing importer components with the LUYA import commmand:
+Now refresh all existing importer components with the LUYA import command:
 
 ```sh
 ./vendor/bin/luya import

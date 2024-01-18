@@ -28,7 +28,7 @@ The deployment (using [LUYA deployer](https://github.com/luyadev/luya-deployer))
 2. Ensure the config contains the right informations in `luya\Config::ENV_PROD` context.
 3. Install and configure the [LUYA deployer]https://github.com/luyadev/luya-deployer)
 4. Deploy your website with the `./vendor/bin/dep luya prod` command.
-5. **First deployment:** Run the `./vendor/bin/luya admin/setup` command **on the production server**. To do so loggin with SSH and rund the admin/setup command.
+5. **First deployment:** Run the `./vendor/bin/luya admin/setup` command **on the production server**. To do so loggin with SSH and run the admin/setup command.
 
 > After the **first deployment** make sure the `public_html/assets`, `public_html/storage` and `runtime` is writeable, if the deployer could not set the permissions accordingly.
 
@@ -38,11 +38,11 @@ If you encounter problems while deployment try to run `./vendor/bin/dep luya pro
 
 You can connect to the server either using:
 
-* Pasword `->password('your pwd')`
+* Password `->password('your pwd')`
 * Identity file `->identityFile('~/.ssh/yourkey')`
 * PEM file (e.g. using AWS or Lightsail) `->pemFile('~/.ssh/yourfile.pem')`
 
-We recommend to use either the identity or pem strategie: this way you can commit your `deploy.php` file on your repo, without having to store a pasword on the repo, which you don't want to do of course.
+We recommend to use either the identity or pem strategy: this way you can commit your `deploy.php` file on your repo, without having to store a password on the repo, which you don't want to do of course.
 
 ### Example configuration file
 
@@ -88,11 +88,11 @@ For details and more commands, see <class name="luya\admin\commands\ProxyControl
 ## Deploy prep env
 
 
-When running a pre-production env (prep) its very common to copy the database and files after deployment but its recommend to achieved that with deployer and admin/proxy via the smart way. Therefore just update your `deploy.php` following the example below:
+When running a pre-production env (prep) it's very common to copy the database and files after deployment but it's recommend to achieved that with deployer and admin/proxy via the smart way. Therefore just update your `deploy.php` following the example below:
 
 ```php
 task('deploy:syncProdEnv', function() {
-    $proxy = run('cd `release_path` && ./vendor/bin/luya admin/proxy --url=https://www.prod-website.com --idf=IDENTIFER --token=TOKEN');
+    $proxy = run('cd `release_path` && ./vendor/bin/luya admin/proxy --url=https://www.prod-website.com --idf=IDENTIFIER --token=TOKEN');
     writeln($proxy);
     
 })->onlyOn('prep');

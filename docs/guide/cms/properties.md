@@ -2,7 +2,7 @@
 
 Page <class name="luya\admin\base\Property" /> are personalised settings you can apply to specific pages. Once a property has defined, it can be applied to every page. 
 
-Let us assume you would like to use different colors on different pages, therefore you can create a color property where the user can select a specific color for each page. Once the property is set you can use them in your view files, or [blocks](/guide/cms/blocks), or [cms layouts](/guide/cms/cmslayouts) components.
+Let us assume you would like to use different colors on different pages, therefore you can create a color property where the user can select a specific color for each page. Once the property is set you can use them in your view files, or [blocks](/guide/cms/blocks), or [CMS layouts](/guide/cms/cmslayouts) components.
 
 Use cases:
 
@@ -85,7 +85,7 @@ echo Html::img($image, ['class' => 'yourImageClass']);
 ```
 
 ::: tip
-All properties implement the magical method `__toString()` and will return the value from the `getValue()` method by default. Keep in mind that this is only true for the echo or return context. When checking for the existance of a value, explicitely use the `getValue()` method as otherwise the property object is returned, which always resolves to true.
+All properties implement the magical method `__toString()` and will return the value from the `getValue()` method by default. Keep in mind that this is only true for the echo or return context. When checking for the existence of a value, explicitly use the `getValue()` method as otherwise the property object is returned, which always resolves to true.
 :::
 
 ## Access the property

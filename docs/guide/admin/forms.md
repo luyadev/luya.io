@@ -50,7 +50,7 @@ If you would like to arrange two forms vertically side by side this could be don
 
 ## Generate form with AngularJS 
 
-Using the angular directive to generate forms as described in the HTML markup, by using the <class name="luya\admin\helpers\Angular" /> Helper:
+Using the AngularJS directive to generate forms as described in the HTML markup, by using the <class name="luya\admin\helpers\Angular" /> Helper:
 
 ```php 
 <?= Angular::text('ngModel', 'Left text input', ['placeholder' => 'text input here ...']); ?>

@@ -48,7 +48,7 @@ export default {
         text: 'Installation',
         items: [
           { text: 'Installation', link: '/guide/installation/' },
-          { text: 'Mac OSX', link: '/guide/installation/mac' },
+          { text: 'macOS', link: '/guide/installation/mac' },
           { text: 'Common Problems', link: '/guide/installation/problems' },
           { text: 'Upgrade', link: '/guide/installation/upgrade' },
           { text: 'Structure & Config', link: '/guide/installation/structure' },
@@ -151,7 +151,7 @@ export default {
             { text: 'Image slider Block', link: '/guide/lessons/imagesliderblock' },
             { text: 'Admin and Frontend module', link: '/guide/lessons/module' },
             { text: 'Create an Active Window', link: '/guide/lessons/activewindow' },
-            { text: 'Custom Angular Controller and Admin View', link: '/guide/lessons/custom-angular-view.md' }
+            { text: 'Custom AngularJS Controller and Admin View', link: '/guide/lessons/custom-angular-view.md' }
           ]
         },
         {

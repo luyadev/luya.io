@@ -6,5 +6,5 @@ The Guide Website for LUYA.
 
 ## Installation
 
-1. install deps: `yarn`
-2. run vitepress: `yarn docs:dev`
+1. Install deps: `yarn`
+2. Run VitePress: `yarn docs:dev`

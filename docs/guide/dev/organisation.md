@@ -29,7 +29,7 @@
 
 Current LUYA Organisation members with the respective role:
 
-[see Github People Tab](https://github.com/orgs/luyadev/people)
+[see GitHub People Tab](https://github.com/orgs/luyadev/people)
 
 ## 6. Roles
 
@@ -42,7 +42,7 @@ Current LUYA Organisation members with the respective role:
 |Extension Manager|Has commit access to specific extensions and has to react as far as these are concerned|No|Yes*|Yes|Yes*
 
 \* Only for the given extensions.  
-\*\* Mentions, comments, pull requests, assignements, issues, reviews
+\*\* Mentions, comments, pull requests, assignments, issues, reviews
 
 ## 7. Rights and possibilities of members
 

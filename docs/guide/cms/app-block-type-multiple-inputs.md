@@ -1,6 +1,6 @@
 # Multiple inputs
 
-Generate a expandable list with custom nested fields and/or plugins inside each row.
+Generate an expandable list with custom nested fields and/or plugins inside each row.
 
 ### Definition in block
 

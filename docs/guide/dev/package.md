@@ -11,7 +11,7 @@ There are different type of packages:
 
 ## Create basic extension with a block
 
-n this guide we will give you a very basic step by step instruction in **how to create an extension** with a block for the CMS which will be distributed over the packagist package manager.
+n this guide we will give you a very basic step by step instruction in **how to create an extension** with a block for the CMS which will be distributed over the Packagist package manager.
 
 You can use this skeleton for a new package: https://github.com/luyadev/luya-package-skeleton
 
@@ -61,7 +61,7 @@ class HeroBlock extends PhpBlock
 ```
 
 4) In order to test the blocks you can register with Composer https://getcomposer.org/doc/05-repositories.md#path or provide the CMS admin the path to the blocks `'cmsadmin' => ['blocks' => 'path/to/blocks/src']]`.
-5) Now you should commit and push the code to GitHub and register the package on packagist: https://packagist.org/packages/submit
+5) Now you should commit and push the code to GitHub and register the package on Packagist: https://packagist.org/packages/submit
 
 ## Composer definition informations
 
@@ -110,14 +110,14 @@ The `composer.json` file can contain an extra section which can be read by the L
 }
 ```
 
-+ blocks: Include the provided folders or blocks while import command. Use ``DS`` for the directory seperator, the LUYA Composer plugin auto replace by current OS specific directory seperator.
++ blocks: Include the provided folders or blocks while import command. Use ``DS`` for the directory separator, the LUYA Composer plugin auto replace by current OS specific directory separator.
 + bootstrap: Add the file to the LUYA bootstraping process.
 
 > When importing blocks a namespace for each block class have to be provided. You can use the [Composer autoloading](https://getcomposer.org/doc/01-basic-usage.md#autoloading) feature handle namespaces.
 
 ## Bootstraping dependencies in dependencies (child dependencies)
 
-Its very common to create a "private" (company specific let' say) repository containing code for several projects and also includes the LUYA requirements like `admin` and `cms`. As LUYA strongly relys on the [LUYA Composer](https://github.com/luyadev/luya-composer) which contains a `bootstrap` section to make more easy to load data when creating extensions and modules this can be a problem when work with child Dependencies (A Dependencies of a Dependencies).
+Its very common to create a "private" (company specific let' say) repository containing code for several projects and also includes the LUYA requirements like `admin` and `cms`. As LUYA strongly relies on the [LUYA Composer](https://github.com/luyadev/luya-composer) which contains a `bootstrap` section to make more easy to load data when creating extensions and modules this can be a problem when work with child Dependencies (A Dependencies of a Dependencies).
 
 Assuming the following scenario we have a `BaseRepo` and an `ProjectApplication` where the `ProjectApplication` requires the `BaseRepo` as a dependency.
 
@@ -141,7 +141,7 @@ Assuming the following scenario we have a `BaseRepo` and an `ProjectApplication`
 }
 ```
 
-As the `ProjectApplication` now requires the `BaseRepo` as a dependency the [Bootstraping Section of LUYA Module CMS](https://github.com/luyadev/luya-module-cms/blob/master/composer.json#L48-L50) is ignored. Therefore its important to call those requirements again in your `BaseRepo`:
+As the `ProjectApplication` now requires the `BaseRepo` as a dependency the [Bootstraping Section of LUYA Module CMS](https://github.com/luyadev/luya-module-cms/blob/master/composer.json#L48-L50) is ignored. Therefore it's important to call those requirements again in your `BaseRepo`:
 
 **Fixed BaseRepo:**
 

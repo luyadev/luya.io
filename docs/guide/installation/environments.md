@@ -45,7 +45,7 @@ $config->component('db', [
 ])->env(Config::ENV_PROD);
 ```
 
-There is also a more readeable annotation with closures:
+There is also a more readable annotation with closures:
 
 ```php
 $config->env(Config::ENV_LOCAL, function(Config $config) {
@@ -81,7 +81,7 @@ $config->env(Config::ENV_PROD, function(Config $config) {
         'class' => 'yii\caching\FileCache'
     ]);
     $config->application([
-        'ensureSecureConnection' => true, // https://luya.io/guide/app-security
+        'ensureSecureConnection' => true, // https://luya.io/guide/app/security
     ]);
 });
 

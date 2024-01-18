@@ -86,7 +86,7 @@ The handling of permissions is different for <class name="luya\admin\base\RestCo
 
 ### RestController
 
-The <class name="luya\admin\base\RestController" /> contains by default **no permission** unless the action is defined in <class name="luya\admin\base\Module" method="extendPermissionRoutes" />. This means that any authenticated user will have access to the action unless a extend permission route is provied. If <class name="luya\admin\Module" prop="apiUserAllowActionsWithoutPermissions" /> is enabled, also API Users will have access, by default API users won't have access.
+The <class name="luya\admin\base\RestController" /> contains by default **no permission** unless the action is defined in <class name="luya\admin\base\Module" method="extendPermissionRoutes" />. This means that any authenticated user will have access to the action unless an extended permission route is provided. If <class name="luya\admin\Module" prop="apiUserAllowActionsWithoutPermissions" /> is enabled, also API Users will have access, by default API users won't have access.
 
 The current permission route is resolved by the <class name="luya\admin\base\RestController" method="permissionRoute" /> action.
 
@@ -135,7 +135,7 @@ Now the given API controller is also accessible to API users.
 
 ### RestActiveController
 
-The <class name="luya\admin\base\RestActiveController" /> requires a model class to perform classic read, create, update and delete tasks. If a custom action is defined, by default **no permission** is required for this action unless its defined in <class name="luya\admin\base\RestActiveController" method="actionPermissions" />:
+The <class name="luya\admin\base\RestActiveController" /> requires a model class to perform classic read, create, update and delete tasks. If a custom action is defined, by default **no permission** is required for this action unless it's defined in <class name="luya\admin\base\RestActiveController" method="actionPermissions" />:
 
 ```php
 class TestActiveRestController extends luya\admin\base\ActiveRestController
@@ -145,7 +145,7 @@ class TestActiveRestController extends luya\admin\base\ActiveRestController
     public function actionPermissions()
     {
         return [
-            'dogs' => \luya\admin\componenets\Auth::CAN_UPDATE,
+            'dogs' => \luya\admin\components\Auth::CAN_UPDATE,
         ];
     }
     

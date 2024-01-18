@@ -1,6 +1,6 @@
 # Structure & Config
 
-See the tipical folder structure of a LUYA application and read more about the <class name="luya\Config" /> object in order to configure your application.
+See the typical folder structure of a LUYA application and read more about the <class name="luya\Config" /> object in order to configure your application.
 
 ## Application Structure
 
@@ -79,7 +79,7 @@ $config = new Config('myproject', dirname(__DIR__), [
             'charset' => 'utf8',
         ],
         'composition' => [
-            'hidden' => true, // no languages in your url (most case for pages which are not multi lingual)
+            'hidden' => true, // no languages in your URL (most case for pages which are not multi-lingual)
             'default' => ['langShortCode' => 'en'], // the default language for the composition should match your default language shortCode in the language table.
         ],
     ],
@@ -97,14 +97,14 @@ $config->env(Config::ENV_LOCAL, function (Config $config) {
         define('YII_ENV', 'local');
     });
 
-    // docker mysql config
+    // docker MySQL config
     $config->component('db', [
         'dsn' => 'mysql:host=DB_HOST;dbname=DB_NAME',
         'username' => 'DB_USERNAME',
         'password' => 'DB_PASSWORD',
     ]);
     
-    // debug and gii on local env
+    // debug and Gii on local env
     $config->module('debug', [
         'class' => 'yii\debug\Module',
         'allowedIPs' => ['*'],
@@ -141,7 +141,7 @@ $config->env(Config::ENV_PROD, function (Config $config) {
 return $config;
 ```
 
-As the `env.php` now recieves the Config object and won't be stored in Git the enviroment to return can be choosen there:
+As the `env.php` now receives the Config object and won't be stored in Git the environment to return can be chosen there:
 
 example content of `env.php`:
 
@@ -153,7 +153,7 @@ return $config->toArray(\luya\Config::ENV_PROD);
 
 ## Console and Web
 
-Since the introduction of <class name="luya\Config" /> its possible to set components for either console or web runtime, assuming you have `cookieValidationKey` in `request` component which is only valid on web runtime you can use <class name="luya\Config" method="webComponent" /> to register the component:
+Since the introduction of <class name="luya\Config" /> it's possible to set components for either console or web runtime, assuming you have `cookieValidationKey` in `request` component which is only valid on web runtime you can use <class name="luya\Config" method="webComponent" /> to register the component:
 
 ```php
 $config->webComponent('request', [
@@ -218,7 +218,7 @@ $config->component('db', [
 ])->env(Config::ENV_PROD);
 ```
 
-You can also define multiple components in a environment block/scope.
+You can also define multiple components in an environment block/scope.
 
 ```php
 $config->env(Config::ENV_PREP, function(Config $config) {
@@ -253,7 +253,7 @@ return $config->toArray(\luya\Config::ENV_PROD);
 
 ## Company wide config
 
-Its very common that you like to share configuration values over different projects, therefore we encourage you to create your own LUYA DI repo, create a private repository on your VCS Platform (example GitHub) add a Bootstrap file like:
+Its very common that you like to share configuration values over different projects, therefore we encourage you to create your own LUYA DI repo, create a private repository on your VCS platform (example GitHub) add a Bootstrap file like:
 
 ```php
 <?php

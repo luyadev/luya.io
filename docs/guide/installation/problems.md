@@ -15,7 +15,7 @@ In order to fix this, make sure you have the same default language short code in
 
 ## Admin Module Logout after Login
 
-If there are random logouts, or immediat logouts after, this is either a problem of being behind a loadbalancer, the ip changes a lot or a problem with the webserver:
+If there are random logouts, or immediate logouts after, this is either a problem of being behind a loadbalancer, the ip changes a lot or a problem with the webserver:
 
 + Disabled <class name="luya\admin\Module" prop="logoutOnUserIpChange" /> in your admin module config, see [example config](structure#configuration-files-and-config-builder)
 + Disabled secure connection check <class name="luya\traits\ApplicationTrait" prop="ensureSecureConnection" />, see [example config](structure#configuration-files-and-config-builder)
@@ -38,7 +38,7 @@ RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}] # php-fpm support
 
 In order to run LUYA with deployer nicely on a production server, the following components should be installed (we use the most common components Apache2 and MySQL, of course you can run LUYA with other database components and webservers like nginx):
 
-+ PHP 7.4 (or higher) (PHP 7.0 and PHP 5.6 should work but its not tested anymore)
++ PHP 7.4 (or higher) (PHP 7.0 and PHP 5.6 should work but it's not tested anymore)
 + MySQL 5.5 (or higher)
 + PHP extensions: curl, fileinfo, mbstring, icu, phar, zip
 + Apache modules: mod_rewrite

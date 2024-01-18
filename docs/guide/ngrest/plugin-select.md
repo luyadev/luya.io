@@ -6,7 +6,7 @@ Generates a dropdown (select) field based on given values.
 
 There are 3 different types of plugins:
 
-+ <class name="luya\admin\ngrest\plugins\SelectArray" />: Take dropdown values from an arrayy
++ <class name="luya\admin\ngrest\plugins\SelectArray" />: Take dropdown values from an array
 + <class name="luya\admin\ngrest\plugins\SelectRelationActiveQuery" />: Determine Values from a Yii relation. Best performance and therefore recommend!
 + <class name="luya\admin\ngrest\plugins\SelectModel" />: Database Query based select, bad performance but quick setup. Should not be used when making selects in a large table.
 
@@ -35,7 +35,7 @@ When dealing with large tables the <class name="luya\admin\ngrest\plugins\Select
 ]
 ```
 
-In order to access the data through a eager loaded relation, the relation name must be omited into the config. Assuming the example above `getUser()` would return a `$this->hasOne()` relation definition the <class name="luya\admin\ngrest\plugins\SelectRelationActiveQuery" prop="relation" /> property can be configured to load the data from this relation:
+In order to access the data through an eager loaded relation, the relation name must be added into the config. Assuming the example above `getUser()` would return a `$this->hasOne()` relation definition the <class name="luya\admin\ngrest\plugins\SelectRelationActiveQuery" prop="relation" /> property can be configured to load the data from this relation:
 
 ```php
 'user_id' => [
@@ -46,7 +46,7 @@ In order to access the data through a eager loaded relation, the relation name m
 ]
 ```
 
-In order to eager load the `user` relation withing API list calls, the `with()` defintion can be configured in <class name="luya\admin\ngrest\base\Api" method="prepareListQuery" />:
+In order to eager load the `user` relation within API list calls, the `with()` definition can be configured in <class name="luya\admin\ngrest\base\Api" method="prepareListQuery" />:
 
 ```php
 public function prepareListQuery()
@@ -112,7 +112,7 @@ public function getCustomer()
 
 ## Handling `null` empty values
 
-By default a **no selection** or a **reset of a currently selected** item will assign the value `null` to this field as defined in <class name="luya\admin\ngrest\plugins\Select" prop="initValue" />. This might make problem with handling empty [Yii validation rule inputs](https://www.yiiframework.com/doc/guide/2.0/en/input-validation#handling-empty-inputs) as `null` wont be threated. Therfore you could change initValue to `0` or change the validation rules to have a default value on empty:
+By default a **no selection** or a **reset of a currently selected** item will assign the value `null` to this field as defined in <class name="luya\admin\ngrest\plugins\Select" prop="initValue" />. This might make problem with handling empty [Yii validation rule inputs](https://www.yiiframework.com/doc/guide/2.0/en/input-validation#handling-empty-inputs) as `null` wont be threated. Therefore you could change initValue to `0` or change the validation rules to have a default value on empty:
 
 ```php
 return [
@@ -120,7 +120,7 @@ return [
 ];
 ```
 
-This will set value to `0` if `null` value recieves the API. Or change the initValue to 0 when configure the select plugin:
+This will set value to `0` if `null` value receives the API. Or change the initValue to 0 when configure the select plugin:
 
 ```php
 return [

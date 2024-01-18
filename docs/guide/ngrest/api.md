@@ -13,7 +13,7 @@ class MyEndpoint extends Api
 
 ## Expand Relations
 
-Its very common to join relation data for index list view in order to reduce SQL queries. To do so define the <class name="luya\admin\ngrest\base\Api" method="withRelations" /> method inside your API. This can be either an array with relations which will be passed to `index, list and view` or an array with a subdefintion in order to define which relation should be used in which scenario.
+Its very common to join relation data for index list view in order to reduce SQL queries. To do so define the <class name="luya\admin\ngrest\base\Api" method="withRelations" /> method inside your API. This can be either an array with relations which will be passed to `index, list and view` or an array with a subdefinition in order to define which relation should be used in which scenario.
 
 ```php
 public function withRelations()
@@ -56,7 +56,7 @@ class XYZ extends NgRestModel
 
 ## Pagination
 
-The LUYA API automaticcally enabled pagination after 200 rows, but you can also force this settings by configure the <class name="luya\admin\ngrest\base\Api" prop="pagination" /> property:
+The LUYA API automatically enabled pagination after 200 rows, but you can also force this settings by configure the <class name="luya\admin\ngrest\base\Api" prop="pagination" /> property:
 
 ```php
 public $pagination = ['defaultPageSize' => 50];
@@ -110,7 +110,7 @@ public $apis = [
 ];
 ```
 
-In the traditional way you would have to run the action `actionComments` like following `example.com/admin/api-module-news/comments?id=1` but as you want to unfold the comments with `example.com/admin/api-module-news/1/comments` you can now add this rule to the extra pattersn for the rule defintion:
+In the traditional way you would have to run the action `actionComments` like following `example.com/admin/api-module-news/comments?id=1` but as you want to unfold the comments with `example.com/admin/api-module-news/1/comments` you can now add this rule to the extra patterns for the rule defintion:
 
 ```php
  public $apiRules = [
@@ -120,7 +120,7 @@ In the traditional way you would have to run the action `actionComments` like fo
 
 ## Filtering
 
-Sometimes you need to have additional filtering methods for a given API requests, therefore <class name="yii\data\DataFilter" /> is ussed. Assuming you'd like filter row for a given where condition, like groups you have to create a Filtering Model and declare the filter model in the API.
+Sometimes you need to have additional filtering methods for a given API requests, therefore <class name="yii\data\DataFilter" /> is used. Assuming you'd like filter row for a given where condition, like groups you have to create a Filtering Model and declare the filter model in the API.
 
 Define the filter model:
 
@@ -138,7 +138,7 @@ class MyApiFilter extends \yii\base\Model
 }
 ```
 
-Assigne the filter model to the API:
+Assign the filter model to the API:
 
 ```php
 class MyApi extends luya\admin\ngrest\base\Api
@@ -149,7 +149,7 @@ class MyApi extends luya\admin\ngrest\base\Api
 }
 ```
 
-Now as you have declared the filtering model to the API, this allows you to use the `filter` param, assuming you d like to filter for a given group_id in the users lise there URL would like this `my-api-filter?filter[group_id]=1`.
+Now as you have declared the filtering model to the API, this allows you to use the `filter` param, assuming you'd like to filter for a given group_id in the users lise there URL would like this `my-api-filter?filter[group_id]=1`.
 
 The filter can also be part of the requested body, the body param should then start with `filter` as well:
 
@@ -187,7 +187,7 @@ Complex and nested conditions are possible as well:
 
 #### A few example as JSON and HTTP GET param
 
-The following examples show filter requests for JSON body param or as get param. This helps to transform from JSON to HTTP GET param as its mostly harder to read and write.
+The following examples show filter requests for JSON body param or as get param. This helps to transform from JSON to HTTP GET param as it's mostly harder to read and write.
 
 <table>
 <thead>

@@ -1,6 +1,6 @@
 # Frontend Module
 
-If specific logic have to be applied to your website, e. g. a form where user can input data or you may load data from a database and render a custom view then you can create a frontend module. The module can be integrated into your CMS or called directly via the module url.
+If specific logic have to be applied to your website, e.g. a form where user can input data or you may load data from a database and render a custom view then you can create a frontend module. The module can be integrated into your CMS or called directly via the module url.
 
 Frontend modules are also a very common way to redistributed logic of a controller but still let the user implement the view files to fit their look.
 
@@ -29,7 +29,7 @@ When including a module into the CMS, the rendering of your module view file wil
 
 ## Title and meta information
 
-LUYA uses the default implementation of the title variable inside the [Yii Titel-Tag](https://www.yiiframework.com/doc-2.0/guide-structure-views.html#setting-page-titles) view object, you can override the title inside an action:
+LUYA uses the default implementation of the title variable inside the [Yii Title Tag](https://www.yiiframework.com/doc-2.0/guide-structure-views.html#setting-page-titles) view object, you can override the title inside an action:
 
 ```php
 public function actionIndex()
@@ -73,9 +73,9 @@ $this->registerMetaTag(['name' => 'description', 'content' => 'Description of th
 
 ### Forms
 
-As the csrf validation is enabled by default, you have to integrate them into your forms (if you are not using the ActiveForm Widget). You will find all information here: [Guide to include CSRF Token forms](https://zero-exception.blogspot.ch/2015/01/yii2-using-csrf-token.html). LUYA will auto insert the csrf meta tag to your head section if you are using the CMS Module.
+As the CSRF validation is enabled by default, you have to integrate them into your forms (if you are not using the ActiveForm Widget). You will find all information here: [Guide to include CSRF Token forms](https://zero-exception.blogspot.ch/2015/01/yii2-using-csrf-token.html). LUYA will auto insert the CSRF meta tag to your head section if you are using the CMS Module.
 
-Quick fix without disabling csrf validation and not using the ActiveForm Widget: 
+Quick fix without disabling CSRF validation and not using the ActiveForm Widget: 
 
 ```php
 <form action='#' method='POST'>
@@ -84,7 +84,7 @@ Quick fix without disabling csrf validation and not using the ActiveForm Widget:
 </form>
 ```
 
-In order to disable the csrf validation set <class name="yii\web\Controller" prop="enableCsrfValidation" /> to `false` inside your Controller.
+In order to disable the CSRF validation set <class name="yii\web\Controller" prop="enableCsrfValidation" /> to `false` inside your Controller.
 
 ```php
 class MyController extends \luya\web\Controller

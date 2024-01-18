@@ -34,9 +34,12 @@ This represents a guideline how words and proper nouns should be written in the 
 + AJAX
 + AngularJS
 + Apache
-+ API
-+ AWS
++ API / APIs
++ AWS S3
 + BBCode
++ BitBucket
++ Bootstrap – the framework
++ Bower
 + CDN
 + CI
 + CMS
@@ -44,17 +47,20 @@ This represents a guideline how words and proper nouns should be written in the 
 + CORS
 + CRUD
 + CSS
++ CSRF
 + DNS
 + Docker
 + DRY
 + e.g. – instead of f.e., for example or similar expressions
 + FAQ
 + GET – REST API command
++ Gii
 + Git
 + GitHub
 + HTML
 + HTTP
 + i18n
++ iOS
 + JavaScript
 + jQuery
 + JS
@@ -65,27 +71,37 @@ This represents a guideline how words and proper nouns should be written in the 
 + macOS
 + MAMP
 + Markdown
++ MD5
 + MVC
 + MySQL
 + NgRest
 + OpenAPI
 + OS
++ Packagist
 + PHP
 + PHPDoc
 + PHPMailer
 + POST – REST API command
 + REST
 + SCSS
++ SMTP
 + SQL
 + SSH
++ Strict DI
++ SVG
 + SVN
++ TTL
 + UI
 + Unix
 + URL
 + VCS
++ VitePress
 + WAMP
++ Windows
++ WordPress
 + XAMPP
-+ Yii
++ XHR
++ Yii / Yii 2
 + yourdomain.com – instead of example.com, yourproject.com, etc.
 
 It should be avoided to use personal pronouns (e.g. we have this, we recommend that, you can, etc.), please use impersonal pronouns (e.g. there is this, it’s recommended that, etc.).
@@ -137,7 +153,7 @@ All classes have to use a standard PHPDoc block including the *author* and *sinc
  *
  * The description of the class with a dot at the end.
  *
- * @property string $virtualProperty This describes the response of the vritualProperty
+ * @property string $virtualProperty This describes the response of the virtual property
  * @property \luya\base\Module $virtualProperty This describes the response but ensures class linkable IDE abilities.
  *
  * @see Take a look at luya\base\Module::resolveRoute()
@@ -195,7 +211,7 @@ Which would be equals to `$_POST['username']` and `$_POST['password']`.
 SQL Database table and field namings:
 
 + Tables are singular
-+ Table and column names are seperated by underscore (_)
++ Table and column names are separated by underscore (_)
 + The primary key is always ***id***
 + ***All*** tables have to use the module name as prefix. (e.g. admin_*)
 + Always use the frontend-module name as a prefix if there are both modules available (frontend and backend).
@@ -224,7 +240,7 @@ The SCSS folder contains all SCSS files and is structured as follows:
 
 | Folders | Description |
 |---------|-------------|
-| `base/` | Contains basic styles like the reboot, angular fixes and default styles for tags |
+| `base/` | Contains basic styles like the reboot, AngularJS fixes and default styles for tags |
 | `browser-fixes/` | Contains specific browser fixes, for each fix we use a different file (e.g. `_ie.scss`) |
 | `components/` | Here all the components are stored. See "components" further down |
 | `fonts/` | Contains font-face and mixins for the specific font. |
@@ -234,7 +250,7 @@ The SCSS folder contains all SCSS files and is structured as follows:
 **Components/**
 
 All classes for a component are prefixed with the components name. If you have to select something by HTML tag, be sure that there is no way to select it by a specific class (if you can add a class to the element, go for it).
-Children of a component are seperated with a `-`.
+Children of a component are separated with a `-`.
 
 Example:
 

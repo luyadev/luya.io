@@ -23,7 +23,7 @@ A theme has a recommend folder structure. Each theme **requires to have a `theme
 ```
 
 + `theme.json`: The theme configuration file contains all information about the theme itself like the name, description and optional array with path maps.
-+ `composer.json`: The Composer configuration file is required to push the package to packagist and makes the installation process very fast.
++ `composer.json`: The Composer configuration file is required to push the package to Packagist and makes the installation process very fast.
 + `layouts/theme.php`: The layout file in the `layouts` folder is like the `layout.php` file in Yii applications and requires a `$content` variable.
 + `cmslayouts/theme.php`: The CMS layout [CMS Layouts](../cms/cmslayouts) which should be taken. Those can be changed in the admin UI.
 
@@ -38,7 +38,7 @@ Theme configuration file `theme.json`:
 |variable|description|example
 |--------|-----------|-----
 |name|The name which is displayed in the Theme Manager|`my-super-name`
-|description|A description what this theme include or what its built on|`My Super Theme based on Bootstrap 4 and JQuery`
+|description|A description what this theme include or what it's built on|`My Super Theme based on Bootstrap 4 and JQuery`
 |pathMap|Read more about in Additional path map|`[]`
 |parentTheme| Read more about in the File inheritance/override section|`null`
 
@@ -100,12 +100,12 @@ CMS layout file `cmslayouts/theme.php`:
 
 While running the import command (`./vendor/bin/luya import`), the theme information will be loaded from the `theme.json` and stored in the database. The command will list the imported themes and layouts after running.
 
-After a succesfull import of the new theme, the theme itself can be activated in the CMS Admin *Themes* section.
+After a successfull import of the new theme, the theme itself can be activated in the CMS Admin *Themes* section.
 **For each new and exists pages you have to set/change the selected layout file.**
 
 ![theme-management](../img/theme-management.png "LUYA theme management")
 
-> For developing purposes themes can also be activated withing the <class name="luya\theme\ThemeManager" /> component with <class name="luya\theme\ThemeManager" prop="activeThemeName" /> property.
+> For developing purposes themes can also be activated within the <class name="luya\theme\ThemeManager" /> component with <class name="luya\theme\ThemeManager" prop="activeThemeName" /> property.
 
 ## Additional path map (`pathMap`)
 
@@ -158,7 +158,7 @@ The order of view inheritance (pathMap) will looks like this:
 3. @blueTheme/views => [ @app/views, @blueTheme/views, @blankTheme/views ]
 3. @blankTheme/views => [ @app/views, @blueTheme/views, @blankTheme/views ]
 
-At first search the requested path in the first column. On a match searching in the list of theme paths for a exists file in the defined order.
+At first search the requested path in the first column. On a match searching in the list of theme paths for an existing file in the defined order.
 
 ## Theme packages
 

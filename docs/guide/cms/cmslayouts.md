@@ -46,7 +46,7 @@ In order to provide a JSON, use the same name as for the layout with the ending 
 }
 ```
 
-Now the administration area knows how the placeholder columns are structured based on the the Bootstrap 4 grid system. The maximum amount of `cols` is 12.
+Now the administration area knows how the placeholder columns are structured based on the Bootstrap 4 grid system. The maximum amount of `cols` is 12.
 
 You can also define multiple rows, here an advanced example for a layout with 4 placeholders:
 

@@ -52,7 +52,7 @@ $config = [
 
 ## Example module
 
-In our example we make a *TEAM module* which has a frontend and admin module part. All admin modules have by defintion the suffix **admin**, the naming of the modules would look like this in our case:
+In our example we make a *TEAM module* which has a frontend and admin module part. All admin modules have by definition the suffix **admin**, the naming of the modules would look like this in our case:
 
 + team *Frontend* `modules/frontend/Module.php`
 + teamadmin *Admin* `modules/admin/Module.php`
@@ -83,7 +83,7 @@ class Module extends \luya\admin\base\Module
 
 ## Import Method
 
-All modules can contain a <class name="luya\admin\base\Module" method="import" /> method wich will be called when running the [console command `import`](/guide/app/console). 
+All modules can contain a <class name="luya\admin\base\Module" method="import" /> method which will be called when running the [console command `import`](/guide/app/console). 
 If <class name="luya\admin\base\Module" method="import" /> method returns an array each class must extend from the <class name="luya\console\Importer" /> class.
 
 > One of the main ideas behind LUYA is to store data in files and import them into your database.
@@ -128,4 +128,4 @@ To do so open the `composer.json` file and add the *autoload* section (if not ex
 }
 ```
 
-Run the `composer dump-autoload` command in order to refresh the autoload section of your Composer file. Now you are able to access the *app/modules/mymodule* files directly with the *mymodule* module namepsace.
+Run the `composer dump-autoload` command in order to refresh the autoload section of your Composer file. Now you are able to access the *app/modules/mymodule* files directly with the *mymodule* module namespace.

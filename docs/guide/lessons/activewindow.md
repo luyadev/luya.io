@@ -33,13 +33,13 @@ This includes linking to the correct class definition of the Active Window, addi
 
 ## Configuring the mail LUYA component
 
-The next step is to actual declare our functions which are needed to send the emails to all members of the group. The LUYA `mail` component was created especially for handling emails. It is included in every LUYA installation and you have only to configure it with your credentials (e.g. pointing to your smtp server etc.). These are the standard values which have to be changed in the kickstarter installation config file `configs/env-local.php`:
+The next step is to actual declare our functions which are needed to send the emails to all members of the group. The LUYA `mail` component was created especially for handling emails. It is included in every LUYA installation and you have only to configure it with your credentials (e.g. pointing to your SMTP server etc.). These are the standard values which have to be changed in the kickstarter installation config file `configs/env-local.php`:
 
 ```php
 'components' => [        
     /*
-     * Add your smtp connection to the mail component to send mails (which is required for secure login), you can test your
-     * mail component with the luya console command ./vendor/bin/luya health/mailer.
+     * Add your SMTP connection to the mail component to send mails (which is required for secure login), you can test your
+     * mail component with the LUYA console command ./vendor/bin/luya health/mailer.
      */
     'mail' => [
         'host' => null,
@@ -154,6 +154,6 @@ We configured the widget to use our defined callback function in the Active Wind
 
 ## Result
 
-After saving the view file, we have successfully added an Active Window to the *addressbook* module. As you can see, it is fully integrated in our CRUD view, utilizes the already defined [bootstrap table styles](https://getbootstrap.com/docs/4.0/content/tables/) and uses the LUYA CMS notification service:
+After saving the view file, we have successfully added an Active Window to the *addressbook* module. As you can see, it is fully integrated in our CRUD view, utilizes the already defined [Bootstrap table styles](https://getbootstrap.com/docs/4.0/content/tables/) and uses the LUYA CMS notification service:
 
 ![Showing the Active Window](../img/aws-result.gif "Showing the Active Window")

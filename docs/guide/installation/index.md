@@ -38,7 +38,7 @@ Now the database connection inside the `configs/config.php` file needs to fit yo
 
 ## Migrate and Import
 
-After successfully setting up your database connection, you have to reopen your terminal and switch to your project directory and excute the **luya** binary files, which has been installed into your vendor folder by Composer as described below.
+After successfully setting up your database connection, you have to reopen your terminal and switch to your project directory and execute the **luya** binary files, which has been installed into your vendor folder by Composer as described below.
 
 Run the migration files with the [migrate console command](/guide/app/console):
 
@@ -72,7 +72,7 @@ The setup process will ask you for an email and password to store your personal 
 
 > `./vendor/bin/luya health` will make a small check if several directories exist and readable/writable.
 
-You can now log into the administration interface, e.g. `http://localhost/luya-kickstarter/public_html/admin` (dependings on the location of the LUYA files).
+You can now log into the administration interface, e.g. `http://localhost/luya-kickstarter/public_html/admin` (depending on the location of the LUYA files).
 
 > Check the [Installation Problems and Questions Site](/guide/installation/problems) if you have any problems with the LUYA setup.
 
@@ -96,4 +96,4 @@ This will run the migrate, import and setup command with a default user `admin@a
 docker-compose exec luya_web luya <console_command>
 ```
 
-Since the Dockerimage is running on port 80, the docker-compose maps the internal [port 80 to your machines port 8080](https://github.com/luyadev/luya-kickstarter/blob/master/docker-compose.yml#L27) so you can now access your website in the browser under `localhost:8080`.
+Since the Docker image is running on port 80, the docker-compose maps the internal [port 80 to your machines port 8080](https://github.com/luyadev/luya-kickstarter/blob/master/docker-compose.yml#L27) so you can now access your website in the browser under `localhost:8080`.

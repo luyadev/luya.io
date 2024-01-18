@@ -35,7 +35,7 @@ The plugins listed below can be configured but make sure your are familiar with 
 |sortRelationArray|<class name="luya\admin\ngrest\plugins\SortRelationArray" />|array|Similar to selectArray but with the ability to sort and to selected multiple items.
 |sortRelationModel|<class name="luya\admin\ngrest\plugins\SortRelationModel" />|array|Similar to selectModel but with the ability to sort and to selected multiple items.
 |html|<class name="luya\admin\ngrest\plugins\Html" />|string|HTML data without encoding.
-|raw|<class name="luya\admin\ngrest\plugins\Raw" />|string|Does not modify the content, usefull when working with JSON API input/output.
+|raw|<class name="luya\admin\ngrest\plugins\Raw" />|string|Does not modify the content, useful when working with JSON API input/output.
 |index|<class name="luya\admin\ngrest\plugins\Index" />|string|Sequential number index.
 |angular|<class name="luya\admin\ngrest\plugins\Angular" />|string|Write a custom AngularJS template which can interact with the current item value.
 
@@ -102,7 +102,7 @@ zaa.directive("myDirective", function() {
 });
 ```
 
-> If your code depends on an external library (which is loaded trough bower for example), you have to push this dependency into the zaa LUYA admin variable: `angular.module("zaa").requires.push('ui.tinymce');`. Afterwards the `ui.tinymce` (in this example) can be used in side your directive.
+> If your code depends on an external library (which is loaded trough Bower for example), you have to push this dependency into the zaa LUYA admin variable: `angular.module("zaa").requires.push('ui.tinymce');`. Afterwards the `ui.tinymce` (in this example) can be used in side your directive.
 
 Now in order to use the custom `TestPlugin` in your [NgRest config model](/guide/ngrest/model) you can define an extra field which takes care of getting (list) and setting (update/create) the value in your <class name="admin\ngrest\base\Model "/> ActiveRecord class model.
 

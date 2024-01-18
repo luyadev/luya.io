@@ -66,7 +66,7 @@ Generate thumbnail cropped to 500x500 pixel but does at background color to fill
 |---        |---        |---
 |width      |yes        |The crop width
 |height     |yes        |The crop height
-|start      |no         |The starting point. This must be an array with two elements representing `x` and `y` coordinates. If not provided its `[0,0]`.
+|start      |no         |The starting point. This must be an array with two elements representing `x` and `y` coordinates. If not provided it's `[0,0]`.
 |saveOptions|no         |Array with options to pass to the imagine `save()` method, example quality.
 
 Crop the image to 500x500 pixel.

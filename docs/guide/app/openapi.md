@@ -1,6 +1,6 @@
 # OpenAPI Generator
 
-Since version 3.2 of LUYA Admin Module an OpenAPI file generator is available. The generator creates a JSON OpenAPI Defintion based on all REST UrlRules and routes provided with ControllerMap.
+Since version 3.2 of LUYA Admin Module an OpenAPI file generator is available. The generator creates a JSON OpenAPI Definition based on all REST UrlRules and routes provided with ControllerMap.
 
 The purpose of the generator is to have documentation where it should belong, in the code, but also provide those descriptions to the Endpoint Consumers.
 
@@ -27,7 +27,7 @@ When logged into the Admin Module, the Documentation can be explored in real tim
 
 ## PHP Documentation
 
-The details, descriptions and paramters or mostly read from the PHPDoc blocks, this means documentation inside the code will be exposed to the API Consumers, thefore its finally absolute worth to take time making propper documentations. This will make other developers, yourself and API Consumers happy. The LUYA OpenAPI generator can interpret reference to objects and classes, will follow them and publish those to the OpenAPI.
+The details, descriptions and parameters or mostly read from the PHPDoc blocks, this means documentation inside the code will be exposed to the API Consumers, therefore it's finally absolute worth to take time making propper documentations. This will make other developers, yourself and API Consumers happy. The LUYA OpenAPI generator can interpret reference to objects and classes, will follow them and publish those to the OpenAPI.
 
 An example of an LUYA Admin API Defintion:
 
@@ -58,13 +58,13 @@ class LangController extends Api
 }
 ```
 
-The above <class name="luya\admin\ngrest\base\Api" /> will be generate all the <class name="luya\rest\ActiveController" /> actions like list, detail view, create, update and delete. The specifications will be taken from the ActiveRecord isntance defined in $modelClass (luya\admin\models\Lang in the above case).
+The above <class name="luya\admin\ngrest\base\Api" /> will be generate all the <class name="luya\rest\ActiveController" /> actions like list, detail view, create, update and delete. The specifications will be taken from the ActiveRecord instance defined in `$modelClass` (`luya\admin\models\Lang` in the above case).
 
 The `actionTest()` requires an param `$id` and will return a <class name="luya\admin\models\Group" /> instance defined in PHP Doc, therefore this is what would be rendered:
 
 ![OpenAPI Custom Action](../img/openapi-custom-action.png "OpenAPI Custom Action")
 
-When Parsing ActiveRecords the `@property` values of a class will be interpreted as well as `attributeLabels()` and `attributeHints()`.
+When parsing ActiveRecords the `@property` values of a class will be interpreted as well as `attributeLabels()` and `attributeHints()`.
 
 ### Request Body
 
@@ -97,7 +97,7 @@ Which would be equals to `$_POST['username']` and `$_POST['password']`.
 
 ### Working with actions() Array
 
-With the Yii Framework its very convient to make use of `actions()` definition as array inside a controller. This allows to easy share actions among controllers. The downside of this behavior is the Description and Title of those Actions are always the same. So the OpenAPI documentation for those actions like REST actions `actionIndex()`, `actionUpdate($id)`, `actionView($id)` are all the same. In order to fix this problem we encourage you to use [@method](https://docs.phpdoc.org/latest/references/phpdoc/tags/method.html) PHPDoc Param this will also improve the documentation of your code and generate correctly meaningful OpenAPI documentations.
+With the Yii Framework it's very convenient to make use of `actions()` definition as array inside a controller. This allows to easy share actions among controllers. The downside of this behavior is the Description and Title of those Actions are always the same. So the OpenAPI documentation for those actions like REST actions `actionIndex()`, `actionUpdate($id)`, `actionView($id)` are all the same. In order to fix this problem we encourage you to use [@method](https://docs.phpdoc.org/latest/references/phpdoc/tags/method.html) PHPDoc Param this will also improve the documentation of your code and generate correctly meaningful OpenAPI documentations.
 
 ```php
 <?php
@@ -117,9 +117,9 @@ With the Yii Framework its very convient to make use of `actions()` definition a
 
 ## Change Verb
 
-In order to ensure all the actions have the correct verbs its recommend to use the <class name="luya\base\Module" prop="urlRules" /> variable, which can declare or override actuall <class name="yii\rest\UrlRule" /> patters or add extraPattersn:
+In order to ensure all the actions have the correct verbs it's recommend to use the <class name="luya\base\Module" prop="urlRules" /> variable, which can declare or override actuall <class name="yii\rest\UrlRule" /> patters or add extra patterns:
 
-An example of how to defined whether an actrin is only allowed for post or not, which is also taken into account when rendering the OpenAPI file:
+An example of how to defined whether an action is only allowed for post or not, which is also taken into account when rendering the OpenAPI file:
 
 ```php
 public $apiRules = [
@@ -140,7 +140,7 @@ The first example will map `POST api-admin-timestamp` to the index action, the s
 
 ## OpenAPI Client
 
-In order to consum the OpenAPI trough OpenAPI Client you have to turn off <class name="luya\admin\Module" prop="jsonCruft" /> behavior in the <class name="luya\Config" /> for the Admin Module:
+In order to consume the OpenAPI trough OpenAPI Client you have to turn off <class name="luya\admin\Module" prop="jsonCruft" /> behavior in the <class name="luya\Config" /> for the Admin Module:
 
 ```php
  'admin' => [

@@ -9,14 +9,14 @@ Every JSON-LD property starts within a given type like `Person` the base of ever
 |Name|Usage
 |----|-----
 |`luya\web\jsonld\Thing`|This is the base object for every JSON-LD object.
-|`luya\web\jsonld\Person`|Authors for serveral things like blog post, comments or used when having text about a person.
+|`luya\web\jsonld\Person`|Authors for several things like blog post, comments or used when having text about a person.
 |`luya\web\jsonld\BlogPosting`|Used for Blog posts or news articles.
 |`luya\web\jsonld\Organization`|Provides information about an organization such as a school, NGO, corporation, club, etc.
 |`luya\web\jsonld\CreativeWork`|Providing informations about a given work.
 |`luya\web\jsonld\Place`|Describes location, for example to provide the company location.
 |`luya\web\jsonld\ImageObject`|Used for images or galleries.
 |`luya\web\jsonld\Comment`|Could be used for user comments.
-|`luya\web\jsonld\ContactPoint`|E-Mail, Telephone or address.
+|`luya\web\jsonld\ContactPoint`|Email, Telephone or address.
 |`luya\web\jsonld\Offer`|Providing an estore offer.
 
 
@@ -27,7 +27,7 @@ JsonLd::person()
    ->setBirthPlace('Ulm, Germany');
 ```
 
-Keep in mind that a lot of objects require a certain sub object. This makes it more complex to build and understand, but also provides the possibility for the nesting which are required by the schema defintions. For example the `BlogPosting` publisher requires an `Organisation` object and the organisation logo requires an `ImageObject` object:
+Keep in mind that a lot of objects require a certain sub object. This makes it more complex to build and understand, but also provides the possibility for the nesting which are required by the schema definitions. For example the `BlogPosting` publisher requires an `Organisation` object and the organisation logo requires an `ImageObject` object:
 
 ```php
 $logo = (new ImageObject())
@@ -41,7 +41,7 @@ JsonLd::blogPosting()
     ->setPublisher($organisation)
 ```
 
-Currently we do not have all possible types implemented but you can always register them by yourself by calling <class name="luya\web\JsonLd" method="addGraph" /> with an array which contains the defintions:
+Currently we do not have all possible types implemented but you can always register them by yourself by calling <class name="luya\web\JsonLd" method="addGraph" /> with an array which contains the definitions:
 
 ```php
 luya\web\JsonLd::addGraph([
