@@ -5,7 +5,7 @@ See <class name="luya\admin\ngrest\base\NgRestModel" method="ngRestPools" />.
 ## Define data pools
 
 ::: info
-The difference between <class name="luya\admin\ngrest\base\NgRestModel" method="ngRestFilters" /> and <class name="luya\admin\ngrest\base\NgRestModel" method="ngRestPools" /> is that the pool identifer must be provided in the menu component and is not visible in the UI, it is like an invisible filter, only available to developers.
+The difference between <class name="luya\admin\ngrest\base\NgRestModel" method="ngRestFilters" /> and <class name="luya\admin\ngrest\base\NgRestModel" method="ngRestPools" /> is that the pool identifier must be provided in the menu component and is not visible in the UI, it is like an invisible filter, only available to developers.
 :::
 
 A data pool can be used to retrieve only a subset of data. The identifier for the pool is passed trough to all subrelation
@@ -20,7 +20,7 @@ return [
 ];
 ```
 
-If the pool identifier is defined in the menu, all subrelation calls will receive the identifer. Thefore, in the above example, you could have a model for car parts that only returns parts with the same pool identifier in relation calls:
+If the pool identifier is defined in the menu, all subrelation calls will receive the identifier. Therefore, in the above example, you could have a model for car parts that only returns parts with the same pool identifier in relation calls:
 
 ```php
 return [

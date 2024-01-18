@@ -4,7 +4,7 @@ The <class name="luya\cms\Menu" /> component allows you to build website navigat
 
 You can access the <class name="luya\cms\Menu" /> component trough `Yii::$app->menu`. This component help you to create menus, find childs, get items of containers, get property data and much more. The menu component is automatically registered when adding the CMS module to your config.
 
-The menu component is registered automatically in your config, if you need to configure or modify settings the registration of the componeont looks like this:
+The menu component is registered automatically in your config, if you need to configure or modify settings the registration of the component looks like this:
 
 ```php
 return [
@@ -205,7 +205,7 @@ The menu component triggers certain <class name="yii\base\Event" />. You can hoo
             // see if this menu item has a property
             $prop = $event->item->getProperty('propertyIdentifier');
             if ($prop) {
-                // if yes, and the method of this provery evaulates whether visible or not, show/hide the item
+                // if yes, and the method of this property evaluates whether visible or not, show/hide the item
                 $event->setVisible($prop->isItemVisible());
             }
         }

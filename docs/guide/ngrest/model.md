@@ -94,7 +94,7 @@ This will trigger the <class name="luya\admin\ngrest\base\NgRestModel" method="d
 
 ## Multlingual / i18n fields
 
-You can define all fields as multi lingual by the following setting the <class name="luya\admin\ngrest\base\NgRestModel" prop="i18n" />:
+You can define all fields as multi-lingual by the following setting the <class name="luya\admin\ngrest\base\NgRestModel" prop="i18n" />:
 
 ```php
 public $i18n = ['title', 'description'];
@@ -102,7 +102,7 @@ public $i18n = ['title', 'description'];
 
 This will automatically enable the options to add content for all languages to each field and returns the content for the current active language when returning the data from the model in the frontend.
 
-When casting a field as i18n it will save the multi lingual data in JSON format in the database.
+When casting a field as i18n it will save the multi-lingual data in JSON format in the database.
 
 ::: warning
 All i18n fields must be type of varchar or even better as text in the database as it is JSON encodes the input array in the database table field. Which mostly requires more then 255 chars.
@@ -112,12 +112,12 @@ The i18n fields will be saved as JSON with a string entry for every CMS language
 
 ## Extra fields
 
-Sometimes you want to define fields which are not part of the ActiveRecord model and are not part of the database table, e. g. you want to display a count of registered users on the CRUD list. To achieve this you may use the <class name="luya\admin\ngrest\base\NgRestModel" method="extraFields" /> principal combined with the <class name="yii\base\BaseObject" /> getter/setter information.
+Sometimes you want to define fields which are not part of the ActiveRecord model and are not part of the database table, e.g. you want to display a count of registered users on the CRUD list. To achieve this you may use the <class name="luya\admin\ngrest\base\NgRestModel" method="extraFields" /> principal combined with the <class name="yii\base\BaseObject" /> getter/setter information.
 
 Extra fields require:
 
 + A getter method. `getRegisteredCount()`
-+ A defintion entry in <class name="luya\admin\ngrest\base\NgRestModel" method="ngRestExtraAttributeTypes" />. `'registeredCount' => 'number'`
++ A definition entry in <class name="luya\admin\ngrest\base\NgRestModel" method="ngRestExtraAttributeTypes" />. `'registeredCount' => 'number'`
 + A validation rule assigned to the attribute name using <class name="luya\admin\ngrest\base\NgRestModel" method="rules" />.  `['registeredCount', 'safe']`
 
 ```php
@@ -140,7 +140,7 @@ public function ngRestExtraAttributeTypes()
 
 > The <class name="luya\admin\ngrest\base\NgRestModel" method="ngRestExtraAttributeTypes" /> defined attributes will be automatically added to <class name="luya\admin\ngrest\base\NgRestModel" method="extraFields" /> section.
 
-In order to work with this new defined extraibue pass the extra to the <class name="luya\admin\ngrest\base\NgRestModel" method="ngRestScopes" /> definition.
+In order to work with this new defined extra attribute pass the extra to the <class name="luya\admin\ngrest\base\NgRestModel" method="ngRestScopes" /> definition.
 
 ```php
 public function ngRestScopes($)
@@ -156,7 +156,7 @@ Its also required to add a validation rule using <class name="luya\admin\ngrest\
 
 #### Extra Attribute without Value
 
-In certain siutation the extra field is not bound to any data, therefore you can either override the extraFields() method and remove the custom attribute or you can attach the "virtual" attribute to an existing root attribute using `.` notation:
+In certain situation the extra field is not bound to any data, therefore you can either override the extraFields() method and remove the custom attribute or you can attach the "virtual" attribute to an existing root attribute using `.` notation:
 
 ```php
 public function ngRestExtraAttributeTypes()
@@ -167,7 +167,7 @@ public function ngRestExtraAttributeTypes()
 }
 ```
 
-This will use the root attribute id which is present in the view, this can be usefull when using <class name="luya\admin\ngrest\plugins\Angular" /> plugins.
+This will use the root attribute id which is present in the view, this can be useful when using <class name="luya\admin\ngrest\plugins\Angular" /> plugins.
 
 ## Default Order (Sorting)
 
@@ -197,7 +197,7 @@ public function ngRestGroupByField()
 }
 ```
 
-The field (e. g. `cat_id`) must exist in the list pointer config array.
+The field (e.g. `cat_id`) must exist in the list pointer config array.
 
 ## Grid list adding user filters
 
@@ -245,7 +245,7 @@ public function ngRestAttributeGroups()
 
 If collapsed is `true` then the form group is hidden when opening the form, otherwise it is open by default (which is default value when nothing else is provided).
 
-## Angular Save/Update callback
+## AngularJS Save/Update callback
 
 Sometimes you just want to trigger some JavaScript functions after the save/update process in the NgRest model, therefore you can add config options with wrapped inside a JavaScript function which will be evaluated in triggered, please take care of JavaScript errors and eval injections when using this method!
 
@@ -258,7 +258,7 @@ public function ngRestConfigOptions()
 }
 ```
 
-When using an angular service injection, make sure to use strict di which is required since LUYA admin module version 1.2.
+When using an AngularJS service injection, make sure to use Strict DI which is required since LUYA admin module version 1.2.
 
 ## CRUD Relation Tabs
 
@@ -289,7 +289,7 @@ The above example will use the `getSales()` method of the current model where yo
 
 > Tip: If you generate an NgRest model for a relation which is not used in any other situations you can hide those items from the menu, but not from the permission system. To hide en element add the hiddenInMenu option in the <class name="luya\admin\base\Module" method="getMenu" /> method of the module as following: `itemApi('name', 'route', 'icon', 'api', ['hiddenInMenu' => true])`.
 
-If you like to display the name of the current element in the tabe you can define `'tabLabelAttribute' => 'fieldName'` where fieldName is the name of the attribute in the list overview.
+If you like to display the name of the current element in the table you can define `'tabLabelAttribute' => 'fieldName'` where fieldName is the name of the attribute in the list overview.
 
 ## Soft Deletion 
 
@@ -341,9 +341,9 @@ public function ngRestScopes()
 }
 ```
 
-A conditin like `['{title}'=>2, '{firstname}'=>'\'bar\'']]` will be evaluted as ng-show="item.title==2 && item.firstname=='bar'"
+A condition like `['{title}'=>2, '{firstname}'=>'\'bar\'']]` will be evaluated as `ng-show="item.title==2 && item.firstname=='bar'"`.
 
-The button conditions might also be defined separtly in the `ngRestConfigOptions()` function e.g. :
+The button conditions might also be defined separately in the `ngRestConfigOptions()` function, e.g.:
 
 ```php
 public function ngRestConfigOptions()

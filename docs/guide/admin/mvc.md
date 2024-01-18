@@ -55,17 +55,17 @@ You have now told the administration module that there is a new menu entry. All 
 Do not forget to run `import` command **and** assign the permission to your Administration Group in the admin UI afterwards!
 :::
 
-You could also use <class name="luya\admin\componenets\AdminMenuBuilder" method="nodeRoute" /> which would not have a group and item which gives you a larger screen to build your custom views.
+You could also use <class name="luya\admin\components\AdminMenuBuilder" method="nodeRoute" /> which would not have a group and item which gives you a larger screen to build your custom views.
 
 ## Custom view inline AngularJS controller
 
-If you would like to make a view file without any asset integration you can just bootstrap an inline angular controller within your view file like this:
+If you would like to make a view file without any asset integration you can just bootstrap an inline AngularJS controller within your view file like this:
 
 ```php
 <script>
 zaa.bootstrap.register('FinderController', ['$scope', function($scope) {
     
-    // add your angular controller logic here
+    // add your AngularJS controller logic here
 
     $scope.title = 'Hello World';    
 }]);

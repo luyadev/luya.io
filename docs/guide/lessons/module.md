@@ -2,11 +2,11 @@
 
 In this lesson we are going to create a module which handles all basic needs for maintaining a simple address book. We will create the module, learn about the CRUD interface, establish an URL route and learning about the two ways of a possible module frontend presentation. 
 
-Our starting point is a fresh [LUYA kickstarter installation](https://luya.io/guide/install).
+Our starting point is a fresh [LUYA kickstarter installation](https://luya.io/guide/installation).
 
 ## Create the module using the LUYA code wizard
 
-As described in the [LUYA  guide](https://luya.io/guide/app-admin-module) we will create the module by using the LUYA code wizard:
+As described in the [LUYA guide](https://luya.io/guide/admin/intro) we will create the module by using the LUYA code wizard:
 
 `./vendor/bin/luya module/create`
 
@@ -20,7 +20,7 @@ After successfully executing you'll notice the created file structure in the `mo
 
 ## Configure the module
 
-To register the module in LUYA you [have to edit the config file](https://luya.io/guide/app-module) according to your working environment. We will edit the `configs/env-local.php` because we are developing in the local environment. To register both modules (admin and frontend), we are adding the `addressbook` and `addressbookadmin` module to the existent module section in the config file:
+To register the module in LUYA you [have to edit the config file](https://luya.io/guide/app/module) according to your working environment. We will edit the `configs/env-local.php` because we are developing in the local environment. To register both modules (admin and frontend), we are adding the `addressbook` and `addressbookadmin` module to the existent module section in the config file:
 
 ```php
 'modules' => [
@@ -34,7 +34,7 @@ To register the module in LUYA you [have to edit the config file](https://luya.i
 ],
 ```
 
-> When creating an open source module, you should provide frontend views which the the developer then could trough `useAppViewPath` or not.
+> When creating an open source module, you should provide frontend views which the developer then could trough `useAppViewPath` or not.
 
 ## Creating the models and migrations
 
@@ -192,7 +192,7 @@ Change the labels in the `attributeLabels()` function to your liking.
 
 ## Frontend presentation
 
-After adding some sample data it is time to add a representation of our module to the frontend. To do this we will have two options: using a module page or using the module block. Both cases need an implementation of the [frontend module](https://luya.io/guide/app-module-frontend)
+After adding some sample data it is time to add a representation of our module to the frontend. To do this we will have two options: using a module page or using the module block. Both cases need an implementation of the [frontend module](https://luya.io/guide/frontend/intro)
 
 ### Module block 
 
@@ -309,7 +309,7 @@ Again you should work with style sheets, CSS class names and external JavaScript
 
 ### Setting up the detail view
 
-When clicking on an entry in the list view, we will end up in our detail view. To be able to get back fast, we are creating a back button with the correct URL route to our list view. Our detail view uses a Yii2 widget again: the [DetailView](https://www.yiiframework.com/doc-2.0/yii-widgets-detailview.html) widget.
+When clicking on an entry in the list view, we will end up in our detail view. To be able to get back fast, we are creating a back button with the correct URL route to our list view. Our detail view uses a Yii 2 widget again: the [DetailView](https://www.yiiframework.com/doc-2.0/yii-widgets-detailview.html) widget.
 
 ```php
 <a href="<?= $route = \luya\helpers\Url::toRoute(['/addressbook']); ?>">Back</a>

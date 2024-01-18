@@ -48,7 +48,7 @@ Working with callbacks
 
 Calling the callbacks
 
-+ When a Active Window callback is called the lower camelcase prefix method e.g. `callbackHelloWorld` must be called as `hello-world`.
++ When an Active Window callback is called the lower camelcase prefix method e.g. `callbackHelloWorld` must be called as `hello-world`.
 
 ## Attaching the class
 
@@ -137,7 +137,7 @@ public function callbackPostData($firstname, $lastname)
 
 ## AngularJS in view files
 
-As the admin UI is written in AngularJS which let´s you easily create inline AngularJS controllers to interact with your Active Window class. The below view file shows an AngularJS controller which collects data from the the controller assigned into the view but uses `ng-repeat to display and render the data.
+As the admin UI is written in AngularJS which let´s you easily create inline AngularJS controllers to interact with your Active Window class. The below view file shows an AngularJS controller which collects data from the controller assigned into the view but uses `ng-repeat to display and render the data.
 
 ```js
 <script>
@@ -159,7 +159,7 @@ zaa.bootstrap.register('InlineController', ['$scope', function($scope) {
 </div>
 ```
 
-After the Active Window response from the function `addToList` has received the Active Window will be reloaded. This is just a very quick integration example and it does not give the user a true AngularJS experience but shows you how to deliver solutions in a very short time. When working with angular you might want to trigger some of the functions of the CRUD, here a list of what functions are callable and what they do:
+After the Active Window response from the function `addToList` has received the Active Window will be reloaded. This is just a very quick integration example and it does not give the user a true AngularJS experience but shows you how to deliver solutions in a very short time. When working with AngularJS you might want to trigger some of the functions of the CRUD, here a list of what functions are callable and what they do:
 
 |Function|Description
 |--------|-----------
@@ -173,7 +173,7 @@ After the Active Window response from the function `addToList` has received the 
 ## Button permission level
 
 In addition to button condition a permission level can be set. This will ensure displaying the buttons only when proper permission level is met.
-This can be defined with the <class name="luya\admin\ngrest\base\ActiveWindow" prop="permissionLevel" /> atrribute. Example:
+This can be defined with the <class name="luya\admin\ngrest\base\ActiveWindow" prop="permissionLevel" /> attribute. Example:
 
 ```php
 public function ngRestActiveWindows()

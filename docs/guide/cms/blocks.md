@@ -97,7 +97,7 @@ Check the <class name="luya\cms\base\PhpBlockView" /> for full method reference 
 
 ## Register and import
 
-After creating a block, you have to *import* it into your application. The reason behind the import process is to avoid rely on database structure (which cant be tracked in a VCS or SVN easily) and to work with PHP files you can manage in version control system (e.g. GitHub or Bitbucket). Run the [Import Command](/guide/app/console):
+After creating a block, you have to *import* it into your application. The reason behind the import process is to avoid rely on database structure (which cant be tracked in a VCS or SVN easily) and to work with PHP files you can manage in version control system (e.g. GitHub or BitBucket). Run the [Import Command](/guide/app/console):
 
 ```sh
 ./vendor/bin/luya import
@@ -151,7 +151,7 @@ The following keys are available:
 + **pageObject**: Returns the <class name="luya\cms\models\NavItem" /> object where you can run <class name="luya\cms\models\NavItem" method="getNav" /> to retrieve the <class name="luya\cms\models\Nav" /> object.
 + **isFirst**: Returns whether this block is the first in its placeholder or not.
 + **isLast**: Return whether his block is the last in its placeholder or not.
-+ **index**: Returns the number of the index/position within this placheholder.
++ **index**: Returns the number of the index/position within this placeholder.
 + **itemsCount**: Returns the number of items inside this placeholder.
 + **isPrevEqual**: Returns whether the previous item is of the same origin (block type, like text block) as the current.
 + **isNextEqual**: Returns whether the next item is of the same origin (block type, like text block) as the current.
@@ -197,7 +197,7 @@ MyBlockAsset::register($this);
 
 Now the [Asset](../app/assets) is registered in the application view object.
 
-Its also possible to just register certain JavaScript or CSS code, there fore use `registerJs()` or `registerCss()` directly in the view files of the block.
+It's also possible to just register certain JavaScript or CSS code, therefore use `registerJs()` or `registerCss()` directly in the view files of the block.
 
 Registering some JavaScript code:
 
@@ -324,8 +324,8 @@ Maybe the application block is not known inside the config files, then there is 
              'variation1' => [
                  'title' => 'Super Bold Text',
                  'vars' => ['cssClass' => 'bold-font-css-class'],
-                 'cfgs' => [], // will be ignore as its empty, so you can also just remove this part.
-                 'extras' => [], // will be ignore as its empty, so you can also just remove this part.
+                 'cfgs' => [], // will be ignore as it's empty, so you can also just remove this part.
+                 'extras' => [], // will be ignore as it's empty, so you can also just remove this part.
                  'is_default' => 0,
              ],
          ]

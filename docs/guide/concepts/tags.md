@@ -61,7 +61,7 @@ I am tooltip[John Doe](This tooltip text appears when hovering over John Doe).
 
 ## Parse content
 
-Perhaps you are not in a context where the parsing is enabled. In this case you can parse your content by using <class name="luya\TagParser" method="convert" /> or with Markdown integration <class name="luya\TagParser" method="convertWithMarkdown" />. This enables the availabilty to parse tags even in your controller or view files.
+Perhaps you are not in a context where the parsing is enabled. In this case you can parse your content by using <class name="luya\TagParser" method="convert" /> or with Markdown integration <class name="luya\TagParser" method="convertWithMarkdown" />. This enables the availability to parse tags even in your controller or view files.
 
 ```php
 echo TagParser::convert('Hello this is: tooltip[John Doe]'); // Parse content with tags

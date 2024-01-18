@@ -30,7 +30,7 @@ return [
 ]
 ```
 
-When enabling `ensureSecureConnection` a few other security mechnism are triggered as well, like cookies use secure flag and a few headers will be set `Strict-Transport-Security`, `X-XSS-Protection`, `X-Frame-Options => "SAMEORIGIN"` in order to prevent [Clickjacking](https://de.wikipedia.org/wiki/Clickjacking).
+When enabling `ensureSecureConnection` a few other security mechanism are triggered as well, like cookies use secure flag and a few headers will be set `Strict-Transport-Security`, `X-XSS-Protection`, `X-Frame-Options => "SAMEORIGIN"` in order to prevent [Clickjacking](https://de.wikipedia.org/wiki/Clickjacking).
 
 ## Secure login
 
@@ -43,13 +43,13 @@ We recommend to enable <class name="luya\admin\Module" prop="secureLogin" /> whi
 ]
 ```
 
-Since admin version 3.0 its also possible to setup 2FA login wiht OTP trough any authenticator app.
+Since admin version 3.0 it's also possible to setup 2FA login with OTP trough any authenticator app.
 
 ![LUYA 2FA](../img/2fa.png)
 
 ## Strong admin user password policy
 
-We recommend to enable the <class name="luya\admin\Module" prop="strongPasswordPolicy" /> property which is availabe since `luya-module-admin` version 1.1.1 and enabled by default since 1.2.0. This property makes sure the user has to enter a strong password with: uppercase, lowercase, special chars, digits and numbers with an min length of 8 chars.
+We recommend to enable the <class name="luya\admin\Module" prop="strongPasswordPolicy" /> property which is available since `luya-module-admin` version 1.1.1 and enabled by default since 1.2.0. This property makes sure the user has to enter a strong password with: uppercase, lowercase, special chars, digits and numbers with an min length of 8 chars.
 
 ```php
 'admin' => [
@@ -60,7 +60,7 @@ We recommend to enable the <class name="luya\admin\Module" prop="strongPasswordP
 
 ## Email verification
 
-With enabling of <class name="luya\admin\Module" prop="emailVerification" /> the user can not change its e-mail until the verification code (which has been sent to the current email) has been entered. This makes it harder to overtake the current account and also not to lock yourself out by entering a wrong email.
+With enabling of <class name="luya\admin\Module" prop="emailVerification" /> the user can not change their email until the verification code (which has been sent to the current email) has been entered. This makes it harder to overtake the current account and also not to lock yourself out by entering a wrong email.
 
 ```php
 'admin' => [

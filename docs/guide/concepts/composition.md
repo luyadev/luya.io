@@ -1,6 +1,6 @@
 # Composition
 
-When dealing with multi lingual websites the <class name="luya\web\Composition" /> component is a powerful tool to help building **multi lingual URL rules**, generate websites with **localization prefixes** (e.g. www.example.com/de/ch) or define domains which should automatic trigger a website language trough **host info mapping**.
+When dealing with multi-lingual websites the <class name="luya\web\Composition" /> component is a powerful tool to help building **multi-lingual URL rules**, generate websites with **localization prefixes** (e.g. www.example.com/de/ch) or define domains which should automatic trigger a website language through **host info mapping**.
 
 ## Configuration
 
@@ -41,7 +41,7 @@ $countryShortCode = Yii::$app->composition['countryShortCode'];
 
 ## Disable the Component
 
-When your website is not running in an multi lingual context and/or you do not want to make use of the composition component you can turn it off by setting <class name="luya\web\Composition" prop="hidden" /> to true. As the composition will be loaded always, you can only tell the component to **not** prefix your urls with the composition patterns.
+When your website is not running in an multi-lingual context and/or you do not want to make use of the composition component you can turn it off by setting <class name="luya\web\Composition" prop="hidden" /> to true. As the composition will be loaded always, you can only tell the component to **not** prefix your urls with the composition patterns.
 
 ```php
 return [

@@ -27,9 +27,9 @@ The possible URL rule keys if not the short form is used.
 |Key     |Description
 |-------------|------------
 |`pattern`      |The newly defined name for the rule which is what the end-users see.
-|`route`        |To internal route used to determine the new location, based on the yii2 routing concept `module/controller/action`.
+|`route`        |To internal route used to determine the new location, based on the Yii 2 routing concept `module/controller/action`.
 |`defaults`     |Provide default values for a given pattern param `'defaults' => ['date' => 0]`
-|`composition`  |Provides the option to defined multi lingual patterns for a given language `'composition' => ['fr' => 'estore/panier', 'de' => 'estore/warenkorb']`
+|`composition`  |Provides the option to defined multi-lingual patterns for a given language `'composition' => ['fr' => 'estore/panier', 'de' => 'estore/warenkorb']`
 
 You can also use parameters in URL rules:
 
@@ -44,7 +44,7 @@ If you are using the module in a CMS context your patterns must be prefix with t
 :::
 
 ::: warning **CMS Page Context:** 
-When you place a **module block** in order to render a module controller and the rendered content produces links (for example a user login, and there is a link to another action where user can reset its password) its important to **disable strict render in CMS settings**! Edit Pen -> Expert -> Strict URL Parsing -> Disable
+When you place a **module block** in order to render a module controller and the rendered content produces links (for example a user login, and there is a link to another action where user can reset their password) it's important to **disable strict render in CMS settings**! Edit Pen -> Expert -> Strict URL Parsing -> Disable
 :::
 
 Below, a short list of regex expressions you may use to parameterize the URLs:
@@ -71,11 +71,11 @@ And a the parameterized route:
 \luya\helpers\Url::toRoute(['/estore/article/index', 'id' => 123]);
 ```
 
-> Its also possible to make links for given Page IDs or Module Names inside the CMS therefore take a look at CMS <class name="luya\cms\helpers\Url" /> which inherits from <class name="luya\helpers\Url" />
+> It's also possible to make links for given Page IDs or Module Names inside the CMS therefore take a look at CMS <class name="luya\cms\helpers\Url" /> which inherits from <class name="luya\helpers\Url" />
 
 ## Multilingual language patterns
 
-If you have multi lingual pages you need patterns for different languages which can be defined in your `$urlRules` configuration too. This will only work when defining the rules inside a module. Take a look at LUYA's default <class name="luya\web\UrlRule" /> object:
+If you have multi-lingual pages you need patterns for different languages which can be defined in your `$urlRules` configuration too. This will only work when defining the rules inside a module. Take a look at LUYA's default <class name="luya\web\UrlRule" /> object:
 
 ```php
 public $urlRules = [
@@ -90,7 +90,7 @@ public $urlRules = [
 ];
 ```
 
-In order to define the URL rules from the urlManager config scope, you can just prefix the route with the given composition pattern. The example above would internally generate the following url rules in the url manager:
+In order to define the URL rules from the urlManager config scope, you can just prefix the route with the given composition pattern. The example above would internally generate the following URL rules in the URL manager:
 
 ```php
 'urlManager' => [
@@ -102,7 +102,7 @@ In order to define the URL rules from the urlManager config scope, you can just 
 ],
 ```
 
-This also means that the given url rules are available when its required to point to a certain language like `Url::toRoute(['fr/estore/basket/default'])` will return `panier`.
+This also means that the given URL rules are available when it's required to point to a certain language like `Url::toRoute(['fr/estore/basket/default'])` will return `panier`.
 
 > When composition is enabled, it will take the correct route for the current language and prefix the pattern if enable in composition config.
 
@@ -110,7 +110,7 @@ To verify which composition language is used you can dump `Yii::$app->compositio
 
 ## Retrieve Current Rule in CMS Context
 
-When you have a CMS `Page as Module` or using the `Module Block` inside a page, the resolved URL Rule its accessible via <class name="luya\cms\Menu" method="getCurrentUrlRule" />. This allows you to access the params of the URL Rule inside layout files. If there is no URL Rule resolved, the return value is `null`. Below an example of how to access the method via the menu and an example response:
+When you have a CMS `Page as Module` or using the `Module Block` inside a page, the resolved URL rule is accessible via <class name="luya\cms\Menu" method="getCurrentUrlRule" />. This allows you to access the params of the URL rule inside layout files. If there is no URL rule resolved, the return value is `null`. Below is an example of how to access the method via the menu and an example response:
 
 ```php
 var_dump(Yii::$app->menu->getCurrentUrlRule());

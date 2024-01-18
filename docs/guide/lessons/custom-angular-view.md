@@ -22,7 +22,7 @@ When clicking on the menu point the route `myadminmodule/finder/index` will be t
 
 ## Create controller
 
-Creating the controller `FinderController` with an `index` action and a API callable action named `data`:
+Creating the controller `FinderController` with an `index` action and an API callable action named `data`:
 
 ```php
 <?php
@@ -39,7 +39,7 @@ class FinderController extends Controller
     // let the controller know that actionData returns data in API Format (JSON).
     public $apiResponseActions = ['data'];
     
-    // The view file to rendern when entering this controller
+    // The view file to render when entering this controller
     public function actionIndex()
     {
         return $this->render('index');
@@ -84,4 +84,4 @@ zaa.bootstrap.register('MyController', ['$scope', '$http', function($scope, $htt
 </div>
 ```
 
-Its very common to just write the angular controller code inside the view, of course you can also make a JavaScript file and add this to an asset and register the [[/guide/admin/assets]].
+Its very common to just write the AngularJS controller code inside the view, of course you can also make a JavaScript file and add this to an asset and register the [[/guide/admin/assets]].

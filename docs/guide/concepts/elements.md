@@ -3,7 +3,7 @@
 The basic idea behind the <class name="luya\web\Element" /> component is based on a behavior known from **AngularJS Directives**. In a huge web project you have several HTML parts you may have to use in several locations but with different contents. 
 Lets assume you have a teaser box which contains a title and a picture. So variables are the picture and the title, but the HTML base will be the same on all pages.
 
-Basic example of a HTML partial wich will be reused in different pages with different contents:
+Basic example of a HTML partial which will be reused in different pages with different contents:
 
 ```html
 <div class="teaser-box">
@@ -47,7 +47,7 @@ Where `button` is the name of the element closure defined in your `elements.php`
 
 ## Render a view file
 
-When you have a more complex HTML element, the possibility to concate all the HTML parts looks a bit ugly, therefore you can also render a view file with the function `render()`. This method will render a defined PHP template which is located in *@app/views/elements/__NAME__.php*.
+When you have a more complex HTML element, the possibility to concatenate all the HTML parts looks a bit ugly, therefore you can also render a view file with the function `render()`. This method will render a defined PHP template which is located in *@app/views/elements/__NAME__.php*.
 
 ```php
 'myElementButton' => function($href, $name) {
@@ -74,7 +74,7 @@ Perhaps you need to render another element component inside another template, th
 </div>
 ```
 
-Of course the above example requires as well that the variables `title`, `description`, `buttonHref` and `buttonName` have been passed to the recursiv element rendering of the button.
+Of course the above example requires as well that the variables `title`, `description`, `buttonHref` and `buttonName` have been passed to the recursive element rendering of the button.
 
 # Automatic styleguide from elements 
 
@@ -102,11 +102,11 @@ return [
 ]
 ```
 
-If the styleguide module is successfully configured it is accesible it trough the url: `yourwebsite.com/styleguide`
+If the styleguide module is successfully configured it is accessible it trough the url: `yourwebsite.com/styleguide`
 
 ## Mocking arguments
 
-The styleguide will automatically use default values for each element. Assuming you have an element argument `$foo` this argument will recieve the value `$foo` inside the styleguide.
+The styleguide will automatically use default values for each element. Assuming you have an element argument `$foo` this argument will receive the value `$foo` inside the styleguide.
 
 ```php
 'test' => function($foo) {

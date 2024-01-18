@@ -2,17 +2,17 @@
 
 > available since LUYA admin module version 2.2
 
-The LUYA admin provides a basic JWT generator including an out of the box authentification system which can proxy requests trough LUYA admin API User and those permission system.
+The LUYA admin provides a basic JWT generator including an out of the box authentication system which can proxy requests trough LUYA admin API User and those permission system.
 
 ## Prerequisite
 
 + [A custom (application) admin module](intro.md) is required to setup JWT .
-+ Understand API Users which are explaind in [Headless Guide Section](../concepts/headless.md).
++ Understand API Users which are explained in [Headless Guide Section](../concepts/headless.md).
 + Configure the <class name="luya\admin\components\Jwt" /> component.
 
 ## How it works
 
-As all LUYA admin APIs requerd an authentification are proxied trough LUYA API Users. The life cycle of the JWT request is described as followed (assuming JWT configuration in the modul is done accordingly):
+As all LUYA admin APIs requerd an authentication are proxied trough LUYA API Users. The life cycle of the JWT request is described as followed (assuming JWT configuration in the module is done accordingly):
 
 Get the token:
 
@@ -21,7 +21,7 @@ Get the token:
 
 Make Request:
 
-+ The Authentification system will threat JWT auth first.
++ The Authentication system will threat JWT auth first.
 + Token will be passed to the <class name="luya\admin\baseJwtIdentityInterface" method="loginByJwtToken" /> method. Return the user if login is valid.
 + The API User model defined in <class name="luya\admin\components\Jwt" prop="apiUserEmail" /> will be looked up and loggedin.
 + The authenticated API User check permission based on the related groups (API Users can associated with multiple groups or none).
@@ -88,7 +88,7 @@ class User extends \luya\admin\ngrest\base\NgRestModel implements luya\admin\bas
 }
 ```
 
-An NgRest API with additonal login, signup and me actions.
+An NgRest API with additional login, signup and me actions.
 
 ```php
 /**
@@ -99,7 +99,7 @@ An NgRest API with additonal login, signup and me actions.
 class UserController extends \luya\admin\ngrest\base\Api
 {
     /**
-     * @var array Define methods which does not require authentification
+     * @var array Define methods which does not require authentication
      */
     public $authOptional = ['login', 'signup'];
 
@@ -111,7 +111,7 @@ class UserController extends \luya\admin\ngrest\base\Api
     /**
      * Make user login and return the user with the fresh generated JWT token which is stored in the user.
      * 
-     * > No authentification needed.
+     * > No authentication needed.
      */
     public function actionLogin()
     {
@@ -135,7 +135,7 @@ class UserController extends \luya\admin\ngrest\base\Api
     /**
      * Allow users to signup which will create a new user.
      * 
-     * > No authentification needed.
+     * > No authentication needed.
      *
      * @return User
      */
@@ -152,7 +152,7 @@ class UserController extends \luya\admin\ngrest\base\Api
     /**
      * Returns the currently logged in JWT authenticated user.
      *
-     * > This method requires authentification.
+     * > This method requires authentication.
      * 
      * @return User
      */
@@ -167,9 +167,9 @@ If a successfull JWT authentication is made the <class name="luya\admin\componen
 
 ## CORS Preflight Request
 
-When working with cross domain requests, each xhr request to the API will make an *option request* or also known as *preflight request*. The <class name="luya\admin\ngrest\base\Api" /> controllers provide an out of the box solution which works for common CRUD operations (add, view, list, edit, delete). This can be enabled by setting <class name="luya\admin\Module" prop="cors" /> to true. For further CORS config options use <class name="luya\traits\ApplicationTrait" prop="corsConfig" />.
+When working with cross domain requests, each XHR request to the API will make an *option request* or also known as *preflight request*. The <class name="luya\admin\ngrest\base\Api" /> controllers provide an out of the box solution which works for common CRUD operations (add, view, list, edit, delete). This can be enabled by setting <class name="luya\admin\Module" prop="cors" /> to true. For further CORS config options use <class name="luya\traits\ApplicationTrait" prop="corsConfig" />.
 
-When working with custom actions you might need to configure the option request for the given method. Therefore you need to configure the API with the following setup: create an URL rule for options request, define the option and make sure the option is available without authentification (its common that option request won't have authentication headers).
+When working with custom actions you might need to configure the option request for the given method. Therefore you need to configure the API with the following setup: create an URL rule for options request, define the option and make sure the option is available without authentication (its common that option request won't have authentication headers).
 
 Create the URL rule for the option request, which defines where the option action should be looked up:
 
@@ -186,7 +186,7 @@ public $apiRules = [
 The above example will forward all OPTIONS request made to the `my-api-name` API on the index action to the options action. `'OPTIONS index' => 'options'` index is the requested action, and options is the action to forward.
 
 ::: tip
-Instead of define each custom action for the method and the options request its possible to set an options wildcard defintion like `OPTIONS <action:[a-zA-Z0-9\-]+>' => 'options'`. Full example
+Instead of defining each custom action for the method and the options request it's possible to set an options wildcard definition like `OPTIONS <action:[a-zA-Z0-9\-]+>' => 'options'`. Full example
 ```
 'GET type' => 'type',
 'GET agenda' => 'agenda',
@@ -195,7 +195,7 @@ Instead of define each custom action for the method and the options request its 
 ```
 :::
 
-As the options request is forwared to the `options` action we should create this in the controller using <class name="luya\admin\ngrest\base\actions\OptionsAction" />:
+As the options request is forwarded to the `options` action we should create this in the controller using <class name="luya\admin\ngrest\base\actions\OptionsAction" />:
 
 ```php
 public function actions()
@@ -216,14 +216,14 @@ public $authOptional = ['options'];
 
 A few principals regarding permissions:
 
-+ Unless an action is masked as <class name="luya\traits\RestBehaviorsTrait" prop="authOptional" /> **every action requires authentification**.
++ Unless an action is masked as <class name="luya\traits\RestBehaviorsTrait" prop="authOptional" /> **every action requires authentication**.
 + If the group of the defined <class name="luya\admin\components\Jwt" prop="apiUserEmail" /> API user has **no permissions**, only your custom actions are accessible.
 + When accessing NgRest API actions like update, create, list or view (detail) and permission is granted the actions are logged with the configured API User.
 + As permission is proxied trough API Users, a valid API User token could access those informations as well.
 
 ## User Based CheckAccess
 
-Its a common task to check the permission for a certain user id, whether the user can update/delete an item or not. Thefore the <class name="luya\admin\base\RestActiveController" method="checkAccess" /> method can be extended by some JWT user id based actions.
+Its a common task to check the permission for a certain user id, whether the user can update/delete an item or not. Therefore the <class name="luya\admin\base\RestActiveController" method="checkAccess" /> method can be extended by some JWT user id based actions.
 
 ```php
 public function checkAccess($action, $model = null, $params = [])

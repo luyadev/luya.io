@@ -1,6 +1,6 @@
 # Application Assets
 
-Asset files like CSS or JavaScript are resources which you have to integrate in your web project but organize them in a "package" like folders, called Asset Bundles. Assets are based on [Yii2 Asset Bundles](https://www.yiiframework.com/doc-2.0/guide-structure-assets.html) you may read more detailed information about. The LUYA assets describe just another way of including them into you project.
+Asset files like CSS or JavaScript are resources which you have to integrate in your web project but organize them in a "package" like folders, called Asset Bundles. Assets are based on [Yii 2 Asset Bundles](https://www.yiiframework.com/doc-2.0/guide-structure-assets.html) you may read more detailed information about. The LUYA assets describe just another way of including them into you project.
 
 Below, an example class of an asset where files are located in `@app/resources` and includes the `css/styles.css` into the view files where the asset is loaded.
 
@@ -39,7 +39,7 @@ Only when the view renders a page, it will generate `link` and `script` tags for
 
 ### Publish Options
 
-To ensure a minimal footprint and to avoid issues with node packages inside the resource folder, it's recommended to manually select the folders which should be published. E. g. in the LUYA kickstarter project you'll find a `boostrap` and a `css` folder in the publish options:
+To ensure a minimal footprint and to avoid issues with node packages inside the resource folder, it's recommended to manually select the folders which should be published. E. g. in the LUYA kickstarter project you'll find a `bootstrap` and a `css` folder in the publish options:
 
 ```php
 public $publishOptions = [
@@ -66,7 +66,7 @@ public $publishOptions = [
 
 Sometimes you may want to access the folder with the asset files, therefore you need to retrieve the base URL of the asset which as the *actual path of the folder in the filesystem* which is in the `public_html/assets/$HASH_NUMBER`.
 
-Run the the get bundle method inside your view file for the registered assetManager in the view object:
+Run the `getBundle()` method inside your view file for the registered `assetManager` in the view object:
 
 ```php
 $myAsset = $this->assetManager->getBundle('\\app\\assets\\MyTestAsset');

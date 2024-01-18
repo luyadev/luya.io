@@ -2,7 +2,7 @@
 
 With *Filters* you can modify, crop, resize or use effects on any image provided from the storage component. To add a filter just create a filter class within the `filters` directory of your project root or module and run the import command to include the filter into the system. When you change the effect chain of your filter you have to run the import command again in order to update all the images which are using your filter.
 
-The basic concept behind filter classes, is to track filters in VCS system, so you can add a filter and push it into git and your project members does have the same environment as you.
+The basic concept behind filter classes is to track filters in VCS, so you can add a filter and push it into git and your project members does have the same environment as you.
 
 ::: tip
 Use the `./vendor/bin/luya admin/filter` command in order to generate a Filter quickly.
@@ -70,7 +70,7 @@ You can apply filters directly inside the view scripts to an image. In our examp
 
 ### Apply filter in PHP view
 
-An example of how to apply a filter in real`time to a retrieved image:
+An example of how to apply a filter in real-time to a retrieved image:
 
 ```php
 <img src="<?= Yii::$app->storage->getImage(139)->applyFilter('my-filter')->source; ?>" border="0" />

@@ -19,7 +19,7 @@ class MyAdminAsset extends \luya\web\Asset
         'js/johndoe.js',
     ];
 
-    // important to solve all JavaScript dependency issues here, e.g. jQuery, bower, angular, ...
+    // important to solve all JavaScript dependency issues here, e.g. jQuery, Bower, AngularJS, ...
     public $depends = [
         'luya\admin\assets\Main',
     ];
@@ -49,7 +49,7 @@ class Module extends \luya\admin\base\Module
 }
 ```
 
-As the admin UI is written in angular the assets must be pre assigned to the admin UI therefore the `getAdminAssets()` method exists.
+As the admin UI is written in AngularJS the assets must be pre assigned to the admin UI therefore the `getAdminAssets()` method exists.
 
 > Keep in mind that you have to register this module in order to register the asset files.
 

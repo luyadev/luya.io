@@ -1,7 +1,7 @@
 # Console commands
 
 To execute a console command open your terminal and change into the base directory of your *LUYA* project. 
-The base directory is where folders like vendor, public_html, runtime are located, e. g. when you run the [luya-kickstarter](/guide/installation/) its in `luya-kickstarter`.
+The base directory is where folders like `vendor`, `public_html`, `runtime` are located, e.g. when you run the [luya-kickstarter](/guide/installation/) it's in `luya-kickstarter`.
 
 ```sh
 ./vendor/bin/luya <command>
@@ -17,14 +17,14 @@ Global LUYA commands:
 
 |Command|Description
 |--------|---------
-|`import`|Updates permission, CMS blocks, CMS layouts, image filters. Import is a one of the main concepts of LUYA. Its saving your project data into the database. This way you can track your files within VCS (Git, SVN) and import them. [Create Import Commmand](/guide/app/module).
-|`migrate`|Execute all migrations from all modules, updates your database if any. The main difference to the Yii migrate command is its going to collect all migrations from all modules.
+|`import`|Updates permission, CMS blocks, CMS layouts, image filters. Import is one of the main concepts of LUYA. It's saving your project data into the database. This way you can track your files within VCS (Git, SVN) and import them. [Create Import Command](/guide/app/module).
+|`migrate`|Execute all migrations from all modules, updates your database if any. The main difference to the Yii migrate command is it's going to collect all migrations from all modules.
 |`migrate/create migration1 modulename`|Create new migration file named `mymigration1` in the module `modulename`: `migrate/create mymigration1 modulename`.
 |`health`|Tests all basic directory if they are writable and existing.
 |`health/mailer`|Check if you mailer component is working and can send mails.
-|`module/create`|Create new [frontend/admin module](/guide/app/module) with a wizzard.
+|`module/create`|Create new [frontend/admin module](/guide/app/module) with a wizard.
 |`module/controller/action`|All commands stored in the folder `commands` can be run by default routing.
-|`theme/create`|Create new [theme](/guide/app/themes) with a wizzard.
+|`theme/create`|Create new [theme](/guide/app/themes) with a wizard.
 
 Admin UI commands:
 
@@ -38,14 +38,14 @@ Admin UI commands:
 |`admin/storage/cleanup-image-table`|Find if duplications are available in the image table (same filter and file id). If confirmed it will remove all duplications except of one, the first one created.
 |`admin/storage/process-thumbnails`|Create all thumbnails for filemanager preview. Otherwise they are created on request load.
 |`admin/active-window/create`|Generate a [new Active Window](/guide/ngrest/activewindow) class file based on your configuration.
-|`admin/crud/create`|Create new [NgRest CRUD](/guide/ngrest/) with a wizzard.
+|`admin/crud/create`|Create new [NgRest CRUD](/guide/ngrest/) with a wizard.
 |`admin/crud/model`|Generates only the [NgRestModel](/guide/ngrest/model.html). Usage `./vendor/bin/luya admin/crud/model "app\models\Customer"` 
 
 CMS module commands:
 
 |Command|Description 
 |---    |---
-|`cms/block/create`|Create new [CMS content blocks](/guide/cms/blocks) with a wizzard.
+|`cms/block/create`|Create new [CMS content blocks](/guide/cms/blocks) with a wizard.
 
 
 ## Create your own command
@@ -74,9 +74,9 @@ class NotifyController extends \luya\console\Command
 }
 ```
 
-> Always use `ouputError($message)` or `outputSuccess($message)` to return the status of the execution inside of the command, depending on this output we can handle PHPUnit test and return colorized outputs.
+> Always use `outputError($message)` or `outputSuccess($message)` to return the status of the execution inside of the command, depending on this output we can handle PHPUnit test and return colorized outputs.
 
-To run the `actionIndex()` from the above mentioned `NotfyController` controller in the `yourmodule` module:
+To run the `actionIndex()` from the above mentioned `NotifyController` controller in the `yourmodule` module:
 
 ```sh
 ./vendor/bin/luya yourmodule/notify
@@ -88,7 +88,7 @@ to execute the `actionBar()` we have to change the route for the notify controll
 ./vendor/bin/luya yourmodule/notify/bar
 ```
 
-If you want to create a command without a module you can just add the the Command controller into the `commands` folder of your application and add the controller to your `controllerMap` of your configuration like the example below:
+If you want to create a command without a module you can just add the command controller into the `commands` folder of your application and add the controller to your `controllerMap` of your configuration like the example below:
 
 ```php
 'controllerMap' => [

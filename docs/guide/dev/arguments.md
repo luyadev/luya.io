@@ -12,7 +12,7 @@
 
 ## Technical Advantages
 
-+ LUYA is based on APIs and can therefore be accesed by any HTTP Client, this is also known as Headless System.
++ LUYA is based on APIs and can therefore be accessed by any HTTP Client, this is also known as Headless System.
 + API Users can be created to access the Content trough APIs for a certain group or user
 + An OpenAPI file can be created on the fly to generate client SDKs or render nice API Documentations.
 + The Administration Module can be shipped without the CMS, therefore maybe the CMS is not required in your Project and only CRUD with API does the job, so just install the Admin Module.
@@ -21,5 +21,5 @@
 
 ## What LUYA never will be
 
-+ LUYA is not intended to unpack on a webserver and follow a graphical step by step setup process, like wordpress or any other CMS systems. LUYA is built for developers which should use VCS and deployment tools.
++ LUYA is not intended to unpack on a webserver and follow a graphical step by step setup process, like WordPress or any other CMS systems. LUYA is built for developers which should use VCS and deployment tools.
 + We will never add a WYSIWYG editor. You can either create your own block with WYSIWYG editor or use a community extension. 

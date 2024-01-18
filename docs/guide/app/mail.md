@@ -44,7 +44,7 @@ bccAddresses(['john@doe.com', 'Jane Doe' => 'jane@doe.com'])
 ccAddresses(['john@doe.com', 'Jane Doe' => 'jane@doe.com'])
 ```
 
-The response value of `$mail` (actually its the response of the method `send()`) is a boolean value. If something happens wrong during the send process you can access the error inside the component like following:
+The response value of `$mail` (actually it's the response of the method `send()`) is a boolean value. If something happens wrong during the send process you can access the error inside the component like following:
 
 ```php
 if (!$mail) {
@@ -57,7 +57,7 @@ if (!$mail) {
 
 ## Using the PHPMailer Object
 
-If you want to access the PHPMailer object you should use the Object-Mode which provides access to the `mailer()` method which is the PHPMailer Object. Here you find a list of [PHPMailer propertys](https://github.com/PHPMailer/PHPMailer#a-simple-example) you can set like in the example below:
+If you want to access the PHPMailer object you should use the Object-Mode which provides access to the `mailer()` method which is the PHPMailer Object. Here you find a list of [PHPMailer properties](https://github.com/PHPMailer/PHPMailer#a-simple-example) you can set like in the example below:
 
 ```php
 $mail = Yii::$app->mail;

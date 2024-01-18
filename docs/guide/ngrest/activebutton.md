@@ -51,7 +51,7 @@ class DuplicateActiveButton extends ActiveButton
 
 The handle method must return <class name="luya\admin\ngrest\base\ActiveButton" method="sendSuccess" /> or <class name="luya\admin\ngrest\base\ActiveButton" method="sendError" /> in order to make a correct API response to the grid view.
 
-Als you can triggere events for certain situations. Assuming you are going to modify the value of a column isnide this CRUD, a forced reload of the CRUD list can be done trough <class name="luya\admin\ngrest\base\ActiveButton" method="sendReloadEvent" />.
+Als you can trigger events for certain situations. Assuming you are going to modify the value of a column inside this CRUD, a forced reload of the CRUD list can be done trough <class name="luya\admin\ngrest\base\ActiveButton" method="sendReloadEvent" />.
 
 ## Attaching the Button
 

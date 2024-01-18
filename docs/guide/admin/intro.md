@@ -4,7 +4,7 @@ An admin module provides the ability to quickly create an admin UI section for y
 
 Some features available in the admin UI section:
 
-+ Create, read, update and delete with AngularJS and Yii2 base on Active Records => [NgRest Section](../ngrest/index.md)
++ Create, read, update and delete with AngularJS and Yii 2 base on Active Records => [NgRest Section](../ngrest/index.md)
 + Display custom data with a controller and view file => [MVC Section](mvc.md)
 + Storage system for uploading images and files => <class name="luya\admin\storage\BaseFileSystemStorage" />
 + Permissions and admin UI menus => [Permissions Section](permission.md)

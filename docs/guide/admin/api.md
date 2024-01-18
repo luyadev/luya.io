@@ -33,7 +33,7 @@ public $apis = [
 ];
 ```
 
-In order to make your API listen to differnt method types you can use <class name="luya\admin\Module" prop="apiRules" />:
+In order to make your API listen to different method types you can use <class name="luya\admin\Module" prop="apiRules" />:
 
 ```php
 public $apiRules = [

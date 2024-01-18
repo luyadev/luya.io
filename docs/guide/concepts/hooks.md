@@ -61,11 +61,11 @@ class DefaultController extends \luya\web\Controller
 }
 ```
 
-If <class name="luya\Hook" method="on" /> is called multiple times in a request cycle the output will concated and sorted by execution time.
+If <class name="luya\Hook" method="on" /> is called multiple times in a request cycle the output will concatenated and sorted by execution time.
 
 ## Using array output
 
-Sometimes it is more convenient to iterate elements instead of concant the output. This can be helpful e.g. if you are working with list outputs:
+Sometimes it is more convenient to iterate elements instead of concatenate the output. This can be helpful e.g. if you are working with list outputs:
 
 ```php
 Hook::on('fooBarArray', function($hook) {
@@ -101,7 +101,7 @@ The rendered output for the iteration example:
 </ul>
 ```
 
-It´s also possible to use associated arrays with keys:
+It's also possible to use associated arrays with keys:
 
 ```php
 Hook::on('fooBarArrayLinks', function($hook) {

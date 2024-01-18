@@ -1,6 +1,6 @@
 # Storage Component
 
-The storage component provies the possibility to upload files and images, also apply filters to images.
+The storage component provides the possibility to upload files and images, also apply filters to images.
 
 In general the storage component is configure by default and available via `Yii::$app->storage`. The main component where all configuration options are display is the <class name="luya\admin\storage\BaseFileSystemStorage" />.
 
@@ -19,7 +19,7 @@ return [
 ]
 ```
 
-This means the storage system is always a direct implementation of what type of file system is used. Here is an example file configuration if you need to have the option to upload insecure files like csv or svgs:
+This means the storage system is always a direct implementation of what type of file system is used. Here is an example file configuration if you need to have the option to upload insecure files like CSVs or SVGs:
 
 ```php
 return [

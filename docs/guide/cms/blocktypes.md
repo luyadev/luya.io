@@ -20,7 +20,7 @@ return [
 |----|--------
 |vars|Variables where to user can enter data according to your type (select, text, radio, etc.).
 |cfgs|Those options are shown as well in the admin UI and are meant to be used optional options which could be use for developers.
-|placeholders|Defined placeholders allows you to mark an area where other blocks can be dropped and rendered. A common usecase could be a div with given class where dropping nested blocks is allowed. Its very common to enable <class name="luya\cms\base\InternalBaseBlock" prop="isContainer" /> property when working with placeholders, this will render the block nicely with cols and rows (if configured).
+|placeholders|Defined placeholders allows you to mark an area where other blocks can be dropped and rendered. A common use case could be a div with given class where dropping nested blocks is allowed. It's very common to enable <class name="luya\cms\base\InternalBaseBlock" prop="isContainer" /> property when working with placeholders, this will render the block nicely with cols and rows (if configured).
 
 Now you can add a field into the above defined type, this is like a configuration of a field which must contain `var`, `label` and `type`:
 
@@ -33,7 +33,7 @@ Now you can add a field into the above defined type, this is like a configuratio
 ```
 
 ::: tip Required Input
-Since version 3.4 of LUYA Module CMS its possible to define a `required` property in order to ensure can not be empty.
+Since version 3.4 of LUYA Module CMS it's possible to define a `required` property in order to ensure can not be empty.
 :::
 
 Above, this would create an input variable with a text input field and a label `From Label for the User`. 
@@ -55,7 +55,7 @@ There are several types you can use to generate your block controllers. Each cla
 |Type Name            |Constants|Description
 |---------------------|---------|-----------
 |zaa-text|TYPE_TEXT|Creates a simple string input text value field.
-|zaa-textarea|TYPE_TEXTAREA|Creates a multirow text input element known as textarea
+|zaa-textarea|TYPE_TEXTAREA|Creates a multi-row text input element known as textarea
 |zaa-password|TYPE_PASSWORD|Creates a input password field which hides the input value behind * signs
 |zaa-number|TYPE_NUMBER|Creates a numeric value
 |zaa-decimal|TYPE_DECIMAL|Creates decimal input field with option: `options="{'steps':0.0001}"` to define step size. Default = 0.001.
@@ -108,7 +108,7 @@ public function extraVars()
 }
 ```
 
-In the view you can access the values as follwed:
+In the view you can access the values as followed:
 
 ```php
 <?php if ($this->extraValue('download') && $this->extraValue('image')): ?>
@@ -136,7 +136,7 @@ public function config()
 }
 ```
 
-The above example would generate 1 row with 2 columns. As bootstrap 4 has max 12 cols the first column would be larger then the second. Now you can enable <class name="luya\cms\base\InternalBaseBlock" prop="isContainer" /> which will render the placeholders nicely and different to casual blocks.
+The above example would generate 1 row with 2 columns. As Bootstrap 4 has at max 12 cols the first column would be larger then the second. Now you can enable <class name="luya\cms\base\InternalBaseBlock" prop="isContainer" /> which will render the placeholders nicely and different to casual blocks.
 
 ::: danger $isContainer has no admin view
 When enabling the <class name="luya\cms\base\InternalBaseBlock" prop="isContainer" /> the <class name="luya\cms\base\InternalBaseBlock" method="admin" /> output wont have **no effect** and is not rendered!
@@ -144,7 +144,7 @@ When enabling the <class name="luya\cms\base\InternalBaseBlock" prop="isContaine
 
 ![block with placeholders](../img/block-placeholders.png)
 
-When enabling the cache for layout blocks, the full placeholder content will be cached to. So its very common to disable caching for blocks with placeholders.
+When enabling the cache for layout blocks, the full placeholder content will be cached to. So it's very common to disable caching for blocks with placeholders.
 
 An example of how a view file for this layout block with placeholders could look like:
 
@@ -185,7 +185,7 @@ class MyBlock extends \luya\cms\base\PhpBlock
                 'query' => \luya\news\models\Article::find(),
                 'label' => 'title', // This attribute from the model is used to render the admin block dropdown selection.
                 'type' => self::INJECTOR_VAR,
-                'varLabel' => 'Select Aritcles', // The Block form label
+                'varLabel' => 'Select Articles', // The Block form label
             ])
         ];
     }
@@ -216,7 +216,7 @@ The following Injectors are currently available:
 
 ### Injector API
 
-Each injector object generate trough the <class name="luya\cms\base\InternalBaseBlock" method="injectors" /> method can be access trough the magical array access. Let´ assume you are registering the TagInjector:
+Each injector object generate trough the <class name="luya\cms\base\InternalBaseBlock" method="injectors" /> method can be access trough the magical array access. Let's assume you are registering the TagInjector:
 
 ```php
 public function injectors()
@@ -232,8 +232,8 @@ Now you are able to access the TagInjector object trough the `$this['tags']` Arr
 In order to develop custom directive types you need to create a few things are required:
 
 1. A module which is registered and loaded (the module will provide the registration of the asset files). [[/guide/admin/intro]]
-2. An asset file which holds the angular directive code. [[/guide/admin/assets]]]
-3. The angular directive itself which is compatible with LUYA injector API.
+2. An asset file which holds the AngularJS directive code. [[/guide/admin/assets]]]
+3. The AngularJS directive itself which is compatible with LUYA injector API.
 
 An example code for a directive which is compatible with the injector API directive:
 

@@ -2,11 +2,11 @@
 
 The LUYA core extends the [Yii 2 Framework](https://github.com/yiisoft/yii2) by helpers and a structured way to run and build any web application you can think of. 
 
-There is a clear vision of the structure for modern web applications, in particluar:
+There is a clear vision of the structure for modern web applications, in particular:
 
 + How to use configuration files and keep them small
 + Arrangement and structure of directories 
-+ Components wich are already set by the core 
++ Components which are already set by the core 
 + Bulletproof DRY concept for secure and fast development
 
 In other words it means you can also use LUYA to build an application without administration or CMS but it still allows you to maintain the same code base over different projects, e.g. with just an MVC provided by Yii via the LUYA core or if you just need an admin UI where you can manage data of your application or as well if you also need a CMS to manage the content.
@@ -52,7 +52,7 @@ The content for `index.php`:
 <?php
 // composer autoload include
 require(__DIR__ . '/../vendor/autoload.php');
-// use the luya boot wrapping class
+// use the LUYA boot wrapping class
 $boot = new \luya\Boot();
 $boot->setBaseYiiFile(__DIR__ . '/../vendor/yiisoft/yii2/Yii.php');
 $boot->run();
@@ -168,4 +168,4 @@ There is a Composer package to start a LUYA core application project very quickl
 composer create-project luyadev/luya-kickstarter-core:^1.0@dev
 ```
 
-This will generate a folder `luya-kickstarter-core` containg all required controllers, views and configs based on the description from above.
+This will generate a folder `luya-kickstarter-core` containing all required controllers, views and configs based on the description from above.

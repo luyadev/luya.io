@@ -25,11 +25,11 @@ Display a smaller preview of the image while loading the bigger version.
 The plugin doesn't need any width or height informations in this mode, but the smaller
 image should have the same dimension.
 
-For example: The Original file has a resolution of 100x100px,
-the smaller version should have 10x10, 20x20 or 30x30px.
+For example: The original file has a resolution of 100x100 pixel,
+the smaller version should have 10x10, 20x20 or 30x30 pixel.
 
 Based on what styles you apply to your image (`custom-classes`) this might work or not.
-You can try to update the placeholder-image styles by using its class and your custom class: `.custom-classes .lazyimage-placeholder-image`
+You can try to update the placeholder image styles by using its class and your custom class: `.custom-classes .lazyimage-placeholder-image`
 
 > Includes a noscript fallback.
 > Make sure to implement a `nojs` or `no-js` class into you `body` or `html` tag.
@@ -97,7 +97,7 @@ $image = Yii::$app->storage->getImage(123);
 
 ## Event
 
-Each image wich is fully loaded will trigger the events `lazyimage-loading` and `lazyimage-loaded` on the `document`.
+Each image which is fully loaded will trigger the events `lazyimage-loading` and `lazyimage-loaded` on the `document`.
 The `lazyimage-loaded` event provides an object with the imageObject used and the type of the event (`success` or `error`).
 
 ```js
@@ -133,8 +133,7 @@ $.lazyLoad({
     // Show console logs
     debug: false,
 
-    // The loader html, customize according
-    // to your needs
+    // The loader HTML, customize according to your needs
     loaderHtml: '<div class="loader"></div>',
 
     // https://developer.mozilla.org/en-US/docs/Web/API/Intersection_Observer_API#Intersection_observer_options

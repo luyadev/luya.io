@@ -36,7 +36,7 @@ Setup CRUD:
 
 ## Creating the model
 
-We assume you have a made a table via the migrations (in your example below we assume you make a team module with members) and execute the migrations. Now you can create an <class name="luya\admin\ngrest\base\NgRestModel" /> model for the provided table. The model represents the data source for the REST API, you can create the model with the gii module extension or you can also generate the model and the rest of the classes with the `admin/crud/create` cli command.
+We assume you have a made a table via the migrations (in your example below we assume you make a team module with members) and execute the migrations. Now you can create an <class name="luya\admin\ngrest\base\NgRestModel" /> model for the provided table. The model represents the data source for the REST API, you can create the model with the Gii module extension or you can also generate the model and the rest of the classes with the `admin/crud/create` cli command.
 
 Lets have a closer look how your model should look like, in our member example of the team module:
 
@@ -96,7 +96,7 @@ class Member extends \luya\admin\ngrest\base\NgRestModel
     
     /**
      * This is the api endpoint for the NgRest implementation, so the NgRest config needs to know where should
-     * all the angular calls go.
+     * all the AngularJS calls go.
      */
     public static function ngRestApiEndpoint()
     {

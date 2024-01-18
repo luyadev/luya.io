@@ -1,6 +1,6 @@
 # Cloud & Docker 
 
-LUYA has been proofenly used in different cloud environments using Docker and e.g. Kubernetes. This ensures your application runs in a stateless context, which means that your application does not store any informations inside the webserver itself. This makes it possible to scale LUYA into an infinite number of websites (PODs) where the load balancer can randomly send traffic to and the user won't notce anything, but actually jumping between webserver. This section explains how you have to configure LUYA in order to achieve this behavior.
+LUYA has been provably used in different cloud environments using Docker and e.g. Kubernetes. This ensures your application runs in a stateless context, which means that your application does not store any informations inside the webserver itself. This makes it possible to scale LUYA into an infinite number of websites (PODs) where the load balancer can randomly send traffic to and the user won't notce anything, but actually jumping between webserver. This section explains how you have to configure LUYA in order to achieve this behavior.
 
 ## Overview
 
@@ -8,11 +8,11 @@ LUYA has been proofenly used in different cloud environments using Docker and e.
 
 This chart illustrates what is required to make your Webserver stateless:
 
-1. a Database
+1. Database
 2. Caching Server (e.g. Memcached)
-3. S3 compataible Storage (for file uploads, assets, etc.) working as a CDN
+3. S3-compatible storage (for file uploads, assets, etc.) working as a CDN
 
-> There different solutions you can use, for example its not required to have a shared caching system, but its strongly recommended as a single request can warm a cache state for all webservers!
+> There different solutions you can use, for example it's not required to have a shared caching system, but it's strongly recommended as a single request can warm a cache state for all webservers!
 
 ## Dockerize your Application
 
@@ -33,11 +33,11 @@ RUN chmod 777 /var/www/html/public_html/assets
 RUN chmod 777 /var/www/html/runtime
 ```
 
-By default this will load the <class name="luya\Config" /> with `ENV_PROD`, you can adjust this by chaning the ENV variable `LUYA_CONFIG_ENV` on run or build time.
+By default this will load the <class name="luya\Config" /> with `ENV_PROD`, you can adjust this by changing the ENV variable `LUYA_CONFIG_ENV` on run or build time.
 
 ## Configure your Application
 
-Ensure [LUYA AWS](https://github.com/luyadev/luya-aws) is installed, so you can store files and assets into your s3 compatible storage system. 
+Ensure [LUYA AWS](https://github.com/luyadev/luya-aws) is installed, so you can store files and assets into your S3-compatible storage system. 
 
 #### Storage Component
 
@@ -78,7 +78,7 @@ $config->component('session', [
 ]);
 ```
 
-otherwise use the session cache
+Otherwise use the session cache:
 
 ```php
 $config->component('session', [
@@ -88,7 +88,7 @@ $config->component('session', [
 
 #### Asset Manager Component
 
-When you have LUYA AWS S3 Storage enabled, you can switch the asset manager to use that bucket. LUYA will upload your assets to that server, so the resources file are served from a CDN:
+When you have LUYA AWS S3 storage enabled, you can switch the asset manager to use that bucket. LUYA will upload your assets to that server, so the resources file are served from a CDN:
 
 ```php
 $config->component('assetManager', [
@@ -111,7 +111,7 @@ $config->component('assetManager', [
 
 #### Request Component
 
-If the urls do not contain https schema, this is because [$isSecureConnection](https://www.yiiframework.com/doc/api/2.0/yii-web-request#getIsSecureConnection()-detail) will return false, therefor you can define the secure headers or disable them as followed:
+If the URLs do not contain https:// schema, this is because [$isSecureConnection](https://www.yiiframework.com/doc/api/2.0/yii-web-request#getIsSecureConnection()-detail) will return `false`, therefor you can define the secure headers or disable them as followed:
 
 ```php
 $config->webComponent('request', [
