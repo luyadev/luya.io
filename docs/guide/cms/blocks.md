@@ -148,7 +148,7 @@ The following keys are available:
 + **id**: Return the unique identifier from the CMS context
 + **blockId**: Returns the id of this block (unique identifier)
 + **context**: Returns frontend or backend to find out in which context you are.
-+ **pageObject**: Returns the <class name="luya\cms\models\NavItem" /> object where you can run <class name="luya\cms\models\NavItem" method="getNav" /> to retrieve the <class name="luya\cms\models\Nav" /> object.
++ **pageObject**: Returns the <class name="luya\cms\models\NavItemPage" /> object where you can run <class name="luya\cms\models\NavItemPage" method="getNavItem" /> to retrieve the <class name="luya\cms\models\NavItem" /> object, from there its possible to run <class name="luya\cms\models\NavItem" method="getNav" /> to retrieve the <class name="luya\cms\models\Nav" />
 + **isFirst**: Returns whether this block is the first in its placeholder or not.
 + **isLast**: Return whether his block is the last in its placeholder or not.
 + **index**: Returns the number of the index/position within this placeholder.
