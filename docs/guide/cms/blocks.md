@@ -137,7 +137,7 @@ You can enable block caching for a block event if the caching component is not r
 
 ## Env / Context Information
 
-Each block is placed in an environment (env) you can access those information inside your block with <class name="luya\cms\base\PhpBlock" method="getEnvOption" />logic:
+Each block is placed in an environment (env). You can access those information inside your block with <class name="luya\cms\base\PhpBlock" method="getEnvOption" /> logic:
 
 ```php
 $this->getEnvOption($key, $defaultValue);
@@ -145,19 +145,34 @@ $this->getEnvOption($key, $defaultValue);
 
 The following keys are available:
 
-+ **id**: Return the unique identifier from the CMS context
-+ **blockId**: Returns the id of this block (unique identifier)
-+ **context**: Returns frontend or backend to find out in which context you are.
-+ **pageObject**: Returns the <class name="luya\cms\models\NavItemPage" /> object where you can run <class name="luya\cms\models\NavItemPage" method="getNavItem" /> to retrieve the <class name="luya\cms\models\NavItem" /> object, from there its possible to run <class name="luya\cms\models\NavItem" method="getNav" /> to retrieve the <class name="luya\cms\models\Nav" />
++ **id**: Returns the unique identifier from the CMS context.
++ **blockId**: Returns the id of this block (unique identifier).
++ **context**: Returns `'frontend'` or `'admin'` to find out in which context you are.
++ **pageObject**: Returns the <class name="luya\cms\models\NavItemPage" /> object where the block is located.
 + **isFirst**: Returns whether this block is the first in its placeholder or not.
-+ **isLast**: Return whether his block is the last in its placeholder or not.
-+ **index**: Returns the number of the index/position within this placeholder.
++ **isLast**: Returns whether this block is the last in its placeholder or not.
++ **index**: Returns the index number/position within this placeholder.
 + **itemsCount**: Returns the number of items inside this placeholder.
 + **isPrevEqual**: Returns whether the previous item is of the same origin (block type, like text block) as the current.
 + **isNextEqual**: Returns whether the next item is of the same origin (block type, like text block) as the current.
-+ **equalIndex**: Get the current index/position of this element within the list of *same* elements.
++ **equalIndex**: Returns the current index number/position of this element within the list of *same* elements.
 
-The properties can help you in order to make a container layout block which auto closes/open the row when working with a grid system like the one from Bootstrap:
+Thereof you can also retrieve the related <class name="luya\cms\models\NavItem" /> and <class name="luya\cms\models\Nav" /> objects
+via <class name="luya\cms\models\NavItemPage" method="getNavItem" /> and <class name="luya\cms\models\NavItem" method="getNav" /> as follows:
+
+```php
+$this->getEnvOption('pageObject')->navItem->nav;
+```
+
+Inside a PHP block view call instead:
+
+```php
+$this->block->getEnvOption($key, $defaultValue);
+```
+
+Or you can easily access these properties through convenient shortcuts, e.g. `$this->isPrevEqual`.
+
+For example, they are useful to make a container layout block which auto close/open the row when working with a grid system like the one from Bootstrap:
 
 ```php
 <?php if (!$this->isPrevEqual): ?>
@@ -180,7 +195,7 @@ The above example would only open the row element once and closes the row contai
 If there are any CMS properties defined you can access them like this:
 
 ```php
-$propObject = $this->getEnvOption('pageObject')->navItem->nav->getProperty('myCustomProperty');
+$this->getEnvOption('pageObject')->navItem->nav->getProperty('myCustomProperty');
 ```
 
 If there is a property defined you will get the property object otherwise returning `false`.
