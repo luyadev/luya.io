@@ -38,8 +38,8 @@ RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}] # php-fpm support
 
 In order to run LUYA with deployer nicely on a production server, the following components should be installed (we use the most common components Apache2 and MySQL, of course you can run LUYA with other database components and webservers like nginx):
 
-+ PHP 7.4 (or higher) (PHP 7.0 and PHP 5.6 should work but it's not tested anymore)
-+ MySQL 5.5 (or higher)
++ PHP 8.0 (PHP 8.1 or higher recommended)
++ MySQL 5.5 (MySQL 8.0 or higher recommended)
 + PHP extensions: curl, fileinfo, mbstring, icu, phar, zip
 + Apache modules: mod_rewrite
 + Git (for deployer)
