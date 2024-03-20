@@ -1,10 +1,10 @@
 # Admin CSS Styles
 
-All [Bootstrap 4](https://getbootstrap.com/) CSS styles and classes are available in the LUYA admin UI. On top of this LUYA provides generic CSS classes for buttons with predefined icons and colors.
+All [Bootstrap 4](https://getbootstrap.com/docs/4.6/getting-started/introduction) CSS styles and classes are accessible within the LUYA admin interface. In addition to these, LUYA offers generic CSS classes for buttons, complete with predefined icons and colors.
 
 ## Buttons
 
-The Bootstrap 4 `btn` class is extended by some predefined colors which are assigned to specific function (e.g. save, delete, abort). The following classes are available in the whole admin UI:
+The `btn` class from Bootstrap 4 is enhanced with predefined colors corresponding to specific functions, such as save, delete, and cancel. These classes are accessible throughout the admin interface:
 
 ```html
 <button type="button" class="btn btn-save">Save</button>
@@ -18,54 +18,54 @@ The Bootstrap 4 `btn` class is extended by some predefined colors which are assi
 <button type="button" class="btn btn-config">Configuration</button>
 ```
 
-You can combine the `btn` class with predefined icons, e.g. the use icons can be achieved by simply adding the CSS class `btn-icon` to the above listed button and the related icon will appear.
+To incorporate predefined icons, simply append the `btn-icon` class to any of the above buttons, and the corresponding icon will be displayed.
 
 ```html
 <button type="button" class="btn btn-save btn-icon">Save</button>
 ```
 
-> Please keep in mind that `<input type="button" class="btn btn-icon btn-save" value="Button label" />` does <b>not</b> work because input fields do not support the pseudo CSS class *:after*. So use the `button` HTML element or something else instead of `input`.
+> Note that `<input type="button" class="btn btn-icon btn-save" value="Button label" />` is not effective because input fields do not support the pseudo CSS class *:after*. Thus, it is recommended to use the `button` HTML element or an alternative instead of `input`.
 
-If you would like to display a button with a generic predefined icon use `btn-icon` without a defined class:
+To show a button with a generic predefined icon, use `btn-icon` without specifying a particular class:
 
 ```html
 <button type="button" class="btn btn-icon"><i class="material-icons">check</i>OK</button>
 ```
 
-If you want a button `btn-icon` without a background simply add `btn-link`:
+For a `btn-icon` button without a background, add `btn-link`:
 
 ```html
 <button type="button" class="btn btn-icon btn-link"><i class="material-icons">check</i>Link</button>
 ```
 
-Below some example combinations:
+Here are some example combinations:
 
 ```html
 <button type="button" class="btn btn-icon btn-save">Save button with icon and text</button>
 <button type="button" class="btn btn-cancel">Cancel button without icon</button>
-<button type="button" class="btn btn-icon btn-delete"></button> // Delete button without label but predefined icon and colors.
+<button type="button" class="btn btn-icon btn-delete"></button> // Delete button without label, but with predefined icon and colors.
 ```
- 
+
 ## Icons
 
-Below, the table shows you which icon stands for what. The full set of usable icons is available under https://material.io/icons.
+The table below illustrates which icons correspond to specific functions. A complete set of icons is available at https://material.io/icons.
 
-| Description | Icon            | Name         |
-| ------------- | ------------- | ------------- |
-| Upload icon | <i class="material-icons">file_upload</i> | `file_upload` |
-| Download icon | <i class="material-icons">file_download</i> | `file_download` |
-| Edit icon | <i class="material-icons">edit</i> | `edit` |
-| Add icon | <i class="material-icons">add_box</i> | `add_box` |
-| Add icon for button | <i class="material-icons">add</i> | `add` |
-| Delete icon | <i class="material-icons">delete</i> | `delete` |
-| Save / Confirm icon | <i class="material-icons">check.png</i> | `check` |
-| Abort / Clear icon | <i class="material-icons">clear</i>  | `clear` |
-| Config icon | <i class="material-icons">settings</i> | `settings` |
-| Settings icon | <i class="material-icons">more_vert</i> | `more_vert` |
-| Visible icon | <i class="material-icons">visibility</i> | `visibility` |
-| Invisible icon | <i class="material-icons">visibility_off</i> | `visibility_off` |
-| Online icon | <i class="material-icons">cloud_queue</i> | `cloud_queue` |
-| Offline icon | <i class="material-icons">cloud_off</i> | `cloud_off` |
-| Sort icon | <i class="material-icons">keyboard_arrow_down</i> <i class="material-icons">keyboard_arrow_up</i> | `keyboard_arrow_down` / `keyboard_arrow_up` |
-| Folder icon | <i class="material-icons">folder</i> | `folder` |
-| Create folder icon | <i class="material-icons">create_new_folder</i> | `create_new_folder` |
+| Description            | Icon                                        | Name                         |
+|------------------------|---------------------------------------------|------------------------------|
+| Upload icon            | <i class="material-icons">file_upload</i>   | `file_upload`                |
+| Download icon          | <i class="material-icons">file_download</i> | `file_download`              |
+| Edit icon              | <i class="material-icons">edit</i>          | `edit`                       |
+| Add icon               | <i class="material-icons">add_box</i>       | `add_box`                    |
+| Add icon for button    | <i class="material-icons">add</i>           | `add`                        |
+| Delete icon            | <i class="material-icons">delete</i>        | `delete`                     |
+| Save/Confirm icon      | <i class="material-icons">check</i>         | `check`                      |
+| Abort/Clear icon       | <i class="material-icons">clear</i>         | `clear`                      |
+| Config icon            | <i class="material-icons">settings</i>      | `settings`                   |
+| Settings icon          | <i class="material-icons">more_vert</i>     | `more_vert`                  |
+| Visible icon           | <i class="material-icons">visibility</i>    | `visibility`                 |
+| Invisible icon         | <i class="material-icons">visibility_off</i>| `visibility_off`             |
+| Online icon            | <i class="material-icons">cloud_queue</i>   | `cloud_queue`                |
+| Offline icon           | <i class="material-icons">cloud_off</i>     | `cloud_off`                  |
+| Sort icon              | <i class="material-icons">keyboard_arrow_down</i> <i class="material-icons">keyboard_arrow_up</i> | `keyboard_arrow_down` / `keyboard_arrow_up` |
+| Folder icon            | <i class="material-icons">folder</i>        | `folder`                     |
+| Create folder icon     | <i class="material-icons">create_new_folder</i> | `create_new_folder`      |
