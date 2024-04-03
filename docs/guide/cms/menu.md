@@ -193,6 +193,39 @@ Or as example inside the application configuration:
 ]
 ```
 
+Instead of using the `childOf` property you can also directly set a menu item:
+
+```php 
+Yii::$app->menu->injectItem(new InjectItem([ 
+    'item' => $parentItem, 
+    'title' => 'Inject Title', 
+    'alias' => 'inject-title',
+])); 
+```
+
+> Be aware that the parent item must be available for current language.
+
+#### Menu items order
+
+You can control the position of the injected menu item via `sortIndex` property.
+As an example, a menu item is injected at the beginning of a submenu:
+
+```php 
+Yii::$app->menu->injectItem(new InjectItem([ 
+    'childOf' => $parentItem.id, 
+    'title' => 'Inject Title', 
+    'alias' => 'inject-title',
+    'sortIndex' => 0, 
+])); 
+```
+
+When then accessing the submenu's items they must be explicitly sorted:
+
+```php
+Yii::$app->menu->find()->where(['==', 'parent_nav_id', $parentItem.navId])->orderBy(['sort_index' => SORT_ASC])->all();
+```
+
+
 ## Events
 
 The menu component triggers certain <class name="yii\base\Event" />. You can hook on those events in the configuration for your <class name="luya\cms\menu\Component" />:
