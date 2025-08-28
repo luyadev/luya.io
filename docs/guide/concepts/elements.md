@@ -102,7 +102,7 @@ return [
 ]
 ```
 
-If the styleguide module is successfully configured it is accessible it trough the url: `yourwebsite.com/styleguide`
+If the styleguide module is successfully configured it is accessible through the URL: `yourwebsite.com/styleguide`
 
 ## Mocking arguments
 

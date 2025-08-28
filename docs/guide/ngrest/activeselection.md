@@ -1,6 +1,6 @@
 # Active Selections
 
-<class name="luya\admin\ngrest\base\ActiveSelection" /> are analog to [Active Buttons](activebutton.md). When <class name="luya\admin\ngrest\base\NgRestModel" method="ngRestActiveSelections" /> are defined, checkboxes will appear in the CRUD list (overview of all records) and a the active selection buttons are visible in the bottom. A click on the button interacts with the selected items/rows.
+<class name="luya\admin\ngrest\base\ActiveSelection" /> are analog to [Active Buttons](activebutton.md). When <class name="luya\admin\ngrest\base\NgRestModel" method="ngRestActiveSelections" /> are defined, checkboxes will appear in the CRUD list (overview of all records) and the Active Selection buttons are visible in the bottom. A click on the button interacts with the selected items/rows.
 
 There are built in Active Selections you can use and configure or you can create your own Active Selections and attach them to an [NgRestModel](model.md)
 

@@ -6,7 +6,7 @@ Since LUYA Admin version 2.0, the ([Yii Queue](https://github.com/yiisoft/yii2-q
 
 The component is configured as `adminqueue` based on the Database `yii\queue\db\Queue` integration. 
 
-The admin module has a default integration for scheduling jobs when working with selects (dropdowns) and checkbox, so you are able to schedule those changes out of the box! See Checkbox (ToggleStatus) <class name="luya\admin\ngrest\plugins\ToggleStatus" prop="scheduling" /> and Select <class name="luya\admin\ngrest\plugins\Select" prop="scheduling" />.
+The admin module has a default integration for scheduling jobs when working with selects (dropdowns) and checkbox, so you are able to schedule those changes out-of-the-box! See Checkbox (ToggleStatus) <class name="luya\admin\ngrest\plugins\ToggleStatus" prop="scheduling" /> and Select <class name="luya\admin\ngrest\plugins\Select" prop="scheduling" />.
 
 ## Configure to run
 
@@ -30,7 +30,7 @@ The fake cron job will run each 25 minutes whether users request the websites in
 ]
 ```
 
-The fake cronjob won't be executed on console (cli) commands. The information about last run timestamp is stored in <class name="luya\admin\models\Config" /> with identifier `luya\admin\models\Config::CONFIG_QUEUE_TIMESTAMP`.
+The fake cronjob won't be executed on console (CLI) commands. The information about last run timestamp is stored in <class name="luya\admin\models\Config" /> with identifier `luya\admin\models\Config::CONFIG_QUEUE_TIMESTAMP`.
 
 ### Cronjob (admin/queue Command)
 

@@ -1,6 +1,6 @@
 # Languages
 
-LUYA provides a powerful multi language support as we have focused on multi-lingual website very strong during the concept and development phase. In order to understand how to configure your site to fit your needs read the section below.
+LUYA provides a powerful multi-language support as we have focused on multi-lingual website very strong during the concept and development phase. In order to understand how to configure your site to fit your needs read the section below.
 
 Keep in mind that the `language` property of your application is the main setting for the Yii translation system.
 
@@ -41,7 +41,7 @@ There are two ways to retrieve the current active language:
 
 > Instead of using the locales system, we recommend you to make usage of the PHP intl extension, which is commonly available. Therefore e.g. you use `Yii::$app->formatter->asDatetime($time, 'MMMM yyyy')` instead of  `strftime("%B %Y", $date);`. Take a look at the formating syntax here https://unicode-org.github.io/icu/userguide/format_parse/datetime
 
-As the composition component can override the <class name="yii\base\Application" prop="language" /> which is the base property for all translations within a Yii system you can define localisations for each language. Localisation are usually set trough setlocale() this is what LUYA does in the <class name="luya\traits\ApplicationTrait" />. You can define a localisation file for each language with the <class name="luya\traits\ApplicationTrait" prop="locales" /> property, for example when language `de` is given it should take the `de_CH.utf8` locale file:
+As the composition component can override the <class name="yii\base\Application" prop="language" /> which is the base property for all translations within a Yii system you can define localisations for each language. Localisation are usually set through `setLocale()` this is what LUYA does in the <class name="luya\traits\ApplicationTrait" />. You can define a localisation file for each language with the <class name="luya\traits\ApplicationTrait" prop="locales" /> property, for example when language `de` is given it should take the `de_CH.utf8` locale file:
 
 ```php
 'locales' => [

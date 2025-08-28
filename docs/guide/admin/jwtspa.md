@@ -2,7 +2,7 @@
 
 > available since LUYA admin module version 2.2
 
-The LUYA admin provides a basic JWT generator including an out of the box authentication system which can proxy requests trough LUYA admin API User and those permission system.
+The LUYA admin provides a basic JWT generator including an out-of-the-box authentication system which can proxy requests through LUYA admin API User and those permission system.
 
 ## Prerequisite
 
@@ -12,7 +12,7 @@ The LUYA admin provides a basic JWT generator including an out of the box authen
 
 ## How it works
 
-As all LUYA admin APIs requerd an authentication are proxied trough LUYA API Users. The life cycle of the JWT request is described as followed (assuming JWT configuration in the module is done accordingly):
+As all LUYA admin APIs requerd an authentication are proxied through LUYA API Users. The life cycle of the JWT request is described as followed (assuming JWT configuration in the module is done accordingly):
 
 Get the token:
 
@@ -71,7 +71,7 @@ class User extends \luya\admin\ngrest\base\NgRestModel implements luya\admin\bas
         return 'api-user';
     }
 
-    // ....... other ngrest models specific content ........... //
+    // ....... other NgRest models specific content ........... //
 
     /* JwtIdentityInterface */
 
@@ -88,7 +88,7 @@ class User extends \luya\admin\ngrest\base\NgRestModel implements luya\admin\bas
 }
 ```
 
-An NgRest API with additional login, signup and me actions.
+A NgRest API with additional login, signup and me actions.
 
 ```php
 /**
@@ -167,7 +167,7 @@ If a successfull JWT authentication is made the <class name="luya\admin\componen
 
 ## CORS Preflight Request
 
-When working with cross domain requests, each XHR request to the API will make an *option request* or also known as *preflight request*. The <class name="luya\admin\ngrest\base\Api" /> controllers provide an out of the box solution which works for common CRUD operations (add, view, list, edit, delete). This can be enabled by setting <class name="luya\admin\Module" prop="cors" /> to true. For further CORS config options use <class name="luya\traits\ApplicationTrait" prop="corsConfig" />.
+When working with cross domain requests, each XHR request to the API will make an *option request* or also known as *preflight request*. The <class name="luya\admin\ngrest\base\Api" /> controllers provide an out-of-the-box solution which works for common CRUD operations (add, view, list, edit, delete). This can be enabled by setting <class name="luya\admin\Module" prop="cors" /> to true. For further CORS config options use <class name="luya\traits\ApplicationTrait" prop="corsConfig" />.
 
 When working with custom actions you might need to configure the option request for the given method. Therefore you need to configure the API with the following setup: create an URL rule for options request, define the option and make sure the option is available without authentication (its common that option request won't have authentication headers).
 
@@ -219,7 +219,7 @@ A few principals regarding permissions:
 + Unless an action is masked as <class name="luya\traits\RestBehaviorsTrait" prop="authOptional" /> **every action requires authentication**.
 + If the group of the defined <class name="luya\admin\components\Jwt" prop="apiUserEmail" /> API user has **no permissions**, only your custom actions are accessible.
 + When accessing NgRest API actions like update, create, list or view (detail) and permission is granted the actions are logged with the configured API User.
-+ As permission is proxied trough API Users, a valid API User token could access those informations as well.
++ As permission is proxied through API Users, a valid API User token could access those informations as well.
 
 ## User Based CheckAccess
 

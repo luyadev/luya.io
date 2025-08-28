@@ -216,7 +216,7 @@ The following Injectors are currently available:
 
 ### Injector API
 
-Each injector object generate trough the <class name="luya\cms\base\InternalBaseBlock" method="injectors" /> method can be access trough the magical array access. Let's assume you are registering the TagInjector:
+Each injector object generate through the <class name="luya\cms\base\InternalBaseBlock" method="injectors" /> method can be access through the magical array access. Let's assume you are registering the TagInjector:
 
 ```php
 public function injectors()
@@ -225,7 +225,7 @@ public function injectors()
 }
 ```
 
-Now you are able to access the TagInjector object trough the `$this['tags']` ArrayAccess getter method.
+Now you are able to access the TagInjector object through the `$this['tags']` ArrayAccess getter method.
 
 ## Custom Types
 

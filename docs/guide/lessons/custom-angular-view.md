@@ -84,4 +84,4 @@ zaa.bootstrap.register('MyController', ['$scope', '$http', function($scope, $htt
 </div>
 ```
 
-Its very common to just write the AngularJS controller code inside the view, of course you can also make a JavaScript file and add this to an asset and register the [[/guide/admin/assets]].
+It's very common to just write the AngularJS controller code inside the view, of course you can also make a JavaScript file and add this to an asset and register the [[/guide/admin/assets]].

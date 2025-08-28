@@ -20,7 +20,7 @@ This will automatically create an pre filled `ImagesliderBlock.php` in our **blo
 
 ## Register an external JavaScript and CSS file
 
-As LUYA is build upon Yii 2, we can use the built in asset system. We register external JS files like [shown in the Yii guide](https://www.yiiframework.com/doc-2.0/guide-output-client-scripts.html#script-files) in the beginning of the view file:
+As LUYA is built upon Yii 2, we can use the built in asset system. We register external JS files like [shown in the Yii guide](https://www.yiiframework.com/doc-2.0/guide-output-client-scripts.html#script-files) in the beginning of the view file:
 
 ```php
 <?php 

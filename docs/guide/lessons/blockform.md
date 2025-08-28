@@ -46,7 +46,7 @@ class TestModel extends Model
                     
 ## Prepare the block 
 
-Now the model responds needs to be assigned to the frontend view trough the extra vars section. Extra vars are somewhat equals to when assign vars into the view in a controller context. You can assign anything into your view files.
+Now the model responds needs to be assigned to the frontend view through the extra vars section. Extra vars are somewhat equals to when assign vars into the view in a controller context. You can assign anything into your view files.
 
 ```php
 class MyFormBlock extends \luya\cms\base\PhpBlock

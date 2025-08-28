@@ -96,13 +96,13 @@ zaa.directive("myDirective", function() {
             });
         }],
         template : function() {
-            return '<div>Use data and model as they are assigned trough scope defintion: <input type="text" ng-model="model" /></div>';
+            return '<div>Use data and model as they are assigned through scope defintion: <input type="text" ng-model="model" /></div>';
         }
     }
 });
 ```
 
-> If your code depends on an external library (which is loaded trough Bower for example), you have to push this dependency into the zaa LUYA admin variable: `angular.module("zaa").requires.push('ui.tinymce');`. Afterwards the `ui.tinymce` (in this example) can be used in side your directive.
+> If your code depends on an external library (which is loaded through Bower for example), you have to push this dependency into the zaa LUYA admin variable: `angular.module("zaa").requires.push('ui.tinymce');`. Afterwards the `ui.tinymce` (in this example) can be used in side your directive.
 
 Now in order to use the custom `TestPlugin` in your [NgRest config model](/guide/ngrest/model) you can define an extra field which takes care of getting (list) and setting (update/create) the value in your <class name="admin\ngrest\base\Model "/> ActiveRecord class model.
 

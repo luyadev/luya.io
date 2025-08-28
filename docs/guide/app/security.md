@@ -43,7 +43,7 @@ We recommend to enable <class name="luya\admin\Module" prop="secureLogin" /> whi
 ]
 ```
 
-Since admin version 3.0 it's also possible to setup 2FA login with OTP trough any authenticator app.
+Since admin version 3.0 it's also possible to setup 2FA login with OTP through any authenticator app.
 
 ![LUYA 2FA](../img/2fa.png)
 
@@ -71,7 +71,7 @@ With enabling of <class name="luya\admin\Module" prop="emailVerification" /> the
 
 ## JSON response cruft prepend
 
-A JSON vulnerability allows third party website to turn your JSON resource URL into JSONP request under some conditions. To encounter this, the server can prefix all JSON requests with following cruft `")]}',\n"`. This is auto enabled for all JSON responses which are provided by the admin module trough the APIs.
+A JSON vulnerability allows third party website to turn your JSON resource URL into JSONP request under some conditions. To encounter this, the server can prefix all JSON requests with following cruft `")]}',\n"`. This is auto enabled for all JSON responses which are provided by the admin module through the APIs.
 
 ```php
 'admin' => [

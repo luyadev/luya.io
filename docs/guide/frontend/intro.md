@@ -1,6 +1,6 @@
 # Frontend Module
 
-If specific logic have to be applied to your website, e.g. a form where user can input data or you may load data from a database and render a custom view then you can create a frontend module. The module can be integrated into your CMS or called directly via the module url.
+If specific logic have to be applied to your website, e.g. a form where user can input data or you may load data from a database and render a custom view then you can create a frontend module. The module can be integrated into your CMS or called directly via the module URL.
 
 Frontend modules are also a very common way to redistributed logic of a controller but still let the user implement the view files to fit their look.
 
@@ -130,11 +130,11 @@ class DefaultController extends Controller
 }
 ```
 
-Those actions are already accessible by an exact url, because we have a `DefaultController` in our `frontendmodule` most likely the URL for the `actionHello()` is:
+Those actions are already accessible by an exact URL, because we have a `DefaultController` in our `frontendmodule` most likely the URL for the `actionHello()` is:
 
 `your-public-project-domain/frontendmodule/default/hello`
 
-Please keep in mind that those actions are case sensitive, which means `actionWhoAmI` it is accessible via the url:
+Please keep in mind that those actions are case-sensitive, which means `actionWhoAmI` it is accessible via the URL:
 
 `your-public-project-domain/frontendmodule/default/who-am-i`
 

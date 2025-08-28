@@ -65,7 +65,7 @@ When you have defined URL rules for your module you may want to use them in your
 \luya\helpers\Url::toRoute(['/estore/basket/index']);
 ```
 
-And a the parameterized route:
+And the parameterized route:
 
 ```php
 \luya\helpers\Url::toRoute(['/estore/article/index', 'id' => 123]);
@@ -106,7 +106,7 @@ This also means that the given URL rules are available when it's required to poi
 
 > When composition is enabled, it will take the correct route for the current language and prefix the pattern if enable in composition config.
 
-To verify which composition language is used you can dump `Yii::$app->composition->langShortCode`. The <class name="luya\web\Composition" /> component is taking care of LUYA multi language websites and is registered by default for all LUYA projects.
+To verify which composition language is used you can dump `Yii::$app->composition->langShortCode`. The <class name="luya\web\Composition" /> component is taking care of LUYA multi-language websites and is registered by default for all LUYA projects.
 
 ## Retrieve Current Rule in CMS Context
 

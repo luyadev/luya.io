@@ -140,7 +140,7 @@ The first example will map `POST api-admin-timestamp` to the index action, the s
 
 ## OpenAPI Client
 
-In order to consume the OpenAPI trough OpenAPI Client you have to turn off <class name="luya\admin\Module" prop="jsonCruft" /> behavior in the <class name="luya\Config" /> for the Admin Module:
+In order to consume the OpenAPI through OpenAPI Client you have to turn off <class name="luya\admin\Module" prop="jsonCruft" /> behavior in the <class name="luya\Config" /> for the Admin Module:
 
 ```php
  'admin' => [
