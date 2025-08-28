@@ -287,7 +287,7 @@ Take a look at <class name="luya\admin\ngrest\base\NgRestRelation" /> for the fu
 
 The above example will use the `getSales()` method of the current model where you are implementing this relation. The `getSales()` must return an <class name="yii\db\QueryInterface" /> Object, for example you can use `$this->hasMany(Model, ['key' => 'rel'])` or `new \yii\db\Query()`.
 
-> Tip: If you generate an NgRest model for a relation which is not used in any other situations you can hide those items from the menu, but not from the permission system. To hide en element add the hiddenInMenu option in the <class name="luya\admin\base\Module" method="getMenu" /> method of the module as following: `itemApi('name', 'route', 'icon', 'api', ['hiddenInMenu' => true])`.
+> Tip: If you generate a NgRest model for a relation which is not used in any other situations you can hide those items from the menu, but not from the permission system. To hide en element add the hiddenInMenu option in the <class name="luya\admin\base\Module" method="getMenu" /> method of the module as following: `itemApi('name', 'route', 'icon', 'api', ['hiddenInMenu' => true])`.
 
 If you like to display the name of the current element in the table you can define `'tabLabelAttribute' => 'fieldName'` where fieldName is the name of the attribute in the list overview.
 

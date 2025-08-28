@@ -137,7 +137,7 @@ public function callbackPostData($firstname, $lastname)
 
 ## AngularJS in view files
 
-As the admin UI is written in AngularJS which let´s you easily create inline AngularJS controllers to interact with your Active Window class. The below view file shows an AngularJS controller which collects data from the controller assigned into the view but uses `ng-repeat to display and render the data.
+As the admin UI is written in AngularJS which lets you easily create inline AngularJS controllers to interact with your Active Window class. The below view file shows an AngularJS controller which collects data from the controller assigned into the view but uses `ng-repeat` to display and render the data.
 
 ```js
 <script>
@@ -200,7 +200,7 @@ To disable permission checks, you have to set the `permissionLevel` to am empty 
 
 ## Existing reusable Active Windows
 
-The admin UI of LUYA provides some basic reusable Active Windows which you can reuse and use out of the box. Just attach them to your NgRest config with the given configuration. Take a look at the API reference for more details in how to attach the specific Active Window.
+The admin UI of LUYA provides some basic reusable Active Windows which you can reuse and use out-of-the-box. Just attach them to your NgRest config with the given configuration. Take a look at the API reference for more details in how to attach the specific Active Window.
 
 |Class|Description
 |--|--|

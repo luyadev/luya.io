@@ -16,7 +16,7 @@ You should always enable caching in production! Caching stores data inside the r
 
 > When using LUYA deployer, the runtime folder will be recreated for each deployment. You can also force recaching by click the reload button in the admin UI.
 
-There are also a few other caching mechanism available and built in into Yii. See the [supported cache storage](https://www.yiiframework.com/doc-2.0/guide-caching-data.html#supported-cache-storage)
+There are also a few other caching mechanism available and built into Yii. See the [supported cache storage](https://www.yiiframework.com/doc-2.0/guide-caching-data.html#supported-cache-storage)
 
 ## Page Caching
 
@@ -45,7 +45,7 @@ When dealing with large database tables in your application you should define da
 
 > since Admin 3.9
 
-The admin provides an out of the box table which can be taken to store the session inside the database, thereore just configured:
+The admin provides an out-of-the-box table which can be taken to store the session inside the database, thereore just configured:
 
 ```php
  $config->component('session', [

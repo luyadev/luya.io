@@ -252,7 +252,7 @@ public function callbackHelloWorld($time)
 }
 ```
 
-The above callback requires the parameter `$time` and must be called trough an AJAX call inside of the JavaScript, to create the URL for this specific callback we are going to use `createAjaxLink()`:
+The above callback requires the parameter `$time` and must be called through an AJAX call inside of the JavaScript, to create the URL for this specific callback we are going to use `createAjaxLink()`:
 
 ```php
 $this->createAjaxLink('HellWorld', ['time' => time()]);

@@ -1,15 +1,15 @@
 # Permissions & Menu
 
-LUYA provides an out of the box permission system. Menu entries are bound to the permission system but you can also define custom permissions. In order to update permissions run the `./vendor/bin/luya import` command which will restore all permissions in the database that you can allocate them to a user group.
+LUYA provides an out-of-the-box permission system. Menu entries are bound to the permission system but you can also define custom permissions. In order to update permissions run the `./vendor/bin/luya import` command which will restore all permissions in the database that you can allocate them to a user group.
 
 Permissions are commonly part of the <class name="luya\admin\base\Module" method="getMenu" /> method but can also be defined in <class name="luya\admin\base\Module" method="extendPermissionApis" /> or <class name="luya\admin\base\Module" method="extendPermissionRoutes" />.
 
 In order to make wording clear in this guide section:
 
 + Authentication: This means you have to provide an access token, bearer auth header or session based authentication mechanism in order to access the given resource.
-+ Permission: This means an API or WEB-Route is stored in the LUYA ADMIN permission system and can be associated to given groups which can be then associated to users (both users and API users). For example, users can be edited, added and deleted.
++ Permission: This means an API or WEB route is stored in the LUYA ADMIN permission system and can be associated to given groups which can be then associated to users (both users and API users). For example, users can be edited, added and deleted.
 + User vs API User: API Users are not able to login in the admin UI, while Users do. There are also other limitations, like API Users can not access actions without permission entries, if disabled (which is by default)
-+ REST/API vs WEB: A REST/API Controller will return JSON or XML formatted content and authentication must be done via token, while a web controller returns HTML (scalar values) and authentication is done trough session cookie.
++ REST/API vs WEB: A REST/API Controller will return JSON or XML formatted content and authentication must be done via token, while a web controller returns HTML (scalar values) and authentication is done through session cookie.
 + Permission Routes: Permission entry for <class name="luya\admin\base\RestController" /> and <class name="luya\admin\base\Controller" />.
 + Permission APIs: Permission entry for <class name="luya\admin\base\RestActiveController" />
 
@@ -25,7 +25,7 @@ Each admin module does have a <class name="luya\admin\base\Module" method="getMe
 + ➀ nodeRoute: Top level node which directly redirects to a custom module route.
 + ➁ group: The group name of items.
 + ➂ itemRoute: An item inside a group to a custom route.
-+ ➂ itemApi: An item inside a group to an NgRest API.
++ ➂ itemApi: An item inside a group to a NgRest API.
 
 ```php
 public function getMenu()
@@ -47,7 +47,7 @@ Please have a look at the <class name="luya\admin\components\AdminMenuBuilder" /
 
 ## Route and API permissions without menu
 
-You can also setup permissions which are not regulated trough <class name="luya\admin\base\Module" method="getMenu" />, therefore configure the <class name="luya\admin\base\Module" /> class and override the following methods:
+You can also setup permissions which are not regulated through <class name="luya\admin\base\Module" method="getMenu" />, therefore configure the <class name="luya\admin\base\Module" /> class and override the following methods:
 
 ```php
 public function extendPermissionApis()
@@ -76,9 +76,9 @@ The above *module/controller/action* route is now protected by admin UI authoriz
 
 There are different controllers which can be extended, but they have different permission systems. Some use `routes` and others take `apis` as permission level.
 
-+ <class name="luya\admin\base\Controller" />: This is a WEB controller and permission is handled trough `routes`. Those controllers usually return HTML content and not REST responses (like JSON).
-+ <class name="luya\admin\base\RestController" />: The RestController can take `routes` as permission, route validation can be done trough <class name="luya\admin\base\RestController" method="checkRouteAccess" />. The controller requies response of array data (JSON response).
-+ <class name="luya\admin\base\RestActiveController" />: The modelClass based ActiveController which implements basic REST behaviors like create,update,view and delete based on a given model. The permission is authorized trough `apis` and the implementation of <class name="luya\admin\base\RestActiveController" method="checkAccess" />.
++ <class name="luya\admin\base\Controller" />: This is a WEB controller and permission is handled through `routes`. Those controllers usually return HTML content and not REST responses (like JSON).
++ <class name="luya\admin\base\RestController" />: The RestController can take `routes` as permission, route validation can be done through <class name="luya\admin\base\RestController" method="checkRouteAccess" />. The controller requies response of array data (JSON response).
++ <class name="luya\admin\base\RestActiveController" />: The modelClass-based ActiveController which implements basic REST behaviors like create, update, view and delete based on a given model. The permission is authorized through `apis` and the implementation of <class name="luya\admin\base\RestActiveController" method="checkAccess" />.
 
 ## Custom Actions in REST/API Controllers
 

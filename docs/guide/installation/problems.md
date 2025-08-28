@@ -15,7 +15,7 @@ In order to fix this, make sure you have the same default language short code in
 
 ## Admin Module Logout after Login
 
-If there are random logouts, or immediate logouts after, this is either a problem of being behind a loadbalancer, the ip changes a lot or a problem with the webserver:
+If there are random logouts, or immediate logouts after, this is either a problem of being behind a load balancer, the IP changes a lot or a problem with the webserver:
 
 + Disabled <class name="luya\admin\Module" prop="logoutOnUserIpChange" /> in your admin module config, see [example config](structure#configuration-files-and-config-builder)
 + Disabled secure connection check <class name="luya\traits\ApplicationTrait" prop="ensureSecureConnection" />, see [example config](structure#configuration-files-and-config-builder)

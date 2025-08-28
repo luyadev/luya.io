@@ -1,6 +1,6 @@
 # Create a LUYA Application
 
-The LUYA installation requires Composer. Please have a look at the [official Composer website](https://getcomposer.org/doc/00-intro.md) if you haven´t installed it on your system yet.
+The LUYA installation requires Composer. Please have a look at the [official Composer website](https://getcomposer.org/doc/00-intro.md) if you haven't installed it on your system yet.
 
 ::: tip Video
 See the [installation Video on Youtube](https://www.youtube.com/watch?v=Ybq878PMe_U).
@@ -8,7 +8,7 @@ See the [installation Video on Youtube](https://www.youtube.com/watch?v=Ybq878PM
 
 ## Create Project
 
-After setting up Composer, we execute the Composer command `create-project` to checkout the [luya-kickstarter](https://github.com/luyadev/luya-kickstarter-bootstrap4) application, an **out of the box** LUYA setup to run your website directly. It is recommended to run the `create-project` command directly from your htdocs/webserver folder like this:
+After setting up Composer, we execute the Composer command `create-project` to checkout the [luya-kickstarter](https://github.com/luyadev/luya-kickstarter-bootstrap4) application, an **out-of-the-box** LUYA setup to run your website directly. It is recommended to run the `create-project` command directly from your htdocs/webserver folder like this:
 
 ```sh
 composer create-project luyadev/luya-kickstarter:^1.0
@@ -34,7 +34,7 @@ cp env.php.dist env.php
 
 > On Windows use:  `copy env.php.dist env.php`
 
-Now the database connection inside the `configs/config.php` file needs to fit your MySQL servers' configuration. It is recommended to open all config files once to change values and understand the behavior. In order to understand the config files, read more in the [environment configs section](/guide/installation/environments.html).
+Now the database connection inside the `configs/config.php` file needs to fit your MySQL server configuration. It is recommended to open all config files once to change values and understand the behavior. In order to understand the config files, read more in the [environment configs section](/guide/installation/environments.html).
 
 ## Migrate and Import
 

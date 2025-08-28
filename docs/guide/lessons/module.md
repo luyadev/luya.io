@@ -34,12 +34,12 @@ To register the module in LUYA you [have to edit the config file](https://luya.i
 ],
 ```
 
-> When creating an open source module, you should provide frontend views which the developer then could trough `useAppViewPath` or not.
+> When creating an open source module, you should provide frontend views which the developer then could through `useAppViewPath` or not.
 
 ## Creating the models and migrations
 
 Our first step for the creation of our data model and the migration files is to create the associated database tables.
-Again, we're using the code wizard to [create the migration file](https://luya.io/guide/ngrest-concept) for our registered admin module **addressbookadmin**. We will need two tables, one for the contact data itself and one for the different contact groups.
+Again, we're using the code wizard to [create the migration file](https://luya.io/guide/ngrest) for our registered admin module **addressbookadmin**. We will need two tables, one for the contact data itself and one for the different contact groups.
 
 ```sh
 ./vendor/bin/luya migrate/create addressbook_basetables addressbookadmin
@@ -160,7 +160,7 @@ Before we will see the module in the admin view, we have to set the permissions 
 
 ## Linking the group table in the contact table
 
-We do not want to put the group ID in a contact record. In order to get a nice dropdown with all available `Groups`, we have to modify the `ngRestAttributeTypes()` function in the `Contact.php` model. We will use the [selectModel](https://luya.io/guide/ngrest-plugin-select) attribute type for the field `group_id`. 
+We do not want to put the group ID in a contact record. In order to get a nice dropdown with all available `Groups`, we have to modify the `ngRestAttributeTypes()` function in the `Contact.php` model. We will use the [selectModel](https://luya.io/guide/ngrest/plugin-select) attribute type for the field `group_id`. 
 
 Our `ngRestAttributeTypes()` function should look like this:
 

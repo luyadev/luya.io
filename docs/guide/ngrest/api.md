@@ -13,7 +13,7 @@ class MyEndpoint extends Api
 
 ## Expand Relations
 
-Its very common to join relation data for index list view in order to reduce SQL queries. To do so define the <class name="luya\admin\ngrest\base\Api" method="withRelations" /> method inside your API. This can be either an array with relations which will be passed to `index, list and view` or an array with a subdefinition in order to define which relation should be used in which scenario.
+It's very common to join relation data for index list view in order to reduce SQL queries. To do so, define the <class name="luya\admin\ngrest\base\Api" method="withRelations" /> method inside your API. This can be either an array with relations which will be passed to `index`, `list` and `view` or an array with a subdefinition in order to define which relation should be used in which scenario.
 
 ```php
 public function withRelations()
@@ -22,7 +22,7 @@ public function withRelations()
 }
 ```
 
-The above relations will be auto added trough <class name="yii\db\ActiveQuery" method="with" /> if defined in `?expand=user,images`. In order to define view specific actions:
+The above relations will be auto added through <class name="yii\db\ActiveQuery" method="with" /> if defined in `?expand=user,images`. In order to define view specific actions:
 
 ```php
 public function withRelations()
@@ -35,7 +35,7 @@ public function withRelations()
 }
 ```
 
-The Yii Framework has a very convenient way to work with model sub relations, using [expand](https://www.yiiframework.com/doc/guide/2.0/en/rest-resources) can also "unfold" sub relations when defined in <class name="luya\admin\ngrest\base\NgRestModel" method="extraFields" />.
+The Yii Framework has a very convenient way to work with model sub-relations, using [expand](https://www.yiiframework.com/doc/guide/2.0/en/rest-resources) can also "unfold" sub-relations when defined in <class name="luya\admin\ngrest\base\NgRestModel" method="extraFields" />.
 
 ```php
 class XYZ extends NgRestModel
@@ -52,7 +52,7 @@ class XYZ extends NgRestModel
 }
 ```
 
-> The <class name="luya\admin\ngrest\base\Api" method="withRelations" /> will **eager load** the data, but in order to expand sub relations e.g. `user.country` the country relation must be defined in <class name="luya\admin\ngrest\base\NgRestModel" method="extraFields" /> `array_merge(['country'], parent::extraFields())` inside the User model.
+> The <class name="luya\admin\ngrest\base\Api" method="withRelations" /> will **eager load** the data, but in order to expand sub-relations e.g. `user.country` the country relation must be defined in <class name="luya\admin\ngrest\base\NgRestModel" method="extraFields" /> `array_merge(['country'], parent::extraFields())` inside the User model.
 
 ## Pagination
 
@@ -62,7 +62,7 @@ The LUYA API automatically enabled pagination after 200 rows, but you can also f
 public $pagination = ['defaultPageSize' => 50];
 ```
 
-In order to enable the `per-page` get request option the `$pagination` property has to be declared like in the example above, by default you can then choose between 0 and 50 items. In order to configure the page size limit use:
+In order to enable the `per-page` GET request option the `$pagination` property has to be declared like in the example above, by default you can then choose between 0 and 50 items. In order to configure the page size limit use:
 
 ```php
 public $pagination = [
@@ -86,9 +86,9 @@ Make sure to call the parent implementation!
 
 ## Extra URL Rules
 
-Since core 1.0.10 and admin 1.2.2 you can also provide some extra patterns for your APIs. With the configuration of <class name="luya\base\Module" prop="apiRules" /> you can give every API a customized setup. As the rules are defined trough <class name="yii\rest\UrlRule" /> you can now set extra pattern, exclude given actions or change tokens.
+Since core 1.0.10 and admin 1.2.2 you can also provide some extra patterns for your APIs. With the configuration of <class name="luya\base\Module" prop="apiRules" /> you can give every API a customized setup. As the rules are defined through <class name="yii\rest\UrlRule" /> you can now set extra pattern, exclude given actions or change tokens.
 
-An example of adding a semantic get request action could look like this:
+An example of adding a semantic GET request action could look like this:
 
 ```php
 class NewsController extends \luya\admin\ngrest\base\Api

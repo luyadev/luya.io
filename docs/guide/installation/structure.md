@@ -62,7 +62,7 @@ $config = new Config('myproject', dirname(__DIR__), [
             'secureLogin' => false, // when enabling secure login, the mail component must be proper configured otherwise the auth token mail will not send.
             'strongPasswordPolicy' => false, // If enabled, the admin user passwords require strength input with special chars, lower, upper, digits and numbers
             'interfaceLanguage' => 'en', // Admin interface default language.
-            'autoBootstrapQueue' => true, // Enables the fake cronjob by default, read more about queue/scheduler: https://luya.io/guide/app-queue
+            'autoBootstrapQueue' => true, // Enables the fake cronjob by default, read more about queue/scheduler: https://luya.io/guide/app/queue
             'logoutOnUserIpChange' => true,
         ],
         'cms' => [
@@ -253,7 +253,7 @@ return $config->toArray(\luya\Config::ENV_PROD);
 
 ## Company wide config
 
-Its very common that you like to share configuration values over different projects, therefore we encourage you to create your own LUYA DI repo, create a private repository on your VCS platform (example GitHub) add a Bootstrap file like:
+It's very common that you like to share configuration values over different projects, therefore we encourage you to create your own LUYA DI repo, create a private repository on your VCS platform (example GitHub) add a bootstrap file like:
 
 ```php
 <?php

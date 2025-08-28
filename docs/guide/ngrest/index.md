@@ -1,7 +1,7 @@
 # Admin module NgRest CRUD
 
 One of the most powerful tools in *LUYA*, is the **AngularJS C** surface. It combines *AngularJS*, *RESTful*, *CRUD* and *Active Record* in a very elegant and powerful way.
-So in a more understandable sentence **Generate administration forms to create, update, delete and list your data very fast and elegant**. It creates an API you can talk trough via AngularJS and you can configure it like an ActiveRecord and also use it like an Active Record Model in your application. Here is an example of an NgRest CRUD for admin UI users:
+So in a more understandable sentence **Generate administration forms to create, update, delete and list your data very fast and elegant**. It creates an API you can talk through via AngularJS and you can configure it like an ActiveRecord and also use it like an Active Record Model in your application. Here is an example of a NgRest CRUD for admin UI users:
 
 ![ngrest-crud-example](../img/ngrest-crud-example.jpg "NgRest CRUD Example")
 
@@ -20,7 +20,7 @@ The word *NgRest* is explained as follows: A**Ng**ular**Rest** (Representational
 8. Set permission in admin UI under `System -> User groups -> Permission`
 :::
 
-#### Steps to understand and create an NgRest CRUD
+#### Steps to understand and create a NgRest CRUD
 
 Preparations:
 
@@ -36,7 +36,7 @@ Setup CRUD:
 
 ## Creating the model
 
-We assume you have a made a table via the migrations (in your example below we assume you make a team module with members) and execute the migrations. Now you can create an <class name="luya\admin\ngrest\base\NgRestModel" /> model for the provided table. The model represents the data source for the REST API, you can create the model with the Gii module extension or you can also generate the model and the rest of the classes with the `admin/crud/create` cli command.
+We assume you have a made a table via the migrations (in your example below we assume you make a team module with members) and execute the migrations. Now you can create an <class name="luya\admin\ngrest\base\NgRestModel" /> model for the provided table. The model represents the data source for the REST API, you can create the model with the Gii module extension or you can also generate the model and the rest of the classes with the `admin/crud/create` CLI command.
 
 Lets have a closer look how your model should look like, in our member example of the team module:
 
@@ -121,7 +121,7 @@ You can read more about the configuration of the [model](model.md).
 
 ## Creating controller and API
 
-Each NgRest CRUD needs an API (to make the REST call, create, update, list which are provided trough [Yii 2 RESTful](https://www.yiiframework.com/doc-2.0/guide-rest-quick-start.html)) and a controller which contains the AngularJS template for your <class name="luya\admin\ngrest\base\NgRestModel" method="ngRestConfig" />. The API and the controller are basically only gateways for the output and do relate to the NgRest model:
+Each NgRest CRUD needs an API (to make the REST call, create, update, list which are provided through [Yii 2 RESTful](https://www.yiiframework.com/doc-2.0/guide-rest-quick-start.html)) and a controller which contains the AngularJS template for your <class name="luya\admin\ngrest\base\NgRestModel" method="ngRestConfig" />. The API and the controller are basically only gateways for the output and do relate to the NgRest model:
 
 ### NgRest Controller
 
@@ -158,7 +158,7 @@ This would generate a new button in the settings dropdown which would call the a
 
 ### NgRest API
 
-The API controller will return the REST formatted data from your model. The API controller needs to know from which configuration of the API it should be build from, therefore define the <class name="luya\admin\ngrest\base\Api" prop="$modelClass" /> property with your defined <class name="luya\admin\ngrest\base\NgRestModel" />.
+The API controller will return the REST-formatted data from your model. The API controller needs to know from which configuration of the API it should be build from, therefore define the <class name="luya\admin\ngrest\base\Api" prop="$modelClass" /> property with your defined <class name="luya\admin\ngrest\base\NgRestModel" />.
 
 ```php
 <?php

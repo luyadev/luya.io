@@ -117,7 +117,7 @@ The `composer.json` file can contain an extra section which can be read by the L
 
 ## Bootstraping dependencies in dependencies (child dependencies)
 
-Its very common to create a "private" (company specific let' say) repository containing code for several projects and also includes the LUYA requirements like `admin` and `cms`. As LUYA strongly relies on the [LUYA Composer](https://github.com/luyadev/luya-composer) which contains a `bootstrap` section to make more easy to load data when creating extensions and modules this can be a problem when work with child Dependencies (A Dependencies of a Dependencies).
+It's very common to create a "private" (company specific let' say) repository containing code for several projects and also includes the LUYA requirements like `admin` and `cms`. As LUYA strongly relies on the [LUYA Composer](https://github.com/luyadev/luya-composer) which contains a `bootstrap` section to make more easy to load data when creating extensions and modules this can be a problem when work with child Dependencies (A Dependencies of a Dependencies).
 
 Assuming the following scenario we have a `BaseRepo` and an `ProjectApplication` where the `ProjectApplication` requires the `BaseRepo` as a dependency.
 

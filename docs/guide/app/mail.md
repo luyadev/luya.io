@@ -17,7 +17,7 @@ LUYA comes with a <class name="luya\components\Mail" /> component that uses PHPM
 
 > Often there are different configuration needed which are depending on your hosting provider. Please have a closer look to <class name="luya\components\Mail" /> to understand how and what can be configured to match the requirements of your email hosting provider.
 
-In order to test your configurations you can run the console command `health/mailer`. The command will try to connect to your mail server trough your provided credentials. By default the mailer component requires a SMTP Server and is not using PHPs mail function.
+In order to test your configurations you can run the console command `health/mailer`. The command will try to connect to your mail server through your provided credentials. By default the mailer component requires a SMTP Server and is not using PHPs mail function.
 
 ```sh
 ./vendor/bin/luya health/mailer
